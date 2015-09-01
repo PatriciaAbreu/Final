@@ -1,0 +1,23 @@
+{
+    exercicios: [
+        {
+            "texto": "Oi, vamos encontrar a Júlia?",
+            "audio": "Exercicio1",
+            "tipoAudio": "m4a",
+            "video": "testeVideo",
+            "tipoVideo": "m4v",
+            "numero": 1
+        },
+        
+        {
+           "texto": "Me ajuda a arrumar os de 0 a 9?",
+            "audio": "testeAudio",
+            "tipoAudio": "m4a",
+            "video": "testeVideo",
+            "tipoVideo": "m4v",
+            "numero": 2
+        }
+    ]
+}
+
+
