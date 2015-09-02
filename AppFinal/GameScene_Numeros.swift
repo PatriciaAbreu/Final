@@ -25,7 +25,10 @@ class GameScene_Numeros: SKScene {
     var personagem_Julia: SKSpriteNode!
     
     var dialogo: SKSpriteNode!
+    var dialogo2: SKSpriteNode!
+    
     var seta_play: SKSpriteNode!
+    var seta_play_2: SKSpriteNode!
     
     var movie: MPMoviePlayerController?
     var audio: AVAudioPlayer!
@@ -47,9 +50,10 @@ class GameScene_Numeros: SKScene {
         
         var exercicio: ExercicioJSON = ExercicioJSON()
         
-        var audio = exercicio.getAudio(1)
+        var video = exercicio.getVideo(0)
+        var audio = exercicio.getAudio(0)
         
-        playVideo("teste", tipo: "m4v")
+        playVideo(video, tipo: "m4v")
         playAudio(audio, tipo: "m4a")
         
     }
@@ -61,16 +65,37 @@ class GameScene_Numeros: SKScene {
         
         var toque = self.nodeAtPoint(touchLocation)
         
-        if toque.name == "seta_play" {
-            dialogo.hidden = true
-            seta_play.hidden = true
+        if toque.name == "seta_play_1" {
+            
+            seta_play.name = "seta_play_2"
+            
+            dialogo2 = SKSpriteNode(imageNamed: "chat_azul_texto_2")
+            dialogo2.zPosition = 1
+            dialogo2.name = "dialogo"
+            dialogo2.size = CGSize(width: 200, height: 200)
+            dialogo2.position = CGPoint(x: 780, y: 400)
+            
+            seta_play_2 = SKSpriteNode(imageNamed: "seta_azul")
+            seta_play_2.zPosition = 1
+            seta_play_2.name = "seta_play_2"
+            seta_play_2.size = CGSize(width: 50, height: 50)
+            seta_play_2.position = CGPoint(x: 780, y: 380)
+            
+            dialogo.removeFromParent()
+            seta_play.removeFromParent()
+            addChild(dialogo2)
+            addChild(seta_play_2)
+            
+
+        }else if toque.name == "seta_play_2" {
+            dialogo2.removeFromParent()
+            seta_play_2.removeFromParent()
 
             personagem_Caio.runAction(SKAction.moveToX(1100, duration: 0.5))
-            
+            movie?.view.hidden = true
             montarExercicio()
-        }
-        
-        if num3.name == "fim" && toque.name == "julia" {
+            
+        }else if num3.name == "fim" && toque.name == "julia" {
             println(num3)
             brinquedo1.removeFromParent()
             personagem_Julia.runAction(SKAction.scaleTo(2, duration: 0.3))
@@ -150,7 +175,7 @@ class GameScene_Numeros: SKScene {
         
         seta_play = SKSpriteNode(imageNamed: "seta_azul")
         seta_play.zPosition = 1
-        seta_play.name = "seta_play"
+        seta_play.name = "seta_play_1"
         seta_play.size = CGSize(width: 50, height: 50)
         seta_play.position = CGPoint(x: 780, y: 380)
         

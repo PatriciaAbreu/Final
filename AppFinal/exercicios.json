@@ -1,10 +1,10 @@
 {
-    exercicios: [
+    "exercicios": [
         {
             "texto": "Oi, vamos encontrar a Júlia?",
             "audio": "Exercicio1",
             "tipoAudio": "m4a",
-            "video": "testeVideo",
+            "video": "teste",
             "tipoVideo": "m4v",
             "numero": 1
         },
