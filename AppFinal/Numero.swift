@@ -12,6 +12,8 @@ class Numero: SKSpriteNode {
     
     var numero: Int!
     static var verifica: Int?
+    static var toque: CGPoint!
+    
     
     init(texture: SKTexture!, color: UIColor!, size: CGSize, numero:Int) {
         super.init(texture: texture, color: color, size: size)
@@ -24,10 +26,12 @@ class Numero: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-//        var touche = touches.first as! UITouch
-//        var touchLocation = touche.locationInNode(self)
-//        
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        var touche = touches.first as! UITouch
+        var touchLocation = touche.locationInNode(self.parent)
+        
+        Numero.toque = touchLocation
+//
 //        var toque = nodeAtPoint(touchLocation)
 //        
 //        //quando apertar os numeros eles devem ir para seus lugares
@@ -110,7 +114,7 @@ class Numero: SKSpriteNode {
 //            // chama o método procuraJulia() da classe GameScene_Numeros
 //            (toque.parent as! GameScene_Numeros).procurarJulia()
 //        }
-//    }
+    }
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         var touch = touches.first as! UITouch
@@ -119,7 +123,6 @@ class Numero: SKSpriteNode {
     
         self.position = location
         
-        println("Moved")
         println(location)
         println(self.position)
 
@@ -132,8 +135,37 @@ class Numero: SKSpriteNode {
         
         self.position = location
         
-        println("Ended")
+        println("ended")
         println(location)
         println(self.position)
+        
+        var toque = nodeAtPoint(location)
+        
+        if toque.position.y >= 683 && toque.position.y <= 690 {
+            
+            if toque.name == "exercicio1_0" {
+                if toque.position.x >= 90 && toque.position.x <= 115 {
+                    
+                    println("ENTROUUU")
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
+            }else if toque.name == "exercicio1_1" {
+                if toque.position.x >= 170 && toque.position.x <= 200 {
+                    
+                    println("ENTROU1")
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                }
+            }else if toque.name == "exercicio1_2" {
+
+            }
+        }
+        
     }
 }

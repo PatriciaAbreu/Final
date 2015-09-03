@@ -46,6 +46,18 @@ class GameScene_Numeros: SKScene {
     var num9: Numero!
     var num10: Numero!
     
+    var barra0: SKSpriteNode!
+    var barra1: SKSpriteNode!
+    var barra2: SKSpriteNode!
+    var barra3: SKSpriteNode!
+    var barra4: SKSpriteNode!
+    var barra5: SKSpriteNode!
+    var barra6: SKSpriteNode!
+    var barra7: SKSpriteNode!
+    var barra8: SKSpriteNode!
+    var barra9: SKSpriteNode!
+    var barra10: SKSpriteNode!
+    
     var exercicio: ExercicioJSON = ExercicioJSON()
     var video: String = ""
     var audioS: String = ""
@@ -265,7 +277,7 @@ class GameScene_Numeros: SKScene {
         num0 = Numero(texture: SKTexture(imageNamed: "num0"), color: nil, size: CGSize(width: 50, height: 50), numero: 0)
         num0.zPosition = 1
         num0.name = "exercicio1_0"
-        num0.position = CGPoint(x: 950, y: 700)
+        num0.position = CGPoint(x: 500, y: 600)
         
         num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: nil, size: CGSize(width: 50, height: 50), numero: 1)
         num1.zPosition = 1
@@ -275,17 +287,17 @@ class GameScene_Numeros: SKScene {
         num2 = Numero(texture: SKTexture(imageNamed: "num2"), color: nil, size: CGSize(width: 50, height: 50), numero: 2)
         num2.zPosition = 1
         num2.name = "exercicio1_2"
-        num2.position = CGPoint(x: 890, y: 650)
+        num2.position = CGPoint(x: 400, y: 550)
         
         num3 = Numero(texture: SKTexture(imageNamed: "num3"), color: nil, size: CGSize(width: 50, height: 50), numero: 3)
         num3.zPosition = 1
         num3.name = "exercicio1_3"
-        num3.position = CGPoint(x: 800, y: 410)
+        num3.position = CGPoint(x: 150, y: 450)
         
         num4 = Numero(texture: SKTexture(imageNamed: "num4"), color: nil, size: CGSize(width: 50, height: 50), numero: 4)
         num4.zPosition = 1
         num4.name = "exercicio1_4"
-        num4.position = CGPoint(x: 830, y: 500)
+        num4.position = CGPoint(x: 920, y: 580)
         
         num5 = Numero(texture: SKTexture(imageNamed: "num5"), color: nil, size: CGSize(width: 50, height: 50), numero: 5)
         num5.zPosition = 1
@@ -300,7 +312,7 @@ class GameScene_Numeros: SKScene {
         num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: nil, size: CGSize(width: 50, height: 50), numero: 7)
         num7.zPosition = 1
         num7.name = "exercicio1_7"
-        num7.position = CGPoint(x: 830, y: 700)
+        num7.position = CGPoint(x: 300, y: 500)
         
         num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: nil, size: CGSize(width: 50, height: 50), numero: 8)
         num8.zPosition = 1
@@ -310,12 +322,12 @@ class GameScene_Numeros: SKScene {
         num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: nil, size: CGSize(width: 50, height: 50), numero: 9)
         num9.zPosition = 1
         num9.name = "exercicio1_9"
-        num9.position = CGPoint(x: 700, y: 630)
+        num9.position = CGPoint(x: 600, y: 530)
         
         num10 = Numero(texture: SKTexture(imageNamed: "num10"), color: nil, size: CGSize(width: 80, height: 70), numero: 10)
         num10.zPosition = 1
         num10.name = "exercicio1_10"
-        num10.position = CGPoint(x: 920, y: 580)
+        num10.position = CGPoint(x: 220, y: 580)
         
         addChild(num0)
         addChild(num1)
@@ -329,6 +341,84 @@ class GameScene_Numeros: SKScene {
         addChild(num9)
         addChild(num10)
         
+//        barra para posicionar os números
+        barra0 = SKSpriteNode(imageNamed: "barra")
+        barra0.zPosition = 1
+        barra0.name = "barra0"
+        barra0.size = CGSize(width: 70, height: 10)
+        barra0.position = CGPoint(x: 100, y: 650)
+        
+        barra1 = SKSpriteNode(imageNamed: "barra")
+        barra1.zPosition = 1
+        barra1.name = "barra1"
+        barra1.size = CGSize(width: 70, height: 10)
+        barra1.position = CGPoint(x: 180, y: 650)
+        
+        barra2 = SKSpriteNode(imageNamed: "barra")
+        barra2.zPosition = 1
+        barra2.name = "barra2"
+        barra2.size = CGSize(width: 70, height: 10)
+        barra2.position = CGPoint(x: 260, y: 650)
+        
+        barra3 = SKSpriteNode(imageNamed: "barra")
+        barra3.zPosition = 1
+        barra3.name = "barra3"
+        barra3.size = CGSize(width: 70, height: 10)
+        barra3.position = CGPoint(x: 340, y: 650)
+        
+        barra4 = SKSpriteNode(imageNamed: "barra")
+        barra4.zPosition = 1
+        barra4.name = "barra4"
+        barra4.size = CGSize(width: 70, height: 10)
+        barra4.position = CGPoint(x: 420, y: 650)
+        
+        barra5 = SKSpriteNode(imageNamed: "barra")
+        barra5.zPosition = 1
+        barra5.name = "barra5"
+        barra5.size = CGSize(width: 70, height: 10)
+        barra5.position = CGPoint(x: 500, y: 650)
+        
+        barra6 = SKSpriteNode(imageNamed: "barra")
+        barra6.zPosition = 1
+        barra6.name = "barra6"
+        barra6.size = CGSize(width: 70, height: 10)
+        barra6.position = CGPoint(x: 580, y: 650)
+        
+        barra7 = SKSpriteNode(imageNamed: "barra")
+        barra7.zPosition = 1
+        barra7.name = "barra7"
+        barra7.size = CGSize(width: 70, height: 10)
+        barra7.position = CGPoint(x: 660, y: 650)
+        
+        barra8 = SKSpriteNode(imageNamed: "barra")
+        barra8.zPosition = 1
+        barra8.name = "barra8"
+        barra8.size = CGSize(width: 70, height: 10)
+        barra8.position = CGPoint(x: 740, y: 650)
+        
+        barra9 = SKSpriteNode(imageNamed: "barra")
+        barra9.zPosition = 1
+        barra9.name = "barra9"
+        barra9.size = CGSize(width: 70, height: 10)
+        barra9.position = CGPoint(x: 820, y: 650)
+        
+        barra10 = SKSpriteNode(imageNamed: "barra")
+        barra10.zPosition = 1
+        barra10.name = "barra10"
+        barra10.size = CGSize(width: 70, height: 10)
+        barra10.position = CGPoint(x: 900, y: 650)
+        
+        addChild(barra0)
+        addChild(barra1)
+        addChild(barra2)
+        addChild(barra3)
+        addChild(barra4)
+        addChild(barra5)
+        addChild(barra6)
+        addChild(barra7)
+        addChild(barra8)
+        addChild(barra9)
+        addChild(barra10)
     }
     
     //função para fazer o boneco aparecer avisando que agora pode procurar a Julia
