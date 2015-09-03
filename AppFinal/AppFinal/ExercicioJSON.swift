@@ -20,7 +20,7 @@ class ExercicioJSON: NSObject {
         arrayDeResultados = NSJSONSerialization.JSONObjectWithData(jData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSArray
     }
     
-    func getAudio(var exercicio: Int)-> String{
+    func getAudio(var exercicio: Int, var audio: String)-> String{
         
         let path: NSString = NSBundle.mainBundle().pathForResource("exercicios", ofType: "json")!
         var data: NSData = NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped, error: nil)!
@@ -33,7 +33,10 @@ class ExercicioJSON: NSObject {
         var exercicio = exercicios.objectAtIndex(exercicio) as! NSDictionary
         println(exercicio)
         
-        var audio = exercicio.objectForKey("audio") as! NSString
+        var audios = exercicio.objectForKey("audio") as! NSDictionary
+        println(audios)
+        
+        var audio = audios.objectForKey(audio) as! NSString
         println(audio)
         
         return audio as! String
