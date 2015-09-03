@@ -107,11 +107,33 @@ class Numero: SKSpriteNode {
             toque.name = "fim10"
             Numero.verifica = 10
             
-//            let notificacao:NSNotificationCenter = NSNotificationCenter.defaultCenter()
-//            
-//            notificacao.postNotificationName("Julia", object: self)
-            
+            // chama o método procuraJulia() da classe GameScene_Numeros
             (toque.parent as! GameScene_Numeros).procurarJulia()
         }
+    }
+    
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        var touch = touches.first as! UITouch
+        var location:CGPoint!
+        location = touch.locationInNode(self)
+    
+        self.position = location
+        
+        println("Moved")
+        println(location)
+        println(self.position)
+
+    }
+    
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        var touch = touches.first as! UITouch
+        var location:CGPoint!
+        location = touch.locationInNode(self)
+        
+        self.position = location
+        
+        println("Ended")
+        println(location)
+        println(self.position)
     }
 }
