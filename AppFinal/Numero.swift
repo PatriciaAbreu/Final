@@ -155,7 +155,7 @@ class Numero: SKSpriteNode {
                     
                 }
             }else if toque.name == "exercicio1_1" {
-                if toque.position.x >= 170 && toque.position.x <= 200 && Numero.verifica == 0{
+                if toque.position.x >= 170 && toque.position.x <= 200 && Numero.verifica == nil{
                     
                     println("ENTROU1")
                     Numero.verifica = 1
