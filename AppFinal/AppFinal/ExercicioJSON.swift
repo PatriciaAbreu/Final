@@ -43,7 +43,7 @@ class ExercicioJSON: NSObject {
         
 }
 
-    func getVideo(var exercicio: Int) -> String {
+    func getVideo(var exercicio: Int, var video: String) -> String {
         
         let path: NSString = NSBundle.mainBundle().pathForResource("exercicios", ofType: "json")!
         var data: NSData = NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped, error: nil)!
@@ -56,7 +56,10 @@ class ExercicioJSON: NSObject {
         var exercicio = exercicios.objectAtIndex(exercicio) as! NSDictionary
         println(exercicio)
         
-        var video = exercicio.objectForKey("video") as! NSString
+        var videos = exercicio.objectForKey("video") as! NSDictionary
+        println(videos)
+        
+        var video = videos.objectForKey(video) as! NSString
         println(video)
         
         return video as! String

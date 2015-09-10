@@ -19,8 +19,9 @@
 		6A541AAB1B82738E0066B36C /* GameScene_Operacoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541AAA1B82738E0066B36C /* GameScene_Operacoes.swift */; };
 		6A541AAE1B82748C0066B36C /* GameScene_Espaco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541AAD1B82748C0066B36C /* GameScene_Espaco.swift */; };
 		6A541AB01B8275020066B36C /* GameScene_Grandezas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541AAF1B8275020066B36C /* GameScene_Grandezas.swift */; };
+		6A6D69461B9F60D000A5BAD8 /* Exercicio3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D69451B9F60D000A5BAD8 /* Exercicio3.m4a */; };
+		6A6D69481B9F61EE00A5BAD8 /* Exercicio4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D69471B9F61EE00A5BAD8 /* Exercicio4.m4a */; };
 		6AA4D4B71B98982100CC7C19 /* Exercicio2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4D4B61B98982100CC7C19 /* Exercicio2.m4a */; };
-		6AA4D4B91B98982D00CC7C19 /* Exercicio3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4D4B81B98982D00CC7C19 /* Exercicio3.m4a */; };
 		6AC1342D1B8F4CBA00E6F6C6 /* Numero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1342C1B8F4CBA00E6F6C6 /* Numero.swift */; };
 		6AC134371B96175C00E6F6C6 /* teste.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 6AC134311B8F544000E6F6C6 /* teste.m4v */; };
 		6AC134391B96177F00E6F6C6 /* Exercicio1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AC134381B96177F00E6F6C6 /* Exercicio1.m4a */; };
@@ -55,8 +56,10 @@
 		6A541AAA1B82738E0066B36C /* GameScene_Operacoes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_Operacoes.swift; sourceTree = "<group>"; };
 		6A541AAD1B82748C0066B36C /* GameScene_Espaco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_Espaco.swift; sourceTree = "<group>"; };
 		6A541AAF1B8275020066B36C /* GameScene_Grandezas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_Grandezas.swift; sourceTree = "<group>"; };
+		6A6D69411B9DD67200A5BAD8 /* AppFinal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppFinal-Bridging-Header.h"; sourceTree = "<group>"; };
+		6A6D69451B9F60D000A5BAD8 /* Exercicio3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio3.m4a; path = ../Exercicio3.m4a; sourceTree = "<group>"; };
+		6A6D69471B9F61EE00A5BAD8 /* Exercicio4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio4.m4a; path = ../Exercicio4.m4a; sourceTree = "<group>"; };
 		6AA4D4B61B98982100CC7C19 /* Exercicio2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio2.m4a; path = ../Exercicio2.m4a; sourceTree = "<group>"; };
-		6AA4D4B81B98982D00CC7C19 /* Exercicio3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio3.m4a; path = ../Exercicio3.m4a; sourceTree = "<group>"; };
 		6AC1342C1B8F4CBA00E6F6C6 /* Numero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Numero.swift; path = ../Numero.swift; sourceTree = "<group>"; };
 		6AC134311B8F544000E6F6C6 /* teste.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = teste.m4v; path = ../teste.m4v; sourceTree = "<group>"; };
 		6AC134381B96177F00E6F6C6 /* Exercicio1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio1.m4a; path = ../Exercicio1.m4a; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 				6A541A7D1B823DE10066B36C /* AppFinal */,
 				6A541A971B823DE10066B36C /* AppFinalTests */,
 				6A541A7C1B823DE10066B36C /* Products */,
+				6A6D69411B9DD67200A5BAD8 /* AppFinal-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,7 +189,8 @@
 			children = (
 				6AC134381B96177F00E6F6C6 /* Exercicio1.m4a */,
 				6AA4D4B61B98982100CC7C19 /* Exercicio2.m4a */,
-				6AA4D4B81B98982D00CC7C19 /* Exercicio3.m4a */,
+				6A6D69451B9F60D000A5BAD8 /* Exercicio3.m4a */,
+				6A6D69471B9F61EE00A5BAD8 /* Exercicio4.m4a */,
 			);
 			name = Audios;
 			sourceTree = "<group>";
@@ -279,7 +284,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AA4D4B91B98982D00CC7C19 /* Exercicio3.m4a in Resources */,
+				6A6D69481B9F61EE00A5BAD8 /* Exercicio4.m4a in Resources */,
+				6A6D69461B9F60D000A5BAD8 /* Exercicio3.m4a in Resources */,
 				6AA4D4B71B98982100CC7C19 /* Exercicio2.m4a in Resources */,
 				6AC1343B1B9618AF00E6F6C6 /* exercicios.json in Resources */,
 				6AC134391B96177F00E6F6C6 /* Exercicio1.m4a in Resources */,
@@ -442,9 +448,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AppFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppFinal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -452,9 +461,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AppFinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppFinal-Bridging-Header.h";
 			};
 			name = Release;
 		};

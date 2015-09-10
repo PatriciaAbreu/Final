@@ -141,12 +141,13 @@ class Numero: SKSpriteNode {
         
         var toque = nodeAtPoint(location)
         
-        if toque.position.y >= 683 && toque.position.y <= 690 {
+        if toque.position.y >= 670 && toque.position.y <= 700 {
             
             if toque.name == "exercicio1_0" {
-                if toque.position.x >= 90 && toque.position.x <= 115 {
+                if toque.position.x >= 90 && toque.position.x <= 115 && Numero.verifica == nil{
                     
                     println("ENTROUUU")
+                    Numero.verifica = 0
                     
                 }else {
                     
@@ -154,16 +155,117 @@ class Numero: SKSpriteNode {
                     
                 }
             }else if toque.name == "exercicio1_1" {
-                if toque.position.x >= 170 && toque.position.x <= 200 {
+                if toque.position.x >= 170 && toque.position.x <= 200 && Numero.verifica == 0{
                     
                     println("ENTROU1")
+                    Numero.verifica = 1
                     
                 }else {
                     
                     toque.position = Numero.toque
                 }
             }else if toque.name == "exercicio1_2" {
-
+                if toque.position.x >= 250 && toque.position.x <= 270 && Numero.verifica == 1{
+                    
+                    println("ENTROU2")
+                    Numero.verifica = 2
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
+            }else if toque.name == "exercicio1_3" {
+                if toque.position.x >= 320 && toque.position.x <= 360 && Numero.verifica == 2{
+                    
+                    println("ENTROU3")
+                    Numero.verifica = 3
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
+            }else if toque.name == "exercicio1_4" {
+                if toque.position.x >= 400 && toque.position.x <= 450 && Numero.verifica == 3{
+                    
+                    println("ENTROU4")
+                    Numero.verifica = 4
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
+            }else if toque.name == "exercicio1_5" {
+                if toque.position.x >= 490 && toque.position.x <= 520 && Numero.verifica == 4{
+                    
+                    println("ENTROU5")
+                    Numero.verifica = 5
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
+            }else if toque.name == "exercicio1_6" {
+                if toque.position.x >= 560 && toque.position.x <= 600 && Numero.verifica == 5{
+                    
+                    println("ENTROU6")
+                    Numero.verifica = 6
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
+            }else if toque.name == "exercicio1_7" {
+                if toque.position.x >= 630 && toque.position.x <= 680 && Numero.verifica == 6{
+                    
+                    println("ENTROU7")
+                    Numero.verifica = 7
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
+            }else if toque.name == "exercicio1_8" {
+                if toque.position.x >= 710 && toque.position.x <= 760 && Numero.verifica == 7{
+                    
+                    println("ENTROU8")
+                    Numero.verifica = 8
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
+            }else if toque.name == "exercicio1_9" {
+                if toque.position.x >= 790 && toque.position.x <= 830 && Numero.verifica == 8{
+                    
+                    println("ENTROU9")
+                    Numero.verifica = 9
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
+            }else if toque.name == "exercicio1_10" {
+                if toque.position.x >= 870 && toque.position.x <= 910 && Numero.verifica == 9{
+                    
+                    println("ENTROU10")
+                    Numero.verifica = 10
+                    
+//                     chama o método procuraJulia() da classe GameScene_Numeros
+                    (toque.parent as! GameScene_Numeros).procurarJulia()
+                    
+                }else {
+                    
+                    toque.position = Numero.toque
+                    
+                }
             }
         }
         

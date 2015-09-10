@@ -66,7 +66,7 @@ class GameScene_Numeros: SKScene {
 
         montarScene()
         
-        video = exercicio.getVideo(0)
+        video = exercicio.getVideo(0, video: "video1")
         audioS = exercicio.getAudio(0, audio: "audio1")
         
         playVideo(video, tipo: "m4v")
@@ -99,7 +99,7 @@ class GameScene_Numeros: SKScene {
             
             movie?.view.hidden = true
             
-            video = exercicio.getVideo(0)
+            video = exercicio.getVideo(0, video: "video2")
             audioS = exercicio.getAudio(0, audio: "audio2")
             
             playVideo(video, tipo: "m4v")
@@ -146,7 +146,7 @@ class GameScene_Numeros: SKScene {
             addChild(dialogo2)
             addChild(seta_play_3)
 
-            video = exercicio.getVideo(0)
+            video = exercicio.getVideo(0, video: "video2")
             audioS = exercicio.getAudio(0, audio: "audio2")
             
             playVideo(video, tipo: "m4v")
@@ -160,7 +160,7 @@ class GameScene_Numeros: SKScene {
             
             personagem_Caio.runAction(SKAction.moveToX(950, duration: 0.5))
             
-            dialogo2 = SKSpriteNode(imageNamed: "chat_azul_texto_2")
+            dialogo2 = SKSpriteNode(imageNamed: "chat_azul_texto_4")
             dialogo2.zPosition = 1
             dialogo2.name = "dialogo"
             dialogo2.size = CGSize(width: 200, height: 200)
@@ -175,8 +175,8 @@ class GameScene_Numeros: SKScene {
             addChild(dialogo2)
             addChild(seta_play_3)
             
-            video = exercicio.getVideo(0)
-            audioS = exercicio.getAudio(0, audio: "audio2")
+            video = exercicio.getVideo(0, video: "video4")
+            audioS = exercicio.getAudio(0, audio: "audio4")
             
             playVideo(video, tipo: "m4v")
             playAudio(audioS, tipo: "m4a")
@@ -441,7 +441,7 @@ class GameScene_Numeros: SKScene {
         addChild(dialogo2)
         addChild(seta_play_3)
         
-        video = exercicio.getVideo(0)
+        video = exercicio.getVideo(0, video: "video3")
         audioS = exercicio.getAudio(0, audio: "audio3")
         playVideo(video, tipo: "m4v")
         playAudio(audioS, tipo: "m4a")
