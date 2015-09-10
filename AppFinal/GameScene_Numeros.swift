@@ -30,6 +30,7 @@ class GameScene_Numeros: SKScene {
     var seta_play: SKSpriteNode!
     var seta_play_2: SKSpriteNode!
     var seta_play_3: SKSpriteNode!
+    var seta_play_4: SKSpriteNode!
     
     var movie: MPMoviePlayerController?
     var audio: AVAudioPlayer!
@@ -80,7 +81,7 @@ class GameScene_Numeros: SKScene {
         let touchLocation = touch.locationInNode(self)
         
         var toque = self.nodeAtPoint(touchLocation)
-        
+    
         if toque.name == "seta_play_1" {
             
             seta_play.name = "seta_play_2"
@@ -128,6 +129,11 @@ class GameScene_Numeros: SKScene {
             personagem_Caio.runAction(SKAction.moveToX(1100, duration: 0.5))
             movie?.view.hidden = true
             
+        }else if toque.name == "seta_play_4" {
+            var novoJogo = SKScene()
+            novoJogo = GameScene_Operacoes(size:size)
+            self.scene!.view?.presentScene(novoJogo)
+            
         }else if toque.name == "julia" && Numero.verifica != 10 {
             personagem_Caio.runAction(SKAction.moveToX(950, duration: 0.5))
             
@@ -166,14 +172,14 @@ class GameScene_Numeros: SKScene {
             dialogo2.size = CGSize(width: 200, height: 200)
             dialogo2.position = CGPoint(x: 900, y: 400)
             
-            seta_play_3 = SKSpriteNode(imageNamed: "seta_azul")
-            seta_play_3.zPosition = 1
-            seta_play_3.name = "seta_play_3"
-            seta_play_3.size = CGSize(width: 50, height: 50)
-            seta_play_3.position = CGPoint(x: 900, y: 380)
+            seta_play_4 = SKSpriteNode(imageNamed: "seta_azul")
+            seta_play_4.zPosition = 1
+            seta_play_4.name = "seta_play_4"
+            seta_play_4.size = CGSize(width: 50, height: 50)
+            seta_play_4.position = CGPoint(x: 900, y: 380)
             
             addChild(dialogo2)
-            addChild(seta_play_3)
+            addChild(seta_play_4)
             
             video = exercicio.getVideo(0, video: "video4")
             audioS = exercicio.getAudio(0, audio: "audio4")
@@ -204,12 +210,6 @@ class GameScene_Numeros: SKScene {
         brinquedo1.size = CGSize(width: 200, height: 200)
         brinquedo1.position = CGPoint(x: 300, y: 100)
         
-        brinquedo2 = SKSpriteNode(imageNamed: "toy2")
-        brinquedo2.zPosition = 1
-        brinquedo2.name = "brinquedo2"
-        brinquedo2.size = CGSize(width: 150, height: 200)
-        brinquedo2.position = CGPoint(x: 400, y: 400)
-        
         //posiciona e adiciona personagens
         personagem_Caio = SKSpriteNode(imageNamed: "Caio")
         personagem_Caio.zPosition = 1
@@ -238,7 +238,6 @@ class GameScene_Numeros: SKScene {
         addChild(background_numeros)
         addChild(personagem_Julia)
         addChild(brinquedo1)
-        addChild(brinquedo2)
         addChild(personagem_Caio)
         addChild(dialogo)
         addChild(seta_play)
