@@ -8,21 +8,20 @@
 
 import SpriteKit
 
-class Numero: SKSpriteNode {
+class Personagem_Menu: SKSpriteNode {
     
-    var numero: Int!
-    static var verifica: Int?
-    static var toque: CGPoint!
+    var posicao: Int!
     
-    
-    init(texture: SKTexture!, color: UIColor!, size: CGSize, numero:Int) {
+    init(texture: SKTexture!, color: UIColor!, size: CGSize, posicao: Int) {
         super.init(texture: texture, color: color, size: size)
+        self.posicao = posicao
         self.userInteractionEnabled = true
-        
-        self.numero = numero
-        
     }
+
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-}
+    }
+    
+    
 }

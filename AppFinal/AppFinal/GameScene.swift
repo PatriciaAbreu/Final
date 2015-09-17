@@ -39,18 +39,31 @@ class GameScene: SKScene {
         montarMenu()
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
         //verifica qual menu foi tocado
-        let touch = touches.first as! UITouch
-        let touchLocatio = touch.locationInNode(self)
+        let touch = touches.first
+        let touchLocatio = touch!.locationInNode(self)
         
-        var toque = self.nodeAtPoint(touchLocatio)
+        let toque = self.nodeAtPoint(touchLocatio)
         var novaScene = SKScene()
         
         if toque.name == "personagem1" {
-            println("personagem1")
-            
+            print("personagem1")
+            if toque.position.x == 295 {
+                toque.runAction(SKAction.moveTo(CGPoint(x: 525, y: 620), duration: 0.4))
+                toque.runAction(SKAction.rotateToAngle(0, duration: 0.4))
+                
+                personagem2_menu.runAction(SKAction.moveTo(CGPoint(x: 755, y: 400), duration: 0.4))
+                personagem2_menu.runAction(SKAction.rotateToAngle(0, duration: 0.4))
+                
+                personagem3_menu.runAction(SKAction.moveTo(CGPoint(x: 525, y: 180), duration: 0.4))
+                personagem3_menu.runAction(SKAction.rotateToAngle(0, duration: 0.4))
+                
+                personagem4_menu.runAction(SKAction.moveTo(CGPoint(x: 295, y: 400), duration: 0.4))
+                personagem4_menu.runAction(SKAction.rotateToAngle(0, duration: 0.4))
+                
+            }
 //            toque.runAction(SKAction.moveTo(CGPoint(x: 525, y: 620), duration: 0.4))
 //            toque.runAction(SKAction.rotateToAngle(1.5, duration: 0.4))
 //            
@@ -66,7 +79,7 @@ class GameScene: SKScene {
             novaScene = GameScene_Numeros(size: size)
             
         }else if toque.name == "personagem2" {
-            println("personagem2")
+            print("personagem2")
             
             toque.runAction(SKAction.moveTo(CGPoint(x: 525, y: 620), duration: 0.4))
             toque.runAction(SKAction.rotateToAngle(1.5, duration: 0.4))
@@ -83,13 +96,13 @@ class GameScene: SKScene {
             novaScene = GameScene_Numeros(size: size)
             
         }else if toque.name == "personagem3" {
-            println("personagem3")
+            print("personagem3")
             
-            toque.runAction(SKAction.moveTo(CGPoint(x: <#CGFloat#>, y: <#CGFloat#>), duration: <#NSTimeInterval#>))
+//            toque.runAction(SKAction.moveTo(CGPoint(x: <#CGFloat#>, y: <#CGFloat#>), duration: <#NSTimeInterval#>))
             novaScene = GameScene_Numeros(size: size)
             
         }else if toque.name == "personagem4" {
-            println("personagem4")
+            print("personagem4")
             
             novaScene = GameScene_Numeros(size: size)
         }

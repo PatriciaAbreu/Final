@@ -11,58 +11,58 @@ import UIKit
 class ExercicioJSON: NSObject {
     
     func busca(){
-        var jData = NSData(contentsOfFile: "exercicios.json")
+        let jData = NSData(contentsOfFile: "exercicios.json")
         
         var arrayDeResultados: NSArray
         var result: NSDictionary
         var nomeRep: Array<String> = []
         
-        arrayDeResultados = NSJSONSerialization.JSONObjectWithData(jData!, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSArray
+        arrayDeResultados = (try! NSJSONSerialization.JSONObjectWithData(jData!, options: NSJSONReadingOptions.MutableContainers)) as! NSArray
     }
     
-    func getAudio(var exercicio: Int, var audio: String)-> String{
+    func getAudio(exercicio: Int, audio: String)-> String{
         
         let path: NSString = NSBundle.mainBundle().pathForResource("exercicios", ofType: "json")!
-        var data: NSData = NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped, error: nil)!
-        var dict: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-        println(dict)
+        let data: NSData = try! NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped)
+        let dict: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
+        print(dict)
         
-        var exercicios = dict.objectForKey("exercicios") as! NSArray
-        println(exercicios)
+        let exercicios = dict.objectForKey("exercicios") as! NSArray
+        print(exercicios)
         
-        var exercicio = exercicios.objectAtIndex(exercicio) as! NSDictionary
-        println(exercicio)
+        let exercicio = exercicios.objectAtIndex(exercicio) as! NSDictionary
+        print(exercicio)
         
-        var audios = exercicio.objectForKey("audio") as! NSDictionary
-        println(audios)
+        let audios = exercicio.objectForKey("audio") as! NSDictionary
+        print(audios)
         
-        var audio = audios.objectForKey(audio) as! NSString
-        println(audio)
+        let audio = audios.objectForKey(audio) as! NSString
+        print(audio)
         
-        return audio as! String
+        return audio as String
         
 }
 
-    func getVideo(var exercicio: Int, var video: String) -> String {
+    func getVideo(exercicio: Int, video: String) -> String {
         
         let path: NSString = NSBundle.mainBundle().pathForResource("exercicios", ofType: "json")!
-        var data: NSData = NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped, error: nil)!
-        var dict: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary
-        println(dict)
+        let data: NSData = try! NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped)
+        let dict: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
+        print(dict)
         
-        var exercicios = dict.objectForKey("exercicios") as! NSArray
-        println(exercicios)
+        let exercicios = dict.objectForKey("exercicios") as! NSArray
+        print(exercicios)
         
-        var exercicio = exercicios.objectAtIndex(exercicio) as! NSDictionary
-        println(exercicio)
+        let exercicio = exercicios.objectAtIndex(exercicio) as! NSDictionary
+        print(exercicio)
         
-        var videos = exercicio.objectForKey("video") as! NSDictionary
-        println(videos)
+        let videos = exercicio.objectForKey("video") as! NSDictionary
+        print(videos)
         
-        var video = videos.objectForKey(video) as! NSString
-        println(video)
+        let video = videos.objectForKey(video) as! NSString
+        print(video)
         
-        return video as! String
+        return video as String
     }
     
     

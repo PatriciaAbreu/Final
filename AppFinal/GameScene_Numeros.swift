@@ -75,12 +75,12 @@ class GameScene_Numeros: SKScene {
         
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        let touch = touches.first as! UITouch
-        let touchLocation = touch.locationInNode(self)
+        let touch = touches.first
+        let touchLocation = touch!.locationInNode(self)
         
-        var toque = self.nodeAtPoint(touchLocation)
+        let toque = self.nodeAtPoint(touchLocation)
     
         if toque.name == "seta_play_1" {
             
@@ -159,7 +159,7 @@ class GameScene_Numeros: SKScene {
             playAudio(audioS, tipo: "m4a")
             
         }else if toque.name == "julia" && Numero.verifica == 10{
-            println(num3)
+            print(num3)
             brinquedo1.removeFromParent()
             personagem_Julia.runAction(SKAction.scaleTo(2, duration: 0.3))
             num3.name = "exercicio1_3"
@@ -245,9 +245,13 @@ class GameScene_Numeros: SKScene {
     }
     
     //função para tocar video
-    func playVideo(var video: String, var tipo: String){
+    func playVideo( video: String, tipo: String){
     
-        if let path = NSBundle.mainBundle().pathForResource(video, ofType: tipo), let url = NSURL.fileURLWithPath(path), let movie = MPMoviePlayerController(contentURL: url) {
+        let path = NSBundle.mainBundle().pathForResource(video, ofType: tipo)
+        let url = NSURL.fileURLWithPath(path!)
+        let movie = MPMoviePlayerController(contentURL: url)
+        
+        if (movie != nil) {
             
             self.movie = movie
             movie.view.frame = CGRect(x: 20, y: 20, width: 300, height: 300)
@@ -256,16 +260,16 @@ class GameScene_Numeros: SKScene {
             self.view?.addSubview(movie.view)
             movie.play()
         }else{
-            debugPrint("Video não encontrado")
+            debugPrint("Video não encontrado", terminator: "")
         }
     }
 
     //função para tocar audio
-    func playAudio(var audio: String, var tipo: String){
+    func playAudio(audio: String, tipo: String){
         
         let path = NSBundle.mainBundle().pathForResource(audio, ofType: tipo)
         let url = NSURL(fileURLWithPath: path!)
-        self.audio = AVAudioPlayer(contentsOfURL: url, error: nil)
+        self.audio = try? AVAudioPlayer(contentsOfURL: url)
         self.audio.prepareToPlay()
         self.audio.play()
     }
@@ -278,52 +282,52 @@ class GameScene_Numeros: SKScene {
 //        num0.name = "exercicio1_0"
 //        num0.position = CGPoint(x: 500, y: 600)
         
-        num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: nil, size: CGSize(width: 50, height: 50), numero: 1)
+        num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 1)
         num1.zPosition = 1
         num1.name = "exercicio1_1"
         num1.position = CGPoint(x: 800, y: 600)
         
-        num2 = Numero(texture: SKTexture(imageNamed: "num2"), color: nil, size: CGSize(width: 50, height: 50), numero: 2)
+        num2 = Numero(texture: SKTexture(imageNamed: "num2"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 2)
         num2.zPosition = 1
         num2.name = "exercicio1_2"
         num2.position = CGPoint(x: 400, y: 550)
         
-        num3 = Numero(texture: SKTexture(imageNamed: "num3"), color: nil, size: CGSize(width: 50, height: 50), numero: 3)
+        num3 = Numero(texture: SKTexture(imageNamed: "num3"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 3)
         num3.zPosition = 1
         num3.name = "exercicio1_3"
         num3.position = CGPoint(x: 150, y: 450)
         
-        num4 = Numero(texture: SKTexture(imageNamed: "num4"), color: nil, size: CGSize(width: 50, height: 50), numero: 4)
+        num4 = Numero(texture: SKTexture(imageNamed: "num4"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 4)
         num4.zPosition = 1
         num4.name = "exercicio1_4"
         num4.position = CGPoint(x: 920, y: 580)
         
-        num5 = Numero(texture: SKTexture(imageNamed: "num5"), color: nil, size: CGSize(width: 50, height: 50), numero: 5)
+        num5 = Numero(texture: SKTexture(imageNamed: "num5"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 5)
         num5.zPosition = 1
         num5.name = "exercicio1_5"
         num5.position = CGPoint(x: 750, y: 530)
         
-        num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: nil, size: CGSize(width: 50, height: 50), numero: 6)
+        num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 6)
         num6.zPosition = 1
         num6.name = "exercicio1_6"
         num6.position = CGPoint(x: 900, y: 480)
         
-        num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: nil, size: CGSize(width: 50, height: 50), numero: 7)
+        num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 7)
         num7.zPosition = 1
         num7.name = "exercicio1_7"
         num7.position = CGPoint(x: 300, y: 500)
         
-        num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: nil, size: CGSize(width: 50, height: 50), numero: 8)
+        num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 8)
         num8.zPosition = 1
         num8.name = "exercicio1_8"
         num8.position = CGPoint(x: 970, y: 430)
         
-        num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: nil, size: CGSize(width: 50, height: 50), numero: 9)
+        num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 9)
         num9.zPosition = 1
         num9.name = "exercicio1_9"
         num9.position = CGPoint(x: 600, y: 530)
         
-        num10 = Numero(texture: SKTexture(imageNamed: "num10"), color: nil, size: CGSize(width: 80, height: 70), numero: 10)
+        num10 = Numero(texture: SKTexture(imageNamed: "num10"), color: UIColor.whiteColor(), size: CGSize(width: 80, height: 70), numero: 10)
         num10.zPosition = 1
         num10.name = "exercicio1_10"
         num10.position = CGPoint(x: 220, y: 580)

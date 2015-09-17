@@ -26,9 +26,9 @@ class Numero: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        var touche = touches.first as! UITouch
-        var touchLocation = touche.locationInNode(self.parent)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touche = touches.first
+        let touchLocation = touche!.locationInNode(self.parent!)
         
         Numero.toque = touchLocation
 //
@@ -116,37 +116,37 @@ class Numero: SKSpriteNode {
 //        }
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        var touch = touches.first as! UITouch
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first
         var location:CGPoint!
-        location = touch.locationInNode(self.parent)
+        location = touch!.locationInNode(self.parent!)
     
         self.position = location
         
-        println(location)
-        println(self.position)
+        print(location)
+        print(self.position)
 
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        var touch = touches.first as! UITouch
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first
         var location:CGPoint!
-        location = touch.locationInNode(self.parent)
+        location = touch!.locationInNode(self.parent!)
         
         self.position = location
         
-        println("ended")
-        println(location)
-        println(self.position)
+        print("ended")
+        print(location)
+        print(self.position)
         
-        var toque = nodeAtPoint(location)
+        let toque = nodeAtPoint(location)
         
         if toque.position.y >= 670 && toque.position.y <= 700 {
             
             if toque.name == "exercicio1_0" {
                 if toque.position.x >= 90 && toque.position.x <= 115 && Numero.verifica == nil{
                     
-                    println("ENTROUUU")
+                    print("ENTROUUU")
                     Numero.verifica = 0
                     
                 }else {
@@ -157,7 +157,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_1" {
                 if toque.position.x >= 170 && toque.position.x <= 200 && Numero.verifica == nil{
                     
-                    println("ENTROU1")
+                    print("ENTROU1")
                     Numero.verifica = 1
                     
                 }else {
@@ -167,7 +167,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_2" {
                 if toque.position.x >= 250 && toque.position.x <= 270 && Numero.verifica == 1{
                     
-                    println("ENTROU2")
+                    print("ENTROU2")
                     Numero.verifica = 2
                     
                 }else {
@@ -178,7 +178,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_3" {
                 if toque.position.x >= 320 && toque.position.x <= 360 && Numero.verifica == 2{
                     
-                    println("ENTROU3")
+                    print("ENTROU3")
                     Numero.verifica = 3
                     
                 }else {
@@ -189,7 +189,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_4" {
                 if toque.position.x >= 400 && toque.position.x <= 450 && Numero.verifica == 3{
                     
-                    println("ENTROU4")
+                    print("ENTROU4")
                     Numero.verifica = 4
                     
                 }else {
@@ -200,7 +200,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_5" {
                 if toque.position.x >= 490 && toque.position.x <= 520 && Numero.verifica == 4{
                     
-                    println("ENTROU5")
+                    print("ENTROU5")
                     Numero.verifica = 5
                     
                 }else {
@@ -211,7 +211,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_6" {
                 if toque.position.x >= 560 && toque.position.x <= 600 && Numero.verifica == 5{
                     
-                    println("ENTROU6")
+                    print("ENTROU6")
                     Numero.verifica = 6
                     
                 }else {
@@ -222,7 +222,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_7" {
                 if toque.position.x >= 630 && toque.position.x <= 680 && Numero.verifica == 6{
                     
-                    println("ENTROU7")
+                    print("ENTROU7")
                     Numero.verifica = 7
                     
                 }else {
@@ -233,7 +233,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_8" {
                 if toque.position.x >= 710 && toque.position.x <= 760 && Numero.verifica == 7{
                     
-                    println("ENTROU8")
+                    print("ENTROU8")
                     Numero.verifica = 8
                     
                 }else {
@@ -244,7 +244,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_9" {
                 if toque.position.x >= 790 && toque.position.x <= 830 && Numero.verifica == 8{
                     
-                    println("ENTROU9")
+                    print("ENTROU9")
                     Numero.verifica = 9
                     
                 }else {
@@ -255,7 +255,7 @@ class Numero: SKSpriteNode {
             }else if toque.name == "exercicio1_10" {
                 if toque.position.x >= 870 && toque.position.x <= 910 && Numero.verifica == 9{
                     
-                    println("ENTROU10")
+                    print("ENTROU10")
                     Numero.verifica = 10
                     
 //                     chama o método procuraJulia() da classe GameScene_Numeros
