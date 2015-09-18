@@ -53,39 +53,28 @@ class GameScene: SKScene {
         let toque = self.nodeAtPoint(touchLocatio)
         var novaScene = SKScene()
         
-        if toque.name == "personagem1" {
-            print("personagem1")
+        if toque.name == "seta_rosa" && personagem1_menu.name == "personagem1_novo" {
             
-            print(toque.parent?.position)
-            menu_todo.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
+            
             
             novaScene = GameScene_Numeros(size: size)
             
-        }else if toque.name == "personagem2" {
-            print("personagem2")
-            menu_todo.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
+        }else if toque.name == "seta_rosa" && personagem2_menu.name == "personagem2_novo"{
+            
             novaScene = GameScene_Numeros(size: size)
             
-        }else if toque.name == "personagem3" {
-            print("personagem3")
-           
-            for (var i = 1; i < 3; i++) {
-                menu_todo.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
-            }
+        }else if toque.name == "seta_rosa" && personagem3_menu.name == "personagem3_novo" {
+            
            
             novaScene = GameScene_Numeros(size: size)
             
-        }else if toque.name == "personagem4" {
-            print("personagem4")
+        }else if toque.name == "seta_rosa" && personagem4_menu.name == "personagem4_novo" {
             
-            for (var i = 1; i < 4; i++) {
-                menu_todo.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
-            }
             novaScene = GameScene_Numeros(size: size)
         }
         
 
-//      self.scene!.view?.presentScene(novaScene)
+      self.scene!.view?.presentScene(novaScene)
 
     }
    
@@ -118,7 +107,7 @@ class GameScene: SKScene {
         personagem1_menu = Personagem_Menu(texture: SKTexture(imageNamed: "personagem1"), color: UIColor.clearColor(), size: CGSize(width: 90, height: 121), item: 1)
         personagem1_menu.zPosition = 1
         personagem1_menu.position = CGPoint(x: 0, y: 225)
-        personagem1_menu.name = "personagem1"
+        personagem1_menu.name = "personagem1_novo"
         
         personagem2_menu = Personagem_Menu(texture: SKTexture(imageNamed: "personagem2"), color: UIColor.clearColor(), size: CGSize(width: 131, height: 94), item: 2)
         personagem2_menu.zPosition = 1
@@ -142,13 +131,15 @@ class GameScene: SKScene {
         menu_todo.addChild(personagem4_menu)
         
         texto = SKSpriteNode(imageNamed: "texto1")
-        texto.zPosition = 1
-        texto.position = CGPoint(x: 0, y: 0)
+        texto.zPosition = 4
+        texto.position = CGPoint(x: 530, y: 450)
+        texto.name = "texto_menu"
         
         seta = SKSpriteNode(imageNamed: "seta_rosa")
-        seta.zPosition = 1
-        seta.position = CGPoint(x: 0, y: -100)
+        seta.zPosition = 4
+        seta.position = CGPoint(x: 530, y: 330)
         seta.size = CGSize(width: 50, height: 50)
+        seta.name = "seta_rosa"
 
         addChild(menu_todo)
         addChild(texto)
