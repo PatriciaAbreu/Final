@@ -28,6 +28,7 @@
 		6AC134391B96177F00E6F6C6 /* Exercicio1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AC134381B96177F00E6F6C6 /* Exercicio1.m4a */; };
 		6AC1343B1B9618AF00E6F6C6 /* exercicios.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AC1343A1B9618AF00E6F6C6 /* exercicios.json */; };
 		6AC1343D1B9618F100E6F6C6 /* ExercicioJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1343C1B9618F100E6F6C6 /* ExercicioJSON.swift */; };
+		6AEB427B1BAC74200034FA31 /* Menu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AEB427A1BAC74200034FA31 /* Menu.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		6AC134381B96177F00E6F6C6 /* Exercicio1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio1.m4a; path = ../Exercicio1.m4a; sourceTree = "<group>"; };
 		6AC1343A1B9618AF00E6F6C6 /* exercicios.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = exercicios.json; path = ../exercicios.json; sourceTree = "<group>"; };
 		6AC1343C1B9618F100E6F6C6 /* ExercicioJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercicioJSON.swift; sourceTree = "<group>"; };
+		6AEB427A1BAC74200034FA31 /* Menu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Menu.m4a; path = ../Menu.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		6AC134301B8F541800E6F6C6 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
+				6AEB427A1BAC74200034FA31 /* Menu.m4a */,
 				6AC134381B96177F00E6F6C6 /* Exercicio1.m4a */,
 				6AA4D4B61B98982100CC7C19 /* Exercicio2.m4a */,
 				6A6D69451B9F60D000A5BAD8 /* Exercicio3.m4a */,
@@ -289,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AEB427B1BAC74200034FA31 /* Menu.m4a in Resources */,
 				6A6D69481B9F61EE00A5BAD8 /* Exercicio4.m4a in Resources */,
 				6A6D69461B9F60D000A5BAD8 /* Exercicio3.m4a in Resources */,
 				6AA4D4B71B98982100CC7C19 /* Exercicio2.m4a in Resources */,

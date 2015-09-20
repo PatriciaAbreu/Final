@@ -1,6 +1,19 @@
 {
     "exercicios": [
                    {
+                   "texto": "Vamos jogar?",
+                   "audio": {
+                   "audio1": "Menu"
+                   },
+                   "tipoAudio": "m4a",
+                   "video": {
+                   "video1": "teste"
+                   },
+                   "tipoVideo": "m4v",
+                   "numero": 0
+                   },
+                   
+                   {
                    "texto": "Oi, vamos encontrar a Júlia?",
                    "audio": {
                    "audio1": "Exercicio1",

@@ -7,6 +7,8 @@
 //
 
 import SpriteKit
+import MediaPlayer
+import AVFoundation
 
 class GameScene: SKScene {
     
@@ -36,12 +38,26 @@ class GameScene: SKScene {
 
     var menuTocado: SKSpriteNode!
     
+    var movie: MPMoviePlayerController?
+    var audio: AVAudioPlayer!
+    
+    var exercicio: ExercicioJSON = ExercicioJSON()
+    var video: String = ""
+    var audioS: String = ""
     
     override func didMoveToView(view: SKView) {
 
         //chamada para montar tela inicial
         montarScene()
         montarMenu()
+        
+        
+        //chamada do video e audio
+        video = exercicio.getVideo(0, video: "video1")
+        audioS = exercicio.getAudio(0, audio: "audio1")
+        
+        playVideo(video, tipo: "m4v")
+        playAudio(audioS, tipo: "m4a")
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -53,27 +69,28 @@ class GameScene: SKScene {
         let toque = self.nodeAtPoint(touchLocatio)
         var novaScene = SKScene()
         
-        if toque.name == "seta_rosa" && personagem1_menu.name == "personagem1_novo" {
+        if toque.name == "seta_rosa" && personagem2_menu.name == "personagem2_novo"{
             
-            
-            
-            novaScene = GameScene_Numeros(size: size)
-            
-        }else if toque.name == "seta_rosa" && personagem2_menu.name == "personagem2_novo"{
-            
-            novaScene = GameScene_Numeros(size: size)
+            novaScene = GameScene_Operacoes(size: size)
+            movie?.view.hidden = true
             
         }else if toque.name == "seta_rosa" && personagem3_menu.name == "personagem3_novo" {
             
-           
             novaScene = GameScene_Numeros(size: size)
+            movie?.view.hidden = true
             
         }else if toque.name == "seta_rosa" && personagem4_menu.name == "personagem4_novo" {
             
             novaScene = GameScene_Numeros(size: size)
+            movie?.view.hidden = true
+            
+        }else if toque.name == "seta_rosa"  {
+            
+            novaScene = GameScene_Numeros(size: size)
+            movie?.view.hidden = true
+            
         }
         
-
       self.scene!.view?.presentScene(novaScene)
 
     }
@@ -107,7 +124,7 @@ class GameScene: SKScene {
         personagem1_menu = Personagem_Menu(texture: SKTexture(imageNamed: "personagem1"), color: UIColor.clearColor(), size: CGSize(width: 90, height: 121), item: 1)
         personagem1_menu.zPosition = 1
         personagem1_menu.position = CGPoint(x: 0, y: 225)
-        personagem1_menu.name = "personagem1_novo"
+        personagem1_menu.name = "personagem1"
         
         personagem2_menu = Personagem_Menu(texture: SKTexture(imageNamed: "personagem2"), color: UIColor.clearColor(), size: CGSize(width: 131, height: 94), item: 2)
         personagem2_menu.zPosition = 1
@@ -144,6 +161,36 @@ class GameScene: SKScene {
         addChild(menu_todo)
         addChild(texto)
         addChild(seta)
+    }
+
+    //função para tocar video
+    func playVideo( video: String, tipo: String){
+        
+        let path = NSBundle.mainBundle().pathForResource(video, ofType: tipo)
+        let url = NSURL.fileURLWithPath(path!)
+        let movie = MPMoviePlayerController(contentURL: url)
+        
+        if (movie != nil) {
+            
+            self.movie = movie
+            movie.view.frame = CGRect(x: 20, y: 20, width: 300, height: 300)
+            movie.view.layer.zPosition = 1
+            movie.scalingMode = .AspectFill
+            self.view?.addSubview(movie.view)
+            movie.play()
+        }else{
+            debugPrint("Video não encontrado", terminator: "")
+        }
+    }
+    
+    //função para tocar audio
+    func playAudio(audio: String, tipo: String){
+        
+        let path = NSBundle.mainBundle().pathForResource(audio, ofType: tipo)
+        let url = NSURL(fileURLWithPath: path!)
+        self.audio = try? AVAudioPlayer(contentsOfURL: url)
+        self.audio.prepareToPlay()
+        self.audio.play()
     }
 
 }

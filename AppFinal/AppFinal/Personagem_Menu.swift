@@ -29,23 +29,14 @@ class Personagem_Menu: SKSpriteNode {
         let touchLocatio = touch!.locationInNode(self)
         
         let toque = self.nodeAtPoint(touchLocatio)
-        var novaScene = SKScene()
                 
-        if toque.name == "personagem1" {
-            print("personagem1")
-            
-            toque.name = "personagem1_novo"
-            
-            novaScene = GameScene_Numeros(size: size)
-            
-        }else if toque.name == "personagem2" {
+        if toque.name == "personagem2" {
             print("personagem2")
             
             toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
 
-            toque.name = "personagem2.novo"
-            
-            novaScene = GameScene_Numeros(size: size)
+            toque.name = "personagem2_novo"
+          
             
         }else if toque.name == "personagem3" {
             print("personagem3")
@@ -56,7 +47,6 @@ class Personagem_Menu: SKSpriteNode {
        
             toque.name = "personagem3_novo"
             
-            novaScene = GameScene_Numeros(size: size)
             
         }else if toque.name == "personagem4" {
             print("personagem4")
@@ -66,10 +56,8 @@ class Personagem_Menu: SKSpriteNode {
             }
             
             toque.name = "personagem4_novo"
-            novaScene = GameScene_Numeros(size: size)
+           
         }
         
-        
-        //      self.scene!.view?.presentScene(novaScene)
     }
 }
