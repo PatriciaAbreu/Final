@@ -11,7 +11,7 @@ import SpriteKit
 class Vegetais: SKSpriteNode {
     
     
-    static var verifica: Int?
+    static var verifica: Int = 0
     static var toque: CGPoint!
     var tipo: String!
     
@@ -56,13 +56,19 @@ class Vegetais: SKSpriteNode {
         
         let toque = nodeAtPoint(location)
         
-        if toque.position.x >= 405 && toque.position.x <= 619 && toque.position.y >= 210 && toque.position.y <= 440 {
+        if toque.position.x >= 390 && toque.position.x <= 630 && toque.position.y >= 190 && toque.position.y <= 470 {
             
             print("ENTROU")
             
             if toque.name == "abacaxi" || toque.name == "banana" || toque.name == "kiwi" {
                 
                 toque.position = Vegetais.toque
+            }else {
+                Vegetais.verifica++
+                print(Vegetais.verifica)
+                if Vegetais.verifica == 5 {
+                    (toque.parent as! GameScene_Operacoes).vamosContar()
+                }
             }
         }
 

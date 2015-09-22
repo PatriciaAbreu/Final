@@ -1,44 +1,56 @@
 {
     "exercicios": [
                    {
-                   "texto": "Vamos jogar?",
-                   "audio": {
-                   "audio1": "Menu"
-                   },
-                   "tipoAudio": "m4a",
-                   "video": {
-                   "video1": "teste"
-                   },
-                   "tipoVideo": "m4v",
-                   "numero": 0
-                   },
-                   
-                   {
-                   "texto": "Oi, vamos encontrar a Júlia?",
-                   "audio": {
-                   "audio1": "Exercicio1",
-                   "audio2": "Exercicio2",
-                   "audio3": "Exercicio3",
-                   "audio4": "Exercicio4",
-                   },
-                   "tipoAudio": "m4a",
-                   "video": {
-                   "video1": "teste",
-                   "video2": "teste",
-                   "video3": "teste",
-                   "video4": "teste",
-                   },
-                   "tipoVideo": "m4v",
-                   "numero": 1
+                        "texto": "Vamos jogar?",
+                        "audio": {
+                        "audio1": "Menu"
+                        },
+                        "tipoAudio": "m4a",
+                        "video": {
+                        "video1": "teste"
+                        },
+                        "tipoVideo": "m4v",
+                        "numero": 0
                    },
                    
                    {
-                   "texto": "Me ajuda a arrumar os de 0 a 9?",
-                   "audio": "testeAudio",
-                   "tipoAudio": "m4a",
-                   "video": "testeVideo",
-                   "tipoVideo": "m4v",
-                   "numero": 2
+                        "texto": "Oi, vamos encontrar a Júlia?",
+                        "audio": {
+                        "audio1": "Exercicio1",
+                        "audio2": "Exercicio2",
+                        "audio3": "Exercicio3",
+                        "audio4": "Exercicio4"
+                        },
+                        "tipoAudio": "m4a",
+                        "video": {
+                        "video1": "teste",
+                        "video2": "teste",
+                        "video3": "teste",
+                        "video4": "teste",
+                        },
+                        "tipoVideo": "m4v",
+                        "numero": 1
+                   },
+                   
+                   {
+                        "texto": "Me ajuda a arrumar os de 0 a 9?",
+                        "audio": {
+                        "audio1": "Exercicio1",
+                        "audio2": "Exercicio2",
+                        "audio3": "Exercicio3",
+                        "audio4": "Exercicio4",
+                        "audio5": "Exercicio5"
+                        },
+                        "tipoAudio": "m4a",
+                        "video": {
+                        "video1": "teste",
+                        "video2": "teste",
+                        "video3": "teste",
+                        "video4": "teste",
+                        "video5": "teste"
+                        },
+                        "tipoVideo": "m4v",
+                        "numero": 2
                    }
                    ]
 }

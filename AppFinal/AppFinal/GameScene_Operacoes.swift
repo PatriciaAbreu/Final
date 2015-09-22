@@ -7,6 +7,8 @@
 //
 
 import SpriteKit
+import MediaPlayer
+import AVFoundation
 
 class GameScene_Operacoes: SKScene {
     var gameController: GameViewController!
@@ -19,10 +21,14 @@ class GameScene_Operacoes: SKScene {
     var chat: SKSpriteNode!
     var chat2: SKSpriteNode!
     var chat3: SKSpriteNode!
+    var chat4: SKSpriteNode!
+    var chat5: SKSpriteNode!
     
     var seta_play: SKSpriteNode!
     var seta_play2: SKSpriteNode!
     var seta_play3: SKSpriteNode!
+    var seta_play4: SKSpriteNode!
+    var seta_play5: SKSpriteNode!
     
     var leg1: SKSpriteNode!
     var leg2: SKSpriteNode!
@@ -33,9 +39,36 @@ class GameScene_Operacoes: SKScene {
     var leg7: SKSpriteNode!
     var leg8: SKSpriteNode!
     
+    var prato: SKSpriteNode!
+    
+    var movie: MPMoviePlayerController?
+    var audio: AVAudioPlayer!
+    
+    var exercicio: ExercicioJSON = ExercicioJSON()
+    var video: String = ""
+    var audioS: String = ""
+    
+    var num0: Numero!
+    var num1: Numero!
+    var num2: Numero!
+    var num3: Numero!
+    var num4: Numero!
+    var num5: Numero!
+    var num6: Numero!
+    var num7: Numero!
+    var num8: Numero!
+    var num9: Numero!
+    var num10: Numero!
+    
     override func didMoveToView(view: SKView) {
 
+        video = exercicio.getVideo(2, video: "video1")
+        audioS = exercicio.getAudio(2, audio: "audio1")
+
         montarScene()
+        
+        playVideo(video, tipo: "m4v")
+        playAudio(audioS, tipo: "m4a")
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -63,6 +96,13 @@ class GameScene_Operacoes: SKScene {
             seta_play2.size = CGSize(width: 50, height: 50)
             seta_play2.position = CGPoint(x: 740, y: 270)
             
+            movie?.view.hidden = true
+            video = exercicio.getVideo(2, video: "video2")
+            audioS = exercicio.getAudio(2, audio: "audio2")
+            
+            playVideo(video, tipo: "m4v")
+            playAudio(audioS, tipo: "m4a")
+            
             addChild(chat2)
             addChild(seta_play2)
             
@@ -85,6 +125,14 @@ class GameScene_Operacoes: SKScene {
             seta_play3.size = CGSize(width: 50, height: 50)
             seta_play3.position = CGPoint(x: 740, y: 270)
 
+            movie?.view.hidden = true
+            video = exercicio.getVideo(2, video: "video3")
+            audioS = exercicio.getAudio(2, audio: "audio3")
+            
+            playVideo(video, tipo: "m4v")
+            playAudio(audioS, tipo: "m4a")
+
+            
             addChild(chat3)
             addChild(seta_play3)
             
@@ -94,9 +142,29 @@ class GameScene_Operacoes: SKScene {
             seta_play3.removeFromParent()
             
             personagem_Ro.runAction(SKAction.moveToX(1500, duration: 0.6))
+            movie?.view.hidden = true
             
             montarExercicio()
-        }  
+            
+        }else if toque.name == "seta_play4" {
+            
+            chat4.removeFromParent()
+            seta_play4.removeFromParent()
+            
+            personagem_Ro.runAction(SKAction.moveToX(1500, duration: 0.6))
+            movie?.view.hidden = true
+            
+            cozinhar()
+            
+        }else if toque.name == "seta_play5" {
+            
+            chat5.removeFromParent()
+            seta_play5.removeFromParent()
+            
+            personagem_Ro.runAction(SKAction.moveToX(1500, duration: 0.6))
+            movie?.view.hidden = true
+            
+        }
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -199,6 +267,193 @@ class GameScene_Operacoes: SKScene {
         addChild(leg6)
         addChild(leg7)
         addChild(leg8)
+    }
+    
+    //função para tocar video
+    func playVideo( video: String, tipo: String){
+        
+        let path = NSBundle.mainBundle().pathForResource(video, ofType: tipo)
+        let url = NSURL.fileURLWithPath(path!)
+        let movie = MPMoviePlayerController(contentURL: url)
+        
+        if (movie != nil) {
+            
+            self.movie = movie
+            movie.view.frame = CGRect(x: 20, y: 20, width: 300, height: 300)
+            movie.view.layer.zPosition = 1
+            movie.scalingMode = .AspectFill
+            self.view?.addSubview(movie.view)
+            movie.play()
+        }else{
+            debugPrint("Video não encontrado", terminator: "")
+        }
+    }
+    
+    //função para tocar audio
+    func playAudio(audio: String, tipo: String){
+        
+        let path = NSBundle.mainBundle().pathForResource(audio, ofType: tipo)
+        let url = NSURL(fileURLWithPath: path!)
+        self.audio = try? AVAudioPlayer(contentsOfURL: url)
+        self.audio.prepareToPlay()
+        self.audio.play()
+    }
+
+    func vamosContar(){
+        
+        leg2.removeFromParent()
+        leg5.removeFromParent()
+        leg8.removeFromParent()
+        
+        //posiciona e adiciona a conversa
+        chat5 = SKSpriteNode(imageNamed: "chat_roxo_texto_5")
+        chat5.zPosition = 1
+        chat5.name = "chat5"
+        chat5.size = CGSize(width: 200, height: 200)
+        chat5.position = CGPoint(x: 730, y: 300)
+        
+        //posiciona e adiciona a seta de próximo
+        seta_play5 = SKSpriteNode(imageNamed: "seta_roxa")
+        seta_play5.zPosition = 1
+        seta_play5.name = "seta_play5"
+        seta_play5.size = CGSize(width: 50, height: 50)
+        seta_play5.position = CGPoint(x: 740, y: 270)
+        
+        movie?.view.hidden = true
+        video = exercicio.getVideo(2, video: "video4")
+        audioS = exercicio.getAudio(2, audio: "audio4")
+        
+        playVideo(video, tipo: "m4v")
+        playAudio(audioS, tipo: "m4a")
+        
+        
+        addChild(chat5)
+        addChild(seta_play5)
+        
+        personagem_Ro.runAction(SKAction.moveToX(850, duration: 0.6))
+        
+        num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 1)
+        num1.zPosition = 1
+        num1.name = "exercicio2_1"
+        num1.position = CGPoint(x: 600, y: 700)
+        
+        num2 = Numero(texture: SKTexture(imageNamed: "num2"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 2)
+        num2.zPosition = 1
+        num2.name = "exercicio2_2"
+        num2.position = CGPoint(x: 200, y: 500)
+        
+        num3 = Numero(texture: SKTexture(imageNamed: "num3"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 3)
+        num3.zPosition = 1
+        num3.name = "exercicio2_3"
+        num3.position = CGPoint(x: 150, y: 350)
+        
+        num4 = Numero(texture: SKTexture(imageNamed: "num4"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 4)
+        num4.zPosition = 1
+        num4.name = "exercicio2_4"
+        num4.position = CGPoint(x: 100, y: 200)
+        
+        num5 = Numero(texture: SKTexture(imageNamed: "num5"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 5)
+        num5.zPosition = 1
+        num5.name = "exercicio2_5"
+        num5.position = CGPoint(x: 900, y: 300)
+        
+        num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 6)
+        num6.zPosition = 1
+        num6.name = "exercicio2_6"
+        num6.position = CGPoint(x: 200, y: 100)
+        
+        num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 7)
+        num7.zPosition = 1
+        num7.name = "exercicio2_7"
+        num7.position = CGPoint(x: 800, y: 200)
+        
+        num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 8)
+        num8.zPosition = 1
+        num8.name = "exercicio2_8"
+        num8.position = CGPoint(x: 850, y: 400)
+        
+        num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 9)
+        num9.zPosition = 1
+        num9.name = "exercicio2_9"
+        num9.position = CGPoint(x: 100, y: 650)
+        
+        num10 = Numero(texture: SKTexture(imageNamed: "num10"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 10)
+        num10.zPosition = 1
+        num10.name = "exercicio2_10"
+        num10.position = CGPoint(x: 800, y: 550)
+        
+        addChild(num1)
+        addChild(num2)
+        addChild(num3)
+        addChild(num4)
+        addChild(num5)
+        addChild(num6)
+        addChild(num7)
+        addChild(num8)
+        addChild(num9)
+        addChild(num10)
+    }
+     
+    func prontoParaCozinhar(){
+        print("COZINHAR")
+        
+        //posiciona e adiciona a conversa
+        chat4 = SKSpriteNode(imageNamed: "chat_roxo_texto_4")
+        chat4.zPosition = 1
+        chat4.name = "chat4"
+        chat4.size = CGSize(width: 200, height: 200)
+        chat4.position = CGPoint(x: 730, y: 300)
+        
+        //posiciona e adiciona a seta de próximo
+        seta_play4 = SKSpriteNode(imageNamed: "seta_roxa")
+        seta_play4.zPosition = 1
+        seta_play4.name = "seta_play4"
+        seta_play4.size = CGSize(width: 50, height: 50)
+        seta_play4.position = CGPoint(x: 740, y: 270)
+        
+        movie?.view.hidden = true
+        video = exercicio.getVideo(2, video: "video4")
+        audioS = exercicio.getAudio(2, audio: "audio4")
+        
+        playVideo(video, tipo: "m4v")
+        playAudio(audioS, tipo: "m4a")
+        
+        
+        addChild(chat4)
+        addChild(seta_play4)
+
+        personagem_Ro.runAction(SKAction.moveToX(850, duration: 0.6))
+        
+    }
+    
+    func cozinhar() {
+        leg1.runAction(SKAction.moveTo(CGPoint(x: 510, y: 360), duration: 0.7))
+        leg3.runAction(SKAction.moveTo(CGPoint(x: 510, y: 360), duration: 0.7))
+        leg4.runAction(SKAction.moveTo(CGPoint(x: 510, y: 360), duration: 0.7))
+        leg6.runAction(SKAction.moveTo(CGPoint(x: 510, y: 360), duration: 0.7))
+        leg7.runAction(SKAction.moveTo(CGPoint(x: 510, y: 360), duration: 0.7))
+
+        novoPrato()
+    }
+    
+    func novoPrato() {
+        
+        leg1.removeFromParent()
+        leg2.removeFromParent()
+        leg3.removeFromParent()
+        leg4.removeFromParent()
+        leg5.removeFromParent()
+        leg6.removeFromParent()
+        leg7.removeFromParent()
+        leg8.removeFromParent()
+        
+        prato = SKSpriteNode(imageNamed: "prato")
+        prato.zPosition = 1
+        prato.position = CGPoint(x: 510, y: 360)
+        prato.name = "prato"
+        prato.size = CGSize(width: 150, height: 150)
+        
+        addChild(prato)
     }
 }
 
