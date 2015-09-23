@@ -23,12 +23,18 @@ class GameScene_Operacoes: SKScene {
     var chat3: SKSpriteNode!
     var chat4: SKSpriteNode!
     var chat5: SKSpriteNode!
+    var chat6: SKSpriteNode!
+    var chat7: SKSpriteNode!
     
     var seta_play: SKSpriteNode!
     var seta_play2: SKSpriteNode!
     var seta_play3: SKSpriteNode!
     var seta_play4: SKSpriteNode!
     var seta_play5: SKSpriteNode!
+    var seta_play6: SKSpriteNode!
+    var seta_play7: SKSpriteNode!
+    
+    var seta_back: SKSpriteNode!
     
     var leg1: SKSpriteNode!
     var leg2: SKSpriteNode!
@@ -164,6 +170,27 @@ class GameScene_Operacoes: SKScene {
             personagem_Ro.runAction(SKAction.moveToX(1500, duration: 0.6))
             movie?.view.hidden = true
             
+        }else if toque.name == "seta_play6" {
+            
+            var novaScene = SKScene()
+            novaScene = GameScene(size: size)
+            movie?.view.hidden = true
+            self.scene!.view?.presentScene(novaScene)
+            
+        }else if toque.name == "seta_play7" {
+            
+            chat7.removeFromParent()
+            seta_play7.removeFromParent()
+            
+            personagem_Ro.runAction(SKAction.moveToX(1500, duration: 0.6))
+            movie?.view.hidden = true
+            
+        }else if toque.name == "seta_back" {
+            
+            var voltarMenu = SKScene()
+            voltarMenu = GameScene(size: size)
+            movie?.view.hidden = true
+            self.scene!.view?.presentScene(voltarMenu)
         }
     }
     
@@ -202,18 +229,25 @@ class GameScene_Operacoes: SKScene {
         chat.size = CGSize(width: 200, height: 200)
         chat.position = CGPoint(x: 730, y: 300)
         
-        //posiciona e adiciona a seta de próximo
+        //posiciona e adiciona a seta de próximo e a de voltar
         seta_play = SKSpriteNode(imageNamed: "seta_roxa")
         seta_play.zPosition = 1
         seta_play.name = "seta_play"
         seta_play.size = CGSize(width: 50, height: 50)
         seta_play.position = CGPoint(x: 740, y: 280)
         
+        seta_back = SKSpriteNode(imageNamed: "seta_back")
+        seta_back.zPosition = 1
+        seta_back.name = "seta_back"
+        seta_back.size = CGSize(width: 50, height: 50)
+        seta_back.position = CGPoint(x: 50, y: 50)
+
         addChild(background)
         addChild(background_cozinha)
         addChild(personagem_Ro)
         addChild(chat)
         addChild(seta_play)
+        addChild(seta_back)
         
     }
     
@@ -355,7 +389,7 @@ class GameScene_Operacoes: SKScene {
         num5 = Numero(texture: SKTexture(imageNamed: "num5"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 5)
         num5.zPosition = 1
         num5.name = "exercicio2_5"
-        num5.position = CGPoint(x: 900, y: 300)
+        num5.position = CGPoint(x: 800, y: 550)
         
         num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 6)
         num6.zPosition = 1
@@ -380,7 +414,8 @@ class GameScene_Operacoes: SKScene {
         num10 = Numero(texture: SKTexture(imageNamed: "num10"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 10)
         num10.zPosition = 1
         num10.name = "exercicio2_10"
-        num10.position = CGPoint(x: 800, y: 550)
+        num10.position = CGPoint(x: 900, y: 300)
+        
         
         addChild(num1)
         addChild(num2)
@@ -393,7 +428,43 @@ class GameScene_Operacoes: SKScene {
         addChild(num9)
         addChild(num10)
     }
-     
+    
+    func contouErrado(){
+        //posiciona e adiciona a conversa
+        chat7 = SKSpriteNode(imageNamed: "chat_roxo_texto_7")
+        chat7.zPosition = 1
+        chat7.name = "chat7"
+        chat7.size = CGSize(width: 200, height: 200)
+        chat7.position = CGPoint(x: 730, y: 300)
+        
+        //posiciona e adiciona a seta de próximo
+        seta_play7 = SKSpriteNode(imageNamed: "seta_roxa")
+        seta_play7.zPosition = 1
+        seta_play7.name = "seta_play7"
+        seta_play7.size = CGSize(width: 50, height: 50)
+        seta_play7.position = CGPoint(x: 740, y: 270)
+        
+        movie?.view.hidden = true
+        
+        
+        
+        
+        
+        //mudar para audio5
+        video = exercicio.getVideo(2, video: "video7")
+        audioS = exercicio.getAudio(2, audio: "audio4")
+        
+        playVideo(video, tipo: "m4v")
+        playAudio(audioS, tipo: "m4a")
+        
+        
+        addChild(chat7)
+        addChild(seta_play7)
+        
+        personagem_Ro.runAction(SKAction.moveToX(850, duration: 0.6))
+
+    }
+    
     func prontoParaCozinhar(){
         print("COZINHAR")
         
@@ -412,6 +483,12 @@ class GameScene_Operacoes: SKScene {
         seta_play4.position = CGPoint(x: 740, y: 270)
         
         movie?.view.hidden = true
+        
+        
+        
+        
+        
+        //mudar para audio5
         video = exercicio.getVideo(2, video: "video4")
         audioS = exercicio.getAudio(2, audio: "audio4")
         
@@ -439,13 +516,21 @@ class GameScene_Operacoes: SKScene {
     func novoPrato() {
         
         leg1.removeFromParent()
-        leg2.removeFromParent()
         leg3.removeFromParent()
         leg4.removeFromParent()
-        leg5.removeFromParent()
         leg6.removeFromParent()
         leg7.removeFromParent()
-        leg8.removeFromParent()
+        
+        num1.removeFromParent()
+        num2.removeFromParent()
+        num3.removeFromParent()
+        num4.removeFromParent()
+        num5.removeFromParent()
+        num6.removeFromParent()
+        num7.removeFromParent()
+        num8.removeFromParent()
+        num9.removeFromParent()
+        num10.removeFromParent()
         
         prato = SKSpriteNode(imageNamed: "prato")
         prato.zPosition = 1
@@ -454,6 +539,37 @@ class GameScene_Operacoes: SKScene {
         prato.size = CGSize(width: 150, height: 150)
         
         addChild(prato)
+        
+        //posiciona e adiciona a conversa
+        chat6 = SKSpriteNode(imageNamed: "chat_roxo_texto_6")
+        chat6.zPosition = 1
+        chat6.name = "chat6"
+        chat6.size = CGSize(width: 200, height: 200)
+        chat6.position = CGPoint(x: 730, y: 300)
+        
+        //posiciona e adiciona a seta de próximo
+        seta_play6 = SKSpriteNode(imageNamed: "seta_roxa")
+        seta_play6.zPosition = 1
+        seta_play6.name = "seta_play6"
+        seta_play6.size = CGSize(width: 50, height: 50)
+        seta_play6.position = CGPoint(x: 740, y: 270)
+        
+        movie?.view.hidden = true
+        
+        
+        
+        //mudar para audio6
+        video = exercicio.getVideo(2, video: "video6")
+        audioS = exercicio.getAudio(2, audio: "audio4")
+        
+        playVideo(video, tipo: "m4v")
+        playAudio(audioS, tipo: "m4a")
+        
+        
+        addChild(chat6)
+        addChild(seta_play6)
+        
+        personagem_Ro.runAction(SKAction.moveToX(850, duration: 0.6))
     }
 }
 

@@ -10,10 +10,10 @@ import SpriteKit
 
 class GameScene_Espaco: SKScene {
     
-    var menu_espaco_forma: SKSpriteNode!
+    var background_bolas: SKSpriteNode!
     
     override func didMoveToView(view: SKView) {
-        montarMenu()
+        montarScene()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -23,19 +23,18 @@ class GameScene_Espaco: SKScene {
         /* Called before each frame is rendered */
     }
     
-    func montarMenu() {
+    func montarScene() {
         //posicionando os menus na tela
-        menu_espaco_forma = SKSpriteNode(imageNamed: "menuRosaClaro_Espaco.png")
-        menu_espaco_forma.zPosition = 1
-        menu_espaco_forma.position = CGPoint(x: 750, y: 530)
-        menu_espaco_forma.name = "menu_espaco_forma"
+        background_bolas = SKSpriteNode(imageNamed: "fundo_bolas")
+        background_bolas.zPosition = 1
+        background_bolas.size = CGSize(width: 1050, height: 800)
+        background_bolas.position = CGPoint(x: 510, y: 400)
+        background_bolas.name = "menu_espaco_forma"
         
-        self.backgroundColor = UIColor.whiteColor()
+        background_bolas.alpha = 0.9
+        addChild(background_bolas)
         
-        addChild(menu_espaco_forma)
         
-        let animacao = SKAction.rotateToAngle(90, duration: 0.3)
-        menu_espaco_forma.runAction(animacao)
     }
     
 }

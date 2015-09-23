@@ -132,17 +132,14 @@ class GameScene_Numeros: SKScene {
         }else if toque.name == "seta_play_4" {
             
             var novoJogo = SKScene()
-            novoJogo = GameScene_Numeros(size: size)
+            novoJogo = GameScene(size: size)
             self.scene!.view?.presentScene(novoJogo)
             
         }else if toque.name == "seta_back" {
-            
-            let voltarMenu = GameScene()
-            voltarMenu.size = view!.bounds.size
-            voltarMenu.backgroundColor = UIColor(red: 246/255, green: 127/255, blue: 250/255, alpha: 1)
-            voltarMenu.scaleMode = .ResizeFill
-            
-            self.scene?.view?.presentScene(voltarMenu)
+
+            var voltarMenu = SKScene()
+            voltarMenu = GameScene(size: size)
+            self.scene!.view?.presentScene(voltarMenu)
             
         }else if toque.name == "julia" && Numero.verifica != 10 {
             
