@@ -10,7 +10,7 @@ import SpriteKit
 import MediaPlayer
 import AVFoundation
 
-class GameScene_Espaco: SKScene {
+class GameScene_Piscina: SKScene {
     
     var background_bolas: SKSpriteNode!
     var background: SKSpriteNode!

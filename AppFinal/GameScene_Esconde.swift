@@ -10,7 +10,7 @@ import SpriteKit
 import MediaPlayer
 import AVFoundation
 
-class GameScene_Numeros: SKScene {
+class GameScene_Esconde: SKScene {
     
     var gameController: GameViewController!
     

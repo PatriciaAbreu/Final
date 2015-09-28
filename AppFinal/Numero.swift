@@ -177,7 +177,7 @@ class Numero: SKSpriteNode {
                     Numero.verifica = 10
                     
 //                     chama o método procuraJulia() da classe GameScene_Numeros
-                    (toque.parent as! GameScene_Numeros).procurarJulia()
+                    (toque.parent as! GameScene_Esconde).procurarJulia()
                     
                 }else {
                     
@@ -191,11 +191,11 @@ class Numero: SKSpriteNode {
         if toque.name == "exercicio2_5" {
             
             toque.runAction(SKAction.scaleTo(2, duration: 0.4))
-            (toque.parent as! GameScene_Operacoes).prontoParaCozinhar()
+            (toque.parent as! GameScene_Cozinha).prontoParaCozinhar()
             
         }else if toque.name == "exercicio2_1" || toque.name == "exercicio2_2" || toque.name == "exercicio2_3" || toque.name == "exercicio2_4" || toque.name == "exercicio2_6" || toque.name == "exercicio2_7" || toque.name == "exercicio2_8" || toque.name == "exercicio2_9" || toque.name == "exercicio2_10" {
             
-            (toque.parent as! GameScene_Operacoes).contouErrado()
+            (toque.parent as! GameScene_Cozinha).contouErrado()
         }
         
         //faz a analise dos números do jogo da piscina de bolinhas

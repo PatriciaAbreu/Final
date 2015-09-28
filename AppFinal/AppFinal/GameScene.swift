@@ -71,22 +71,22 @@ class GameScene: SKScene {
         
         if toque.name == "seta_rosa" && personagem2_menu.name == "personagem2_novo"{
             
-            novaScene = GameScene_Operacoes(size: size)
+            novaScene = GameScene_Cozinha(size: size)
             movie?.view.hidden = true
             
         }else if toque.name == "seta_rosa" && personagem3_menu.name == "personagem3_novo" {
             
-            novaScene = GameScene_Espaco(size: size)
+            novaScene = GameScene_Piscina(size: size)
             movie?.view.hidden = true
             
         }else if toque.name == "seta_rosa" && personagem4_menu.name == "personagem4_novo" {
             
-            novaScene = GameScene_Numeros(size: size)
+            novaScene = GameScene_Esconde(size: size)
             movie?.view.hidden = true
             
         }else if toque.name == "seta_rosa"  {
             
-            novaScene = GameScene_Numeros(size: size)
+            novaScene = GameScene_Esconde(size: size)
             movie?.view.hidden = true
             
         }
