@@ -13,11 +13,7 @@ class ExercicioJSON: NSObject {
     func busca(){
         let jData = NSData(contentsOfFile: "exercicios.json")
         
-        var arrayDeResultados: NSArray
-        var result: NSDictionary
-        var nomeRep: Array<String> = []
-        
-        arrayDeResultados = (try! NSJSONSerialization.JSONObjectWithData(jData!, options: NSJSONReadingOptions.MutableContainers)) as! NSArray
+        var arrayDeResultados = (try! NSJSONSerialization.JSONObjectWithData(jData!, options: NSJSONReadingOptions.MutableContainers)) as! NSArray
     }
     
     func getAudio(exercicio: Int, audio: String)-> String{
