@@ -27,10 +27,32 @@ class Numero: SKSpriteNode {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let touche = touches.first
-        let touchLocation = touche!.locationInNode(self.parent!)
+        let touch = touches.first
+        let touchLocation = touch!.locationInNode(self.parent!)
+        var location:CGPoint!
+        
+        location = touch!.locationInNode(self.parent!)
+        
+        let toque = nodeAtPoint(location)
         
         Numero.toque = touchLocation
+        
+        //faz a analise da soma dos numeros do jogo da piscina de bolinhas
+        if toque.name == "exercicio3.1_1" {
+            
+            Numero.verifica = 1
+            (toque.parent as! GameScene_Piscina).soma()
+            
+        }else if toque.name == "exercicio3.1_2" && Numero.verifica == 1{
+            
+            Numero.verifica = 2
+            (toque.parent as! GameScene_Piscina).soma()
+            
+        }else if toque.name == "exercicio3.1_3" || toque.name == "exercicio3.1_4" || toque.name == "exercicio3.1_5" || toque.name == "exercicio3.1_6" || toque.name == "exercicio3.1_7" || toque.name == "exercicio3.1_8" || toque.name == "exercicio3.1_9" || toque.name == "exercicio3.1_0" {
+            
+            Numero.verifica = 0
+            (toque.parent as! GameScene_Piscina).soma()
+        }
 
     }
     

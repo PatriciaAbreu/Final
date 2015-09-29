@@ -15,6 +15,7 @@ class GameScene_Piscina: SKScene {
     var background_bolas: SKSpriteNode!
     var background: SKSpriteNode!
     var background_retangulo: SKSpriteNode!
+    var fundo_piscina: SKSpriteNode!
     
     var movie: MPMoviePlayerController?
     var audio: AVAudioPlayer!
@@ -34,11 +35,17 @@ class GameScene_Piscina: SKScene {
     var chat1: SKSpriteNode!
     var chat2: SKSpriteNode!
     var chat3: SKSpriteNode!
+    var chat4: SKSpriteNode!
+    var chat5: SKSpriteNode!
+    var chat6: SKSpriteNode!
     
     var seta_play: SKSpriteNode!
     var seta_play1: SKSpriteNode!
     var seta_play2: SKSpriteNode!
     var seta_play3: SKSpriteNode!
+    var seta_play4: SKSpriteNode!
+    var seta_play5: SKSpriteNode!
+    var seta_play6: SKSpriteNode!
     
     var bola1: SKSpriteNode!
     var bola2: SKSpriteNode!
@@ -49,6 +56,9 @@ class GameScene_Piscina: SKScene {
     var bola7: SKSpriteNode!
     var bola8: SKSpriteNode!
     var bola9: SKSpriteNode!
+    var bola10: SKSpriteNode!
+    var bola11: SKSpriteNode!
+    var bola12: SKSpriteNode!
     
     var num0: Numero!
     var num1: Numero!
@@ -65,6 +75,9 @@ class GameScene_Piscina: SKScene {
     var num3_placa: Numero!
     var num4_placa: Numero!
     var num5_placa: Numero!
+    
+    var num1_placa_soma: Numero!
+    var num2_placa_soma: Numero!
     
     var sinal_adicao1: SKSpriteNode!
     var sinal_adicao2: SKSpriteNode!
@@ -222,7 +235,82 @@ class GameScene_Piscina: SKScene {
             num9.removeFromParent()
             num10.removeFromParent()
             
-            somaBolas()
+            personagem_Paula = SKSpriteNode(imageNamed: "Paula")
+            personagem_Paula.zPosition = 1
+            personagem_Paula.name = "paula"
+            personagem_Paula.position = CGPoint(x: 850, y: 150)
+            personagem_Paula.size = CGSize(width: 126, height: 227)
+            
+            chat4 = SKSpriteNode(imageNamed: "chat_verde_texto_4")
+            chat4.zPosition = 1
+            chat4.name = "chat_verde_4"
+            chat4.size = CGSize(width: 200, height: 200)
+            chat4.position = CGPoint(x: 730, y: 300)
+
+            seta_play4 = SKSpriteNode(imageNamed: "seta_verde")
+            seta_play4.zPosition = 1
+            seta_play4.name = "seta_play4"
+            seta_play4.size = CGSize(width: 50, height: 50)
+            seta_play4.position = CGPoint(x: 740, y: 280)
+            
+            video = exercicio.getVideo(3, video: "video4")
+            audioS = exercicio.getAudio(3, audio: "audio4")
+            
+            playVideo(video, tipo: "m4v")
+            playAudio(audioS, tipo: "m4a")
+            
+            addChild(personagem_Paula)
+            addChild(chat4)
+            addChild(seta_play4)
+            
+        }else if toque.name == "seta_play4" {
+            
+            personagem_Paula.runAction(SKAction.moveToX(1200, duration: 0.6))
+            chat4.removeFromParent()
+            seta_play4.removeFromParent()
+            movie?.view.hidden = true
+            
+            montaSoma()
+            
+        }else if toque.name == "seta_play5" {
+         
+            personagem_Paula.runAction(SKAction.moveToX(1200, duration: 0.6))
+            
+            chat5.removeFromParent()
+            seta_play5.removeFromParent()
+            movie?.view.hidden = true
+            
+            personagem_placa1.removeFromParent()
+            personagem_placa2.removeFromParent()
+            personagem_placa3.removeFromParent()
+            background_retangulo.removeFromParent()
+            sinal_adicao1.removeFromParent()
+            sinal_adicao2.removeFromParent()
+            sinal_igual.removeFromParent()
+            num3_placa.removeFromParent()
+            num4_placa.removeFromParent()
+            num5_placa.removeFromParent()
+            num1_placa_soma.removeFromParent()
+            num2_placa_soma.removeFromParent()
+            num1.removeFromParent()
+            num2.removeFromParent()
+            num3.removeFromParent()
+            num4.removeFromParent()
+            num5.removeFromParent()
+            num6.removeFromParent()
+            num7.removeFromParent()
+            num8.removeFromParent()
+            num9.removeFromParent()
+            num0.removeFromParent()
+            
+            montaPiscina()
+            
+        }else if toque.name == "seta_play6" {
+            
+            personagem_Paula.runAction(SKAction.moveToX(1200, duration: 0.6))
+            chat5.removeFromParent()
+            seta_play5.removeFromParent()
+            movie?.view.hidden = true
             
         }
     }
@@ -487,7 +575,7 @@ class GameScene_Piscina: SKScene {
     }
     
     //função para soma das bolinhas
-    func somaBolas(){
+    func montaSoma(){
         
         //posiciona personagens placas
         personagem_placa1 = SKSpriteNode(imageNamed: "personagem_placa_1")
@@ -616,6 +704,112 @@ class GameScene_Piscina: SKScene {
         addChild(num8)
         addChild(num9)
         addChild(num0)
+        
+    }
+    
+    //função que soma as bolas
+    func soma(){
+        
+        if Numero.verifica == 1 {
+            
+            num1_placa_soma = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 1)
+            num1_placa_soma.zPosition = 1
+            num1_placa_soma.position = CGPoint(x: 750, y: 500)
+            
+            addChild(num1_placa_soma)
+            
+        }else if Numero.verifica == 2{
+            
+            num2_placa_soma = Numero(texture: SKTexture(imageNamed: "num2"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 2)
+            num2_placa_soma.zPosition = 1
+            num2_placa_soma.position = CGPoint(x: 850, y: 500)
+            
+            addChild(num2_placa_soma)
+            
+            personagem_Paula = SKSpriteNode(imageNamed: "Paula")
+            personagem_Paula.zPosition = 1
+            personagem_Paula.name = "paula"
+            personagem_Paula.position = CGPoint(x: 850, y: 150)
+            personagem_Paula.size = CGSize(width: 126, height: 227)
+            
+            chat5 = SKSpriteNode(imageNamed: "chat_verde_texto_5")
+            chat5.zPosition = 1
+            chat5.name = "chat_verde_5"
+            chat5.size = CGSize(width: 200, height: 200)
+            chat5.position = CGPoint(x: 730, y: 300)
+            
+            seta_play5 = SKSpriteNode(imageNamed: "seta_verde")
+            seta_play5.zPosition = 1
+            seta_play5.name = "seta_play5"
+            seta_play5.size = CGSize(width: 50, height: 50)
+            seta_play5.position = CGPoint(x: 740, y: 280)
+            
+            video = exercicio.getVideo(3, video: "video5")
+            audioS = exercicio.getAudio(3, audio: "audio5")
+            
+            playVideo(video, tipo: "m4v")
+            playAudio(audioS, tipo: "m4a")
+            
+            addChild(personagem_Paula)
+            addChild(chat5)
+            addChild(seta_play5)
+            
+        }else if Numero.verifica == 0 {
+            
+            if num1_placa_soma != nil {
+                
+                num1_placa_soma.removeFromParent()
+                
+            }
+            if num2_placa_soma != nil {
+                
+                num2_placa_soma.removeFromParent()
+            
+            }
+            
+            //aparecer personagem avisando que errou a conta
+            personagem_Paula = SKSpriteNode(imageNamed: "Paula")
+            personagem_Paula.zPosition = 1
+            personagem_Paula.name = "paula"
+            personagem_Paula.position = CGPoint(x: 850, y: 150)
+            personagem_Paula.size = CGSize(width: 126, height: 227)
+            
+            chat6 = SKSpriteNode(imageNamed: "chat_verde_texto_6")
+            chat6.zPosition = 1
+            chat6.name = "chat_verde_6"
+            chat6.size = CGSize(width: 200, height: 200)
+            chat6.position = CGPoint(x: 730, y: 300)
+            
+            seta_play6 = SKSpriteNode(imageNamed: "seta_verde")
+            seta_play6.zPosition = 1
+            seta_play6.name = "seta_play6"
+            seta_play6.size = CGSize(width: 50, height: 50)
+            seta_play6.position = CGPoint(x: 740, y: 280)
+            
+            video = exercicio.getVideo(3, video: "video6")
+            audioS = exercicio.getAudio(3, audio: "audio6")
+            
+            playVideo(video, tipo: "m4v")
+            playAudio(audioS, tipo: "m4a")
+            
+            addChild(personagem_Paula)
+            addChild(chat6)
+            addChild(seta_play6)
+
+        }
+    }
+    
+    //funcao que monta a piscina
+    func montaPiscina() {
+        
+        fundo_piscina = SKSpriteNode(imageNamed: "fundo_piscina")
+        fundo_piscina.zPosition = 1
+        fundo_piscina.size = CGSize(width: 1050, height: 800)
+        fundo_piscina.position = CGPoint(x: 510, y: 400)
+        fundo_piscina.name = "menu_espaco_forma"
+        fundo_piscina.alpha = 0.9
+        
+        addChild(fundo_piscina)
     }
     
     //função para tocar video
