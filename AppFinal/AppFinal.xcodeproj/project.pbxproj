@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A1686CB1BC1C03900585972 /* Bolas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1686CA1BC1C03900585972 /* Bolas.swift */; settings = {ASSET_TAGS = (); }; };
 		6A541A811B823DE10066B36C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541A801B823DE10066B36C /* AppDelegate.swift */; };
 		6A541A831B823DE10066B36C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6A541A821B823DE10066B36C /* GameScene.sks */; };
 		6A541A851B823DE10066B36C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541A841B823DE10066B36C /* GameScene.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A1686CA1BC1C03900585972 /* Bolas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bolas.swift; sourceTree = "<group>"; };
 		6A541A7B1B823DE10066B36C /* AppFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A541A7F1B823DE10066B36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A541A801B823DE10066B36C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				6AC1342C1B8F4CBA00E6F6C6 /* Numero.swift */,
 				6A7D251E1BAA0FF800C094BF /* Personagem_Menu.swift */,
 				6AEB427C1BAF0C500034FA31 /* Vegetais.swift */,
+				6A1686CA1BC1C03900585972 /* Bolas.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				6A541AB01B8275020066B36C /* GameScene_Grandezas.swift in Sources */,
 				6AC1343D1B9618F100E6F6C6 /* ExercicioJSON.swift in Sources */,
 				6AC1342D1B8F4CBA00E6F6C6 /* Numero.swift in Sources */,
+				6A1686CB1BC1C03900585972 /* Bolas.swift in Sources */,
 				6A7D251F1BAA0FF800C094BF /* Personagem_Menu.swift in Sources */,
 				6A541AAB1B82738E0066B36C /* GameScene_Cozinha.swift in Sources */,
 				6AEB427D1BAF0C500034FA31 /* Vegetais.swift in Sources */,

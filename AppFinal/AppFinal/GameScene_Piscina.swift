@@ -39,6 +39,7 @@ class GameScene_Piscina: SKScene {
     var chat5: SKSpriteNode!
     var chat6: SKSpriteNode!
     var chat7: SKSpriteNode!
+    var chat8: SKSpriteNode!
     
     var seta_play: SKSpriteNode!
     var seta_play1: SKSpriteNode!
@@ -48,19 +49,20 @@ class GameScene_Piscina: SKScene {
     var seta_play5: SKSpriteNode!
     var seta_play6: SKSpriteNode!
     var seta_play7: SKSpriteNode!
+    var seta_play8: SKSpriteNode!
     
-    var bola1: SKSpriteNode!
-    var bola2: SKSpriteNode!
-    var bola3: SKSpriteNode!
-    var bola4: SKSpriteNode!
-    var bola5: SKSpriteNode!
-    var bola6: SKSpriteNode!
-    var bola7: SKSpriteNode!
-    var bola8: SKSpriteNode!
-    var bola9: SKSpriteNode!
-    var bola10: SKSpriteNode!
-    var bola11: SKSpriteNode!
-    var bola12: SKSpriteNode!
+    var bola1: Bolas!
+    var bola2: Bolas!
+    var bola3: Bolas!
+    var bola4: Bolas!
+    var bola5: Bolas!
+    var bola6: Bolas!
+    var bola7: Bolas!
+    var bola8: Bolas!
+    var bola9: Bolas!
+    var bola10: Bolas!
+    var bola11: Bolas!
+    var bola12: Bolas!
     
     var num0: Numero!
     var num1: Numero!
@@ -321,6 +323,13 @@ class GameScene_Piscina: SKScene {
             seta_play7.removeFromParent()
             movie?.view.hidden = true
             
+        }else if toque.name == "seta_play8" {
+            
+            var novaScene = SKScene()
+            novaScene = GameScene(size: size)
+            movie?.view.hidden = true
+            self.scene!.view?.presentScene(novaScene)
+            
         }
     }
     
@@ -375,28 +384,24 @@ class GameScene_Piscina: SKScene {
             personagem_placa.size = CGSize(width: 110, height: 305)
             personagem_placa.position = CGPoint(x: 850, y: 150)
             
-            bola1 = SKSpriteNode(imageNamed: "bola_amarela")
+            bola1 = Bolas(texture: SKTexture(imageNamed: "bola_amarela"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola1.zPosition = 1
             bola1.name = "bola1"
-            bola1.size = CGSize(width: 100, height: 100)
             bola1.position = CGPoint(x: 440, y: 300)
             
-            bola2 = SKSpriteNode(imageNamed: "bola_azul_claro")
+            bola2 = Bolas(texture: SKTexture(imageNamed: "bola_azul_claro"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola2.zPosition = 1
             bola2.name = "bola2"
-            bola2.size = CGSize(width: 100, height: 100)
             bola2.position = CGPoint(x: 440, y: 470)
             
-            bola3 = SKSpriteNode(imageNamed: "bola_rosa")
+            bola3 = Bolas(texture: SKTexture(imageNamed: "bola_rosa"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola3.zPosition = 1
             bola3.name = "bola3"
-            bola3.size = CGSize(width: 100, height: 100)
             bola3.position = CGPoint(x: 640, y: 300)
             
-            bola4 = SKSpriteNode(imageNamed: "bola_vermelha")
+            bola4 = Bolas(texture: SKTexture(imageNamed: "bola_vermelha"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola4.zPosition = 1
             bola4.name = "bola4"
-            bola4.size = CGSize(width: 100, height: 100)
             bola4.position = CGPoint(x: 640, y: 470)
             
             addChild(personagem_placa)
@@ -429,22 +434,19 @@ class GameScene_Piscina: SKScene {
             personagem_placa.size = CGSize(width: 110, height: 305)
             personagem_placa.position = CGPoint(x: 850, y: 150)
             
-            bola1 = SKSpriteNode(imageNamed: "bola_marrom")
+            bola1 = Bolas(texture: SKTexture(imageNamed: "bola_marrom"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola1.zPosition = 1
             bola1.name = "bola1"
-            bola1.size = CGSize(width: 100, height: 100)
             bola1.position = CGPoint(x: 440, y: 300)
             
-            bola2 = SKSpriteNode(imageNamed: "bola_roxa")
+            bola2 = Bolas(texture: SKTexture(imageNamed: "bola_roxa"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola2.zPosition = 1
             bola2.name = "bola2"
-            bola2.size = CGSize(width: 100, height: 100)
             bola2.position = CGPoint(x: 500, y: 470)
             
-            bola3 = SKSpriteNode(imageNamed: "bola_laranja")
+            bola3 = Bolas(texture: SKTexture(imageNamed: "bola_laranja"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola3.zPosition = 1
             bola3.name = "bola3"
-            bola3.size = CGSize(width: 100, height: 100)
             bola3.position = CGPoint(x: 640, y: 370)
             
             addChild(personagem_placa)
@@ -475,34 +477,29 @@ class GameScene_Piscina: SKScene {
             personagem_placa.size = CGSize(width: 110, height: 305)
             personagem_placa.position = CGPoint(x: 850, y: 150)
             
-            bola1 = SKSpriteNode(imageNamed: "bola_amarela")
+            bola1 = Bolas(texture: SKTexture(imageNamed: "bola_amarela"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola1.zPosition = 1
             bola1.name = "bola1"
-            bola1.size = CGSize(width: 100, height: 100)
             bola1.position = CGPoint(x: 440, y: 300)
             
-            bola2 = SKSpriteNode(imageNamed: "bola_azul_claro")
+            bola2 = Bolas(texture: SKTexture(imageNamed: "bola_azul_claro"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola2.zPosition = 1
             bola2.name = "bola2"
-            bola2.size = CGSize(width: 100, height: 100)
             bola2.position = CGPoint(x: 440, y: 470)
             
-            bola3 = SKSpriteNode(imageNamed: "bola_rosa")
+            bola3 = Bolas(texture: SKTexture(imageNamed: "bola_rosa"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola3.zPosition = 1
             bola3.name = "bola3"
-            bola3.size = CGSize(width: 100, height: 100)
             bola3.position = CGPoint(x: 640, y: 300)
             
-            bola4 = SKSpriteNode(imageNamed: "bola_vermelha")
+            bola4 = Bolas(texture: SKTexture(imageNamed: "bola_vermelha"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola4.zPosition = 1
             bola4.name = "bola4"
-            bola4.size = CGSize(width: 100, height: 100)
             bola4.position = CGPoint(x: 640, y: 470)
             
-            bola5 = SKSpriteNode(imageNamed: "bola_verde")
+            bola5 = Bolas(texture: SKTexture(imageNamed: "bola_verde"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
             bola5.zPosition = 1
             bola5.name = "bola5"
-            bola5.size = CGSize(width: 100, height: 100)
             bola5.position = CGPoint(x: 530, y: 380)
             
             addChild(personagem_placa)
@@ -819,76 +816,64 @@ class GameScene_Piscina: SKScene {
         fundo_piscina.name = "menu_espaco_forma"
         fundo_piscina.alpha = 0.9
         
-        bola1 = SKSpriteNode(imageNamed: "bola_amarela")
+        bola1 = Bolas(texture: SKTexture(imageNamed: "bola_amarela"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola1.zPosition = 1
         bola1.name = "bola1"
-        bola1.size = CGSize(width: 100, height: 100)
         bola1.position = CGPoint(x: 100, y: 200)
         
-        bola2 = SKSpriteNode(imageNamed: "bola_azul_claro")
+        bola2 = Bolas(texture: SKTexture(imageNamed: "bola_azul_claro"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola2.zPosition = 1
         bola2.name = "bola2"
-        bola2.size = CGSize(width: 100, height: 100)
         bola2.position = CGPoint(x: 250, y: 620)
         
-        bola3 = SKSpriteNode(imageNamed: "bola_rosa")
+        bola3 = Bolas(texture: SKTexture(imageNamed: "bola_rosa"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola3.zPosition = 1
         bola3.name = "bola3"
-        bola3.size = CGSize(width: 100, height: 100)
         bola3.position = CGPoint(x: 200, y: 400)
         
-        bola4 = SKSpriteNode(imageNamed: "bola_vermelha")
+        bola4 = Bolas(texture: SKTexture(imageNamed: "bola_vermelha"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola4.zPosition = 1
         bola4.name = "bola4"
-        bola4.size = CGSize(width: 100, height: 100)
         bola4.position = CGPoint(x: 800, y: 200)
         
-        bola5 = SKSpriteNode(imageNamed: "bola_verde")
+        bola5 = Bolas(texture: SKTexture(imageNamed: "bola_verde"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola5.zPosition = 1
         bola5.name = "bola5"
-        bola5.size = CGSize(width: 100, height: 100)
         bola5.position = CGPoint(x: 500, y: 700)
         
-        bola6 = SKSpriteNode(imageNamed: "bola_azul")
+        bola6 = Bolas(texture: SKTexture(imageNamed: "bola_azul"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola6.zPosition = 1
         bola6.name = "bola6"
-        bola6.size = CGSize(width: 100, height: 100)
         bola6.position = CGPoint(x: 800, y: 700)
         
-        bola7 = SKSpriteNode(imageNamed: "bola_laranja")
+        bola7 = Bolas(texture: SKTexture(imageNamed: "bola_laranja"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola7.zPosition = 1
         bola7.name = "bola7"
-        bola7.size = CGSize(width: 100, height: 100)
         bola7.position = CGPoint(x: 100, y: 700)
         
-        bola8 = SKSpriteNode(imageNamed: "bola_verde_claro")
+        bola8 = Bolas(texture: SKTexture(imageNamed: "bola_verde_claro"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola8.zPosition = 1
         bola8.name = "bola8"
-        bola8.size = CGSize(width: 100, height: 100)
         bola8.position = CGPoint(x: 400, y: 100)
         
-        bola9 = SKSpriteNode(imageNamed: "bola_marrom")
+        bola9 = Bolas(texture: SKTexture(imageNamed: "bola_marrom"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola9.zPosition = 1
         bola9.name = "bola9"
-        bola9.size = CGSize(width: 100, height: 100)
         bola9.position = CGPoint(x: 650, y: 100)
         
-        bola10 = SKSpriteNode(imageNamed: "bola_roxa")
+        bola10 = Bolas(texture: SKTexture(imageNamed: "bola_roxa"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola10.zPosition = 1
         bola10.name = "bola10"
-        bola10.size = CGSize(width: 100, height: 100)
         bola10.position = CGPoint(x: 850, y: 500)
         
-        bola11 = SKSpriteNode(imageNamed: "bola_rosa")
+        bola11 = Bolas(texture: SKTexture(imageNamed: "bola_rosa"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola11.zPosition = 1
         bola11.name = "bola11"
-        bola11.size = CGSize(width: 100, height: 100)
         bola11.position = CGPoint(x: 900, y: 350)
         
-        bola12 = SKSpriteNode(imageNamed: "bola_vermelha")
+        bola12 = Bolas(texture: SKTexture(imageNamed: "bola_vermelha"), color: UIColor.clearColor(), size: CGSize(width: 100, height: 100))
         bola12.zPosition = 1
         bola12.name = "bola12"
-        bola12.size = CGSize(width: 100, height: 100)
         bola12.position = CGPoint(x: 100, y: 470)
         
         addChild(fundo_piscina)
@@ -928,6 +913,34 @@ class GameScene_Piscina: SKScene {
 
         addChild(chat7)
         addChild(seta_play7)
+    }
+    
+    //função que exibe mensagem de acabou
+    func fimDoExercicio(){
+        
+        personagem_Paula.runAction(SKAction.moveToX(800, duration: 0.6))
+        personagem_Paula.zPosition = 3
+        
+        chat8 = SKSpriteNode(imageNamed: "chat_verde_texto_8")
+        chat8.zPosition = 1
+        chat8.name = "chat_verde_8"
+        chat8.size = CGSize(width: 200, height: 200)
+        chat8.position = CGPoint(x: 730, y: 300)
+        
+        seta_play8 = SKSpriteNode(imageNamed: "seta_verde")
+        seta_play8.zPosition = 1
+        seta_play8.name = "seta_play8"
+        seta_play8.size = CGSize(width: 50, height: 50)
+        seta_play8.position = CGPoint(x: 740, y: 280)
+        
+        video = exercicio.getVideo(3, video: "video8")
+        audioS = exercicio.getAudio(3, audio: "audio8")
+        
+        playVideo(video, tipo: "m4v")
+        playAudio(audioS, tipo: "m4a")
+        
+        addChild(chat8)
+        addChild(seta_play8)
     }
     
     //função para tocar video

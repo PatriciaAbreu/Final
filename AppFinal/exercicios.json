@@ -66,7 +66,8 @@
                    "audio4": "Exercicio4",
                    "audio5": "Exercicio4",
                    "audio6": "Exercicio4",
-                   "audio7": "Exercicio4"
+                   "audio7": "Exercicio4",
+                   "audio8": "Exercicio4"
                    },
                    "tipoAudio": "m4a",
                    "video": {
@@ -76,7 +77,8 @@
                    "video4": "teste",
                    "video5": "teste",
                    "video6": "teste",
-                   "video7": "teste"
+                   "video7": "teste",
+                   "video8": "teste"
                    },
                    "tipoVideo": "m4v",
                    "numero": 2
