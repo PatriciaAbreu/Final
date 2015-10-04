@@ -38,6 +38,7 @@ class GameScene_Piscina: SKScene {
     var chat4: SKSpriteNode!
     var chat5: SKSpriteNode!
     var chat6: SKSpriteNode!
+    var chat7: SKSpriteNode!
     
     var seta_play: SKSpriteNode!
     var seta_play1: SKSpriteNode!
@@ -46,6 +47,7 @@ class GameScene_Piscina: SKScene {
     var seta_play4: SKSpriteNode!
     var seta_play5: SKSpriteNode!
     var seta_play6: SKSpriteNode!
+    var seta_play7: SKSpriteNode!
     
     var bola1: SKSpriteNode!
     var bola2: SKSpriteNode!
@@ -310,6 +312,13 @@ class GameScene_Piscina: SKScene {
             personagem_Paula.runAction(SKAction.moveToX(1200, duration: 0.6))
             chat5.removeFromParent()
             seta_play5.removeFromParent()
+            movie?.view.hidden = true
+            
+        }else if toque.name == "seta_play7" {
+            
+            personagem_Paula.runAction(SKAction.moveToX(1200, duration: 0.6))
+            chat7.removeFromParent()
+            seta_play7.removeFromParent()
             movie?.view.hidden = true
             
         }
@@ -802,14 +811,123 @@ class GameScene_Piscina: SKScene {
     //funcao que monta a piscina
     func montaPiscina() {
         
+        
         fundo_piscina = SKSpriteNode(imageNamed: "fundo_piscina")
         fundo_piscina.zPosition = 1
-        fundo_piscina.size = CGSize(width: 1050, height: 800)
+        fundo_piscina.size = CGSize(width: 500, height: 500)
         fundo_piscina.position = CGPoint(x: 510, y: 400)
         fundo_piscina.name = "menu_espaco_forma"
         fundo_piscina.alpha = 0.9
         
+        bola1 = SKSpriteNode(imageNamed: "bola_amarela")
+        bola1.zPosition = 1
+        bola1.name = "bola1"
+        bola1.size = CGSize(width: 100, height: 100)
+        bola1.position = CGPoint(x: 100, y: 200)
+        
+        bola2 = SKSpriteNode(imageNamed: "bola_azul_claro")
+        bola2.zPosition = 1
+        bola2.name = "bola2"
+        bola2.size = CGSize(width: 100, height: 100)
+        bola2.position = CGPoint(x: 250, y: 620)
+        
+        bola3 = SKSpriteNode(imageNamed: "bola_rosa")
+        bola3.zPosition = 1
+        bola3.name = "bola3"
+        bola3.size = CGSize(width: 100, height: 100)
+        bola3.position = CGPoint(x: 200, y: 400)
+        
+        bola4 = SKSpriteNode(imageNamed: "bola_vermelha")
+        bola4.zPosition = 1
+        bola4.name = "bola4"
+        bola4.size = CGSize(width: 100, height: 100)
+        bola4.position = CGPoint(x: 800, y: 200)
+        
+        bola5 = SKSpriteNode(imageNamed: "bola_verde")
+        bola5.zPosition = 1
+        bola5.name = "bola5"
+        bola5.size = CGSize(width: 100, height: 100)
+        bola5.position = CGPoint(x: 500, y: 700)
+        
+        bola6 = SKSpriteNode(imageNamed: "bola_azul")
+        bola6.zPosition = 1
+        bola6.name = "bola6"
+        bola6.size = CGSize(width: 100, height: 100)
+        bola6.position = CGPoint(x: 800, y: 700)
+        
+        bola7 = SKSpriteNode(imageNamed: "bola_laranja")
+        bola7.zPosition = 1
+        bola7.name = "bola7"
+        bola7.size = CGSize(width: 100, height: 100)
+        bola7.position = CGPoint(x: 100, y: 700)
+        
+        bola8 = SKSpriteNode(imageNamed: "bola_verde_claro")
+        bola8.zPosition = 1
+        bola8.name = "bola8"
+        bola8.size = CGSize(width: 100, height: 100)
+        bola8.position = CGPoint(x: 400, y: 100)
+        
+        bola9 = SKSpriteNode(imageNamed: "bola_marrom")
+        bola9.zPosition = 1
+        bola9.name = "bola9"
+        bola9.size = CGSize(width: 100, height: 100)
+        bola9.position = CGPoint(x: 650, y: 100)
+        
+        bola10 = SKSpriteNode(imageNamed: "bola_roxa")
+        bola10.zPosition = 1
+        bola10.name = "bola10"
+        bola10.size = CGSize(width: 100, height: 100)
+        bola10.position = CGPoint(x: 850, y: 500)
+        
+        bola11 = SKSpriteNode(imageNamed: "bola_rosa")
+        bola11.zPosition = 1
+        bola11.name = "bola11"
+        bola11.size = CGSize(width: 100, height: 100)
+        bola11.position = CGPoint(x: 900, y: 350)
+        
+        bola12 = SKSpriteNode(imageNamed: "bola_vermelha")
+        bola12.zPosition = 1
+        bola12.name = "bola12"
+        bola12.size = CGSize(width: 100, height: 100)
+        bola12.position = CGPoint(x: 100, y: 470)
+        
         addChild(fundo_piscina)
+        addChild(bola1)
+        addChild(bola2)
+        addChild(bola3)
+        addChild(bola4)
+        addChild(bola5)
+        addChild(bola6)
+        addChild(bola7)
+        addChild(bola8)
+        addChild(bola9)
+        addChild(bola10)
+        addChild(bola11)
+        addChild(bola12)
+        
+        personagem_Paula.runAction(SKAction.moveToX(800, duration: 0.6))
+        personagem_Paula.zPosition = 3
+        
+        chat7 = SKSpriteNode(imageNamed: "chat_verde_texto_7")
+        chat7.zPosition = 1
+        chat7.name = "chat_verde_7"
+        chat7.size = CGSize(width: 200, height: 200)
+        chat7.position = CGPoint(x: 730, y: 300)
+        
+        seta_play7 = SKSpriteNode(imageNamed: "seta_verde")
+        seta_play7.zPosition = 1
+        seta_play7.name = "seta_play7"
+        seta_play7.size = CGSize(width: 50, height: 50)
+        seta_play7.position = CGPoint(x: 740, y: 280)
+        
+        video = exercicio.getVideo(3, video: "video7")
+        audioS = exercicio.getAudio(3, audio: "audio7")
+        
+        playVideo(video, tipo: "m4v")
+        playAudio(audioS, tipo: "m4a")
+
+        addChild(chat7)
+        addChild(seta_play7)
     }
     
     //função para tocar video
