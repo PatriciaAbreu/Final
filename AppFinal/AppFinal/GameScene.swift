@@ -47,6 +47,7 @@ class GameScene: SKScene {
     
     override func didMoveToView(view: SKView) {
 
+       
         //chamada para montar tela inicial
         montarScene()
         montarMenu()
@@ -56,7 +57,7 @@ class GameScene: SKScene {
         video = exercicio.getVideo(0, video: "video1")
         audioS = exercicio.getAudio(0, audio: "audio1")
         
-        playVideo(video, tipo: "m4v")
+        playVideo(video, tipo: "mp4")
         playAudio(audioS, tipo: "m4a")
     }
     

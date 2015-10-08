@@ -71,7 +71,7 @@ class GameScene_Esconde: SKScene {
         video = exercicio.getVideo(1, video: "video1")
         audioS = exercicio.getAudio(1, audio: "audio1")
         
-        playVideo(video, tipo: "m4v")
+        playVideo(video, tipo: "mp4")
         playAudio(audioS, tipo: "m4a")
         
     }
@@ -103,7 +103,7 @@ class GameScene_Esconde: SKScene {
             video = exercicio.getVideo(1, video: "video2")
             audioS = exercicio.getAudio(1, audio: "audio2")
             
-            playVideo(video, tipo: "m4v")
+            playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
             
             dialogo.removeFromParent()
@@ -137,6 +137,7 @@ class GameScene_Esconde: SKScene {
             
         }else if toque.name == "seta_back" {
 
+            movie?.view.hidden = true
             var voltarMenu = SKScene()
             voltarMenu = GameScene(size: size)
             self.scene!.view?.presentScene(voltarMenu)
@@ -163,7 +164,7 @@ class GameScene_Esconde: SKScene {
             video = exercicio.getVideo(1, video: "video2")
             audioS = exercicio.getAudio(1, audio: "audio2")
             
-            playVideo(video, tipo: "m4v")
+            playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
             
         }else if toque.name == "julia" && Numero.verifica == 10{
@@ -193,18 +194,12 @@ class GameScene_Esconde: SKScene {
             video = exercicio.getVideo(1, video: "video4")
             audioS = exercicio.getAudio(1, audio: "audio4")
             
-            playVideo(video, tipo: "m4v")
+            playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
             
         }
     }
     
-    override func update(currentTime: CFTimeInterval) {
-        
-        /* Called before each frame is rendered */
-        
-    }
-
     func montarScene(){
         
         //posiciona e adiciona o plano de fundo
@@ -303,12 +298,7 @@ class GameScene_Esconde: SKScene {
     
     //função par montar o exercicio
     func montarExercicio(){
-        
-//        num0 = Numero(texture: SKTexture(imageNamed: "num0"), color: nil, size: CGSize(width: 50, height: 50), numero: 0)
-//        num0.zPosition = 1
-//        num0.name = "exercicio1_0"
-//        num0.position = CGPoint(x: 500, y: 600)
-        
+
         num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 1)
         num1.zPosition = 1
         num1.name = "exercicio1_1"
@@ -359,7 +349,6 @@ class GameScene_Esconde: SKScene {
         num10.name = "exercicio1_10"
         num10.position = CGPoint(x: 220, y: 580)
         
-//        addChild(num0)
         addChild(num1)
         addChild(num2)
         addChild(num3)
@@ -370,14 +359,7 @@ class GameScene_Esconde: SKScene {
         addChild(num8)
         addChild(num9)
         addChild(num10)
-        
-//        barra para posicionar os números
-//        barra0 = SKSpriteNode(imageNamed: "barra")
-//        barra0.zPosition = 1
-//        barra0.name = "barra0"
-//        barra0.size = CGSize(width: 70, height: 10)
-//        barra0.position = CGPoint(x: 100, y: 650)
-        
+
         barra1 = SKSpriteNode(imageNamed: "barra")
         barra1.zPosition = 1
         barra1.name = "barra1"
@@ -438,7 +420,6 @@ class GameScene_Esconde: SKScene {
         barra10.size = CGSize(width: 70, height: 10)
         barra10.position = CGPoint(x: 900, y: 650)
         
-//        addChild(barra0)
         addChild(barra1)
         addChild(barra2)
         addChild(barra3)
@@ -473,7 +454,7 @@ class GameScene_Esconde: SKScene {
         
         video = exercicio.getVideo(1, video: "video3")
         audioS = exercicio.getAudio(1, audio: "audio3")
-        playVideo(video, tipo: "m4v")
+        playVideo(video, tipo: "mp4")
         playAudio(audioS, tipo: "m4a")
     }
 }

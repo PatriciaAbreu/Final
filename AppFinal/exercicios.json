@@ -7,7 +7,7 @@
                         },
                         "tipoAudio": "m4a",
                         "video": {
-                        "video1": "teste"
+                        "video1": "video1"
                         },
                         "tipoVideo": "m4v",
                         "numero": 0
@@ -23,10 +23,10 @@
                         },
                         "tipoAudio": "m4a",
                         "video": {
-                        "video1": "teste",
-                        "video2": "teste",
-                        "video3": "teste",
-                        "video4": "teste",
+                        "video1": "video2",
+                        "video2": "video3",
+                        "video3": "video4",
+                        "video4": "video5",
                         },
                         "tipoVideo": "m4v",
                         "numero": 1
