@@ -50,6 +50,7 @@ class GameScene_Piscina: SKScene {
     var seta_play6: SKSpriteNode!
     var seta_play7: SKSpriteNode!
     var seta_play8: SKSpriteNode!
+    var seta_back: SKSpriteNode!
     
     var bola1: Bolas!
     var bola2: Bolas!
@@ -330,6 +331,12 @@ class GameScene_Piscina: SKScene {
             movie?.view.hidden = true
             self.scene!.view?.presentScene(novaScene)
             
+        }else if toque.name == "seta_back" {
+            
+            var voltarMenu = SKScene()
+            voltarMenu = GameScene(size: size)
+            movie?.view.hidden = true
+            self.scene!.view?.presentScene(voltarMenu)
         }
     }
     
@@ -360,17 +367,25 @@ class GameScene_Piscina: SKScene {
         chat1.size = CGSize(width: 200, height: 200)
         chat1.position = CGPoint(x: 730, y: 300)
         
-        //posiciona e adiciona a seta de próximo e a de voltar
+        //posiciona e adiciona a seta de próximo 
         seta_play1 = SKSpriteNode(imageNamed: "seta_verde")
         seta_play1.zPosition = 1
         seta_play1.name = "seta_play1"
         seta_play1.size = CGSize(width: 50, height: 50)
         seta_play1.position = CGPoint(x: 740, y: 280)
         
+        //posiciona e adiciona a seta de retornar ao menu
+        seta_back = SKSpriteNode(imageNamed: "seta_back_verde")
+        seta_back.zPosition = 1
+        seta_back.name = "seta_back"
+        seta_back.size = CGSize(width: 50, height: 50)
+        seta_back.position = CGPoint(x: 50, y: 50)
+        
         addChild(background_bolas)
         addChild(personagem_Paula)
         addChild(chat1)
         addChild(seta_play1)
+        addChild(seta_back)
     }
     
     //função que monta o exercicio
