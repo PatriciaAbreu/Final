@@ -131,6 +131,7 @@ class GameScene_Esconde: SKScene {
             
         }else if toque.name == "seta_play_4" {
             
+            movie?.view.hidden = true
             var novoJogo = SKScene()
             novoJogo = GameScene(size: size)
             self.scene!.view?.presentScene(novoJogo)

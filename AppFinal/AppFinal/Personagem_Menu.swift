@@ -31,11 +31,12 @@ class Personagem_Menu: SKSpriteNode {
         let toque = self.nodeAtPoint(touchLocatio)
                 
         if toque.name == "personagem2" {
-            print("personagem2")
             
             toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
 
             toque.name = "personagem2_novo"
+            
+//            (toque.parent as! GameScene).muda_texto("personagem2_novo")
           
             
         }else if toque.name == "personagem3" {
@@ -47,6 +48,8 @@ class Personagem_Menu: SKSpriteNode {
        
             toque.name = "personagem3_novo"
             
+//            (toque.parent as! GameScene).muda_texto("personagem3_novo")
+
             
         }else if toque.name == "personagem4" {
             print("personagem4")

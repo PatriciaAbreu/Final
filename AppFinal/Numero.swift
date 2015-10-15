@@ -217,7 +217,7 @@ class Numero: SKSpriteNode {
             
         }else if toque.name == "exercicio2_1" || toque.name == "exercicio2_2" || toque.name == "exercicio2_3" || toque.name == "exercicio2_4" || toque.name == "exercicio2_6" || toque.name == "exercicio2_7" || toque.name == "exercicio2_8" || toque.name == "exercicio2_9" || toque.name == "exercicio2_10" {
             
-            (toque.parent as! GameScene_Cozinha).contouErrado()
+            (toque as! GameScene_Cozinha).contouErrado()
         }
         
         //faz a analise dos números do jogo da piscina de bolinhas

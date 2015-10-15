@@ -25,11 +25,14 @@ class GameScene: SKScene {
     
     var menu: SKSpriteNode!
     
-    var circulo_menu: SKSpriteNode!
-    var personagem1_menu: SKSpriteNode!
-    var personagem2_menu: SKSpriteNode!
-    var personagem3_menu: SKSpriteNode!
-    var personagem4_menu: SKSpriteNode!
+    var circulo_menu: Personagem_Menu!
+    var personagem1_menu: Personagem_Menu!
+    var personagem2_menu: Personagem_Menu!
+    var personagem3_menu: Personagem_Menu!
+    var personagem4_menu: Personagem_Menu!
+    
+    //placas
+    var placa_nome_jogo: SKSpriteNode!
     
     let menu_todo = SKSpriteNode(color: UIColor.clearColor(), size: CGSize(width: 583, height: 574))
     
@@ -68,7 +71,7 @@ class GameScene: SKScene {
         let touchLocatio = touch!.locationInNode(self)
         
         let toque = self.nodeAtPoint(touchLocatio)
-        var novaScene = SKScene()
+        var novaScene: SKScene?
         
         if toque.name == "seta_rosa" && personagem2_menu.name == "personagem2_novo"{
             
@@ -91,9 +94,9 @@ class GameScene: SKScene {
             movie?.view.hidden = true
             
         }
-        
-      self.scene!.view?.presentScene(novaScene)
-
+        if novaScene != nil {
+            self.scene!.view?.presentScene(novaScene)
+        }
     }
    
     override func update(currentTime: CFTimeInterval) {
@@ -159,11 +162,41 @@ class GameScene: SKScene {
         seta.size = CGSize(width: 50, height: 50)
         seta.name = "seta_rosa"
 
+        //adiciona e posiciona a placa com os nomes dos jogos
+        placa_nome_jogo = Personagem_Menu(texture: SKTexture(imageNamed: "esconde_esconde"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
+        placa_nome_jogo.zPosition = 1
+        placa_nome_jogo.name = "esconde"
+        placa_nome_jogo.position = CGPoint(x: 800, y: 100)
+        
+//        addChild(placa_nome_jogo)
         addChild(menu_todo)
         addChild(texto)
         addChild(seta)
+        
+        
     }
 
+    //função para mudar o texto do nome do jogo
+    func muda_texto(personagem: String){
+        placa_nome_jogo.removeFromParent();
+        
+        if personagem == "personagem2_novo" {
+            placa_nome_jogo = Personagem_Menu(texture: SKTexture(imageNamed: "cozinha"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
+            placa_nome_jogo.zPosition = 1
+            placa_nome_jogo.name = "cozinha"
+            placa_nome_jogo.position = CGPoint(x: 800, y: 100)
+            
+        }else if personagem == "personagem3_novo" {
+            placa_nome_jogo = Personagem_Menu(texture: SKTexture(imageNamed: "piscina_de_bolinhas"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
+            placa_nome_jogo.zPosition = 1
+            placa_nome_jogo.name = "piscina"
+            placa_nome_jogo.position = CGPoint(x: 800, y: 100)
+            
+        }
+        
+        addChild(placa_nome_jogo)
+
+    }
     //função para tocar video
     func playVideo( video: String, tipo: String){
         

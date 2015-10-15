@@ -236,7 +236,7 @@ class GameScene_Cozinha: SKScene {
         seta_play.size = CGSize(width: 50, height: 50)
         seta_play.position = CGPoint(x: 740, y: 280)
         
-        seta_back = SKSpriteNode(imageNamed: "seta_back")
+        seta_back = SKSpriteNode(imageNamed: "seta_back_roxa")
         seta_back.zPosition = 1
         seta_back.name = "seta_back"
         seta_back.size = CGSize(width: 50, height: 50)
@@ -283,9 +283,9 @@ class GameScene_Cozinha: SKScene {
         leg6.name = "pimentao"
         leg6.position = CGPoint(x: 800, y: 450)
         
-        leg7 = Vegetais(texture: SKTexture(imageNamed: "tomate"), color: UIColor.clearColor(), size: CGSize(width: 80, height: 80), tipo: "legume")
+        leg7 = Vegetais(texture: SKTexture(imageNamed: "cenoura"), color: UIColor.clearColor(), size: CGSize(width: 80, height: 80), tipo: "legume")
         leg7.zPosition = 1
-        leg7.name = "tomate"
+        leg7.name = "cenoura"
         leg7.position = CGPoint(x: 900, y: 250)
         
         leg8 = Vegetais(texture: SKTexture(imageNamed: "banana"), color: UIColor.clearColor(), size: CGSize(width: 80, height: 80), tipo: "fruta")
@@ -365,6 +365,7 @@ class GameScene_Cozinha: SKScene {
         addChild(seta_play5)
         
         personagem_Ro.runAction(SKAction.moveToX(850, duration: 0.6))
+        personagem_Ro.zPosition = 3
         
         num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 1)
         num1.zPosition = 1
@@ -446,10 +447,6 @@ class GameScene_Cozinha: SKScene {
         
         movie?.view.hidden = true
         
-        
-        
-        
-        
         //mudar para audio5
         video = exercicio.getVideo(2, video: "video7")
         audioS = exercicio.getAudio(2, audio: "audio4")
@@ -483,10 +480,6 @@ class GameScene_Cozinha: SKScene {
         seta_play4.position = CGPoint(x: 740, y: 270)
         
         movie?.view.hidden = true
-        
-        
-        
-        
         
         //mudar para audio5
         video = exercicio.getVideo(2, video: "video4")
