@@ -29,38 +29,35 @@ class Personagem_Menu: SKSpriteNode {
         let touchLocatio = touch!.locationInNode(self)
         
         let toque = self.nodeAtPoint(touchLocatio)
-                
-        if toque.name == "personagem2" {
-            
+        
+        if toque.position.x == 225 && toque.position.y == 0 {
             toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
+            
+        }else if toque.position.x == 0 && toque.position.y == -225 {
+            for (var i = 1; i < 3; i++) {
+                toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
+            }
+            
+        }else if toque.position.x == -225 && toque.position.y == 0 {
+            for (var i = 1; i < 4; i++) {
+                toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.6))
+            }
+            
+        }
 
+        if toque.name == "personagem1"{
+            toque.name = "personagem1_novo"
+            
+        }else if toque.name == "personagem2" {
             toque.name = "personagem2_novo"
             
-//            (toque.parent as! GameScene).muda_texto("personagem2_novo")
-          
-            
         }else if toque.name == "personagem3" {
-            print("personagem3")
-            
-            for (var i = 1; i < 3; i++) {
-            toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
-            }
-       
             toque.name = "personagem3_novo"
             
-//            (toque.parent as! GameScene).muda_texto("personagem3_novo")
-
-            
         }else if toque.name == "personagem4" {
-            print("personagem4")
-            
-            for (var i = 1; i < 4; i++) {
-            toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.6))
-            }
-            
             toque.name = "personagem4_novo"
-           
         }
+        
         
     }
 }

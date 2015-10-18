@@ -13,6 +13,21 @@
 		6A1686DD1BC716E400585972 /* video3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686D81BC716E400585972 /* video3.mp4 */; };
 		6A1686DE1BC716E400585972 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686D91BC716E400585972 /* video2.mp4 */; };
 		6A1686DF1BC716E400585972 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686DA1BC716E400585972 /* video1.mp4 */; };
+		6A1686EF1BD4447B00585972 /* Exercicio19.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E01BD4447A00585972 /* Exercicio19.m4a */; };
+		6A1686F01BD4447B00585972 /* Exercicio18.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E11BD4447A00585972 /* Exercicio18.m4a */; };
+		6A1686F11BD4447B00585972 /* Exercicio17.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E21BD4447A00585972 /* Exercicio17.m4a */; };
+		6A1686F21BD4447B00585972 /* Exercicio16.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E31BD4447A00585972 /* Exercicio16.m4a */; };
+		6A1686F31BD4447B00585972 /* Exercicio15.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E41BD4447A00585972 /* Exercicio15.m4a */; };
+		6A1686F41BD4447B00585972 /* Exercicio14.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E51BD4447A00585972 /* Exercicio14.m4a */; };
+		6A1686F51BD4447B00585972 /* Exercicio13.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E61BD4447A00585972 /* Exercicio13.m4a */; };
+		6A1686F61BD4447B00585972 /* Exercicio12.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E71BD4447A00585972 /* Exercicio12.m4a */; };
+		6A1686F71BD4447B00585972 /* Exercicio11.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E81BD4447A00585972 /* Exercicio11.m4a */; };
+		6A1686F81BD4447B00585972 /* Exercicio10.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686E91BD4447A00585972 /* Exercicio10.m4a */; };
+		6A1686F91BD4447B00585972 /* Exercicio9.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686EA1BD4447A00585972 /* Exercicio9.m4a */; };
+		6A1686FA1BD4447B00585972 /* Exercicio8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686EB1BD4447A00585972 /* Exercicio8.m4a */; };
+		6A1686FB1BD4447B00585972 /* Exercicio7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686EC1BD4447A00585972 /* Exercicio7.m4a */; };
+		6A1686FC1BD4447B00585972 /* Exercicio6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686ED1BD4447A00585972 /* Exercicio6.m4a */; };
+		6A1686FD1BD4447B00585972 /* Exercicio5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686EE1BD4447A00585972 /* Exercicio5.m4a */; };
 		6A541A811B823DE10066B36C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541A801B823DE10066B36C /* AppDelegate.swift */; };
 		6A541A831B823DE10066B36C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6A541A821B823DE10066B36C /* GameScene.sks */; };
 		6A541A851B823DE10066B36C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541A841B823DE10066B36C /* GameScene.swift */; };
@@ -55,6 +70,21 @@
 		6A1686D81BC716E400585972 /* video3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video3.mp4; path = ../video3.mp4; sourceTree = "<group>"; };
 		6A1686D91BC716E400585972 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video2.mp4; path = ../video2.mp4; sourceTree = "<group>"; };
 		6A1686DA1BC716E400585972 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video1.mp4; path = ../video1.mp4; sourceTree = "<group>"; };
+		6A1686E01BD4447A00585972 /* Exercicio19.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio19.m4a; path = ../Exercicio19.m4a; sourceTree = "<group>"; };
+		6A1686E11BD4447A00585972 /* Exercicio18.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio18.m4a; path = ../Exercicio18.m4a; sourceTree = "<group>"; };
+		6A1686E21BD4447A00585972 /* Exercicio17.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio17.m4a; path = ../Exercicio17.m4a; sourceTree = "<group>"; };
+		6A1686E31BD4447A00585972 /* Exercicio16.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio16.m4a; path = ../Exercicio16.m4a; sourceTree = "<group>"; };
+		6A1686E41BD4447A00585972 /* Exercicio15.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio15.m4a; path = ../Exercicio15.m4a; sourceTree = "<group>"; };
+		6A1686E51BD4447A00585972 /* Exercicio14.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio14.m4a; path = ../Exercicio14.m4a; sourceTree = "<group>"; };
+		6A1686E61BD4447A00585972 /* Exercicio13.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio13.m4a; path = ../Exercicio13.m4a; sourceTree = "<group>"; };
+		6A1686E71BD4447A00585972 /* Exercicio12.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio12.m4a; path = ../Exercicio12.m4a; sourceTree = "<group>"; };
+		6A1686E81BD4447A00585972 /* Exercicio11.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio11.m4a; path = ../Exercicio11.m4a; sourceTree = "<group>"; };
+		6A1686E91BD4447A00585972 /* Exercicio10.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio10.m4a; path = ../Exercicio10.m4a; sourceTree = "<group>"; };
+		6A1686EA1BD4447A00585972 /* Exercicio9.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio9.m4a; path = ../Exercicio9.m4a; sourceTree = "<group>"; };
+		6A1686EB1BD4447A00585972 /* Exercicio8.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio8.m4a; path = ../Exercicio8.m4a; sourceTree = "<group>"; };
+		6A1686EC1BD4447A00585972 /* Exercicio7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio7.m4a; path = ../Exercicio7.m4a; sourceTree = "<group>"; };
+		6A1686ED1BD4447A00585972 /* Exercicio6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio6.m4a; path = ../Exercicio6.m4a; sourceTree = "<group>"; };
+		6A1686EE1BD4447A00585972 /* Exercicio5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio5.m4a; path = ../Exercicio5.m4a; sourceTree = "<group>"; };
 		6A541A7B1B823DE10066B36C /* AppFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A541A7F1B823DE10066B36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A541A801B823DE10066B36C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +248,21 @@
 				6AA4D4B61B98982100CC7C19 /* Exercicio2.m4a */,
 				6A6D69451B9F60D000A5BAD8 /* Exercicio3.m4a */,
 				6A6D69471B9F61EE00A5BAD8 /* Exercicio4.m4a */,
+				6A1686E01BD4447A00585972 /* Exercicio19.m4a */,
+				6A1686E11BD4447A00585972 /* Exercicio18.m4a */,
+				6A1686E21BD4447A00585972 /* Exercicio17.m4a */,
+				6A1686E31BD4447A00585972 /* Exercicio16.m4a */,
+				6A1686E41BD4447A00585972 /* Exercicio15.m4a */,
+				6A1686E51BD4447A00585972 /* Exercicio14.m4a */,
+				6A1686E61BD4447A00585972 /* Exercicio13.m4a */,
+				6A1686E71BD4447A00585972 /* Exercicio12.m4a */,
+				6A1686E81BD4447A00585972 /* Exercicio11.m4a */,
+				6A1686E91BD4447A00585972 /* Exercicio10.m4a */,
+				6A1686EA1BD4447A00585972 /* Exercicio9.m4a */,
+				6A1686EB1BD4447A00585972 /* Exercicio8.m4a */,
+				6A1686EC1BD4447A00585972 /* Exercicio7.m4a */,
+				6A1686ED1BD4447A00585972 /* Exercicio6.m4a */,
+				6A1686EE1BD4447A00585972 /* Exercicio5.m4a */,
 			);
 			name = Audios;
 			sourceTree = "<group>";
@@ -314,6 +359,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A1686EF1BD4447B00585972 /* Exercicio19.m4a in Resources */,
+				6A1686F01BD4447B00585972 /* Exercicio18.m4a in Resources */,
+				6A1686F11BD4447B00585972 /* Exercicio17.m4a in Resources */,
+				6A1686F21BD4447B00585972 /* Exercicio16.m4a in Resources */,
+				6A1686F31BD4447B00585972 /* Exercicio15.m4a in Resources */,
+				6A1686F41BD4447B00585972 /* Exercicio14.m4a in Resources */,
+				6A1686F51BD4447B00585972 /* Exercicio13.m4a in Resources */,
+				6A1686F61BD4447B00585972 /* Exercicio12.m4a in Resources */,
+				6A1686F71BD4447B00585972 /* Exercicio11.m4a in Resources */,
+				6A1686F81BD4447B00585972 /* Exercicio10.m4a in Resources */,
+				6A1686F91BD4447B00585972 /* Exercicio9.m4a in Resources */,
+				6A1686FA1BD4447B00585972 /* Exercicio8.m4a in Resources */,
+				6A1686FB1BD4447B00585972 /* Exercicio7.m4a in Resources */,
+				6A1686FC1BD4447B00585972 /* Exercicio6.m4a in Resources */,
+				6A1686FD1BD4447B00585972 /* Exercicio5.m4a in Resources */,
 				6A1686DB1BC716E400585972 /* video5.mp4 in Resources */,
 				6A1686DC1BC716E400585972 /* video4.mp4 in Resources */,
 				6A1686DD1BC716E400585972 /* video3.mp4 in Resources */,

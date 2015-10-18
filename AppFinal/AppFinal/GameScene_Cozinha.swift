@@ -354,8 +354,8 @@ class GameScene_Cozinha: SKScene {
         seta_play5.position = CGPoint(x: 740, y: 270)
         
         movie?.view.hidden = true
-        video = exercicio.getVideo(2, video: "video4")
-        audioS = exercicio.getAudio(2, audio: "audio4")
+        video = exercicio.getVideo(2, video: "video5")
+        audioS = exercicio.getAudio(2, audio: "audio5")
         
         playVideo(video, tipo: "m4v")
         playAudio(audioS, tipo: "m4a")
@@ -449,7 +449,7 @@ class GameScene_Cozinha: SKScene {
         
         //mudar para audio5
         video = exercicio.getVideo(2, video: "video7")
-        audioS = exercicio.getAudio(2, audio: "audio4")
+        audioS = exercicio.getAudio(2, audio: "audio7")
         
         playVideo(video, tipo: "m4v")
         playAudio(audioS, tipo: "m4a")
@@ -553,7 +553,7 @@ class GameScene_Cozinha: SKScene {
         
         //mudar para audio6
         video = exercicio.getVideo(2, video: "video6")
-        audioS = exercicio.getAudio(2, audio: "audio4")
+        audioS = exercicio.getAudio(2, audio: "audio6")
         
         playVideo(video, tipo: "m4v")
         playAudio(audioS, tipo: "m4a")
