@@ -30,6 +30,12 @@ class Personagem_Menu: SKSpriteNode {
         
         let toque = self.nodeAtPoint(touchLocatio)
         
+        if toque.name == "personagem1_1" || toque.name == "personagem2_1" || toque.name == "personagem3_1" || toque.name == "personagem4_1"{
+            
+        }else if toque.name == "personagem1_2" || toque.name == "personagem2_2" || toque.name == "personagem3_2" || toque.name == "personagem4_2" {
+            
+        }
+        
         if toque.position.x == 225 && toque.position.y == 0 {
             toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
             

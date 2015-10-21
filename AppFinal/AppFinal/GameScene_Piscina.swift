@@ -532,52 +532,52 @@ class GameScene_Piscina: SKScene {
     //função que posiciona os numeros
     func posicionaNumeros(){
         
-        num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 1)
+        num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 1, exercicio: 3)
         num1.zPosition = 1
         num1.name = "exercicio3_1"
         num1.position = CGPoint(x: 600, y: 700)
         
-        num2 = Numero(texture: SKTexture(imageNamed: "num2"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 2)
+        num2 = Numero(texture: SKTexture(imageNamed: "num2"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 2, exercicio: 3)
         num2.zPosition = 1
         num2.name = "exercicio3_2_certo"
         num2.position = CGPoint(x: 200, y: 500)
         
-        num3 = Numero(texture: SKTexture(imageNamed: "num3"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 3)
+        num3 = Numero(texture: SKTexture(imageNamed: "num3"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 3, exercicio: 3)
         num3.zPosition = 1
         num3.name = "exercicio3_3_certo"
         num3.position = CGPoint(x: 150, y: 350)
         
-        num4 = Numero(texture: SKTexture(imageNamed: "num4"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 4)
+        num4 = Numero(texture: SKTexture(imageNamed: "num4"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 4, exercicio: 3)
         num4.zPosition = 1
         num4.name = "exercicio3_4_certo"
         num4.position = CGPoint(x: 100, y: 200)
         
-        num5 = Numero(texture: SKTexture(imageNamed: "num5"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 5)
+        num5 = Numero(texture: SKTexture(imageNamed: "num5"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 5, exercicio: 3)
         num5.zPosition = 1
         num5.name = "exercicio3_5_certo"
         num5.position = CGPoint(x: 800, y: 550)
         
-        num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 6)
+        num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 6, exercicio: 3)
         num6.zPosition = 1
         num6.name = "exercicio3_6"
         num6.position = CGPoint(x: 200, y: 100)
         
-        num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 7)
+        num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 7, exercicio: 3)
         num7.zPosition = 1
         num7.name = "exercicio3_7_certo"
         num7.position = CGPoint(x: 300, y: 700)
         
-        num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 8)
+        num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 8, exercicio: 3)
         num8.zPosition = 1
         num8.name = "exercicio3_8"
         num8.position = CGPoint(x: 850, y: 400)
         
-        num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 9)
+        num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 9, exercicio: 3)
         num9.zPosition = 1
         num9.name = "exercicio3_9"
         num9.position = CGPoint(x: 100, y: 650)
         
-        num10 = Numero(texture: SKTexture(imageNamed: "num10"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 10)
+        num10 = Numero(texture: SKTexture(imageNamed: "num10"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 10, exercicio: 3)
         num10.zPosition = 1
         num10.name = "exercicio3_10"
         num10.position = CGPoint(x: 900, y: 700)
@@ -637,65 +637,65 @@ class GameScene_Piscina: SKScene {
         background_retangulo.position = CGPoint(x: 800, y: 500)
         
         //posiciona numeros nas placas
-        num3_placa = Numero(texture: SKTexture(imageNamed: "num3"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 3)
+        num3_placa = Numero(texture: SKTexture(imageNamed: "num3"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 3, exercicio: 3)
         num3_placa.zPosition = 1
         num3_placa.position = CGPoint(x: 300, y: 600)
         
-        num4_placa = Numero(texture: SKTexture(imageNamed: "num4"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 4)
+        num4_placa = Numero(texture: SKTexture(imageNamed: "num4"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 4, exercicio: 3)
         num4_placa.zPosition = 1
         num4_placa.position = CGPoint(x: 100, y: 600)
         
-        num5_placa = Numero(texture: SKTexture(imageNamed: "num5"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 5)
+        num5_placa = Numero(texture: SKTexture(imageNamed: "num5"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 5, exercicio: 3)
         num5_placa.zPosition = 1
         num5_placa.position = CGPoint(x: 500, y: 600)
         
         //posiciona numeros
-        num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 1)
+        num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 1, exercicio: 3)
         num1.zPosition = 1
         num1.name = "exercicio3.1_1"
         num1.position = CGPoint(x: 100, y: 300)
         
-        num2 = Numero(texture: SKTexture(imageNamed: "num2"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 2)
+        num2 = Numero(texture: SKTexture(imageNamed: "num2"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 2, exercicio: 3)
         num2.zPosition = 1
         num2.name = "exercicio3.1_2"
         num2.position = CGPoint(x: 200, y: 200)
         
-        num3 = Numero(texture: SKTexture(imageNamed: "num3"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 3)
+        num3 = Numero(texture: SKTexture(imageNamed: "num3"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 3, exercicio: 3)
         num3.zPosition = 1
         num3.name = "exercicio3.1_3"
         num3.position = CGPoint(x: 300, y: 100)
         
-        num4 = Numero(texture: SKTexture(imageNamed: "num4"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 4)
+        num4 = Numero(texture: SKTexture(imageNamed: "num4"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 4, exercicio: 3)
         num4.zPosition = 1
         num4.name = "exercicio3.1_4"
         num4.position = CGPoint(x: 400, y: 250)
         
-        num5 = Numero(texture: SKTexture(imageNamed: "num5"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 5)
+        num5 = Numero(texture: SKTexture(imageNamed: "num5"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 5, exercicio: 3)
         num5.zPosition = 1
         num5.name = "exercicio3.1_5"
         num5.position = CGPoint(x: 550, y: 280)
         
-        num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 6)
+        num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 6, exercicio: 3)
         num6.zPosition = 1
         num6.name = "exercicio3.1_6"
         num6.position = CGPoint(x: 600, y: 100)
         
-        num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 7)
+        num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 7, exercicio: 3)
         num7.zPosition = 1
         num7.name = "exercicio3.1_7"
         num7.position = CGPoint(x: 700, y: 200)
         
-        num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 8)
+        num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 8, exercicio: 3)
         num8.zPosition = 1
         num8.name = "exercicio3.1_8"
         num8.position = CGPoint(x: 800, y: 300)
         
-        num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 9)
+        num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 9, exercicio: 3)
         num9.zPosition = 1
         num9.name = "exercicio3.1_9"
         num9.position = CGPoint(x: 900, y: 150)
         
-        num0 = Numero(texture: SKTexture(imageNamed: "num0"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 0)
+        num0 = Numero(texture: SKTexture(imageNamed: "num0"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 0, exercicio: 3)
         num0.zPosition = 1
         num0.name = "exercicio3.1_0"
         num0.position = CGPoint(x: 950, y: 250)
@@ -733,7 +733,7 @@ class GameScene_Piscina: SKScene {
         
         if Numero.verifica == 1 {
             
-            num1_placa_soma = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 1)
+            num1_placa_soma = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 1, exercicio: 3)
             num1_placa_soma.zPosition = 1
             num1_placa_soma.position = CGPoint(x: 750, y: 500)
             
@@ -741,7 +741,7 @@ class GameScene_Piscina: SKScene {
             
         }else if Numero.verifica == 2{
             
-            num2_placa_soma = Numero(texture: SKTexture(imageNamed: "num2"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 2)
+            num2_placa_soma = Numero(texture: SKTexture(imageNamed: "num2"), color: UIColor.clearColor(), size: CGSize(width: 70, height: 70), numero: 2, exercicio: 3)
             num2_placa_soma.zPosition = 1
             num2_placa_soma.position = CGPoint(x: 850, y: 500)
             

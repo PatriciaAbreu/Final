@@ -60,6 +60,17 @@ class GameScene_Esconde: SKScene {
     var barra9: SKSpriteNode!
     var barra10: SKSpriteNode!
     
+    var posi_num1: SKSpriteNode!
+    var posi_num2: SKSpriteNode!
+    var posi_num3: SKSpriteNode!
+    var posi_num4: SKSpriteNode!
+    var posi_num5: SKSpriteNode!
+    var posi_num6: SKSpriteNode!
+    var posi_num7: SKSpriteNode!
+    var posi_num8: SKSpriteNode!
+    var posi_num9: SKSpriteNode!
+    var posi_num10: SKSpriteNode!
+    
     var exercicio: ExercicioJSON = ExercicioJSON()
     var video: String = ""
     var audioS: String = ""
@@ -83,6 +94,8 @@ class GameScene_Esconde: SKScene {
         let touchLocation = touch!.locationInNode(self)
 
         let toque = self.nodeAtPoint(touchLocation)
+        
+        print(toque.name)
         
         if toque.name == "seta_play_1" {
             seta_play.name = "seta_play_2"
@@ -300,52 +313,52 @@ class GameScene_Esconde: SKScene {
     //função par montar o exercicio
     func montarExercicio(){
 
-        num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 1)
+        num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 1, exercicio: 1)
         num1.zPosition = 1
         num1.name = "exercicio1_1"
         num1.position = CGPoint(x: 800, y: 600)
         
-        num2 = Numero(texture: SKTexture(imageNamed: "num2"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 2)
+        num2 = Numero(texture: SKTexture(imageNamed: "num2"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 2, exercicio: 1)
         num2.zPosition = 1
         num2.name = "exercicio1_2"
         num2.position = CGPoint(x: 400, y: 550)
         
-        num3 = Numero(texture: SKTexture(imageNamed: "num3"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 3)
+        num3 = Numero(texture: SKTexture(imageNamed: "num3"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 3, exercicio: 1)
         num3.zPosition = 1
         num3.name = "exercicio1_3"
         num3.position = CGPoint(x: 150, y: 450)
         
-        num4 = Numero(texture: SKTexture(imageNamed: "num4"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 4)
+        num4 = Numero(texture: SKTexture(imageNamed: "num4"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 4, exercicio: 1)
         num4.zPosition = 1
         num4.name = "exercicio1_4"
         num4.position = CGPoint(x: 920, y: 580)
         
-        num5 = Numero(texture: SKTexture(imageNamed: "num5"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 5)
+        num5 = Numero(texture: SKTexture(imageNamed: "num5"), color:  UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 5, exercicio: 1)
         num5.zPosition = 1
         num5.name = "exercicio1_5"
         num5.position = CGPoint(x: 750, y: 530)
         
-        num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 6)
+        num6 = Numero(texture: SKTexture(imageNamed: "num6"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 6, exercicio: 1)
         num6.zPosition = 1
         num6.name = "exercicio1_6"
         num6.position = CGPoint(x: 900, y: 480)
         
-        num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 7)
+        num7 = Numero(texture: SKTexture(imageNamed: "num7"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 7, exercicio: 1)
         num7.zPosition = 1
         num7.name = "exercicio1_7"
         num7.position = CGPoint(x: 300, y: 500)
         
-        num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 8)
+        num8 = Numero(texture: SKTexture(imageNamed: "num8"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 8, exercicio: 1)
         num8.zPosition = 1
         num8.name = "exercicio1_8"
         num8.position = CGPoint(x: 970, y: 430)
         
-        num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 9)
+        num9 = Numero(texture: SKTexture(imageNamed: "num9"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 9, exercicio: 1)
         num9.zPosition = 1
         num9.name = "exercicio1_9"
         num9.position = CGPoint(x: 600, y: 530)
         
-        num10 = Numero(texture: SKTexture(imageNamed: "num10"), color: UIColor.whiteColor(), size: CGSize(width: 80, height: 70), numero: 10)
+        num10 = Numero(texture: SKTexture(imageNamed: "num10"), color: UIColor.whiteColor(), size: CGSize(width: 80, height: 70), numero: 10, exercicio: 1)
         num10.zPosition = 1
         num10.name = "exercicio1_10"
         num10.position = CGPoint(x: 220, y: 580)
@@ -361,65 +374,148 @@ class GameScene_Esconde: SKScene {
         addChild(num9)
         addChild(num10)
 
+        posi_num1 = SKSpriteNode()
+        posi_num1.color = UIColor.clearColor()
+        posi_num1.size = CGSize(width: 100, height: 100)
+        posi_num1.position = CGPoint(x: 70, y: 670)
+        posi_num1.zPosition = 1
+        posi_num1.name = "posi_num1"
+        
+        posi_num2 = SKSpriteNode()
+        posi_num2.color = UIColor.clearColor()
+        posi_num2.size = CGSize(width: 100, height: 100)
+        posi_num2.position = CGPoint(x: 170, y: 670)
+        posi_num2.zPosition = 1
+        posi_num2.name = "posi_num2"
+        
+        posi_num3 = SKSpriteNode()
+        posi_num3.color = UIColor.clearColor()
+        posi_num3.size = CGSize(width: 100, height: 100)
+        posi_num3.position = CGPoint(x: 270, y: 670)
+        posi_num3.zPosition = 1
+        posi_num3.name = "posi_num3"
+        
+        posi_num4 = SKSpriteNode()
+        posi_num4.color = UIColor.clearColor()
+        posi_num4.size = CGSize(width: 100, height: 100)
+        posi_num4.position = CGPoint(x: 370, y: 670)
+        posi_num4.zPosition = 1
+        posi_num4.name = "posi_num4"
+        
+        posi_num5 = SKSpriteNode()
+        posi_num5.color = UIColor.clearColor()
+        posi_num5.size = CGSize(width: 100, height: 100)
+        posi_num5.position = CGPoint(x: 470, y: 670)
+        posi_num5.zPosition = 1
+        posi_num5.name = "posi_num5"
+        
+        posi_num6 = SKSpriteNode()
+        posi_num6.color = UIColor.clearColor()
+        posi_num6.size = CGSize(width: 100, height: 100)
+        posi_num6.position = CGPoint(x: 570, y: 670)
+        posi_num6.zPosition = 1
+        posi_num6.name = "posi_num6"
+        
+        posi_num7 = SKSpriteNode()
+        posi_num7.color = UIColor.clearColor()
+        posi_num7.size = CGSize(width: 100, height: 100)
+        posi_num7.position = CGPoint(x: 670, y: 670)
+        posi_num7.zPosition = 1
+        posi_num7.name = "posi_num7"
+
+        posi_num8 = SKSpriteNode()
+        posi_num8.color = UIColor.clearColor()
+        posi_num8.size = CGSize(width: 100, height: 100)
+        posi_num8.position = CGPoint(x: 770, y: 670)
+        posi_num8.zPosition = 1
+        posi_num8.name = "posi_num8"
+        
+        posi_num9 = SKSpriteNode()
+        posi_num9.color = UIColor.clearColor()
+        posi_num9.size = CGSize(width: 100, height: 100)
+        posi_num9.position = CGPoint(x: 870, y: 670)
+        posi_num9.zPosition = 1
+        posi_num9.name = "posi_num9"
+
+
+        posi_num10 = SKSpriteNode()
+        posi_num10.color = UIColor.clearColor()
+        posi_num10.size = CGSize(width: 100, height: 100)
+        posi_num10.position = CGPoint(x: 970, y: 670)
+        posi_num10.zPosition = 1
+        posi_num10.name = "posi_num10"
+        
+        addChild(posi_num1)
+        addChild(posi_num2)
+        addChild(posi_num3)
+        addChild(posi_num4)
+        addChild(posi_num5)
+        addChild(posi_num6)
+        addChild(posi_num7)
+        addChild(posi_num8)
+        addChild(posi_num9)
+        addChild(posi_num10)
+
+        
         barra1 = SKSpriteNode(imageNamed: "barra")
         barra1.zPosition = 1
         barra1.name = "barra1"
         barra1.size = CGSize(width: 70, height: 10)
-        barra1.position = CGPoint(x: 180, y: 650)
+        barra1.position = CGPoint(x: 70, y: 640)
         
         barra2 = SKSpriteNode(imageNamed: "barra")
         barra2.zPosition = 1
         barra2.name = "barra2"
         barra2.size = CGSize(width: 70, height: 10)
-        barra2.position = CGPoint(x: 260, y: 650)
+        barra2.position = CGPoint(x: 170, y: 640)
         
         barra3 = SKSpriteNode(imageNamed: "barra")
         barra3.zPosition = 1
         barra3.name = "barra3"
         barra3.size = CGSize(width: 70, height: 10)
-        barra3.position = CGPoint(x: 340, y: 650)
+        barra3.position = CGPoint(x: 270, y: 640)
         
         barra4 = SKSpriteNode(imageNamed: "barra")
         barra4.zPosition = 1
         barra4.name = "barra4"
         barra4.size = CGSize(width: 70, height: 10)
-        barra4.position = CGPoint(x: 420, y: 650)
+        barra4.position = CGPoint(x: 370, y: 640)
         
         barra5 = SKSpriteNode(imageNamed: "barra")
         barra5.zPosition = 1
         barra5.name = "barra5"
         barra5.size = CGSize(width: 70, height: 10)
-        barra5.position = CGPoint(x: 500, y: 650)
+        barra5.position = CGPoint(x: 470, y: 640)
         
         barra6 = SKSpriteNode(imageNamed: "barra")
         barra6.zPosition = 1
         barra6.name = "barra6"
         barra6.size = CGSize(width: 70, height: 10)
-        barra6.position = CGPoint(x: 580, y: 650)
+        barra6.position = CGPoint(x: 570, y: 640)
         
         barra7 = SKSpriteNode(imageNamed: "barra")
         barra7.zPosition = 1
         barra7.name = "barra7"
         barra7.size = CGSize(width: 70, height: 10)
-        barra7.position = CGPoint(x: 660, y: 650)
+        barra7.position = CGPoint(x: 670, y: 640)
         
         barra8 = SKSpriteNode(imageNamed: "barra")
         barra8.zPosition = 1
         barra8.name = "barra8"
         barra8.size = CGSize(width: 70, height: 10)
-        barra8.position = CGPoint(x: 740, y: 650)
+        barra8.position = CGPoint(x: 770, y: 640)
         
         barra9 = SKSpriteNode(imageNamed: "barra")
         barra9.zPosition = 1
         barra9.name = "barra9"
         barra9.size = CGSize(width: 70, height: 10)
-        barra9.position = CGPoint(x: 820, y: 650)
+        barra9.position = CGPoint(x: 870, y: 640)
         
         barra10 = SKSpriteNode(imageNamed: "barra")
         barra10.zPosition = 1
         barra10.name = "barra10"
         barra10.size = CGSize(width: 70, height: 10)
-        barra10.position = CGPoint(x: 900, y: 650)
+        barra10.position = CGPoint(x: 970, y: 640)
         
         addChild(barra1)
         addChild(barra2)
@@ -457,5 +553,51 @@ class GameScene_Esconde: SKScene {
         audioS = exercicio.getAudio(1, audio: "audio3")
         playVideo(video, tipo: "mp4")
         playAudio(audioS, tipo: "m4a")
+    }
+    
+    
+    func posicionarNumero(numero:Numero){
+
+        if numero.intersectsNode(posi_num1) {
+            
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num1.position.x, y: posi_num1.position.y), duration: 0.2))
+
+        }else if numero.intersectsNode(posi_num2){
+            
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num2.position.x, y: posi_num2.position.y), duration: 0.2))
+            
+        }else if numero.intersectsNode(posi_num3){
+            
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num3.position.x, y: posi_num3.position.y), duration: 0.2))
+            
+        }else if numero.intersectsNode(posi_num4){
+            
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num4.position.x, y: posi_num4.position.y), duration: 0.2))
+            
+        }else if numero.intersectsNode(posi_num5){
+            
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num5.position.x, y: posi_num5.position.y), duration: 0.2))
+            
+        }else if numero.intersectsNode(posi_num6){
+            
+             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num6.position.x, y: posi_num6.position.y), duration: 0.2))
+            
+        }else if numero.intersectsNode(posi_num7){
+            
+             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num7.position.x, y: posi_num7.position.y), duration: 0.2))
+            
+        }else if numero.intersectsNode(posi_num8){
+            
+             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num8.position.x, y: posi_num8.position.y), duration: 0.2))
+            
+        }else if numero.intersectsNode(posi_num9){
+            
+             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num9.position.x, y: posi_num9.position.y), duration: 0.2))
+            
+        }else if numero.intersectsNode(posi_num10){
+            
+             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num10.position.x, y: posi_num10.position.y), duration: 0.2))
+            
+        }
     }
 }
