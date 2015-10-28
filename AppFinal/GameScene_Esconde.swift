@@ -14,9 +14,6 @@ class GameScene_Esconde: SKScene {
     
     var gameController: GameViewController!
     
-//    var menu_ano1: SKSpriteNode!
-//    var menu_ano2: SKSpriteNode!
-    
     var background_numeros: SKSpriteNode!
     var brinquedo1: SKSpriteNode!
     var brinquedo2: SKSpriteNode!
@@ -71,12 +68,14 @@ class GameScene_Esconde: SKScene {
     var posi_num9: SKSpriteNode!
     var posi_num10: SKSpriteNode!
     
+    var controle: Int = 0
+    
     var exercicio: ExercicioJSON = ExercicioJSON()
     var video: String = ""
     var audioS: String = ""
     
     override func didMoveToView(view: SKView) {
-
+        
         montarScene()
         
         video = exercicio.getVideo(1, video: "video1")
@@ -92,7 +91,7 @@ class GameScene_Esconde: SKScene {
         
         let touch = touches.first
         let touchLocation = touch!.locationInNode(self)
-
+        
         let toque = self.nodeAtPoint(touchLocation)
         
         print(toque.name)
@@ -128,7 +127,7 @@ class GameScene_Esconde: SKScene {
             
             dialogo2.removeFromParent()
             seta_play_2.removeFromParent()
-
+            
             personagem_Caio.runAction(SKAction.moveToX(1100, duration: 0.5))
             movie?.view.hidden = true
             
@@ -150,13 +149,13 @@ class GameScene_Esconde: SKScene {
             self.scene!.view?.presentScene(novoJogo)
             
         }else if toque.name == "seta_back" {
-
+            
             movie?.view.hidden = true
             var voltarMenu = SKScene()
             voltarMenu = GameScene(size: size)
             self.scene!.view?.presentScene(voltarMenu)
             
-        }else if toque.name == "julia" && Numero.verifica != 10 {
+        }else if toque.name == "julia" && controle != 10 {
             
             personagem_Caio.runAction(SKAction.moveToX(950, duration: 0.5))
             
@@ -181,7 +180,7 @@ class GameScene_Esconde: SKScene {
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
             
-        }else if toque.name == "julia" && Numero.verifica == 10{
+        }else if toque.name == "julia" && controle == 10{
             
             print(num3)
             brinquedo1.removeFromParent()
@@ -222,7 +221,7 @@ class GameScene_Esconde: SKScene {
         background_numeros.name = "background_numeros"
         background_numeros.size = CGSize(width: 1050, height: 800)
         background_numeros.position = CGPoint(x: 510, y: 400)
-    
+        
         // posiciona e adiciona brinquedos
         brinquedo1 = SKSpriteNode(imageNamed: "bola_toy")
         brinquedo1.zPosition = 1
@@ -277,12 +276,12 @@ class GameScene_Esconde: SKScene {
         addChild(dialogo)
         addChild(seta_play)
         addChild(seta_back)
-
+        
     }
     
     //função para tocar video
     func playVideo( video: String, tipo: String){
-    
+        
         let path = NSBundle.mainBundle().pathForResource(video, ofType: tipo)
         let url = NSURL.fileURLWithPath(path!)
         let movie = MPMoviePlayerController(contentURL: url)
@@ -299,7 +298,7 @@ class GameScene_Esconde: SKScene {
             debugPrint("Video não encontrado", terminator: "")
         }
     }
-
+    
     //função para tocar audio
     func playAudio(audio: String, tipo: String){
         
@@ -312,7 +311,7 @@ class GameScene_Esconde: SKScene {
     
     //função par montar o exercicio
     func montarExercicio(){
-
+        
         num1 = Numero(texture: SKTexture(imageNamed: "num1"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 1, exercicio: 1)
         num1.zPosition = 1
         num1.name = "exercicio1_1"
@@ -373,71 +372,71 @@ class GameScene_Esconde: SKScene {
         addChild(num8)
         addChild(num9)
         addChild(num10)
-
+        
         posi_num1 = SKSpriteNode()
         posi_num1.color = UIColor.clearColor()
         posi_num1.size = CGSize(width: 100, height: 100)
         posi_num1.position = CGPoint(x: 70, y: 670)
-        posi_num1.zPosition = 1
+        posi_num1.zPosition = 0
         posi_num1.name = "posi_num1"
         
         posi_num2 = SKSpriteNode()
         posi_num2.color = UIColor.clearColor()
         posi_num2.size = CGSize(width: 100, height: 100)
         posi_num2.position = CGPoint(x: 170, y: 670)
-        posi_num2.zPosition = 1
+        posi_num2.zPosition = 0
         posi_num2.name = "posi_num2"
         
         posi_num3 = SKSpriteNode()
         posi_num3.color = UIColor.clearColor()
         posi_num3.size = CGSize(width: 100, height: 100)
         posi_num3.position = CGPoint(x: 270, y: 670)
-        posi_num3.zPosition = 1
+        posi_num3.zPosition = 0
         posi_num3.name = "posi_num3"
         
         posi_num4 = SKSpriteNode()
         posi_num4.color = UIColor.clearColor()
         posi_num4.size = CGSize(width: 100, height: 100)
         posi_num4.position = CGPoint(x: 370, y: 670)
-        posi_num4.zPosition = 1
+        posi_num4.zPosition = 0
         posi_num4.name = "posi_num4"
         
         posi_num5 = SKSpriteNode()
         posi_num5.color = UIColor.clearColor()
         posi_num5.size = CGSize(width: 100, height: 100)
         posi_num5.position = CGPoint(x: 470, y: 670)
-        posi_num5.zPosition = 1
+        posi_num5.zPosition = 0
         posi_num5.name = "posi_num5"
         
         posi_num6 = SKSpriteNode()
         posi_num6.color = UIColor.clearColor()
         posi_num6.size = CGSize(width: 100, height: 100)
         posi_num6.position = CGPoint(x: 570, y: 670)
-        posi_num6.zPosition = 1
+        posi_num6.zPosition = 0
         posi_num6.name = "posi_num6"
         
         posi_num7 = SKSpriteNode()
         posi_num7.color = UIColor.clearColor()
         posi_num7.size = CGSize(width: 100, height: 100)
         posi_num7.position = CGPoint(x: 670, y: 670)
-        posi_num7.zPosition = 1
+        posi_num7.zPosition = 0
         posi_num7.name = "posi_num7"
-
+        
         posi_num8 = SKSpriteNode()
         posi_num8.color = UIColor.clearColor()
         posi_num8.size = CGSize(width: 100, height: 100)
         posi_num8.position = CGPoint(x: 770, y: 670)
-        posi_num8.zPosition = 1
+        posi_num8.zPosition = 0
         posi_num8.name = "posi_num8"
         
         posi_num9 = SKSpriteNode()
         posi_num9.color = UIColor.clearColor()
         posi_num9.size = CGSize(width: 100, height: 100)
         posi_num9.position = CGPoint(x: 870, y: 670)
-        posi_num9.zPosition = 1
+        posi_num9.zPosition = 0
         posi_num9.name = "posi_num9"
-
-
+        
+        
         posi_num10 = SKSpriteNode()
         posi_num10.color = UIColor.clearColor()
         posi_num10.size = CGSize(width: 100, height: 100)
@@ -455,7 +454,7 @@ class GameScene_Esconde: SKScene {
         addChild(posi_num8)
         addChild(posi_num9)
         addChild(posi_num10)
-
+        
         
         barra1 = SKSpriteNode(imageNamed: "barra")
         barra1.zPosition = 1
@@ -557,47 +556,225 @@ class GameScene_Esconde: SKScene {
     
     
     func posicionarNumero(numero:Numero){
-
+        
         if numero.intersectsNode(posi_num1) {
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num1.position.x, y: posi_num1.position.y), duration: 0.2))
-
+            print("entrou1")
+            
         }else if numero.intersectsNode(posi_num2){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num2.position.x, y: posi_num2.position.y), duration: 0.2))
-            
+            print("entrou2")
         }else if numero.intersectsNode(posi_num3){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num3.position.x, y: posi_num3.position.y), duration: 0.2))
+            print("entrou3")
             
         }else if numero.intersectsNode(posi_num4){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num4.position.x, y: posi_num4.position.y), duration: 0.2))
+            print("entrou4")
             
         }else if numero.intersectsNode(posi_num5){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num5.position.x, y: posi_num5.position.y), duration: 0.2))
+            print("entrou5")
             
         }else if numero.intersectsNode(posi_num6){
             
-             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num6.position.x, y: posi_num6.position.y), duration: 0.2))
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num6.position.x, y: posi_num6.position.y), duration: 0.2))
+            print("entrou6")
             
         }else if numero.intersectsNode(posi_num7){
             
-             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num7.position.x, y: posi_num7.position.y), duration: 0.2))
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num7.position.x, y: posi_num7.position.y), duration: 0.2))
+            print("entrou7")
             
         }else if numero.intersectsNode(posi_num8){
             
-             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num8.position.x, y: posi_num8.position.y), duration: 0.2))
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num8.position.x, y: posi_num8.position.y), duration: 0.2))
+            print("entrou8")
             
         }else if numero.intersectsNode(posi_num9){
             
-             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num9.position.x, y: posi_num9.position.y), duration: 0.2))
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num9.position.x, y: posi_num9.position.y), duration: 0.2))
+            print("entrou9")
             
         }else if numero.intersectsNode(posi_num10){
             
-             numero.runAction(SKAction.moveTo(CGPoint(x: posi_num10.position.x, y: posi_num10.position.y), duration: 0.2))
+            numero.runAction(SKAction.moveTo(CGPoint(x: posi_num10.position.x, y: posi_num10.position.y), duration: 0.2))
+            print("entrou10")
             
         }
+        
+        
+    }
+    
+    func verificaPosicao(numero: Numero){
+        
+        if numero.intersectsNode(posi_num1){
+            
+            if numero.name != "exercicio1_1" {
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 0 {
+                controle = 1
+                
+            }else{
+                
+                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+            
+            
+        }else if numero.intersectsNode(posi_num2) {
+            
+            if numero.name != "exercicio1_2"{
+
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 1 {
+                controle = 2
+                
+            }else{
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+
+            
+            
+        }else if numero.intersectsNode(posi_num3){
+            
+            if numero.name != "exercicio1_3" {
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 2 {
+                controle = 3
+                
+            }else{
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+
+            
+            
+        }else if numero.intersectsNode(posi_num4) {
+            
+            if numero.name != "exercicio1_4" {
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 3 {
+                controle = 4
+                
+            }else{
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+
+            
+            
+        }else if numero.intersectsNode(posi_num5) {
+            
+            if numero.name != "exercicio1_5" {
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 4 {
+                controle = 5
+                
+            }else{
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+
+            
+            
+        }else if numero.intersectsNode(posi_num6) {
+            
+            if numero.name != "exercicio1_6" {
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 5 {
+                controle = 6
+                
+            }else{
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+
+            
+            
+        }else if numero.intersectsNode(posi_num7) {
+            
+            if numero.name != "exercicio1_7" {
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 6 {
+                controle = 7
+                
+            }else{
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+
+            
+            
+        }else if numero.intersectsNode(posi_num8) {
+            
+            if numero.name != "exercicio1_8" {
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 7 {
+                controle = 8
+                
+            }else{
+                
+                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+
+            
+            
+        }else if numero.intersectsNode(posi_num9) {
+            
+            if numero.name != "exercicio1_9" {
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 8 {
+                controle = 9
+                
+            }else{
+                
+                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+
+            
+            
+        }else if numero.intersectsNode(posi_num10) {
+            
+            if numero.name != "exercicio1_10" {
+                
+                numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+            }else if controle == 9 {
+                controle = 10
+                procurarJulia()
+                
+            }else{
+                
+                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                
+            }
+
+            
+            
+        }
+
+        
     }
 }
