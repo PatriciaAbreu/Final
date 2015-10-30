@@ -10,6 +10,10 @@ import SpriteKit
 import MediaPlayer
 import AVFoundation
 
+func random(lo: Int, hi : Int) -> Int {
+    return lo + Int(arc4random_uniform(UInt32(hi - lo + 1)))
+}
+
 class GameScene: SKScene {
     
     var gameController: GameViewController!

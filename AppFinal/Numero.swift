@@ -40,11 +40,7 @@ class Numero: SKSpriteNode {
         print("began")
         print(Numero.toque)
         let toque = nodeAtPoint(location)
-        
-        
-        
-        
-        
+           
         //faz a analise da soma dos numeros do jogo da piscina de bolinhas
         if toque.name == "exercicio3.1_1" {
             
