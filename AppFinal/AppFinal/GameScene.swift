@@ -89,7 +89,7 @@ class GameScene: SKScene {
             
         }else if toque.name == "seta_rosa" && personagem4_menu.name == "personagem4_novo" {
             
-            novaScene = GameScene_Esconde(size: size)
+            novaScene = GameScene_Grandezas(size: size)
             movie?.view.hidden = true
             
         }else if toque.name == "seta_rosa"  {

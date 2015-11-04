@@ -10,10 +10,14 @@ import SpriteKit
 
 class GameScene_Grandezas: SKScene {
     
-    var menu_grandeza_medidas: SKSpriteNode!
+    var background_patinhos: SKSpriteNode!
+    var patinho: SKSpriteNode!
+    var patinhos: [SKSpriteNode] = []
     
     override func didMoveToView(view: SKView) {
-        montarMenu()
+        montaScene()
+        montaExercicio()
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -23,19 +27,41 @@ class GameScene_Grandezas: SKScene {
         /* Called before each frame is rendered */
     }
     
-    func montarMenu() {
-        //posicionando os menus na tela
-        menu_grandeza_medidas = SKSpriteNode(imageNamed: "menuLaranja_Grandezas.png")
-        menu_grandeza_medidas.zPosition = 1
-        menu_grandeza_medidas.position = CGPoint(x: 750, y: 200)
-        menu_grandeza_medidas.name = "menu_grandeza_medidas"
+    func montaScene(){
         
-        self.backgroundColor = UIColor.whiteColor()
+        //posiciona e adiciona o plano de fundo
+        background_patinhos = SKSpriteNode(imageNamed: "backgroundGrass")
+        background_patinhos.zPosition = 1
+        background_patinhos.name = "background_patinhos"
+        background_patinhos.size = CGSize(width: 1050, height: 800)
+        background_patinhos.position = CGPoint(x: 510, y: 400)
         
-        addChild(menu_grandeza_medidas)
+        addChild(background_patinhos)
         
-        let animacao = SKAction.rotateToAngle(90, duration: 0.3)
-        menu_grandeza_medidas.runAction(animacao)
     }
     
+    func montaExercicio(){
+        let quantidade = random(1, hi: 7)
+        
+        for i in 1...quantidade{
+            
+            patinho = SKSpriteNode(imageNamed: "julia")
+            patinho.zPosition = 1
+            patinho.name = "patinho\(i)"
+            patinho.size = CGSize(width: 150, height: 200)
+            patinho.position = CGPoint(x: 1100, y: 200)
+            
+            patinhos.append(patinho)
+            
+            addChild(patinho)
+            
+            let duracao:Int = 2 * Int(i)
+            let espera: SKAction = SKAction.waitForDuration(NSTimeInterval(duracao))
+            let anda: SKAction = SKAction.moveToX(0, duration: 1)
+            let sequencia: SKAction = SKAction.sequence([espera,anda])
+            let repete: SKAction = SKAction.repeatActionForever(sequencia)
+            
+            patinho.runAction(repete)
+        }
+    }
 }
