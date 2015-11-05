@@ -8,11 +8,12 @@
 
 import SpriteKit
 
-class GameScene_Grandezas: SKScene {
+class GameScene_Grandezas: SKScene, UITextFieldDelegate {
     
     var background_patinhos: SKSpriteNode!
     var patinho: SKSpriteNode!
     var patinhos: [SKSpriteNode] = []
+    var texto: UITextField!
     
     override func didMoveToView(view: SKView) {
         montaScene()
@@ -21,6 +22,16 @@ class GameScene_Grandezas: SKScene {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first
+        let touchLocation = touch!.locationInNode(self)
+        
+        let toque = self.nodeAtPoint(touchLocation)
+        
+        if toque.intersectsNode(self){
+            self.view?.endEditing(true)
+        }
+            
+        
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -62,6 +73,21 @@ class GameScene_Grandezas: SKScene {
             let repete: SKAction = SKAction.repeatActionForever(sequencia)
             
             patinho.runAction(repete)
+            
+            if i == quantidade && patinho.name == "patinho\(quantidade)" {
+                montaResposta(quantidade)
+            }
         }
+    }
+    
+    func montaResposta(resposta: Int){
+        
+        texto = UITextField(frame: CGRect(x: 450, y: 200, width: 200, height: 40))
+        texto.backgroundColor = UIColor.blueColor()
+        texto.resignFirstResponder()
+        
+        self.view?.addSubview(texto)
+        
+        print(texto.text)
     }
 }

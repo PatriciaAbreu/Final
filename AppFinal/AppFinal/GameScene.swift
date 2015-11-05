@@ -123,12 +123,49 @@ class GameScene: SKScene {
     func girarMenu(posicaoTocada:CGPoint) {
         print(posicaoTocada)
         
+        // Posição (x, y) do personagem que fica no topo
+        let posicaoPersonagemSelecionado = CGPoint(x: UIScreen.mainScreen().bounds.width / 2, y: UIScreen.mainScreen().bounds.height - 225)
         
-        let v1 = CGVector(dx: posicaoTocada.x, dy: posicaoTocada.y)
-        let v2 = CGVector(dx: 520, dy: 620)
-        let novoAngulo = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
+        // Posição (x,y) do centro do circulo, neste caso, centro da tela
+        let centro = CGPoint(x: UIScreen.mainScreen().bounds.width / 2, y: UIScreen.mainScreen().bounds.height / 2)
         
-        self.menu_todo.runAction(SKAction.rotateByAngle(novoAngulo, duration: 2.6))
+        // Vetor em relação a posição (x,y) que foi tocada
+        let v1 = CGVector(dx: posicaoTocada.x - centro.x, dy: posicaoTocada.y - centro.y)
+        
+        // Vetor em relação a posição (x,y) que o personagem selecionado deve ir
+        let v2 = CGVector(dx: posicaoPersonagemSelecionado.x - centro.x, dy: posicaoPersonagemSelecionado.y - centro.y)
+        
+        // Calcular o angulo que deve ser rotacionado
+        var novoAngulo = (atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx))
+        
+        // posicao
+        var posicao = CGFloat(ceil(novoAngulo / 1.67))
+        // Ajustar o segundo personagem no sentido anti-horario para que seja sempre identificado como -1
+        if posicao == 3 || posicao == 0 {
+            posicao = -1
+        }
+        
+        // Se não for o personagem que está no topo
+        if CGFloat(novoAngulo / 1.67) < -0.2 || CGFloat(novoAngulo / 1.67) > 0.5 {
+            // Angulo deve ser multiplo de 1.57
+            novoAngulo = posicao * 1.57
+            
+            // Usar a posicao do item para fazer uma animação com duracao legal para todos os personagens
+            let duracao = 1.0 * Double(abs(posicao))
+            // Realizar animação
+            self.menu_todo.runAction(SKAction.rotateByAngle(novoAngulo, duration: duracao))
+        }
+        
+        
+        
+        
+        /*----------------*/
+        
+        //let v1 = CGVector(dx: posicaoTocada.x, dy: posicaoTocada.y)
+        //let v2 = CGVector(dx: 520, dy: 620)
+        //let novoAngulo = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
+        
+       // self.menu_todo.runAction(SKAction.rotateByAngle(novoAngulo, duration: 2.6))
     }
     
     func montarMenu() {
