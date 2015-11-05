@@ -72,9 +72,9 @@ class GameScene: SKScene {
 
         //verifica qual menu foi tocado
         let touch = touches.first
-        let touchLocatio = touch!.locationInNode(self)
+        let touchLocation = touch!.locationInNode(self)
         
-        let toque = self.nodeAtPoint(touchLocatio)
+        let toque = self.nodeAtPoint(touchLocation)
         var novaScene: SKScene?
         
         if toque.name == "seta_rosa" && personagem2_menu.name == "personagem2_novo"{
@@ -98,6 +98,7 @@ class GameScene: SKScene {
             movie?.view.hidden = true
             
         }
+        
         if novaScene != nil {
             self.scene!.view?.presentScene(novaScene)
         }
@@ -117,6 +118,17 @@ class GameScene: SKScene {
         backgroundPrincipal.position = CGPoint(x: 510, y: 400)
         
         addChild(backgroundPrincipal)
+    }
+    
+    func girarMenu(posicaoTocada:CGPoint) {
+        print(posicaoTocada)
+        
+        
+        let v1 = CGVector(dx: posicaoTocada.x, dy: posicaoTocada.y)
+        let v2 = CGVector(dx: 520, dy: 620)
+        let novoAngulo = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
+        
+        self.menu_todo.runAction(SKAction.rotateByAngle(novoAngulo, duration: 2.6))
     }
     
     func montarMenu() {

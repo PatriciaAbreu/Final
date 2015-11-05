@@ -26,9 +26,9 @@ class Personagem_Menu: SKSpriteNode {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         //verifica qual menu foi tocado
         let touch = touches.first
-        let touchLocatio = touch!.locationInNode(self)
+        let touchLocation = touch!.locationInNode(self)
         
-        let toque = self.nodeAtPoint(touchLocatio)
+        let toque = self.nodeAtPoint(touchLocation)
         
         if toque.name == "personagem1_1" || toque.name == "personagem2_1" || toque.name == "personagem3_1" || toque.name == "personagem4_1"{
             
@@ -36,21 +36,21 @@ class Personagem_Menu: SKSpriteNode {
             
         }
         
-        if toque.position.x == 225 && toque.position.y == 0 {
-            toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
-            
-        }else if toque.position.x == 0 && toque.position.y == -225 {
-            for (var i = 1; i < 3; i++) {
-                toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
-            }
-            
-        }else if toque.position.x == -225 && toque.position.y == 0 {
-            for (var i = 1; i < 4; i++) {
-                toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.6))
-            }
-            
-        }
-
+//        if toque.position.x == 225 && toque.position.y == 0 {
+//            toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
+//            
+//        }else if toque.position.x == 0 && toque.position.y == -225 {
+//            for (var i = 1; i < 3; i++) {
+//                toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
+//            }
+//            
+//        }else if toque.position.x == -225 && toque.position.y == 0 {
+//            for (var i = 1; i < 4; i++) {
+//                toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.6))
+//            }
+//            
+//        }
+        
         if toque.name == "personagem1"{
             toque.name = "personagem1_novo"
             
@@ -64,6 +64,8 @@ class Personagem_Menu: SKSpriteNode {
             toque.name = "personagem4_novo"
         }
         
-        
+        let pontoEmRelacaoATela = self.convertPoint(touchLocation, toNode: self.parent!.parent!)
+        let cenaOndeEstaOMenu = (toque.parent?.parent as! GameScene)
+        cenaOndeEstaOMenu.girarMenu(pontoEmRelacaoATela)
     }
 }
