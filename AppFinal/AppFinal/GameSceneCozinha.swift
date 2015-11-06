@@ -10,7 +10,7 @@ import SpriteKit
 import MediaPlayer
 import AVFoundation
 
-class GameScene_Cozinha: SKScene {
+class GameSceneCozinha: SKScene {
     var gameController: GameViewController!
 
     var background_cozinha: SKSpriteNode!

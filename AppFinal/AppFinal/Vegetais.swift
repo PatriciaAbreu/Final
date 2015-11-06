@@ -77,7 +77,7 @@ class Vegetais: SKSpriteNode {
                 Vegetais.verifica++
                 print(Vegetais.verifica)
                 if Vegetais.verifica == 5 {
-                    (toque.parent as! GameScene_Cozinha).vamosContar()
+                    (toque.parent as! GameSceneCozinha).vamosContar()
                 }
             }
         }

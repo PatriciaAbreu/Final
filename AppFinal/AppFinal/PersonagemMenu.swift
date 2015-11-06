@@ -1,5 +1,5 @@
 //
-//  Personagem_Menu.swift
+//  PersonagensMenu.swift
 //  AppFinal
 //
 //  Created by Patricia de Abreu on 16/09/15.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Personagem_Menu: SKSpriteNode {
+class PersonagensMenu: SKSpriteNode {
     
     var item: Int!
     

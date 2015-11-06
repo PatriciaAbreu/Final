@@ -29,11 +29,11 @@ class GameScene: SKScene {
     
     var menu: SKSpriteNode!
     
-    var circulo_menu: Personagem_Menu!
-    var personagem1_menu: Personagem_Menu!
-    var personagem2_menu: Personagem_Menu!
-    var personagem3_menu: Personagem_Menu!
-    var personagem4_menu: Personagem_Menu!
+    var circulo_menu: PersonagensMenu!
+    var personagem1_menu: PersonagensMenu!
+    var personagem2_menu: PersonagensMenu!
+    var personagem3_menu: PersonagensMenu!
+    var personagem4_menu: PersonagensMenu!
     
     //placas
     var placa_nome_jogo: SKSpriteNode!
@@ -79,22 +79,22 @@ class GameScene: SKScene {
         
         if toque.name == "seta_rosa" && personagem2_menu.name == "personagem2_novo"{
             
-            novaScene = GameScene_Cozinha(size: size)
+            novaScene = GameSceneCozinha(size: size)
             movie?.view.hidden = true
             
         }else if toque.name == "seta_rosa" && personagem3_menu.name == "personagem3_novo" {
             
-            novaScene = GameScene_Piscina(size: size)
+            novaScene = GameScenePiscina(size: size)
             movie?.view.hidden = true
             
         }else if toque.name == "seta_rosa" && personagem4_menu.name == "personagem4_novo" {
             
-            novaScene = GameScene_Grandezas(size: size)
+            novaScene = GameScenePatinho(size: size)
             movie?.view.hidden = true
             
         }else if toque.name == "seta_rosa"  {
             
-            novaScene = GameScene_Esconde(size: size)
+            novaScene = GameSceneEsconde(size: size)
             movie?.view.hidden = true
             
         }
@@ -140,9 +140,10 @@ class GameScene: SKScene {
         
         // posicao
         var posicao = CGFloat(ceil(novoAngulo / 1.67))
+        
         // Ajustar o segundo personagem no sentido anti-horario para que seja sempre identificado como -1
         if posicao == 3 || posicao == 0 {
-            posicao = -1
+            posicao = 3
         }
         
         // Se não for o personagem que está no topo
@@ -152,20 +153,11 @@ class GameScene: SKScene {
             
             // Usar a posicao do item para fazer uma animação com duracao legal para todos os personagens
             let duracao = 1.0 * Double(abs(posicao))
+            
             // Realizar animação
             self.menu_todo.runAction(SKAction.rotateByAngle(novoAngulo, duration: duracao))
         }
-        
-        
-        
-        
-        /*----------------*/
-        
-        //let v1 = CGVector(dx: posicaoTocada.x, dy: posicaoTocada.y)
-        //let v2 = CGVector(dx: 520, dy: 620)
-        //let novoAngulo = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
-        
-       // self.menu_todo.runAction(SKAction.rotateByAngle(novoAngulo, duration: 2.6))
+
     }
     
     func montarMenu() {
@@ -173,27 +165,27 @@ class GameScene: SKScene {
         menu_todo.zPosition = 1
         menu_todo.position = CGPoint(x: 525, y: 400)
         
-        circulo_menu = Personagem_Menu(texture: SKTexture(imageNamed: "circulo"), color: UIColor.clearColor(), size: CGSize(width: 354, height: 348), item: 0)
+        circulo_menu = PersonagensMenu(texture: SKTexture(imageNamed: "circulo"), color: UIColor.clearColor(), size: CGSize(width: 354, height: 348), item: 0)
         circulo_menu.zPosition = 1
         circulo_menu.position = CGPoint(x: 0, y: 0)
         circulo_menu.name = "circulo_menu"
         
-        personagem1_menu = Personagem_Menu(texture: SKTexture(imageNamed: "personagem1"), color: UIColor.clearColor(), size: CGSize(width: 90, height: 121), item: 1)
+        personagem1_menu = PersonagensMenu(texture: SKTexture(imageNamed: "personagem1"), color: UIColor.clearColor(), size: CGSize(width: 90, height: 121), item: 1)
         personagem1_menu.zPosition = 1
         personagem1_menu.position = CGPoint(x: 0, y: 225)
         personagem1_menu.name = "personagem1"
         
-        personagem2_menu = Personagem_Menu(texture: SKTexture(imageNamed: "personagem2"), color: UIColor.clearColor(), size: CGSize(width: 131, height: 94), item: 2)
+        personagem2_menu = PersonagensMenu(texture: SKTexture(imageNamed: "personagem2"), color: UIColor.clearColor(), size: CGSize(width: 131, height: 94), item: 2)
         personagem2_menu.zPosition = 1
         personagem2_menu.position = CGPoint(x: 225, y: 0)
         personagem2_menu.name = "personagem2"
         
-        personagem3_menu = Personagem_Menu(texture: SKTexture(imageNamed: "personagem3"), color: UIColor.clearColor(), size: CGSize(width: 89, height: 120), item: 3)
+        personagem3_menu = PersonagensMenu(texture: SKTexture(imageNamed: "personagem3"), color: UIColor.clearColor(), size: CGSize(width: 89, height: 120), item: 3)
         personagem3_menu.zPosition = 1
         personagem3_menu.position = CGPoint(x: 0, y: -225)
         personagem3_menu.name = "personagem3"
         
-        personagem4_menu = Personagem_Menu(texture: SKTexture(imageNamed: "personagem4"), color: UIColor.clearColor(), size: CGSize(width: 120, height: 95), item: 4)
+        personagem4_menu = PersonagensMenu(texture: SKTexture(imageNamed: "personagem4"), color: UIColor.clearColor(), size: CGSize(width: 120, height: 95), item: 4)
         personagem4_menu.zPosition = 1
         personagem4_menu.position = CGPoint(x: -225, y: 0)
         personagem4_menu.name = "personagem4"
@@ -216,7 +208,7 @@ class GameScene: SKScene {
         seta.name = "seta_rosa"
 
         //adiciona e posiciona a placa com os nomes dos jogos
-        placa_nome_jogo = Personagem_Menu(texture: SKTexture(imageNamed: "esconde_esconde"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
+        placa_nome_jogo = PersonagensMenu(texture: SKTexture(imageNamed: "esconde_esconde"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
         placa_nome_jogo.zPosition = 1
         placa_nome_jogo.name = "esconde"
         placa_nome_jogo.position = CGPoint(x: 800, y: 100)
@@ -234,13 +226,13 @@ class GameScene: SKScene {
         placa_nome_jogo.removeFromParent();
         
         if personagem == "personagem2_novo" {
-            placa_nome_jogo = Personagem_Menu(texture: SKTexture(imageNamed: "cozinha"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
+            placa_nome_jogo = PersonagensMenu(texture: SKTexture(imageNamed: "cozinha"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
             placa_nome_jogo.zPosition = 1
             placa_nome_jogo.name = "cozinha"
             placa_nome_jogo.position = CGPoint(x: 800, y: 100)
             
         }else if personagem == "personagem3_novo" {
-            placa_nome_jogo = Personagem_Menu(texture: SKTexture(imageNamed: "piscina_de_bolinhas"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
+            placa_nome_jogo = PersonagensMenu(texture: SKTexture(imageNamed: "piscina_de_bolinhas"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
             placa_nome_jogo.zPosition = 1
             placa_nome_jogo.name = "piscina"
             placa_nome_jogo.position = CGPoint(x: 800, y: 100)

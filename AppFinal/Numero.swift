@@ -45,17 +45,17 @@ class Numero: SKSpriteNode {
         if toque.name == "exercicio3.1_1" {
             
             Numero.verifica = 1
-            (toque.parent as! GameScene_Piscina).soma()
+            (toque.parent as! GameScenePiscina).soma()
             
         }else if toque.name == "exercicio3.1_2" && Numero.verifica == 1{
             
             Numero.verifica = 2
-            (toque.parent as! GameScene_Piscina).soma()
+            (toque.parent as! GameScenePiscina).soma()
             
         }else if toque.name == "exercicio3.1_3" || toque.name == "exercicio3.1_4" || toque.name == "exercicio3.1_5" || toque.name == "exercicio3.1_6" || toque.name == "exercicio3.1_7" || toque.name == "exercicio3.1_8" || toque.name == "exercicio3.1_9" || toque.name == "exercicio3.1_0" {
             
             Numero.verifica = 0
-            (toque.parent as! GameScene_Piscina).soma()
+            (toque.parent as! GameScenePiscina).soma()
         }
         
     }
@@ -72,8 +72,8 @@ class Numero: SKSpriteNode {
         let toc = toque as! Numero
         
         if toc.exercicio == 1 {
-            //chama método da classe GameScene_Esconde para posicionar o objeto do tipo Numero tocado na posição correta
-            (toque.parent as! GameScene_Esconde).posicionarNumero(toc)
+            //chama método da classe GameSceneEsconde para posicionar o objeto do tipo Numero tocado na posição correta
+            (toque.parent as! GameSceneEsconde).posicionarNumero(toc)
         }
         
         
@@ -93,7 +93,7 @@ class Numero: SKSpriteNode {
         let toc = toque as! Numero
         
         if toc.exercicio == 1 {
-            (toque.parent as! GameScene_Esconde).verificaPosicao(toc)
+            (toque.parent as! GameSceneEsconde).verificaPosicao(toc)
         }
         if toc.exercicio != 1 {
             self.position = location
@@ -103,11 +103,11 @@ class Numero: SKSpriteNode {
             if toque.name == "exercicio2_5" {
                 
                 toque.runAction(SKAction.scaleTo(2, duration: 0.4))
-                (toque.parent as! GameScene_Cozinha).prontoParaCozinhar()
+                (toque.parent as! GameSceneCozinha).prontoParaCozinhar()
                 
             }else if toque.name == "exercicio2_1" || toque.name == "exercicio2_2" || toque.name == "exercicio2_3" || toque.name == "exercicio2_4" || toque.name == "exercicio2_6" || toque.name == "exercicio2_7" || toque.name == "exercicio2_8" || toque.name == "exercicio2_9" || toque.name == "exercicio2_10" {
                 
-                (toque as! GameScene_Cozinha).contouErrado()
+                (toque as! GameSceneCozinha).contouErrado()
             }
             
             //faz a analise dos números do jogo da piscina de bolinhas

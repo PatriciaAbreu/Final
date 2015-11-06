@@ -60,7 +60,7 @@ class Bolas: SKSpriteNode {
             
             if Bolas.verifica == 12 {
                 
-                (toque.parent as! GameScene_Piscina).fimDoExercicio()
+                (toque.parent as! GameScenePiscina).fimDoExercicio()
             }
 
         }

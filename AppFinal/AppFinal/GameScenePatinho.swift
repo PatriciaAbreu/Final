@@ -1,5 +1,5 @@
 //
-//  GameScene_Grandezas.swift
+//  GameScenePatinho.swift
 //  AppFinal
 //
 //  Created by Patricia de Abreu on 17/08/15.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene_Grandezas: SKScene, UITextFieldDelegate {
+class GameScenePatinho: SKScene, UITextFieldDelegate {
     
     var background_patinhos: SKSpriteNode!
     var patinho: SKSpriteNode!
@@ -65,29 +65,45 @@ class GameScene_Grandezas: SKScene, UITextFieldDelegate {
             patinhos.append(patinho)
             
             addChild(patinho)
+
             
             let duracao:Int = 2 * Int(i)
             let espera: SKAction = SKAction.waitForDuration(NSTimeInterval(duracao))
             let anda: SKAction = SKAction.moveToX(0, duration: 1)
             let sequencia: SKAction = SKAction.sequence([espera,anda])
-            let repete: SKAction = SKAction.repeatActionForever(sequencia)
+//            let repete: SKAction = SKAction.repeatActionForever(sequencia)
             
-            patinho.runAction(repete)
             
-            if i == quantidade && patinho.name == "patinho\(quantidade)" {
-                montaResposta(quantidade)
+            
+            
+            if i == quantidade {
+                patinho.runAction(sequencia, completion: { () -> Void in
+                    self.montaResposta(quantidade)
+                })
+            }else{
+                patinho.runAction(sequencia)
             }
         }
+        
+//        montaResposta(quantidade)
     }
     
     func montaResposta(resposta: Int){
         
         texto = UITextField(frame: CGRect(x: 450, y: 200, width: 200, height: 40))
         texto.backgroundColor = UIColor.blueColor()
-        texto.resignFirstResponder()
         
+        
+        
+        let teclado = Teclado()
+        addChild(teclado)
+        
+        teclado.position = CGPoint(x: CGRectGetMidX((self.view?.bounds)!), y: CGRectGetMinY((self.view?.bounds)!
+            ) + teclado.frame.height/2)
         self.view?.addSubview(texto)
         
-        print(texto.text)
+//        print(texto.text)
     }
+    
+    
 }
