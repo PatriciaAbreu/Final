@@ -36,21 +36,6 @@ class PersonagensMenu: SKSpriteNode {
             
         }
         
-//        if toque.position.x == 225 && toque.position.y == 0 {
-//            toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
-//            
-//        }else if toque.position.x == 0 && toque.position.y == -225 {
-//            for (var i = 1; i < 3; i++) {
-//                toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.4))
-//            }
-//            
-//        }else if toque.position.x == -225 && toque.position.y == 0 {
-//            for (var i = 1; i < 4; i++) {
-//                toque.parent?.runAction(SKAction.rotateByAngle(1.57, duration: 0.6))
-//            }
-//            
-//        }
-        
         if toque.name == "personagem1"{
             toque.name = "personagem1_novo"
             

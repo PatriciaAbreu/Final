@@ -8,16 +8,21 @@
 
 import SpriteKit
 
-class GameScenePatinho: SKScene, UITextFieldDelegate {
+class GameScenePatinho: SKScene {
     
     var background_patinhos: SKSpriteNode!
     var patinho: SKSpriteNode!
     var patinhos: [SKSpriteNode] = []
-    var texto: UITextField!
+    let texto: SKLabelNode = SKLabelNode(fontNamed: "Arial")
+    var quantidadeDePatinhos: Int!
+    var numeroDigitado: Int!
+    let teclado = Teclado()
+    var jogarNovamente: SKSpriteNode!
+    var retornarMenu: SKSpriteNode!
     
     override func didMoveToView(view: SKView) {
         montaScene()
-        montaExercicio()
+        montaExercicio(0)
         
     }
     
@@ -26,11 +31,19 @@ class GameScenePatinho: SKScene, UITextFieldDelegate {
         let touchLocation = touch!.locationInNode(self)
         
         let toque = self.nodeAtPoint(touchLocation)
-        
-        if toque.intersectsNode(self){
-            self.view?.endEditing(true)
-        }
+
+        var menu: SKScene?
+        if toque.name == "jogarNovamente"{
+            texto.removeFromParent()
+            jogarNovamente.removeFromParent()
+            retornarMenu.removeFromParent()
+            montaExercicio(0)
             
+        }else if toque.name == "retornarMenu"{
+            menu = GameScene(size: size)
+            self.scene?.view?.presentScene(menu)
+        }
+        
         
     }
     
@@ -51,10 +64,16 @@ class GameScenePatinho: SKScene, UITextFieldDelegate {
         
     }
     
-    func montaExercicio(){
-        let quantidade = random(1, hi: 7)
+    func montaExercicio(quantidadePatinhos: Int){
         
-        for i in 1...quantidade{
+        if quantidadePatinhos == 0 {
+            quantidadeDePatinhos = random(1, hi: 7)
+        }else {
+            quantidadeDePatinhos = quantidadePatinhos
+        }
+        
+        
+        for i in 1...quantidadeDePatinhos{
             
             patinho = SKSpriteNode(imageNamed: "julia")
             patinho.zPosition = 1
@@ -66,44 +85,78 @@ class GameScenePatinho: SKScene, UITextFieldDelegate {
             
             addChild(patinho)
 
-            
             let duracao:Int = 2 * Int(i)
             let espera: SKAction = SKAction.waitForDuration(NSTimeInterval(duracao))
-            let anda: SKAction = SKAction.moveToX(0, duration: 1)
+            let anda: SKAction = SKAction.moveToX(-70, duration: 1)
             let sequencia: SKAction = SKAction.sequence([espera,anda])
-//            let repete: SKAction = SKAction.repeatActionForever(sequencia)
             
-            
-            
-            
-            if i == quantidade {
+            if i == quantidadeDePatinhos {
                 patinho.runAction(sequencia, completion: { () -> Void in
-                    self.montaResposta(quantidade)
+                    self.montaResposta(self.quantidadeDePatinhos)
                 })
             }else{
                 patinho.runAction(sequencia)
             }
         }
-        
-//        montaResposta(quantidade)
     }
     
     func montaResposta(resposta: Int){
         
-        texto = UITextField(frame: CGRect(x: 450, y: 200, width: 200, height: 40))
-        texto.backgroundColor = UIColor.blueColor()
+        for i in 0...patinhos.count-1 {
+            patinhos[i].removeFromParent()
+        }
         
-        
-        
-        let teclado = Teclado()
+        teclado.patinho = self
         addChild(teclado)
         
-        teclado.position = CGPoint(x: CGRectGetMidX((self.view?.bounds)!), y: CGRectGetMinY((self.view?.bounds)!
-            ) + teclado.frame.height/2)
-        self.view?.addSubview(texto)
+        teclado.position = CGPoint(x: CGRectGetMidX((self.view?.bounds)!), y: CGRectGetMinY((self.view?.bounds)!) + teclado.frame.height/2)
+
+        self.texto.position = CGPoint(x: 450, y: 500)
+        self.texto.zPosition = 1
+        self.texto.fontSize = 50
+
+        self.texto.text = "RESPOSTA"
+        self.texto.fontColor = UIColor.grayColor()
+//        self.texto.color = UIColor.grayColor()
+        addChild(self.texto)
         
-//        print(texto.text)
     }
     
+    func numeroTocado(numero: String){
+        if numero == "DELETE" {
+            self.texto.text = "RESPOSTA"
+        }else if numero == "ENTER" {
+            verificaResposta(numero)
+        }else {
+            self.texto.text = numero
+            numeroDigitado = Int(numero)
+        }
+        
+    }
+    
+    func verificaResposta(numero: String){
+        
+        teclado.removeFromParent()
+        
+        if quantidadeDePatinhos == numeroDigitado {
+            texto.text = "PARABENS!!"
+            
+            jogarNovamente = SKSpriteNode(imageNamed: "seta_rosa")
+            jogarNovamente.name = "jogarNovamente"
+            jogarNovamente.zPosition = 1
+            jogarNovamente.position = CGPoint(x: 600, y: 300)
+            
+            retornarMenu = SKSpriteNode(imageNamed: "seta_back")
+            retornarMenu.name = "retornarMenu"
+            retornarMenu.zPosition = 1
+            retornarMenu.position = CGPoint(x: 400, y: 300)
+            
+            addChild(jogarNovamente)
+            addChild(retornarMenu)
+        }else{
+            texto.removeFromParent()
+            montaExercicio(quantidadeDePatinhos)
+        }
+    }
     
 }

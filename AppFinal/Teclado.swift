@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 import SpriteKit
 
+
 class Teclado: SKSpriteNode {
     
     private var touchedKeys = [Tecla]()
+    var patinho: GameScenePatinho?
     
-    var numeric = ["1", "2", "3", "\n", 0, "4", "5", "6", "\n", 0, "7", "8", "9", "\n", 0, "DELETE", "0","DELETE"]
+    
+    var numeric = ["1", "2", "3", "\n", 0, "4", "5", "6", "\n", 0, "7", "8", "9", "\n", 0, "DELETE", "0","ENTER"]
     
     init() {
         let texture = SKTexture(imageNamed: "bg_keyboard.png")
@@ -44,10 +47,14 @@ class Teclado: SKSpriteNode {
                 var key:Tecla!
                 
                 if character == "DELETE" {
-                    key = Tecla(imageNamed: "btn_keyboard_backspace.png")
+                    key = Tecla(imageNamed: "btn_keyboard_backspace.png", identifier: "DELETE")
+                }else if character == "ENTER" {
+                    key = Tecla(imageNamed: "btb_keyboard_enter.png", identifier: "ENTER")
                 }else {
                     key = Tecla(character: Character(character as! String))
                 }
+                
+                
                 key.teclado = self
                 key.zPosition = 9999
                 if lastKey == nil {
@@ -89,8 +96,13 @@ class Teclado: SKSpriteNode {
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        
+//    }
+    
+    func touchesEnded(identifier: String) {
         self.cleanTouch()
+        self.patinho?.numeroTocado(identifier)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {

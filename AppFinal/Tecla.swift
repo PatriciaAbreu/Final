@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 import SpriteKit
 
+
 class Tecla: SKSpriteNode {
-    
     
     var teclado: Teclado?
     var character:Character = " "
     var type:String = ""
-    
+    var identifier: String!
+
     init(character:Character) {
         let imageNamed = "btn_keyboard\(random(1, hi: 3)).png"
         let texture = SKTexture(imageNamed: imageNamed)
@@ -30,13 +31,15 @@ class Tecla: SKSpriteNode {
         label.zPosition = 9999
         self.addChild(label)
         
+        self.identifier = String(character)
         self.userInteractionEnabled = true
     }
     
-    init(imageNamed:String) {
+    init(imageNamed:String, identifier: String) {
         let texture = SKTexture(imageNamed: imageNamed)
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         
+        self.identifier = identifier
         self.userInteractionEnabled = true
     }
     
@@ -57,9 +60,12 @@ class Tecla: SKSpriteNode {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         //analisar qual botao foi pressionado
         
+//        delegate?.numeroTocado(identifier)
         
         print("Touches Ended: \(self.character)")
-        self.teclado?.touchesEnded(touches, withEvent: event)
+        self.teclado?.touchesEnded(identifier)
+//        self.teclado?.touchesEnded(touches, withEvent: event)
+        
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
