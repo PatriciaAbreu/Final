@@ -7,6 +7,8 @@
 //
 
 import SpriteKit
+import MediaPlayer
+import AVFoundation
 
 class GameScenePatinho: SKScene {
     
@@ -19,6 +21,14 @@ class GameScenePatinho: SKScene {
     let teclado = Teclado()
     var jogarNovamente: SKSpriteNode!
     var retornarMenu: SKSpriteNode!
+    
+    var movie: MPMoviePlayerController?
+    var audio: AVAudioPlayer!
+    
+    var exercicio: ExercicioJSON = ExercicioJSON()
+    var video: String = ""
+    var audioS: String = ""
+
     
     override func didMoveToView(view: SKView) {
         montaScene()
@@ -42,6 +52,11 @@ class GameScenePatinho: SKScene {
         }else if toque.name == "retornarMenu"{
             menu = GameScene(size: size)
             self.scene?.view?.presentScene(menu)
+            
+        }else if toque.name == "tentarNovamente" {
+            jogarNovamente.removeFromParent()
+            texto.removeFromParent()
+            montaExercicio(quantidadeDePatinhos)
         }
         
         
@@ -54,7 +69,7 @@ class GameScenePatinho: SKScene {
     func montaScene(){
         
         //posiciona e adiciona o plano de fundo
-        background_patinhos = SKSpriteNode(imageNamed: "backgroundGrass")
+        background_patinhos = SKSpriteNode(imageNamed: "lake")
         background_patinhos.zPosition = 1
         background_patinhos.name = "background_patinhos"
         background_patinhos.size = CGSize(width: 1050, height: 800)
@@ -75,20 +90,22 @@ class GameScenePatinho: SKScene {
         
         for i in 1...quantidadeDePatinhos{
             
-            patinho = SKSpriteNode(imageNamed: "julia")
+            patinho = SKSpriteNode(imageNamed: "pato")
             patinho.zPosition = 1
             patinho.name = "patinho\(i)"
-            patinho.size = CGSize(width: 150, height: 200)
-            patinho.position = CGPoint(x: 1100, y: 200)
+            patinho.size = CGSize(width: 100, height: 100)
+            patinho.position = CGPoint(x: 1100, y: 250)
             
             patinhos.append(patinho)
             
             addChild(patinho)
 
-            let duracao:Int = 2 * Int(i)
+            let duracao:Int = 4 * Int(i)
             let espera: SKAction = SKAction.waitForDuration(NSTimeInterval(duracao))
-            let anda: SKAction = SKAction.moveToX(-70, duration: 1)
-            let sequencia: SKAction = SKAction.sequence([espera,anda])
+            let andaTrecho1: SKAction = SKAction.moveToX(600, duration: 1.5)
+            let andaTrecho2: SKAction = SKAction.moveTo(CGPoint(x: 550, y: 200), duration: 1.5)
+            let andaTrecho3: SKAction = SKAction.moveToX(-70, duration: 1.5)
+            let sequencia: SKAction = SKAction.sequence([espera,andaTrecho1, andaTrecho2, andaTrecho3])
             
             if i == quantidadeDePatinhos {
                 patinho.runAction(sequencia, completion: { () -> Void in
@@ -111,13 +128,12 @@ class GameScenePatinho: SKScene {
         
         teclado.position = CGPoint(x: CGRectGetMidX((self.view?.bounds)!), y: CGRectGetMinY((self.view?.bounds)!) + teclado.frame.height/2)
 
-        self.texto.position = CGPoint(x: 450, y: 500)
+        self.texto.position = CGPoint(x: 500, y: 500)
         self.texto.zPosition = 1
         self.texto.fontSize = 50
 
-        self.texto.text = "RESPOSTA"
-        self.texto.fontColor = UIColor.grayColor()
-//        self.texto.color = UIColor.grayColor()
+        self.texto.text = "Quantos patinhos passaram?"
+        self.texto.fontColor = UIColor.blackColor()
         addChild(self.texto)
         
     }
@@ -125,6 +141,12 @@ class GameScenePatinho: SKScene {
     func numeroTocado(numero: String){
         if numero == "DELETE" {
             self.texto.text = "RESPOSTA"
+            movie?.view.hidden = true
+            video = exercicio.getVideo(1, video: "video2")
+            audioS = exercicio.getAudio(1, audio: "audio2")
+            
+            playVideo(video, tipo: "mp4")
+            playAudio(audioS, tipo: "m4a")
         }else if numero == "ENTER" {
             verificaResposta(numero)
         }else {
@@ -145,18 +167,58 @@ class GameScenePatinho: SKScene {
             jogarNovamente.name = "jogarNovamente"
             jogarNovamente.zPosition = 1
             jogarNovamente.position = CGPoint(x: 600, y: 300)
+            jogarNovamente.size = CGSize(width: 100, height: 100)
             
             retornarMenu = SKSpriteNode(imageNamed: "seta_back")
             retornarMenu.name = "retornarMenu"
             retornarMenu.zPosition = 1
             retornarMenu.position = CGPoint(x: 400, y: 300)
+            retornarMenu.size = CGSize(width: 100, height: 100)
             
             addChild(jogarNovamente)
             addChild(retornarMenu)
+            
         }else{
-            texto.removeFromParent()
-            montaExercicio(quantidadeDePatinhos)
+            texto.text = "Acho que você errou. Tente novamente!"
+            jogarNovamente = SKSpriteNode(imageNamed: "seta_rosa")
+            jogarNovamente.name = "tentarNovamente"
+            jogarNovamente.zPosition = 1
+            jogarNovamente.position = CGPoint(x: 500, y: 400)
+            jogarNovamente.size = CGSize(width: 100, height: 100)
+
+            addChild(jogarNovamente)
+            
         }
     }
     
+    //função para tocar video
+    func playVideo( video: String, tipo: String){
+        
+        let path = NSBundle.mainBundle().pathForResource(video, ofType: tipo)
+        let url = NSURL.fileURLWithPath(path!)
+        let movie = MPMoviePlayerController(contentURL: url)
+        
+        if (movie != nil) {
+            
+            self.movie = movie
+            movie.view.frame = CGRect(x: 20, y: 20, width: 300, height: 300)
+            movie.view.layer.zPosition = 1
+            movie.scalingMode = .AspectFill
+            self.view?.addSubview(movie.view)
+            movie.play()
+        }else{
+            debugPrint("Video não encontrado", terminator: "")
+        }
+    }
+    
+    //função para tocar audio
+    func playAudio(audio: String, tipo: String){
+        
+        let path = NSBundle.mainBundle().pathForResource(audio, ofType: tipo)
+        let url = NSURL(fileURLWithPath: path!)
+        self.audio = try? AVAudioPlayer(contentsOfURL: url)
+        self.audio.prepareToPlay()
+        self.audio.play()
+    }
+
 }
