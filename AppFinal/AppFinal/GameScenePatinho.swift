@@ -13,6 +13,10 @@ import AVFoundation
 class GameScenePatinho: SKScene {
     
     var background_patinhos: SKSpriteNode!
+    var personagem: SKSpriteNode!
+    var chat: SKSpriteNode!
+    var seta: SKSpriteNode!
+    
     var patinho: SKSpriteNode!
     var patinhos: [SKSpriteNode] = []
     let texto: SKLabelNode = SKLabelNode(fontNamed: "Arial")
@@ -21,7 +25,7 @@ class GameScenePatinho: SKScene {
     let teclado = Teclado()
     var jogarNovamente: SKSpriteNode!
     var retornarMenu: SKSpriteNode!
-    
+
     var movie: MPMoviePlayerController?
     var audio: AVAudioPlayer!
     
@@ -32,7 +36,6 @@ class GameScenePatinho: SKScene {
     
     override func didMoveToView(view: SKView) {
         montaScene()
-        montaExercicio(0)
         
     }
     
@@ -43,13 +46,78 @@ class GameScenePatinho: SKScene {
         let toque = self.nodeAtPoint(touchLocation)
 
         var menu: SKScene?
-        if toque.name == "jogarNovamente"{
+        
+        if toque.name == "seta1" {
+            chat.removeFromParent()
+            seta.removeFromParent()
+            
+            chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_2")
+            chat.zPosition = 1
+            chat.name = "chat2"
+            chat.position = CGPoint(x: 600, y: 400)
+            chat.size = CGSize(width: 200, height: 200)
+            
+            seta = SKSpriteNode(imageNamed: "seta_azul")
+            seta.zPosition = 1
+            seta.name = "seta2"
+            seta.position = CGPoint(x: 600, y: 370)
+            seta.size = CGSize(width: 50, height: 50)
+
+            addChild(chat)
+            addChild(seta)
+            
+        }else if toque.name == "seta2" {
+            chat.removeFromParent()
+            seta.removeFromParent()
+            
+            chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_3")
+            chat.zPosition = 1
+            chat.name = "chat3"
+            chat.position = CGPoint(x: 600, y: 400)
+            chat.size = CGSize(width: 200, height: 200)
+            
+            seta = SKSpriteNode(imageNamed: "seta_azul")
+            seta.zPosition = 1
+            seta.name = "seta3"
+            seta.position = CGPoint(x: 600, y: 370)
+            seta.size = CGSize(width: 50, height: 50)
+
+            addChild(chat)
+            addChild(seta)
+        
+        }else if toque.name == "seta3" {
+            chat.removeFromParent()
+            seta.removeFromParent()
+            
+            chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_4")
+            chat.zPosition = 1
+            chat.name = "chat4"
+            chat.position = CGPoint(x: 600, y: 400)
+            chat.size = CGSize(width: 200, height: 200)
+            
+            seta = SKSpriteNode(imageNamed: "seta_azul")
+            seta.zPosition = 1
+            seta.name = "seta4"
+            seta.position = CGPoint(x: 600, y: 370)
+            seta.size = CGSize(width: 50, height: 50)
+
+            addChild(chat)
+            addChild(seta)
+            
+        }else if toque.name == "seta4" {
+            chat.removeFromParent()
+            seta.removeFromParent()
+            personagem.removeFromParent()
+            
+            montaExercicio(0)
+            
+        }else if toque.name == "jogarNovamente" {
             texto.removeFromParent()
             jogarNovamente.removeFromParent()
             retornarMenu.removeFromParent()
             montaExercicio(0)
             
-        }else if toque.name == "retornarMenu"{
+        }else if toque.name == "retornarMenu" {
             menu = GameScene(size: size)
             self.scene?.view?.presentScene(menu)
             
@@ -75,7 +143,28 @@ class GameScenePatinho: SKScene {
         background_patinhos.size = CGSize(width: 1050, height: 800)
         background_patinhos.position = CGPoint(x: 510, y: 400)
         
+        personagem = SKSpriteNode(imageNamed: "Caio")
+        personagem.zPosition = 1
+        personagem.name = "Caio"
+        personagem.position = CGPoint(x: 700, y: 200)
+        personagem.size = CGSize(width: 150, height: 300)
+        
+        chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_1")
+        chat.zPosition = 1
+        chat.name = "chat1"
+        chat.position = CGPoint(x: 600, y: 400)
+        chat.size = CGSize(width: 200, height: 200)
+        
+        seta = SKSpriteNode(imageNamed: "seta_azul")
+        seta.zPosition = 1
+        seta.name = "seta1"
+        seta.position = CGPoint(x: 600, y: 370)
+        seta.size = CGSize(width: 50, height: 50)
+        
         addChild(background_patinhos)
+        addChild(personagem)
+        addChild(chat)
+        addChild(seta)
         
     }
     
