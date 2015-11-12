@@ -103,7 +103,7 @@ class GameScenePatinho: SKScene {
             let duracao:Int = 4 * Int(i)
             let espera: SKAction = SKAction.waitForDuration(NSTimeInterval(duracao))
             let andaTrecho1: SKAction = SKAction.moveToX(600, duration: 1.5)
-            let andaTrecho2: SKAction = SKAction.moveTo(CGPoint(x: 550, y: 200), duration: 1.5)
+            let andaTrecho2: SKAction = SKAction.moveTo(CGPoint(x: 500, y: 200), duration: 1.5)
             let andaTrecho3: SKAction = SKAction.moveToX(-70, duration: 1.5)
             let sequencia: SKAction = SKAction.sequence([espera,andaTrecho1, andaTrecho2, andaTrecho3])
             
@@ -163,17 +163,17 @@ class GameScenePatinho: SKScene {
         if quantidadeDePatinhos == numeroDigitado {
             texto.text = "PARABENS!!"
             
-            jogarNovamente = SKSpriteNode(imageNamed: "seta_rosa")
-            jogarNovamente.name = "jogarNovamente"
-            jogarNovamente.zPosition = 1
-            jogarNovamente.position = CGPoint(x: 600, y: 300)
-            jogarNovamente.size = CGSize(width: 100, height: 100)
-            
-            retornarMenu = SKSpriteNode(imageNamed: "seta_back")
+            retornarMenu = SKSpriteNode(imageNamed: "seta_rosa")
             retornarMenu.name = "retornarMenu"
             retornarMenu.zPosition = 1
-            retornarMenu.position = CGPoint(x: 400, y: 300)
+            retornarMenu.position = CGPoint(x: 600, y: 300)
             retornarMenu.size = CGSize(width: 100, height: 100)
+            
+            jogarNovamente = SKSpriteNode(imageNamed: "seta_back")
+            jogarNovamente.name = "jogarNovamente"
+            jogarNovamente.zPosition = 1
+            jogarNovamente.position = CGPoint(x: 400, y: 300)
+            jogarNovamente.size = CGSize(width: 100, height: 100)
             
             addChild(jogarNovamente)
             addChild(retornarMenu)
