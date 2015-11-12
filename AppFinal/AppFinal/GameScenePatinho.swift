@@ -37,6 +37,13 @@ class GameScenePatinho: SKScene {
     override func didMoveToView(view: SKView) {
         montaScene()
         
+        video = exercicio.getVideo(4, video: "video1")
+        audioS = exercicio.getAudio(4, audio: "audio1")
+        
+        playVideo(video, tipo: "m4v")
+        playAudio(audioS, tipo: "m4a")
+
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -63,6 +70,13 @@ class GameScenePatinho: SKScene {
             seta.position = CGPoint(x: 600, y: 370)
             seta.size = CGSize(width: 50, height: 50)
 
+            movie!.view.hidden = true
+            video = exercicio.getVideo(4, video: "video2")
+            audioS = exercicio.getAudio(4, audio: "audio2")
+            
+            playVideo(video, tipo: "m4v")
+            playAudio(audioS, tipo: "m4a")
+            
             addChild(chat)
             addChild(seta)
             
@@ -82,6 +96,13 @@ class GameScenePatinho: SKScene {
             seta.position = CGPoint(x: 600, y: 370)
             seta.size = CGSize(width: 50, height: 50)
 
+            movie!.view.hidden = true
+            video = exercicio.getVideo(4, video: "video3")
+            audioS = exercicio.getAudio(4, audio: "audio3")
+            
+            playVideo(video, tipo: "m4v")
+            playAudio(audioS, tipo: "m4a")
+            
             addChild(chat)
             addChild(seta)
         
@@ -101,6 +122,13 @@ class GameScenePatinho: SKScene {
             seta.position = CGPoint(x: 600, y: 370)
             seta.size = CGSize(width: 50, height: 50)
 
+            movie!.view.hidden = true
+            video = exercicio.getVideo(4, video: "video4")
+            audioS = exercicio.getAudio(4, audio: "audio4")
+            
+            playVideo(video, tipo: "m4v")
+            playAudio(audioS, tipo: "m4a")
+            
             addChild(chat)
             addChild(seta)
             
@@ -108,6 +136,7 @@ class GameScenePatinho: SKScene {
             chat.removeFromParent()
             seta.removeFromParent()
             personagem.removeFromParent()
+            movie!.view.hidden = true
             
             montaExercicio(0)
             
