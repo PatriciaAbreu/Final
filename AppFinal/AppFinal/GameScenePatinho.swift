@@ -166,15 +166,15 @@ class GameScenePatinho: SKScene {
     func montaScene(){
         
         //posiciona e adiciona o plano de fundo
-        background_patinhos = SKSpriteNode(imageNamed: "lake")
+        background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinho.png")
         background_patinhos.zPosition = 1
         background_patinhos.name = "background_patinhos"
         background_patinhos.size = CGSize(width: 1050, height: 800)
         background_patinhos.position = CGPoint(x: 510, y: 400)
         
-        personagem = SKSpriteNode(imageNamed: "Caio")
+        personagem = SKSpriteNode(imageNamed: "Julia-1")
         personagem.zPosition = 1
-        personagem.name = "Caio"
+        personagem.name = "Julia"
         personagem.position = CGPoint(x: 700, y: 200)
         personagem.size = CGSize(width: 150, height: 300)
         
