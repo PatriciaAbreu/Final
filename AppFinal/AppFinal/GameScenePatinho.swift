@@ -228,14 +228,11 @@ class GameScenePatinho: SKScene {
             let espera: SKAction = SKAction.waitForDuration(NSTimeInterval(duracao))
             let andaTrecho1: SKAction = SKAction.moveToX(790, duration: 1.5)
             let andaTrecho2: SKAction = SKAction.moveTo(CGPoint(x: 700, y: 200), duration: 1.5)
-            
-            let trocaPato1pra2 = SKAction.runBlock({ () -> Void in
+            let andaTrecho3: SKAction = SKAction.moveToX(-70, duration: 1.5)
+            let trocaPatoTerraParaAgua = SKAction.runBlock({ () -> Void in
                 patinhot.texture = SKTexture(imageNamed: "pato")
             })
-
-            
-            let andaTrecho3: SKAction = SKAction.moveToX(-70, duration: 1.5)
-            let sequencia: SKAction = SKAction.sequence([espera, andaTrecho1, trocaPato1pra2, andaTrecho2, andaTrecho3])
+            let sequencia: SKAction = SKAction.sequence([espera, andaTrecho1, andaTrecho2, trocaPatoTerraParaAgua, andaTrecho3])
             
             if i == quantidadeDePatinhos {
                 patinhot.runAction(sequencia, completion: { () -> Void in
@@ -291,12 +288,18 @@ class GameScenePatinho: SKScene {
         teclado.removeFromParent()
         
         if quantidadeDePatinhos == numeroDigitado {
-            let comemoracao: SKEmitterNode = SKEmitterNode(fileNamed: "Comemoracao")!
             
             texto.text = "PARABENS!!"
             texto.fontColor = UIColor.blueColor()
             
-            texto.addChild(comemoracao)
+            // comemoração estilo fogos de artifício
+            let comemoracao: SKEmitterNode = SKEmitterNode(fileNamed: "Comemoracao")!
+            let comemoracaoPosicao: SKSpriteNode = SKSpriteNode()
+            comemoracaoPosicao.zPosition = 1
+            comemoracaoPosicao.position = CGPoint(x: 800, y: 600)
+            addChild(comemoracaoPosicao)
+            comemoracaoPosicao.addChild(comemoracao)
+            
             retornarMenu = SKSpriteNode(imageNamed: "seta_rosa")
             retornarMenu.name = "retornarMenu"
             retornarMenu.zPosition = 1
