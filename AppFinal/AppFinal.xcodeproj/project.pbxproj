@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A08E4A71BF638D100F7A287 /* Comemoracao.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6A08E4A61BF638D100F7A287 /* Comemoracao.sks */; };
 		6A1686CB1BC1C03900585972 /* Bolas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1686CA1BC1C03900585972 /* Bolas.swift */; };
 		6A1686DB1BC716E400585972 /* video5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686D61BC716E400585972 /* video5.mp4 */; };
 		6A1686DC1BC716E400585972 /* video4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686D71BC716E400585972 /* video4.mp4 */; };
@@ -28,6 +29,7 @@
 		6A1686FB1BD4447B00585972 /* Exercicio7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686EC1BD4447A00585972 /* Exercicio7.m4a */; };
 		6A1686FC1BD4447B00585972 /* Exercicio6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686ED1BD4447A00585972 /* Exercicio6.m4a */; };
 		6A1686FD1BD4447B00585972 /* Exercicio5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A1686EE1BD4447A00585972 /* Exercicio5.m4a */; };
+		6A48C07F1BF6332300600DF4 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A48C07D1BF6332300600DF4 /* spark.png */; };
 		6A541A811B823DE10066B36C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541A801B823DE10066B36C /* AppDelegate.swift */; };
 		6A541A831B823DE10066B36C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6A541A821B823DE10066B36C /* GameScene.sks */; };
 		6A541A851B823DE10066B36C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541A841B823DE10066B36C /* GameScene.swift */; };
@@ -67,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A08E4A61BF638D100F7A287 /* Comemoracao.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Comemoracao.sks; sourceTree = "<group>"; };
 		6A1686CA1BC1C03900585972 /* Bolas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bolas.swift; sourceTree = "<group>"; };
 		6A1686D61BC716E400585972 /* video5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video5.mp4; path = ../video5.mp4; sourceTree = "<group>"; };
 		6A1686D71BC716E400585972 /* video4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video4.mp4; path = ../video4.mp4; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		6A1686EC1BD4447A00585972 /* Exercicio7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio7.m4a; path = ../Exercicio7.m4a; sourceTree = "<group>"; };
 		6A1686ED1BD4447A00585972 /* Exercicio6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio6.m4a; path = ../Exercicio6.m4a; sourceTree = "<group>"; };
 		6A1686EE1BD4447A00585972 /* Exercicio5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio5.m4a; path = ../Exercicio5.m4a; sourceTree = "<group>"; };
+		6A48C07D1BF6332300600DF4 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		6A541A7B1B823DE10066B36C /* AppFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A541A7F1B823DE10066B36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A541A801B823DE10066B36C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 		6A541A721B823DE10066B36C = {
 			isa = PBXGroup;
 			children = (
+				6A08E4A61BF638D100F7A287 /* Comemoracao.sks */,
+				6A48C07D1BF6332300600DF4 /* spark.png */,
 				6A541A7D1B823DE10066B36C /* AppFinal */,
 				6A541A971B823DE10066B36C /* AppFinalTests */,
 				6A541A7C1B823DE10066B36C /* Products */,
@@ -384,6 +390,7 @@
 				6A1686F31BD4447B00585972 /* Exercicio15.m4a in Resources */,
 				6A1686F41BD4447B00585972 /* Exercicio14.m4a in Resources */,
 				6A1686F51BD4447B00585972 /* Exercicio13.m4a in Resources */,
+				6A08E4A71BF638D100F7A287 /* Comemoracao.sks in Resources */,
 				6A1686F61BD4447B00585972 /* Exercicio12.m4a in Resources */,
 				6A1686F71BD4447B00585972 /* Exercicio11.m4a in Resources */,
 				6A1686F81BD4447B00585972 /* Exercicio10.m4a in Resources */,
@@ -398,6 +405,7 @@
 				6A1686DE1BC716E400585972 /* video2.mp4 in Resources */,
 				6A1686DF1BC716E400585972 /* video1.mp4 in Resources */,
 				6AEB427B1BAC74200034FA31 /* Menu.m4a in Resources */,
+				6A48C07F1BF6332300600DF4 /* spark.png in Resources */,
 				6A6D69481B9F61EE00A5BAD8 /* Exercicio4.m4a in Resources */,
 				6A6D69461B9F60D000A5BAD8 /* Exercicio3.m4a in Resources */,
 				6AA4D4B71B98982100CC7C19 /* Exercicio2.m4a in Resources */,

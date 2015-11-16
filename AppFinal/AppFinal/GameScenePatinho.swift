@@ -190,6 +190,11 @@ class GameScenePatinho: SKScene {
         seta.position = CGPoint(x: 600, y: 370)
         seta.size = CGSize(width: 50, height: 50)
         
+        
+        
+        
+        
+        
         addChild(background_patinhos)
         addChild(personagem)
         addChild(chat)
@@ -207,30 +212,37 @@ class GameScenePatinho: SKScene {
         
         
         for i in 1...quantidadeDePatinhos{
+
+            let patinhot = SKSpriteNode()
+            patinhot.texture = SKTexture(imageNamed: "patoTerra")
+            patinhot.zPosition = 1
+            patinhot.name = "patinho\(i)"
+            patinhot.size = CGSize(width: 100, height: 100)
+            patinhot.position = CGPoint(x: 1100, y: 250)
             
-            patinho = SKSpriteNode(imageNamed: "pato")
-            patinho.zPosition = 1
-            patinho.name = "patinho\(i)"
-            patinho.size = CGSize(width: 100, height: 100)
-            patinho.position = CGPoint(x: 1100, y: 250)
+            patinhos.append(patinhot)
             
-            patinhos.append(patinho)
-            
-            addChild(patinho)
+            addChild(patinhot)
 
             let duracao:Int = 4 * Int(i)
             let espera: SKAction = SKAction.waitForDuration(NSTimeInterval(duracao))
-            let andaTrecho1: SKAction = SKAction.moveToX(600, duration: 1.5)
-            let andaTrecho2: SKAction = SKAction.moveTo(CGPoint(x: 500, y: 200), duration: 1.5)
+            let andaTrecho1: SKAction = SKAction.moveToX(790, duration: 1.5)
+            let andaTrecho2: SKAction = SKAction.moveTo(CGPoint(x: 700, y: 200), duration: 1.5)
+            
+            let trocaPato1pra2 = SKAction.runBlock({ () -> Void in
+                patinhot.texture = SKTexture(imageNamed: "pato")
+            })
+
+            
             let andaTrecho3: SKAction = SKAction.moveToX(-70, duration: 1.5)
-            let sequencia: SKAction = SKAction.sequence([espera,andaTrecho1, andaTrecho2, andaTrecho3])
+            let sequencia: SKAction = SKAction.sequence([espera, andaTrecho1, trocaPato1pra2, andaTrecho2, andaTrecho3])
             
             if i == quantidadeDePatinhos {
-                patinho.runAction(sequencia, completion: { () -> Void in
+                patinhot.runAction(sequencia, completion: { () -> Void in
                     self.montaResposta(self.quantidadeDePatinhos)
                 })
             }else{
-                patinho.runAction(sequencia)
+                patinhot.runAction(sequencia)
             }
         }
     }
@@ -279,8 +291,12 @@ class GameScenePatinho: SKScene {
         teclado.removeFromParent()
         
         if quantidadeDePatinhos == numeroDigitado {
-            texto.text = "PARABENS!!"
+            let comemoracao: SKEmitterNode = SKEmitterNode(fileNamed: "Comemoracao")!
             
+            texto.text = "PARABENS!!"
+            texto.fontColor = UIColor.blueColor()
+            
+            texto.addChild(comemoracao)
             retornarMenu = SKSpriteNode(imageNamed: "seta_rosa")
             retornarMenu.name = "retornarMenu"
             retornarMenu.zPosition = 1
