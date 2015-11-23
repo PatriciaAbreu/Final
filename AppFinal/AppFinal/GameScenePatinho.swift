@@ -18,8 +18,6 @@ class GameScenePatinho: SKScene {
     var seta: SKSpriteNode!
     var setaBack: SKSpriteNode!
     
-    var videoSprite = SKVideoNode()
-    
     var patinho: SKSpriteNode!
     var patinhos: [SKSpriteNode] = []
     let texto: SKLabelNode = SKLabelNode(fontNamed: "Arial")
@@ -28,25 +26,19 @@ class GameScenePatinho: SKScene {
     let teclado = Teclado()
     var jogarNovamente: SKSpriteNode!
     var retornarMenu: SKSpriteNode!
-
+    
     var comemoracao: SKEmitterNode!
     var comemoracaoPosicao: SKSpriteNode!
     
-    var movie: MPMoviePlayerController?
+    var videoSprite = SKVideoNode()
     var audio: AVAudioPlayer!
     
     var exercicio: ExercicioJSON = ExercicioJSON()
     var video: String = ""
     var audioS: String = ""
-
+    
     
     override func didMoveToView(view: SKView) {
-        
-        audioS = exercicio.getAudio(4, audio: "audio1")
-        playAudio(audioS, tipo: "m4a")
-
-        video = exercicio.getVideo(4, video: "video1")
-        playVideo(video, tipo: "m4v")
         
         montaScene()
         
@@ -57,7 +49,7 @@ class GameScenePatinho: SKScene {
         let touchLocation = touch!.locationInNode(self)
         
         let toque = self.nodeAtPoint(touchLocation)
-
+        
         var menu: SKScene?
         
         if toque.name == "seta1" {
@@ -76,7 +68,7 @@ class GameScenePatinho: SKScene {
             seta.name = "seta2"
             seta.position = CGPoint(x: 600, y: 370)
             seta.size = CGSize(width: 50, height: 50)
-
+            
             video = exercicio.getVideo(4, video: "video2")
             audioS = exercicio.getAudio(4, audio: "audio2")
             
@@ -102,7 +94,7 @@ class GameScenePatinho: SKScene {
             seta.name = "seta3"
             seta.position = CGPoint(x: 600, y: 370)
             seta.size = CGSize(width: 50, height: 50)
-
+            
             video = exercicio.getVideo(4, video: "video3")
             audioS = exercicio.getAudio(4, audio: "audio3")
             
@@ -111,7 +103,7 @@ class GameScenePatinho: SKScene {
             
             addChild(chat)
             addChild(seta)
-        
+            
         }else if toque.name == "seta3" {
             chat.removeFromParent()
             seta.removeFromParent()
@@ -128,7 +120,7 @@ class GameScenePatinho: SKScene {
             seta.name = "seta4"
             seta.position = CGPoint(x: 600, y: 370)
             seta.size = CGSize(width: 50, height: 50)
-
+            
             video = exercicio.getVideo(4, video: "video4")
             audioS = exercicio.getAudio(4, audio: "audio4")
             
@@ -155,10 +147,40 @@ class GameScenePatinho: SKScene {
             
         }else if toque.name == "jogarNovamente" {
             comemoracaoPosicao.removeFromParent()
-            texto.removeFromParent()
+            
             jogarNovamente.removeFromParent()
             retornarMenu.removeFromParent()
-            montaExercicio(0)
+            texto.removeFromParent()
+            
+            personagem = SKSpriteNode(imageNamed: "Julia-1")
+            personagem.zPosition = 2
+            personagem.name = "Julia"
+            personagem.position = CGPoint(x: 700, y: 200)
+            personagem.size = CGSize(width: 150, height: 300)
+            
+            chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_1")
+            chat.zPosition = 2
+            chat.name = "chat5"
+            chat.position = CGPoint(x: 600, y: 400)
+            chat.size = CGSize(width: 200, height: 200)
+            
+            seta = SKSpriteNode(imageNamed: "seta_azul")
+            seta.zPosition = 2
+            seta.name = "seta5"
+            seta.position = CGPoint(x: 600, y: 370)
+            seta.size = CGSize(width: 50, height: 50)
+            
+            audioS = exercicio.getAudio(4, audio: "audio1")
+            playAudio(audioS, tipo: "m4a")
+            
+            video = exercicio.getVideo(4, video: "video1")
+            playVideo(video, tipo: "m4v")
+            
+            addChild(personagem)
+            addChild(chat)
+            addChild(seta)
+            
+            
             
         }else if toque.name == "retornarMenu" {
             
@@ -169,9 +191,19 @@ class GameScenePatinho: SKScene {
             
             jogarNovamente.removeFromParent()
             texto.removeFromParent()
+            
             montaExercicio(quantidadeDePatinhos)
             
-        }else if toque.name == "voltar" {
+            
+        }else if toque.name == "seta5" {
+            
+            personagem.removeFromParent()
+            chat.removeFromParent()
+            seta.removeFromParent()
+            
+            montaExercicio(0)
+            
+        }else if toque.name == "setaVoltar" {
             
             menu = MenuJogo1(size: size)
             self.scene?.view?.presentScene(menu)
@@ -213,9 +245,15 @@ class GameScenePatinho: SKScene {
         
         setaBack = SKSpriteNode(imageNamed: "seta_back")
         setaBack.zPosition = 2
-        setaBack.name = "voltar"
+        setaBack.name = "setaVoltar"
         setaBack.position = CGPoint(x: 50, y: 50)
         setaBack.size = CGSize(width: 50, height: 50)
+        
+        audioS = exercicio.getAudio(4, audio: "audio1")
+        playAudio(audioS, tipo: "m4a")
+        
+        video = exercicio.getVideo(4, video: "video1")
+        playVideo(video, tipo: "m4v")
         
         addChild(background_patinhos)
         addChild(personagem)
@@ -235,7 +273,7 @@ class GameScenePatinho: SKScene {
         
         
         for i in 1...quantidadeDePatinhos{
-
+            
             let patinhot = SKSpriteNode()
             patinhot.texture = SKTexture(imageNamed: "patoTerra")
             patinhot.zPosition = 2
@@ -246,7 +284,7 @@ class GameScenePatinho: SKScene {
             patinhos.append(patinhot)
             
             addChild(patinhot)
-
+            
             let duracao:Int = 4 * Int(i)
             let espera: SKAction = SKAction.waitForDuration(NSTimeInterval(duracao))
             let andaTrecho1: SKAction = SKAction.moveToX(790, duration: 1.5)
@@ -277,11 +315,11 @@ class GameScenePatinho: SKScene {
         addChild(teclado)
         
         teclado.position = CGPoint(x: CGRectGetMidX((self.view?.bounds)!), y: CGRectGetMinY((self.view?.bounds)!) + teclado.frame.height/2)
-
+        
         self.texto.position = CGPoint(x: 500, y: 500)
         self.texto.zPosition = 2
         self.texto.fontSize = 40
-
+        
         self.texto.text = "Quantos patinhos passaram?"
         self.texto.fontColor = UIColor.blackColor()
         addChild(self.texto)
@@ -361,7 +399,7 @@ class GameScenePatinho: SKScene {
             jogarNovamente.zPosition = 2
             jogarNovamente.position = CGPoint(x: 500, y: 400)
             jogarNovamente.size = CGSize(width: 100, height: 100)
-
+            
             addChild(jogarNovamente)
             
         }
@@ -381,7 +419,7 @@ class GameScenePatinho: SKScene {
         videoSprite.position = CGPoint(x: 150, y: 600)
         videoSprite.size = CGSize(width: 500, height: 300)
         
-
+        
         addChild(videoSprite)
         videoSprite.play()
     }
@@ -395,5 +433,5 @@ class GameScenePatinho: SKScene {
         self.audio.prepareToPlay()
         self.audio.play()
     }
-
+    
 }

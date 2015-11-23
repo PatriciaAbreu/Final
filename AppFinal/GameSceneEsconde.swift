@@ -30,7 +30,7 @@ class GameSceneEsconde: SKScene {
     var seta_play_4: SKSpriteNode!
     var seta_back: SKSpriteNode!
     
-    var movie: MPMoviePlayerController?
+    var videoSprite: SKVideoNode!
     var audio: AVAudioPlayer!
     
     var numeros : [Numero] = []
@@ -82,7 +82,7 @@ class GameSceneEsconde: SKScene {
             seta_play_2.size = CGSize(width: 50, height: 50)
             seta_play_2.position = CGPoint(x: 780, y: 380)
             
-            movie?.view.hidden = true
+            videoSprite.removeFromParent()
             video = exercicio.getVideo(1, video: "video2")
             audioS = exercicio.getAudio(1, audio: "audio2")
             
@@ -100,7 +100,7 @@ class GameSceneEsconde: SKScene {
             seta_play_2.removeFromParent()
             
             personagem_Caio.runAction(SKAction.moveToX(1100, duration: 0.5))
-            movie?.view.hidden = true
+            videoSprite.removeFromParent()
             
             montarExercicio()
             
@@ -110,18 +110,18 @@ class GameSceneEsconde: SKScene {
             seta_play_3.removeFromParent()
             
             personagem_Caio.runAction(SKAction.moveToX(1100, duration: 0.5))
-            movie?.view.hidden = true
+            videoSprite.removeFromParent()
             
         }else if toque.name == "seta_play_4" {
             
-            movie?.view.hidden = true
+            videoSprite.removeFromParent()
             var novoJogo = SKScene()
-            novoJogo = GameScene(size: size)
+            novoJogo = MenuJogo1(size: size)
             self.scene!.view?.presentScene(novoJogo)
             
         }else if toque.name == "seta_back" {
             
-            movie?.view.hidden = true
+            videoSprite.removeFromParent()
             var voltarMenu = SKScene()
             voltarMenu = MenuJogo1(size: size)
             self.scene!.view?.presentScene(voltarMenu)
@@ -253,21 +253,21 @@ class GameSceneEsconde: SKScene {
     //função para tocar video
     func playVideo( video: String, tipo: String){
         
-        let path = NSBundle.mainBundle().pathForResource(video, ofType: tipo)
-        let url = NSURL.fileURLWithPath(path!)
-        let movie = MPMoviePlayerController(contentURL: url)
+        let url = NSBundle.mainBundle().URLForResource(video, withExtension: tipo)
+        let asset = AVURLAsset(URL: url!)
+        let videoPlay = AVPlayerItem(asset: asset)
+        let aPlayer = AVPlayer(playerItem: videoPlay)
         
-        if (movie != nil) {
-            
-            self.movie = movie
-            movie.view.frame = CGRect(x: 20, y: 20, width: 300, height: 300)
-            movie.view.layer.zPosition = 1
-            movie.scalingMode = .AspectFill
-            self.view?.addSubview(movie.view)
-            movie.play()
-        }else{
-            debugPrint("Video não encontrado", terminator: "")
-        }
+        videoSprite = SKVideoNode(AVPlayer: aPlayer)
+        videoSprite.zPosition = 1
+        videoSprite.name = "videoSprite"
+        videoSprite.position = CGPoint(x: 180, y: 600)
+        videoSprite.size = CGSize(width: 350, height: 250)
+        
+        
+        addChild(videoSprite)
+        videoSprite.play()
+
     }
     
     //função para tocar audio

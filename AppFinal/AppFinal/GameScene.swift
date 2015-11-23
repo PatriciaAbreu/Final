@@ -45,7 +45,7 @@ class GameScene: SKScene {
 
     var menuTocado: SKSpriteNode!
     
-    var movie: MPMoviePlayerController?
+    var videoSprite: SKVideoNode!
     var audio: AVAudioPlayer!
     
     var exercicio: ExercicioJSON = ExercicioJSON()
@@ -86,17 +86,17 @@ class GameScene: SKScene {
         if toque.name == "seta_rosa" && personagem3_menu.name == "personagem3_novo" {
         
             novaScene = GameScenePiscina(size: size)
-            movie?.view.hidden = true
+            videoSprite.removeFromParent()
             
         }else if toque.name == "seta_rosa" && personagem4_menu.name == "personagem4_novo" {
             
             novaScene = GameScenePatinho(size: size)
-            movie?.view.hidden = true
+            videoSprite.removeFromParent()
             
         }else if toque.name == "seta_rosa"  {
             
             novaScene = MenuJogo1(size: size)
-            movie?.view.hidden = true
+            videoSprite.removeFromParent()
             
         }
         
@@ -246,21 +246,21 @@ class GameScene: SKScene {
     //função para tocar video
     func playVideo( video: String, tipo: String){
         
-        let path = NSBundle.mainBundle().pathForResource(video, ofType: tipo)
-        let url = NSURL.fileURLWithPath(path!)
-        let movie = MPMoviePlayerController(contentURL: url)
+        let url = NSBundle.mainBundle().URLForResource(video, withExtension: tipo)
+        let asset = AVURLAsset(URL: url!)
+        let videoPlay = AVPlayerItem(asset: asset)
+        let aPlayer = AVPlayer(playerItem: videoPlay)
         
-        if (movie != nil) {
-            
-            self.movie = movie
-            movie.view.frame = CGRect(x: 20, y: 20, width: 300, height: 300)
-            movie.view.layer.zPosition = 1
-            movie.scalingMode = .AspectFill
-            self.view?.addSubview(movie.view)
-            movie.play()
-        }else{
-            debugPrint("Video não encontrado", terminator: "")
-        }
+        videoSprite = SKVideoNode(AVPlayer: aPlayer)
+        videoSprite.zPosition = 1
+        videoSprite.name = "videoSprite"
+        videoSprite.position = CGPoint(x: 180, y: 600)
+        videoSprite.size = CGSize(width: 350, height: 250)
+        
+        
+        addChild(videoSprite)
+        videoSprite.play()
+
     }
     
     //função para tocar audio
