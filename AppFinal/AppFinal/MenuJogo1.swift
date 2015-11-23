@@ -15,7 +15,10 @@ class MenuJogo1: SKScene {
 
     var background: SKSpriteNode!
     
-    var jogo1: SKSpriteNode!
+    var jogoPatinho: SKSpriteNode!
+    var jogoEsconde: SKSpriteNode!
+    
+    var novaScene: SKScene!
     
     override func didMoveToView(view: SKView) {
 
@@ -30,6 +33,17 @@ class MenuJogo1: SKScene {
         
         let toque = self.nodeAtPoint(touchLocation)
         
+        if toque.name == "jogoPato" {
+           
+            novaScene = GameScenePatinho(size: size)
+            
+        }else if toque.name == "jogoEsconde" {
+            
+            novaScene = GameSceneEsconde(size: size)
+            
+        }
+        
+        self.scene?.view?.presentScene(novaScene)
     }
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
@@ -46,7 +60,22 @@ class MenuJogo1: SKScene {
         background.size = CGSize(width: 1050, height: 800)
         background.position = CGPoint(x: 510, y: 400)
         
+        // posiciona e adiciona os jogos
+        jogoPatinho = SKSpriteNode(imageNamed: "pato")
+        jogoPatinho.zPosition = 1
+        jogoPatinho.name = "jogoPato"
+        jogoPatinho.position = CGPoint(x: 300, y: 300)
+        jogoPatinho.size = CGSize(width: 90, height: 70)
+        
+        jogoEsconde = SKSpriteNode(imageNamed: "num10")
+        jogoEsconde.zPosition = 1
+        jogoEsconde.name = "jogoEsconde"
+        jogoEsconde.position = CGPoint(x: 700, y: 300)
+        jogoEsconde.size = CGSize(width: 90, height: 70)
+        
         addChild(background)
+        addChild(jogoPatinho)
+        addChild(jogoEsconde)
         
     }
     

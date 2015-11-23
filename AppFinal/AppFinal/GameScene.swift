@@ -77,13 +77,14 @@ class GameScene: SKScene {
         let toque = self.nodeAtPoint(touchLocation)
         var novaScene: SKScene?
         
-        if toque.name == "seta_rosa" && personagem2_menu.name == "personagem2_novo"{
-            
-            novaScene = GameSceneCozinha(size: size)
-            movie?.view.hidden = true
-            
-        }else if toque.name == "seta_rosa" && personagem3_menu.name == "personagem3_novo" {
-            
+//        if toque.name == "seta_rosa" && personagem2_menu.name == "personagem2_novo"{
+//            
+//            novaScene = GameSceneCozinha(size: size)
+//            movie?.view.hidden = true
+//            
+//        }else 
+        if toque.name == "seta_rosa" && personagem3_menu.name == "personagem3_novo" {
+        
             novaScene = GameScenePiscina(size: size)
             movie?.view.hidden = true
             
@@ -94,7 +95,7 @@ class GameScene: SKScene {
             
         }else if toque.name == "seta_rosa"  {
             
-            novaScene = GameSceneEsconde(size: size)
+            novaScene = MenuJogo1(size: size)
             movie?.view.hidden = true
             
         }

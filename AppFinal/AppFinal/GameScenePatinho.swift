@@ -16,6 +16,7 @@ class GameScenePatinho: SKScene {
     var personagem: SKSpriteNode!
     var chat: SKSpriteNode!
     var seta: SKSpriteNode!
+    var setaBack: SKSpriteNode!
     
     var videoSprite = SKVideoNode()
     
@@ -160,13 +161,20 @@ class GameScenePatinho: SKScene {
             montaExercicio(0)
             
         }else if toque.name == "retornarMenu" {
-            menu = GameScene(size: size)
+            
+            menu = MenuJogo1(size: size)
             self.scene?.view?.presentScene(menu)
             
         }else if toque.name == "tentarNovamente" {
+            
             jogarNovamente.removeFromParent()
             texto.removeFromParent()
             montaExercicio(quantidadeDePatinhos)
+            
+        }else if toque.name == "voltar" {
+            
+            menu = MenuJogo1(size: size)
+            self.scene?.view?.presentScene(menu)
         }
         
         
@@ -203,10 +211,17 @@ class GameScenePatinho: SKScene {
         seta.position = CGPoint(x: 600, y: 370)
         seta.size = CGSize(width: 50, height: 50)
         
+        setaBack = SKSpriteNode(imageNamed: "seta_back")
+        setaBack.zPosition = 2
+        setaBack.name = "voltar"
+        setaBack.position = CGPoint(x: 50, y: 50)
+        setaBack.size = CGSize(width: 50, height: 50)
+        
         addChild(background_patinhos)
         addChild(personagem)
         addChild(chat)
         addChild(seta)
+        addChild(setaBack)
         
     }
     

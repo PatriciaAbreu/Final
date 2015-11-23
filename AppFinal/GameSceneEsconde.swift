@@ -123,7 +123,7 @@ class GameSceneEsconde: SKScene {
             
             movie?.view.hidden = true
             var voltarMenu = SKScene()
-            voltarMenu = GameScene(size: size)
+            voltarMenu = MenuJogo1(size: size)
             self.scene!.view?.presentScene(voltarMenu)
             
         }else if toque.name == "julia" && controle != 10 {
