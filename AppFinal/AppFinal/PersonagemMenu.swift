@@ -51,6 +51,6 @@ class PersonagensMenu: SKSpriteNode {
         
         let pontoEmRelacaoATela = self.convertPoint(touchLocation, toNode: self.parent!.parent!)
         let cenaOndeEstaOMenu = (toque.parent?.parent as! GameScene)
-        cenaOndeEstaOMenu.girarMenu(pontoEmRelacaoATela)
+//        cenaOndeEstaOMenu.girarMenu(pontoEmRelacaoATela)
     }
 }

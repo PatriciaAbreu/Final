@@ -45,6 +45,9 @@
 		6A6D69481B9F61EE00A5BAD8 /* Exercicio4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D69471B9F61EE00A5BAD8 /* Exercicio4.m4a */; };
 		6A7D251F1BAA0FF800C094BF /* PersonagemMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7D251E1BAA0FF800C094BF /* PersonagemMenu.swift */; };
 		6AA4D4B71B98982100CC7C19 /* Exercicio2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4D4B61B98982100CC7C19 /* Exercicio2.m4a */; };
+		6AAAB9B51C08B66E0017BFB4 /* MenuJogo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAAB9B41C08B66E0017BFB4 /* MenuJogo2.swift */; };
+		6AAAB9B71C08B67E0017BFB4 /* MenuJogo3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAAB9B61C08B67E0017BFB4 /* MenuJogo3.swift */; };
+		6AAAB9BA1C08B68F0017BFB4 /* MenuJogo4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAAB9B91C08B68F0017BFB4 /* MenuJogo4.swift */; };
 		6AC1342D1B8F4CBA00E6F6C6 /* Numero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC1342C1B8F4CBA00E6F6C6 /* Numero.swift */; };
 		6AC134371B96175C00E6F6C6 /* teste.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 6AC134311B8F544000E6F6C6 /* teste.m4v */; };
 		6AC134391B96177F00E6F6C6 /* Exercicio1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AC134381B96177F00E6F6C6 /* Exercicio1.m4a */; };
@@ -112,6 +115,9 @@
 		6A6D69471B9F61EE00A5BAD8 /* Exercicio4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio4.m4a; path = ../Exercicio4.m4a; sourceTree = "<group>"; };
 		6A7D251E1BAA0FF800C094BF /* PersonagemMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonagemMenu.swift; sourceTree = "<group>"; };
 		6AA4D4B61B98982100CC7C19 /* Exercicio2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio2.m4a; path = ../Exercicio2.m4a; sourceTree = "<group>"; };
+		6AAAB9B41C08B66E0017BFB4 /* MenuJogo2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuJogo2.swift; sourceTree = "<group>"; };
+		6AAAB9B61C08B67E0017BFB4 /* MenuJogo3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuJogo3.swift; sourceTree = "<group>"; };
+		6AAAB9B91C08B68F0017BFB4 /* MenuJogo4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuJogo4.swift; sourceTree = "<group>"; };
 		6AC1342C1B8F4CBA00E6F6C6 /* Numero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Numero.swift; path = ../Numero.swift; sourceTree = "<group>"; };
 		6AC134311B8F544000E6F6C6 /* teste.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = teste.m4v; path = ../teste.m4v; sourceTree = "<group>"; };
 		6AC134381B96177F00E6F6C6 /* Exercicio1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio1.m4a; path = ../Exercicio1.m4a; sourceTree = "<group>"; };
@@ -217,6 +223,9 @@
 				6A541AAA1B82738E0066B36C /* MenuJogo1.swift */,
 				6A541AAD1B82748C0066B36C /* GameScenePiscina.swift */,
 				6A541AAF1B8275020066B36C /* GameScenePatinho.swift */,
+				6AAAB9B41C08B66E0017BFB4 /* MenuJogo2.swift */,
+				6AAAB9B61C08B67E0017BFB4 /* MenuJogo3.swift */,
+				6AAAB9B91C08B68F0017BFB4 /* MenuJogo4.swift */,
 			);
 			name = Game_Scene;
 			sourceTree = "<group>";
@@ -433,6 +442,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AAAB9B51C08B66E0017BFB4 /* MenuJogo2.swift in Sources */,
+				6AAAB9B71C08B67E0017BFB4 /* MenuJogo3.swift in Sources */,
+				6AAAB9BA1C08B68F0017BFB4 /* MenuJogo4.swift in Sources */,
 				6A541A851B823DE10066B36C /* GameScene.swift in Sources */,
 				6A541A871B823DE10066B36C /* GameViewController.swift in Sources */,
 				6A541AA51B82564F0066B36C /* GameSceneEsconde.swift in Sources */,
