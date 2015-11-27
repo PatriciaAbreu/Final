@@ -152,13 +152,23 @@ class GameScenePatinho: SKScene {
             retornarMenu.removeFromParent()
             texto.removeFromParent()
             
+            background_patinhos.removeFromParent()
+            
+            background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinhoVazio")
+            background_patinhos.zPosition = 2
+            background_patinhos.name = "background_patinhos_sol"
+            background_patinhos.size = CGSize(width: 1050, height: 800)
+            background_patinhos.position = CGPoint(x: 510, y: 400)
+
+            addChild(background_patinhos)
+            
             personagem = SKSpriteNode(imageNamed: "Julia-1")
             personagem.zPosition = 2
             personagem.name = "Julia"
             personagem.position = CGPoint(x: 700, y: 200)
             personagem.size = CGSize(width: 150, height: 300)
             
-            chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_1")
+            chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_6")
             chat.zPosition = 2
             chat.name = "chat5"
             chat.position = CGPoint(x: 600, y: 400)
@@ -180,8 +190,6 @@ class GameScenePatinho: SKScene {
             addChild(chat)
             addChild(seta)
             
-            
-            
         }else if toque.name == "retornarMenu" {
             
             menu = MenuJogo1(size: size)
@@ -193,7 +201,6 @@ class GameScenePatinho: SKScene {
             texto.removeFromParent()
             
             montaExercicio(quantidadeDePatinhos)
-            
             
         }else if toque.name == "seta5" {
             

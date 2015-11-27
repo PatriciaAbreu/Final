@@ -112,10 +112,10 @@ class GameScene: SKScene {
     func montarScene(){
         
         //imagem de plano de fundo
-        backgroundPrincipal = SKSpriteNode(imageNamed: "backgroundGrass")
-        backgroundPrincipal.zPosition = 1
+        backgroundPrincipal = SKSpriteNode(imageNamed: "cenarioInicialVazio")
+        backgroundPrincipal.zPosition = 2
         backgroundPrincipal.name = "backGroundPrincipal"
-        backgroundPrincipal.size = CGSize(width: 1050, height: 800)
+        backgroundPrincipal.size = CGSize(width: 1400, height: 800)
         backgroundPrincipal.position = CGPoint(x: 510, y: 400)
         
         addChild(backgroundPrincipal)
@@ -191,11 +191,11 @@ class GameScene: SKScene {
         personagem4_menu.position = CGPoint(x: -225, y: 0)
         personagem4_menu.name = "personagem4"
         
-        menu_todo.addChild(circulo_menu)
-        menu_todo.addChild(personagem1_menu)
-        menu_todo.addChild(personagem2_menu)
-        menu_todo.addChild(personagem3_menu)
-        menu_todo.addChild(personagem4_menu)
+//        menu_todo.addChild(circulo_menu)
+//        menu_todo.addChild(personagem1_menu)
+//        menu_todo.addChild(personagem2_menu)
+//        menu_todo.addChild(personagem3_menu)
+//        menu_todo.addChild(personagem4_menu)
         
         texto = SKSpriteNode(imageNamed: "texto1")
         texto.zPosition = 4
@@ -215,9 +215,9 @@ class GameScene: SKScene {
         placa_nome_jogo.position = CGPoint(x: 800, y: 100)
         
 //        addChild(placa_nome_jogo)
-        addChild(menu_todo)
-        addChild(texto)
-        addChild(seta)
+//        addChild(menu_todo)
+//        addChild(texto)
+//        addChild(seta)
         
         
     }

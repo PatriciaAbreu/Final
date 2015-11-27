@@ -368,9 +368,6 @@ class GameSceneEsconde: SKScene {
     
     func posicionarNumero(numero:Numero){
         
-        print("testeeeee")
-        print(posicoes[0])
-        
         if numero.intersectsNode(posicoes[0]) {
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[0].position.x, y: posicoes[0].position.y), duration: 0.2))

@@ -75,11 +75,6 @@ class Numero: SKSpriteNode {
             //chama método da classe GameSceneEsconde para posicionar o objeto do tipo Numero tocado na posição correta
             (toque.parent as! GameSceneEsconde).posicionarNumero(toc)
         }
-        
-        
-        
-        
-        
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -97,18 +92,6 @@ class Numero: SKSpriteNode {
         }
         if toc.exercicio != 1 {
             self.position = location
-            
-            
-            // faz a analise dos números jogo da cozinha
-//            if toque.name == "exercicio2_5" {
-//                
-//                toque.runAction(SKAction.scaleTo(2, duration: 0.4))
-//                (toque.parent as! GameSceneCozinha).prontoParaCozinhar()
-//                
-//            }else if toque.name == "exercicio2_1" || toque.name == "exercicio2_2" || toque.name == "exercicio2_3" || toque.name == "exercicio2_4" || toque.name == "exercicio2_6" || toque.name == "exercicio2_7" || toque.name == "exercicio2_8" || toque.name == "exercicio2_9" || toque.name == "exercicio2_10" {
-//                
-//                (toque as! GameSceneCozinha).contouErrado()
-//            }
             
             //faz a analise dos números do jogo da piscina de bolinhas
             if toque.name == "exercicio3_4_certo" {
