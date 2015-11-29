@@ -51,7 +51,7 @@ class Teclado: SKSpriteNode {
                 }else if character == "ENTER" {
                     key = Tecla(imageNamed: "tecla_enter", identifier: "ENTER")
                 }else {
-                    key = Tecla(imageNamed: "tecla_\(character)")
+                    key = Tecla(imageNamed: "tecla_\(character)", identificador: String(character))
                 }
                 
                 
@@ -95,10 +95,7 @@ class Teclado: SKSpriteNode {
             self.touchedKeys.removeLast().touchesCancelled()
         }
     }
-    
-//    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        
-//    }
+
     
     func touchesEnded(identifier: String) {
         self.cleanTouch()

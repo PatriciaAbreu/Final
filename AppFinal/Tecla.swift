@@ -44,12 +44,16 @@ class Tecla: SKSpriteNode {
         self.userInteractionEnabled = true
     }
     
-    init(imageNamed: String) {
+    init(imageNamed: String, identificador: String) {
         let texture = SKTexture(imageNamed: imageNamed)
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
 
         let tecla = SKSpriteNode(imageNamed: imageNamed)
         addChild(tecla)
+        
+        self.identifier = identificador
+        self.userInteractionEnabled = true
+
     }
     
     required init?(coder aDecoder: NSCoder) {
