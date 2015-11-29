@@ -30,10 +30,10 @@ class GameScene: SKScene {
     var menu: SKSpriteNode!
     
     var circulo_menu: PersonagensMenu!
-    var personagem_Julia: SKSpriteNode!
-    var personagem_Carol: SKSpriteNode!
-    var personagem_Pedro: SKSpriteNode!
-    var personagem_Caio: SKSpriteNode!
+    var personagemJulia: SKSpriteNode!
+    var personagemCarol: SKSpriteNode!
+    var personagemPedro: SKSpriteNode!
+    var personagemCaio: SKSpriteNode!
     var raioSol: SKSpriteNode!
     var sol: SKSpriteNode!
     
@@ -79,6 +79,15 @@ class GameScene: SKScene {
         
         if toque.name == "Julia" {
         
+            backgroundPrincipal.removeFromParent()
+            personagemJulia.removeFromParent()
+            personagemCaio.removeFromParent()
+            personagemCarol.removeFromParent()
+            personagemPedro.removeFromParent()
+            sol.removeFromParent()
+            videoSprite.removeFromParent()
+            raioSol.removeFromParent()
+            
             novaScene = MenuJogo1(size: size)
             videoSprite.removeFromParent()
             
@@ -129,38 +138,38 @@ class GameScene: SKScene {
         sol.size = CGSize(width: 290, height: 290)
         sol.position = CGPoint(x: 150, y: 630)
         
-        personagem_Julia = SKSpriteNode(imageNamed: "Julia")
-        personagem_Julia.zPosition = 4
-        personagem_Julia.name = "Julia"
-        personagem_Julia.size = CGSize(width: 250, height: 400)
-        personagem_Julia.position = CGPoint(x: 200, y: 250)
+        personagemJulia = SKSpriteNode(imageNamed: "Julia")
+        personagemJulia.zPosition = 4
+        personagemJulia.name = "Julia"
+        personagemJulia.size = CGSize(width: 250, height: 400)
+        personagemJulia.position = CGPoint(x: 200, y: 250)
         
-        personagem_Carol = SKSpriteNode(imageNamed: "Carol")
-        personagem_Carol.zPosition = 2
-        personagem_Carol.name = "Carol"
-        personagem_Carol.size = CGSize(width: 250, height: 450)
-        personagem_Carol.position = CGPoint(x: 400, y: 380)
+        personagemCarol = SKSpriteNode(imageNamed: "Carol")
+        personagemCarol.zPosition = 2
+        personagemCarol.name = "Carol"
+        personagemCarol.size = CGSize(width: 250, height: 450)
+        personagemCarol.position = CGPoint(x: 400, y: 380)
 
-        personagem_Pedro = SKSpriteNode(imageNamed: "Pedro")
-        personagem_Pedro.zPosition = 2
-        personagem_Pedro.name = "Pedro"
-        personagem_Pedro.size = CGSize(width: 250, height: 450)
-        personagem_Pedro.position = CGPoint(x: 700, y: 380)
+        personagemPedro = SKSpriteNode(imageNamed: "Pedro")
+        personagemPedro.zPosition = 2
+        personagemPedro.name = "Pedro"
+        personagemPedro.size = CGSize(width: 250, height: 450)
+        personagemPedro.position = CGPoint(x: 700, y: 380)
         
-        personagem_Caio = SKSpriteNode(imageNamed: "Caio")
-        personagem_Caio.zPosition = 4
-        personagem_Caio.name = "Caio"
-        personagem_Caio.size = CGSize(width: 300, height: 400)
-        personagem_Caio.position = CGPoint(x: 900, y: 250)
+        personagemCaio = SKSpriteNode(imageNamed: "Caio")
+        personagemCaio.zPosition = 4
+        personagemCaio.name = "Caio"
+        personagemCaio.size = CGSize(width: 300, height: 400)
+        personagemCaio.position = CGPoint(x: 900, y: 250)
         
         
         addChild(backgroundPrincipal)
         addChild(raioSol)
         addChild(sol)
-        addChild(personagem_Julia)
-        addChild(personagem_Carol)
-        addChild(personagem_Pedro)
-        addChild(personagem_Caio)
+        addChild(personagemJulia)
+        addChild(personagemCarol)
+        addChild(personagemPedro)
+        addChild(personagemCaio)
     }
     
     //função para tocar video
