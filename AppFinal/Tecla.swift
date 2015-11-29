@@ -23,6 +23,7 @@ class Tecla: SKSpriteNode {
         let texture = SKTexture(imageNamed: imageNamed)
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         
+        
         self.character = character
         let label = SKLabelNode(fontNamed: "Arial-Bold")
         label.text = String(character)
@@ -43,6 +44,14 @@ class Tecla: SKSpriteNode {
         self.userInteractionEnabled = true
     }
     
+    init(imageNamed: String) {
+        let texture = SKTexture(imageNamed: imageNamed)
+        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+
+        let tecla = SKSpriteNode(imageNamed: imageNamed)
+        addChild(tecla)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -59,12 +68,7 @@ class Tecla: SKSpriteNode {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         //analisar qual botao foi pressionado
-        
-//        delegate?.numeroTocado(identifier)
-        
-        print("Touches Ended: \(self.character)")
         self.teclado?.touchesEnded(identifier)
-//        self.teclado?.touchesEnded(touches, withEvent: event)
         
     }
     

@@ -20,8 +20,8 @@ class Teclado: SKSpriteNode {
     var numeric = ["1", "2", "3", "\n", 0, "4", "5", "6", "\n", 0, "7", "8", "9", "\n", 0, "DELETE", "0","ENTER"]
     
     init() {
-        let texture = SKTexture(imageNamed: "bg_keyboard.png")
-        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        let texture = SKTexture(imageNamed: "botoes_fundo")
+        super.init(texture: texture, color: UIColor.clearColor(), size: CGSize(width: 400, height: 400))
         
         self.zPosition = 9999
         
@@ -47,11 +47,11 @@ class Teclado: SKSpriteNode {
                 var key:Tecla!
                 
                 if character == "DELETE" {
-                    key = Tecla(imageNamed: "btn_keyboard_backspace.png", identifier: "DELETE")
+                    key = Tecla(imageNamed: "tecla_voltar", identifier: "DELETE")
                 }else if character == "ENTER" {
-                    key = Tecla(imageNamed: "btb_keyboard_enter.png", identifier: "ENTER")
+                    key = Tecla(imageNamed: "tecla_enter", identifier: "ENTER")
                 }else {
-                    key = Tecla(character: Character(character as! String))
+                    key = Tecla(imageNamed: "tecla_\(character)")
                 }
                 
                 
