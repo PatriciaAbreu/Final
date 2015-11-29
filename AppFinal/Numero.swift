@@ -75,65 +75,10 @@ class Numero: SKSpriteNode {
         if toc.exercicio == 1 {
             (toque.parent as! GameSceneEsconde).verificaPosicao(toc)
         }
+        
         if toc.exercicio != 1 {
             self.position = location
             
-            //faz a analise dos números do jogo da piscina de bolinhas
-            if toque.name == "exercicio3_4_certo" {
-                if toque.position.x >= 830 && toque.position.x <= 870 && toque.position.y >= 230 && toque.position.y <= 270 {
-                    
-                    toque.name = "exercicio3_4_novo"
-                    
-                }else {
-                    
-                    toque.position = Numero.toque
-                }
-                
-            }else if toque.name == "exercicio3_3_certo" {
-                if toque.position.x >= 830 && toque.position.x <= 870 && toque.position.y >= 230 && toque.position.y <= 270 {
-                    
-                    toque.name = "exercicio3_3_novo"
-                    
-                }else{
-                    
-                    toque.position = Numero.toque
-                    
-                }
-            }else if toque.name == "exercicio3_5_certo" {
-                if toque.position.x >= 830 && toque.position.x <= 870 && toque.position.y >= 230 && toque.position.y <= 270 {
-                    
-                    toque.name = "exercicio3_5_novo"
-                    
-                }else {
-                    
-                    toque.position = Numero.toque
-                    
-                }
-            }else if toque.name == "exercicio3_7_certo" {
-                if toque.position.x >= 830 && toque.position.x <= 870 && toque.position.y >= 230 && toque.position.y <= 270 {
-                    
-                    toque.name = "exercicio3_7_novo"
-                    
-                }else {
-                    
-                    toque.position = Numero.toque
-                    
-                }
-            }else if toque.name == "exercicio3_2_certo" {
-                if toque.position.x >= 830 && toque.position.x <= 870 && toque.position.y >= 230 && toque.position.y <= 270 {
-                    
-                    toque.name = "exercicio3_2_novo"
-                    
-                }else {
-                    
-                    toque.position = Numero.toque
-                    
-                }
-            }else if toque.name == "exercicio3_1" || toque.name == "exercicio3_2" || toque.name == "exercicio3_3" || toque.name == "exercicio3_4" || toque.name == "exercicio3_5" || toque.name == "exercicio3_6" || toque.name == "exercicio3_7" || toque.name == "exercicio3_8" || toque.name == "exercicio3_9" || toque.name == "exercicio3_10" {
-                
-                toque.position = Numero.toque
-                
-            }
             
         }
     }

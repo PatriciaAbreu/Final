@@ -15,8 +15,9 @@ class GameSceneEsconde: SKScene {
     var gameController: GameViewController!
     
     var background_numeros: SKSpriteNode!
-    var brinquedo1: SKSpriteNode!
-    var brinquedo2: SKSpriteNode!
+    var vaso: SKSpriteNode!
+    var casaCachorro: SKSpriteNode!
+    var bola: SKSpriteNode!
     
     var personagem_Caio: SKSpriteNode!
     var personagem_Julia: SKSpriteNode!
@@ -29,6 +30,8 @@ class GameSceneEsconde: SKScene {
     var seta_play_3: SKSpriteNode!
     var seta_play_4: SKSpriteNode!
     var seta_back: SKSpriteNode!
+    
+    var posicao: Int!
     
     var videoSprite: SKVideoNode!
     var audio: AVAudioPlayer!
@@ -71,13 +74,13 @@ class GameSceneEsconde: SKScene {
             seta_play.name = "seta_play_2"
             
             dialogo2 = SKSpriteNode(imageNamed: "chat_azul_texto_2")
-            dialogo2.zPosition = 1
+            dialogo2.zPosition = 2
             dialogo2.name = "dialogo"
             dialogo2.size = CGSize(width: 200, height: 200)
             dialogo2.position = CGPoint(x: 780, y: 400)
             
             seta_play_2 = SKSpriteNode(imageNamed: "seta_azul")
-            seta_play_2.zPosition = 1
+            seta_play_2.zPosition = 2
             seta_play_2.name = "seta_play_2"
             seta_play_2.size = CGSize(width: 50, height: 50)
             seta_play_2.position = CGPoint(x: 780, y: 380)
@@ -108,9 +111,19 @@ class GameSceneEsconde: SKScene {
             
             dialogo2.removeFromParent()
             seta_play_3.removeFromParent()
+            background_numeros.removeFromParent()
             
             personagem_Caio.runAction(SKAction.moveToX(1100, duration: 0.5))
             videoSprite.removeFromParent()
+            
+            //posiciona e adiciona o plano de fundo
+            background_numeros = SKSpriteNode(imageNamed: "cenarioEsconde")
+            background_numeros.zPosition = 2
+            background_numeros.name = "background_numeros"
+            background_numeros.size = CGSize(width: 1100, height: 800)
+            background_numeros.position = CGPoint(x: 550, y: 400)
+            
+            addChild(background_numeros)
             
         }else if toque.name == "seta_play_4" {
             
@@ -127,17 +140,27 @@ class GameSceneEsconde: SKScene {
             self.scene!.view?.presentScene(voltarMenu)
             
         }else if toque.name == "julia" && controle != 10 {
+            background_numeros.removeFromParent()
+            
+            //posiciona e adiciona o plano de fundo
+            background_numeros = SKSpriteNode(imageNamed: "cenarioEscondeVazio")
+            background_numeros.zPosition = 2
+            background_numeros.name = "background_numeros"
+            background_numeros.size = CGSize(width: 1100, height: 800)
+            background_numeros.position = CGPoint(x: 550, y: 400)
+            
+            addChild(background_numeros)
             
             personagem_Caio.runAction(SKAction.moveToX(950, duration: 0.5))
             
             dialogo2 = SKSpriteNode(imageNamed: "chat_azul_texto_2")
-            dialogo2.zPosition = 1
+            dialogo2.zPosition = 2
             dialogo2.name = "dialogo"
             dialogo2.size = CGSize(width: 200, height: 200)
             dialogo2.position = CGPoint(x: 900, y: 400)
             
             seta_play_3 = SKSpriteNode(imageNamed: "seta_azul")
-            seta_play_3.zPosition = 1
+            seta_play_3.zPosition = 2
             seta_play_3.name = "seta_play_3"
             seta_play_3.size = CGSize(width: 50, height: 50)
             seta_play_3.position = CGPoint(x: 900, y: 380)
@@ -152,26 +175,40 @@ class GameSceneEsconde: SKScene {
             playAudio(audioS, tipo: "m4a")
             
         }else if toque.name == "julia" && controle == 10{
+            background_numeros.removeFromParent()
             
+            if posicao == 1 {
+                vaso.removeFromParent()
+            }else if posicao == 2 {
+                casaCachorro.removeFromParent()
+            }else{
+                bola.removeFromParent()
+            }
             
-            brinquedo1.removeFromParent()
             personagem_Julia.runAction(SKAction.scaleTo(2, duration: 0.3))
             numeros[3].name = "exercicio1_3"
             
             personagem_Caio.runAction(SKAction.moveToX(950, duration: 0.5))
             
+            background_numeros = SKSpriteNode(imageNamed: "cenarioEscondeVazio")
+            background_numeros.zPosition = 2
+            background_numeros.name = "background_numeros"
+            background_numeros.size = CGSize(width: 1100, height: 800)
+            background_numeros.position = CGPoint(x: 550, y: 400)
+
             dialogo2 = SKSpriteNode(imageNamed: "chat_azul_texto_4")
-            dialogo2.zPosition = 1
+            dialogo2.zPosition = 2
             dialogo2.name = "dialogo"
             dialogo2.size = CGSize(width: 200, height: 200)
             dialogo2.position = CGPoint(x: 900, y: 400)
             
             seta_play_4 = SKSpriteNode(imageNamed: "seta_azul")
-            seta_play_4.zPosition = 1
+            seta_play_4.zPosition = 2
             seta_play_4.name = "seta_play_4"
             seta_play_4.size = CGSize(width: 50, height: 50)
             seta_play_4.position = CGPoint(x: 900, y: 380)
             
+            addChild(background_numeros)
             addChild(dialogo2)
             addChild(seta_play_4)
             
@@ -187,62 +224,40 @@ class GameSceneEsconde: SKScene {
     func montarScene(){
         
         //posiciona e adiciona o plano de fundo
-        background_numeros = SKSpriteNode(imageNamed: "fundo_sala_brinquedos")
-        background_numeros.zPosition = 1
+        background_numeros = SKSpriteNode(imageNamed: "cenarioEscondeVazio")
+        background_numeros.zPosition = 2
         background_numeros.name = "background_numeros"
-        background_numeros.size = CGSize(width: 1050, height: 800)
-        background_numeros.position = CGPoint(x: 510, y: 400)
-        
-        // posiciona e adiciona brinquedos
-        brinquedo1 = SKSpriteNode(imageNamed: "bola_toy")
-        brinquedo1.zPosition = 1
-        brinquedo1.name = "brinquedo1"
-        brinquedo1.size = CGSize(width: 200, height: 200)
-        brinquedo1.position = CGPoint(x: 300, y: 100)
-        
-        brinquedo2 = SKSpriteNode(imageNamed: "carro_toy")
-        brinquedo2.zPosition = 1
-        brinquedo2.name = "brinquedo2"
-        brinquedo2.size = CGSize(width: 124, height: 81)
-        brinquedo2.position = CGPoint(x: 450, y: 330)
+        background_numeros.size = CGSize(width: 1100, height: 800)
+        background_numeros.position = CGPoint(x: 550, y: 400)
         
         //posiciona e adiciona personagens
         personagem_Caio = SKSpriteNode(imageNamed: "Caio")
-        personagem_Caio.zPosition = 1
+        personagem_Caio.zPosition = 5
         personagem_Caio.name = "caio"
         personagem_Caio.size = CGSize(width: 150, height: 300)
         personagem_Caio.position = CGPoint(x: 850, y: 150)
         
-        personagem_Julia = SKSpriteNode(imageNamed: "julia")
-        personagem_Julia.zPosition = 1
-        personagem_Julia.name = "julia"
-        personagem_Julia.size = CGSize(width: 150, height: 200)
-        personagem_Julia.position = CGPoint(x: 250, y: 150)
-        
         //posiciona e adiciona dialogo
         dialogo = SKSpriteNode(imageNamed: "chat_azul_texto")
-        dialogo.zPosition = 1
+        dialogo.zPosition = 2
         dialogo.name = "dialogo"
         dialogo.size = CGSize(width: 200, height: 200)
         dialogo.position = CGPoint(x: 780, y: 400)
         
         //posiona e adiciona setas
         seta_play = SKSpriteNode(imageNamed: "seta_azul")
-        seta_play.zPosition = 1
+        seta_play.zPosition = 2
         seta_play.name = "seta_play_1"
         seta_play.size = CGSize(width: 50, height: 50)
         seta_play.position = CGPoint(x: 780, y: 380)
         
         seta_back = SKSpriteNode(imageNamed: "seta_back")
-        seta_back.zPosition = 1
+        seta_back.zPosition = 4
         seta_back.name = "seta_back"
         seta_back.size = CGSize(width: 50, height: 50)
         seta_back.position = CGPoint(x: 50, y: 50)
         
         addChild(background_numeros)
-        addChild(personagem_Julia)
-        addChild(brinquedo1)
-        addChild(brinquedo2)
         addChild(personagem_Caio)
         addChild(dialogo)
         addChild(seta_play)
@@ -261,8 +276,8 @@ class GameSceneEsconde: SKScene {
         videoSprite = SKVideoNode(AVPlayer: aPlayer)
         videoSprite.zPosition = 1
         videoSprite.name = "videoSprite"
-        videoSprite.position = CGPoint(x: 180, y: 600)
-        videoSprite.size = CGSize(width: 350, height: 250)
+        videoSprite.position = CGPoint(x: 100, y: 610)
+        videoSprite.size = CGSize(width: 350, height: 290)
         
         
         addChild(videoSprite)
@@ -283,14 +298,78 @@ class GameSceneEsconde: SKScene {
     //função par montar o exercicio
     func montarExercicio(){
         
+        background_numeros.removeFromParent()
+        
+        //posiciona e adiciona o plano de fundo
+        background_numeros = SKSpriteNode(imageNamed: "cenarioEsconde")
+        background_numeros.zPosition = 2
+        background_numeros.name = "background_numeros"
+        background_numeros.size = CGSize(width: 1100, height: 800)
+        background_numeros.position = CGPoint(x: 550, y: 400)
+        
+        addChild(background_numeros)
+        
+        // posiciona Julia
+        
+        posicao = random(1, hi: 3)
+        
+        if posicao == 1 {
+            vaso = SKSpriteNode(imageNamed: "vaso")
+            vaso.zPosition = 4
+            vaso.name = "vaso"
+            vaso.size = CGSize(width: 170, height: 430)
+            vaso.position = CGPoint(x: 80, y: 220)
+            
+            personagem_Julia = SKSpriteNode(imageNamed: "Julia")
+            personagem_Julia.zPosition = 3
+            personagem_Julia.name = "julia"
+            personagem_Julia.size = CGSize(width: 150, height: 200)
+            personagem_Julia.position = CGPoint(x: 110, y: 220)
+
+            addChild(vaso)
+            addChild(personagem_Julia)
+            
+        }else if posicao == 2 {
+            casaCachorro = SKSpriteNode(imageNamed: "casaCachorro")
+            casaCachorro.zPosition = 4
+            casaCachorro.name = "casaCachorro"
+            casaCachorro.size = CGSize(width: 200, height: 200)
+            casaCachorro.position = CGPoint(x: 630, y: 250)
+            
+            personagem_Julia = SKSpriteNode(imageNamed: "Julia")
+            personagem_Julia.zPosition = 3
+            personagem_Julia.name = "julia"
+            personagem_Julia.size = CGSize(width: 150, height: 200)
+            personagem_Julia.position = CGPoint(x: 690, y: 250)
+
+            addChild(casaCachorro)
+            addChild(personagem_Julia)
+            
+        } else {
+            bola = SKSpriteNode(imageNamed: "bola")
+            bola.zPosition = 4
+            bola.name = "bola"
+            bola.size = CGSize(width: 200, height: 220)
+            bola.position = CGPoint(x: 800, y: 100)
+            
+            personagem_Julia = SKSpriteNode(imageNamed: "Julia")
+            personagem_Julia.zPosition = 3
+            personagem_Julia.name = "julia"
+            personagem_Julia.size = CGSize(width: 150, height: 200)
+            personagem_Julia.position = CGPoint(x: 740, y: 100)
+            
+            addChild(bola)
+            addChild(personagem_Julia)
+        }
+        
         // gera números de 1 a 10
         for i in 1...10{
             let num = Numero(texture: SKTexture(imageNamed: "num\(i)"), color: UIColor.whiteColor(), size: CGSize(width: 50, height: 50), numero: 1, exercicio: 1)
-            num.zPosition = 1
+            num.zPosition = 5
             num.name = "exercicio1_\(i)"
             var test = false
             repeat{
-                num.position = CGPoint(x: random(30, hi: 970), y: random(30, hi: 600))
+                num.position = CGPoint(x: random(30, hi: 970), y: random(30, hi: 500))
                 test = false
                 var j = 0
                 while j < numeros.count && !test{
@@ -303,15 +382,15 @@ class GameSceneEsconde: SKScene {
             addChild(num)
         }
         
-        var distancia = 70
+        var distancia = 550
         
         // gera SKSpriteNodes transparentes para posicionar os números
-        for i in 1...10 {
+        for i in 1...5 {
             let posi = SKSpriteNode()
             posi.color = UIColor.clearColor()
-            posi.position = CGPoint(x: distancia, y: 670)
-            posi.size = CGSize(width: 100, height: 100)
-            posi.zPosition = 0
+            posi.position = CGPoint(x: distancia, y: 700)
+            posi.size = CGSize(width: 100, height: 70)
+            posi.zPosition = 3
             posi.name = "posi_num\(i)"
             
             distancia = distancia + 100
@@ -320,21 +399,53 @@ class GameSceneEsconde: SKScene {
             addChild(posi)
         }
         
-        var distaciaBarra = 70
+        distancia = 550
+        
+        for i in 6...10 {
+            let posi = SKSpriteNode()
+            posi.color = UIColor.clearColor()
+            posi.position = CGPoint(x: distancia, y: 600)
+            posi.size = CGSize(width: 100, height: 70)
+            posi.zPosition = 3
+            posi.name = "posi_num\(i)"
+            
+            distancia = distancia + 100
+            
+            posicoes.append(posi)
+            addChild(posi)
+        }
+        
+        var distaciaXBarra = 550
         
         // gera as barras para posicionar os números
-        for i in 1...10 {
-            let barra = SKSpriteNode(imageNamed: "barra")
-            barra.zPosition = 1
-            barra.size = CGSize(width: 70, height: 10)
-            barra.position = CGPoint(x: distaciaBarra, y: 640)
+        for i in 1...5 {
+            let barra = SKSpriteNode(imageNamed: "placa")
+            barra.zPosition = 3
+            barra.size = CGSize(width: 100, height: 70)
+            barra.position = CGPoint(x: distaciaXBarra, y: 700)
             barra.name = "barra\(i)"
             
-            distaciaBarra = distaciaBarra + 100
+            distaciaXBarra = distaciaXBarra + 100
             
             barras.append(barra)
             addChild(barra)
             
+        }
+        
+        distaciaXBarra = 550
+        
+        for i in 6...10 {
+            let barra = SKSpriteNode(imageNamed: "placa")
+            barra.zPosition = 3
+            barra.size = CGSize(width: 100, height: 70)
+            barra.position = CGPoint(x: distaciaXBarra, y: 600)
+            barra.name = "barra\(i)"
+            
+            distaciaXBarra = distaciaXBarra + 100
+            
+            barras.append(barra)
+            addChild(barra)
+   
         }
         
     }
@@ -342,16 +453,27 @@ class GameSceneEsconde: SKScene {
     //função para fazer o boneco aparecer avisando que agora pode procurar a Julia
     func procurarJulia(){
         
+        background_numeros.removeFromParent()
+        
+        //posiciona e adiciona o plano de fundo
+        background_numeros = SKSpriteNode(imageNamed: "cenarioEscondeVazio")
+        background_numeros.zPosition = 2
+        background_numeros.name = "background_numeros"
+        background_numeros.size = CGSize(width: 1100, height: 800)
+        background_numeros.position = CGPoint(x: 550, y: 400)
+        
+        addChild(background_numeros)
+        
         personagem_Caio.runAction(SKAction.moveToX(950, duration: 0.5))
         
         dialogo2 = SKSpriteNode(imageNamed: "chat_azul_texto_3")
-        dialogo2.zPosition = 1
+        dialogo2.zPosition = 2
         dialogo2.name = "dialogo"
         dialogo2.size = CGSize(width: 200, height: 200)
         dialogo2.position = CGPoint(x: 900, y: 400)
         
         seta_play_3 = SKSpriteNode(imageNamed: "seta_azul")
-        seta_play_3.zPosition = 1
+        seta_play_3.zPosition = 2
         seta_play_3.name = "seta_play_3"
         seta_play_3.size = CGSize(width: 50, height: 50)
         seta_play_3.position = CGPoint(x: 900, y: 380)
