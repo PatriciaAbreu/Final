@@ -53,17 +53,9 @@ class Bolas: SKSpriteNode {
         
         let toque = nodeAtPoint(location)
         
-        if toque.position.x >= 315 && toque.position.x <= 710 && toque.position.y >= 210 && toque.position.y <= 590 {
-            
-            Bolas.verifica++
-            print(Bolas.verifica)
-            
-            if Bolas.verifica == 12 {
-                
-                (toque.parent as! GameScenePiscina).fimDoExercicio()
-            }
+       
 
         }
         
     }
-}
+

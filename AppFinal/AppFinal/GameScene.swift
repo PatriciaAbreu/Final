@@ -78,7 +78,25 @@ class GameScene: SKScene {
         var novaScene: SKScene?
         
         if toque.name == "Julia" {
+            
+            novaScene = MenuJogo1(size: size)
+            
+        }else if toque.name == "Caio" {
+            
+            novaScene = MenuJogo4(size: size)
+            
+        }else if toque.name == "Carol"  {
+            
+            novaScene = MenuJogo2(size: size)
+            
+        }else if toque.name == "Pedro"  {
+            
+            novaScene = MenuJogo3(size: size)
+            
+        }
         
+        if novaScene != nil {
+            
             backgroundPrincipal.removeFromParent()
             personagemJulia.removeFromParent()
             personagemCaio.removeFromParent()
@@ -87,28 +105,8 @@ class GameScene: SKScene {
             sol.removeFromParent()
             videoSprite.removeFromParent()
             raioSol.removeFromParent()
-            
-            novaScene = MenuJogo1(size: size)
             videoSprite.removeFromParent()
             
-        }else if toque.name == "Caio" {
-            
-            novaScene = GameScenePatinho(size: size)
-            videoSprite.removeFromParent()
-            
-        }else if toque.name == "Carol"  {
-            
-            novaScene = MenuJogo1(size: size)
-            videoSprite.removeFromParent()
-            
-        }else if toque.name == "Pedro"  {
-            
-            novaScene = MenuJogo1(size: size)
-            videoSprite.removeFromParent()
-            
-        }
-        
-        if novaScene != nil {
             self.scene!.view?.presentScene(novaScene)
         }
     }
@@ -161,7 +159,6 @@ class GameScene: SKScene {
         personagemCaio.name = "Caio"
         personagemCaio.size = CGSize(width: 300, height: 400)
         personagemCaio.position = CGPoint(x: 900, y: 250)
-        
         
         addChild(backgroundPrincipal)
         addChild(raioSol)

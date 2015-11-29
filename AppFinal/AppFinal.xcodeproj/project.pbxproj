@@ -39,7 +39,6 @@
 		6A541A9B1B823DE10066B36C /* AppFinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541A9A1B823DE10066B36C /* AppFinalTests.swift */; };
 		6A541AA51B82564F0066B36C /* GameSceneEsconde.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541AA41B82564F0066B36C /* GameSceneEsconde.swift */; };
 		6A541AAB1B82738E0066B36C /* MenuJogo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541AAA1B82738E0066B36C /* MenuJogo1.swift */; };
-		6A541AAE1B82748C0066B36C /* GameScenePiscina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541AAD1B82748C0066B36C /* GameScenePiscina.swift */; };
 		6A541AB01B8275020066B36C /* GameScenePatinho.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A541AAF1B8275020066B36C /* GameScenePatinho.swift */; };
 		6A6D69461B9F60D000A5BAD8 /* Exercicio3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D69451B9F60D000A5BAD8 /* Exercicio3.m4a */; };
 		6A6D69481B9F61EE00A5BAD8 /* Exercicio4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D69471B9F61EE00A5BAD8 /* Exercicio4.m4a */; };
@@ -108,7 +107,6 @@
 		6A541A9A1B823DE10066B36C /* AppFinalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFinalTests.swift; sourceTree = "<group>"; };
 		6A541AA41B82564F0066B36C /* GameSceneEsconde.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameSceneEsconde.swift; path = ../GameSceneEsconde.swift; sourceTree = "<group>"; };
 		6A541AAA1B82738E0066B36C /* MenuJogo1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuJogo1.swift; sourceTree = "<group>"; };
-		6A541AAD1B82748C0066B36C /* GameScenePiscina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScenePiscina.swift; sourceTree = "<group>"; };
 		6A541AAF1B8275020066B36C /* GameScenePatinho.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScenePatinho.swift; sourceTree = "<group>"; };
 		6A6D69411B9DD67200A5BAD8 /* AppFinal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppFinal-Bridging-Header.h"; sourceTree = "<group>"; };
 		6A6D69451B9F60D000A5BAD8 /* Exercicio3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Exercicio3.m4a; path = ../Exercicio3.m4a; sourceTree = "<group>"; };
@@ -220,9 +218,8 @@
 			children = (
 				6A541A841B823DE10066B36C /* GameScene.swift */,
 				6A541AA41B82564F0066B36C /* GameSceneEsconde.swift */,
-				6A541AAA1B82738E0066B36C /* MenuJogo1.swift */,
-				6A541AAD1B82748C0066B36C /* GameScenePiscina.swift */,
 				6A541AAF1B8275020066B36C /* GameScenePatinho.swift */,
+				6A541AAA1B82738E0066B36C /* MenuJogo1.swift */,
 				6AAAB9B41C08B66E0017BFB4 /* MenuJogo2.swift */,
 				6AAAB9B61C08B67E0017BFB4 /* MenuJogo3.swift */,
 				6AAAB9B91C08B68F0017BFB4 /* MenuJogo4.swift */,
@@ -449,7 +446,6 @@
 				6A541A871B823DE10066B36C /* GameViewController.swift in Sources */,
 				6A541AA51B82564F0066B36C /* GameSceneEsconde.swift in Sources */,
 				6AFE66331BED03BE00D2910E /* Teclado.swift in Sources */,
-				6A541AAE1B82748C0066B36C /* GameScenePiscina.swift in Sources */,
 				6A541AB01B8275020066B36C /* GameScenePatinho.swift in Sources */,
 				6AFE66371BED04AE00D2910E /* EstiloTeclado.swift in Sources */,
 				6AC1343D1B9618F100E6F6C6 /* ExercicioJSON.swift in Sources */,

@@ -22,6 +22,7 @@ class MenuJogo1: SKScene {
     var jogoEsconde: SKSpriteNode!
     var personagemJulia: SKSpriteNode!
     var dialogo: SKSpriteNode!
+    var voltar: SKSpriteNode!
     
     var novaScene: SKScene!
     
@@ -59,9 +60,27 @@ class MenuJogo1: SKScene {
             
             novaScene = GameSceneEsconde(size: size)
             
+        }else if toque.name == "voltar" {
+            
+            novaScene = GameScene(size: size)
+            
         }
         
-        self.scene?.view?.presentScene(novaScene)
+        if novaScene != nil {
+            background.removeFromParent()
+            raioSol.removeFromParent()
+            sol.removeFromParent()
+            placaMenu1.removeFromParent()
+            placaMenu2.removeFromParent()
+            jogoPatinho.removeFromParent()
+            jogoEsconde.removeFromParent()
+            personagemJulia.removeFromParent()
+            dialogo.removeFromParent()
+            voltar.removeFromParent()
+            videoSprite.removeFromParent()
+            self.scene?.view?.presentScene(novaScene)
+        }
+        
     }
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
@@ -130,6 +149,12 @@ class MenuJogo1: SKScene {
         dialogo.size = CGSize(width: 200, height: 200)
         dialogo.position = CGPoint(x: 700, y: 500)
         
+        voltar = SKSpriteNode(imageNamed: "seta_amarelo_voltar")
+        voltar.zPosition = 2
+        voltar.name = "voltar"
+        voltar.size = CGSize(width: 50, height: 50)
+        voltar.position = CGPoint(x: 80, y: 50)
+        
         addChild(background)
         addChild(raioSol)
         addChild(sol)
@@ -139,6 +164,7 @@ class MenuJogo1: SKScene {
         addChild(jogoEsconde)
         addChild(personagemJulia)
         addChild(dialogo)
+        addChild(voltar)
         
     }
     
