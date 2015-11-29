@@ -43,7 +43,7 @@ class MenuJogo3: SKScene {
         scene?.view?.backgroundColor = UIColor.whiteColor()
         
         //posiciona e adiciona o plano de fundo
-        background = SKSpriteNode(imageNamed: "fundo_bolas")
+        background = SKSpriteNode(imageNamed: "cenarioPrincipal")
         background.zPosition = 1
         background.name = "backgroundMenuJogos"
         background.size = CGSize(width: 1050, height: 800)

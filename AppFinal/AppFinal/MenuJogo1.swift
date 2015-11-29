@@ -14,7 +14,8 @@ class MenuJogo1: SKScene {
     var gameController: GameViewController!
 
     var background: SKSpriteNode!
-    
+    var placaMenu1: SKSpriteNode!
+    var placaMenu2: SKSpriteNode!
     var jogoPatinho: SKSpriteNode!
     var jogoEsconde: SKSpriteNode!
     
@@ -54,26 +55,40 @@ class MenuJogo1: SKScene {
         scene?.view?.backgroundColor = UIColor.whiteColor()
         
         //posiciona e adiciona o plano de fundo
-        background = SKSpriteNode(imageNamed: "fundo_bolas")
-        background.zPosition = 1
+        background = SKSpriteNode(imageNamed: "cenarioPrincipal")
+        background.zPosition = 2
         background.name = "backgroundMenuJogos"
-        background.size = CGSize(width: 1050, height: 800)
-        background.position = CGPoint(x: 510, y: 400)
+        background.size = CGSize(width: 1424, height: 800)
+        background.position = CGPoint(x: 670, y: 400)
+        
+        placaMenu1 = SKSpriteNode(imageNamed: "placa")
+        placaMenu1.zPosition = 2
+        placaMenu1.name = "menuPlaca1"
+        placaMenu1.size = CGSize(width: 200, height: 100)
+        placaMenu1.position = CGPoint(x: 200, y: 200)
+        
+        placaMenu2 = SKSpriteNode(imageNamed: "placa")
+        placaMenu2.zPosition = 2
+        placaMenu2.name = "menuPlaca2"
+        placaMenu2.size = CGSize(width: 200, height: 100)
+        placaMenu2.position = CGPoint(x: 500, y: 200)
         
         // posiciona e adiciona os jogos
         jogoPatinho = SKSpriteNode(imageNamed: "pato")
-        jogoPatinho.zPosition = 1
+        jogoPatinho.zPosition = 2
         jogoPatinho.name = "jogoPato"
-        jogoPatinho.position = CGPoint(x: 300, y: 300)
+        jogoPatinho.position = CGPoint(x: 190, y: 200)
         jogoPatinho.size = CGSize(width: 90, height: 70)
         
         jogoEsconde = SKSpriteNode(imageNamed: "num10")
-        jogoEsconde.zPosition = 1
+        jogoEsconde.zPosition = 2
         jogoEsconde.name = "jogoEsconde"
-        jogoEsconde.position = CGPoint(x: 700, y: 300)
+        jogoEsconde.position = CGPoint(x: 490, y: 200)
         jogoEsconde.size = CGSize(width: 90, height: 70)
         
         addChild(background)
+        addChild(placaMenu1)
+        addChild(placaMenu2)
         addChild(jogoPatinho)
         addChild(jogoEsconde)
         

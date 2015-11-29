@@ -31,9 +31,11 @@ class GameScene: SKScene {
     
     var circulo_menu: PersonagensMenu!
     var personagem_Julia: SKSpriteNode!
-    var personagem2_menu: PersonagensMenu!
-    var personagem3_menu: PersonagensMenu!
-    var personagem4_menu: PersonagensMenu!
+    var personagem_Carol: SKSpriteNode!
+    var personagem_Pedro: SKSpriteNode!
+    var personagem_Caio: SKSpriteNode!
+    var raioSol: SKSpriteNode!
+    var sol: SKSpriteNode!
     
     //placas
     var placa_nome_jogo: SKSpriteNode!
@@ -109,43 +111,58 @@ class GameScene: SKScene {
     func montarScene(){
         
         //imagem de plano de fundo
-        backgroundPrincipal = SKSpriteNode(imageNamed: "cenarioInicialVazio")
+        backgroundPrincipal = SKSpriteNode(imageNamed: "cenarioPrincipal")
         backgroundPrincipal.zPosition = 2
         backgroundPrincipal.name = "backGroundPrincipal"
-        backgroundPrincipal.size = CGSize(width: 1400, height: 800)
-        backgroundPrincipal.position = CGPoint(x: 510, y: 400)
+        backgroundPrincipal.size = CGSize(width: 1424, height: 800)
+        backgroundPrincipal.position = CGPoint(x: 670, y: 400)
         
-        personagem_Julia = SKSpriteNode(imageNamed: "Julia-1")
-        personagem_Julia.zPosition = 2
+        raioSol = SKSpriteNode(imageNamed: "raioSol")
+        raioSol.zPosition = 2
+        raioSol.name = "raioSol"
+        raioSol.size = CGSize(width: 2100, height: 1999)
+        raioSol.position = CGPoint(x: 140, y: 630)
+        
+        sol = SKSpriteNode(imageNamed: "sol")
+        sol.zPosition = 3
+        sol.name = "sol"
+        sol.size = CGSize(width: 290, height: 290)
+        sol.position = CGPoint(x: 150, y: 630)
+        
+        personagem_Julia = SKSpriteNode(imageNamed: "Julia")
+        personagem_Julia.zPosition = 4
         personagem_Julia.name = "Julia"
-        personagem_Julia.size = CGSize(width: 300, height: 500)
-        personagem_Julia.position = CGPoint(x: 150, y: 250)
+        personagem_Julia.size = CGSize(width: 250, height: 400)
+        personagem_Julia.position = CGPoint(x: 200, y: 250)
+        
+        personagem_Carol = SKSpriteNode(imageNamed: "Carol")
+        personagem_Carol.zPosition = 2
+        personagem_Carol.name = "Carol"
+        personagem_Carol.size = CGSize(width: 250, height: 450)
+        personagem_Carol.position = CGPoint(x: 400, y: 380)
+
+        personagem_Pedro = SKSpriteNode(imageNamed: "Pedro")
+        personagem_Pedro.zPosition = 2
+        personagem_Pedro.name = "Pedro"
+        personagem_Pedro.size = CGSize(width: 250, height: 450)
+        personagem_Pedro.position = CGPoint(x: 700, y: 380)
+        
+        personagem_Caio = SKSpriteNode(imageNamed: "Caio")
+        personagem_Caio.zPosition = 4
+        personagem_Caio.name = "Caio"
+        personagem_Caio.size = CGSize(width: 300, height: 400)
+        personagem_Caio.position = CGPoint(x: 900, y: 250)
+        
         
         addChild(backgroundPrincipal)
+        addChild(raioSol)
+        addChild(sol)
         addChild(personagem_Julia)
+        addChild(personagem_Carol)
+        addChild(personagem_Pedro)
+        addChild(personagem_Caio)
     }
     
-    //função para mudar o texto do nome do jogo
-    func muda_texto(personagem: String){
-        placa_nome_jogo.removeFromParent();
-        
-        if personagem == "personagem2_novo" {
-            placa_nome_jogo = PersonagensMenu(texture: SKTexture(imageNamed: "cozinha"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
-            placa_nome_jogo.zPosition = 1
-            placa_nome_jogo.name = "cozinha"
-            placa_nome_jogo.position = CGPoint(x: 800, y: 100)
-            
-        }else if personagem == "personagem3_novo" {
-            placa_nome_jogo = PersonagensMenu(texture: SKTexture(imageNamed: "piscina_de_bolinhas"), color: UIColor.clearColor(), size: CGSize(width: 377, height: 162), item: 100)
-            placa_nome_jogo.zPosition = 1
-            placa_nome_jogo.name = "piscina"
-            placa_nome_jogo.position = CGPoint(x: 800, y: 100)
-            
-        }
-        
-        addChild(placa_nome_jogo)
-
-    }
     //função para tocar video
     func playVideo( video: String, tipo: String){
         
@@ -157,8 +174,8 @@ class GameScene: SKScene {
         videoSprite = SKVideoNode(AVPlayer: aPlayer)
         videoSprite.zPosition = 1
         videoSprite.name = "videoSprite"
-        videoSprite.position = CGPoint(x: 500, y: 300)
-        videoSprite.size = CGSize(width: 350, height: 250)
+        videoSprite.position = CGPoint(x: 150, y: 630)
+        videoSprite.size = CGSize(width: 350, height: 290)
         
         
         addChild(videoSprite)
