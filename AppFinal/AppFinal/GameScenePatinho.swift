@@ -17,6 +17,7 @@ class GameScenePatinho: SKScene {
     var chat: SKSpriteNode!
     var seta: SKSpriteNode!
     var setaBack: SKSpriteNode!
+    var sol: SKSpriteNode!
     
     var patinho: SKSpriteNode!
     var patinhos: [SKSpriteNode] = []
@@ -60,13 +61,13 @@ class GameScenePatinho: SKScene {
             chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_2")
             chat.zPosition = 2
             chat.name = "chat2"
-            chat.position = CGPoint(x: 600, y: 400)
+            chat.position = CGPoint(x: 700, y: 400)
             chat.size = CGSize(width: 200, height: 200)
             
-            seta = SKSpriteNode(imageNamed: "seta_azul")
+            seta = SKSpriteNode(imageNamed: "seta_verde_azul")
             seta.zPosition = 2
             seta.name = "seta2"
-            seta.position = CGPoint(x: 600, y: 370)
+            seta.position = CGPoint(x: 700, y: 370)
             seta.size = CGSize(width: 50, height: 50)
             
             video = exercicio.getVideo(4, video: "video2")
@@ -86,13 +87,13 @@ class GameScenePatinho: SKScene {
             chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_3")
             chat.zPosition = 2
             chat.name = "chat3"
-            chat.position = CGPoint(x: 600, y: 400)
+            chat.position = CGPoint(x: 700, y: 400)
             chat.size = CGSize(width: 200, height: 200)
             
-            seta = SKSpriteNode(imageNamed: "seta_azul")
+            seta = SKSpriteNode(imageNamed: "seta_verde_azul")
             seta.zPosition = 2
             seta.name = "seta3"
-            seta.position = CGPoint(x: 600, y: 370)
+            seta.position = CGPoint(x: 700, y: 370)
             seta.size = CGSize(width: 50, height: 50)
             
             video = exercicio.getVideo(4, video: "video3")
@@ -112,13 +113,13 @@ class GameScenePatinho: SKScene {
             chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_4")
             chat.zPosition = 2
             chat.name = "chat4"
-            chat.position = CGPoint(x: 600, y: 400)
+            chat.position = CGPoint(x: 700, y: 400)
             chat.size = CGSize(width: 200, height: 200)
             
-            seta = SKSpriteNode(imageNamed: "seta_azul")
+            seta = SKSpriteNode(imageNamed: "seta_verde_azul")
             seta.zPosition = 2
             seta.name = "seta4"
-            seta.position = CGPoint(x: 600, y: 370)
+            seta.position = CGPoint(x: 700, y: 370)
             seta.size = CGSize(width: 50, height: 50)
             
             video = exercicio.getVideo(4, video: "video4")
@@ -135,14 +136,23 @@ class GameScenePatinho: SKScene {
             seta.removeFromParent()
             personagem.removeFromParent()
             videoSprite.removeFromParent()
+            sol.removeFromParent()
+            background_patinhos.removeFromParent()
             
             background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinhoSol")
             background_patinhos.zPosition = 2
             background_patinhos.name = "background_patinhos_sol"
-            background_patinhos.size = CGSize(width: 1050, height: 800)
-            background_patinhos.position = CGPoint(x: 510, y: 400)
+            background_patinhos.size = CGSize(width: 1424, height: 800)
+            background_patinhos.position = CGPoint(x: 670, y: 400)
             
+            sol = SKSpriteNode(imageNamed: "sol")
+            sol.zPosition = 2
+            sol.name = "sol"
+            sol.size = CGSize(width: 290, height: 290)
+            sol.position = CGPoint(x: 178, y: 565)
+
             addChild(background_patinhos)
+            addChild(sol)
             montaExercicio(0)
             
         }else if toque.name == "jogarNovamente" {
@@ -151,33 +161,30 @@ class GameScenePatinho: SKScene {
             jogarNovamente.removeFromParent()
             retornarMenu.removeFromParent()
             texto.removeFromParent()
-            
             background_patinhos.removeFromParent()
             
             background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinhoVazio")
             background_patinhos.zPosition = 2
             background_patinhos.name = "background_patinhos_sol"
-            background_patinhos.size = CGSize(width: 1050, height: 800)
-            background_patinhos.position = CGPoint(x: 510, y: 400)
-
-            addChild(background_patinhos)
+            background_patinhos.size = CGSize(width: 1424, height: 800)
+            background_patinhos.position = CGPoint(x: 670, y: 400)
             
-            personagem = SKSpriteNode(imageNamed: "Julia-1")
+            personagem = SKSpriteNode(imageNamed: "Julia")
             personagem.zPosition = 2
             personagem.name = "Julia"
-            personagem.position = CGPoint(x: 700, y: 200)
+            personagem.position = CGPoint(x: 800, y: 200)
             personagem.size = CGSize(width: 150, height: 300)
             
             chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_6")
             chat.zPosition = 2
             chat.name = "chat5"
-            chat.position = CGPoint(x: 600, y: 400)
+            chat.position = CGPoint(x: 700, y: 400)
             chat.size = CGSize(width: 200, height: 200)
             
-            seta = SKSpriteNode(imageNamed: "seta_azul")
+            seta = SKSpriteNode(imageNamed: "seta_verde_azul")
             seta.zPosition = 2
             seta.name = "seta5"
-            seta.position = CGPoint(x: 600, y: 370)
+            seta.position = CGPoint(x: 700, y: 370)
             seta.size = CGSize(width: 50, height: 50)
             
             audioS = exercicio.getAudio(4, audio: "audio1")
@@ -186,6 +193,7 @@ class GameScenePatinho: SKScene {
             video = exercicio.getVideo(4, video: "video1")
             playVideo(video, tipo: "m4v")
             
+            addChild(background_patinhos)
             addChild(personagem)
             addChild(chat)
             addChild(seta)
@@ -207,6 +215,22 @@ class GameScenePatinho: SKScene {
             personagem.removeFromParent()
             chat.removeFromParent()
             seta.removeFromParent()
+            background_patinhos.removeFromParent()
+            
+            background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinhoSol")
+            background_patinhos.zPosition = 2
+            background_patinhos.name = "background_patinhos_sol"
+            background_patinhos.size = CGSize(width: 1424, height: 800)
+            background_patinhos.position = CGPoint(x: 670, y: 400)
+            
+            sol = SKSpriteNode(imageNamed: "sol")
+            sol.zPosition = 2
+            sol.name = "sol"
+            sol.size = CGSize(width: 290, height: 290)
+            sol.position = CGPoint(x: 178, y: 565)
+            
+            addChild(background_patinhos)
+            addChild(sol)
             
             montaExercicio(0)
             
@@ -229,28 +253,34 @@ class GameScenePatinho: SKScene {
         background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinhoVazio")
         background_patinhos.zPosition = 2
         background_patinhos.name = "background_patinhos"
-        background_patinhos.size = CGSize(width: 1050, height: 800)
-        background_patinhos.position = CGPoint(x: 510, y: 400)
+        background_patinhos.size = CGSize(width: 1424, height: 800)
+        background_patinhos.position = CGPoint(x: 670, y: 400)
         
-        personagem = SKSpriteNode(imageNamed: "Julia-1")
+        sol = SKSpriteNode(imageNamed: "sol")
+        sol.zPosition = 2
+        sol.name = "sol"
+        sol.size = CGSize(width: 290, height: 290)
+        sol.position = CGPoint(x: 178, y: 565)
+        
+        personagem = SKSpriteNode(imageNamed: "Julia")
         personagem.zPosition = 2
         personagem.name = "Julia"
-        personagem.position = CGPoint(x: 700, y: 200)
+        personagem.position = CGPoint(x: 800, y: 200)
         personagem.size = CGSize(width: 150, height: 300)
         
         chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_1")
         chat.zPosition = 2
         chat.name = "chat1"
-        chat.position = CGPoint(x: 600, y: 400)
+        chat.position = CGPoint(x: 700, y: 400)
         chat.size = CGSize(width: 200, height: 200)
         
-        seta = SKSpriteNode(imageNamed: "seta_azul")
+        seta = SKSpriteNode(imageNamed: "seta_verde_azul")
         seta.zPosition = 2
         seta.name = "seta1"
-        seta.position = CGPoint(x: 600, y: 370)
+        seta.position = CGPoint(x: 700, y: 370)
         seta.size = CGSize(width: 50, height: 50)
         
-        setaBack = SKSpriteNode(imageNamed: "seta_back")
+        setaBack = SKSpriteNode(imageNamed: "seta_verde_azul_voltar")
         setaBack.zPosition = 2
         setaBack.name = "setaVoltar"
         setaBack.position = CGPoint(x: 50, y: 50)
@@ -263,6 +293,7 @@ class GameScenePatinho: SKScene {
         playVideo(video, tipo: "m4v")
         
         addChild(background_patinhos)
+        addChild(sol)
         addChild(personagem)
         addChild(chat)
         addChild(seta)
@@ -286,7 +317,7 @@ class GameScenePatinho: SKScene {
             patinhot.zPosition = 2
             patinhot.name = "patinho\(i)"
             patinhot.size = CGSize(width: 100, height: 100)
-            patinhot.position = CGPoint(x: 1100, y: 250)
+            patinhot.position = CGPoint(x: 1100, y: 230)
             
             patinhos.append(patinhot)
             
@@ -294,8 +325,8 @@ class GameScenePatinho: SKScene {
             
             let duracao:Int = 4 * Int(i)
             let espera: SKAction = SKAction.waitForDuration(NSTimeInterval(duracao))
-            let andaTrecho1: SKAction = SKAction.moveToX(790, duration: 1.5)
-            let andaTrecho2: SKAction = SKAction.moveTo(CGPoint(x: 700, y: 200), duration: 1.5)
+            let andaTrecho1: SKAction = SKAction.moveToX(1000, duration: 1.5)
+            let andaTrecho2: SKAction = SKAction.moveTo(CGPoint(x: 800, y: 180), duration: 1.5)
             let andaTrecho3: SKAction = SKAction.moveToX(-70, duration: 1.5)
             let trocaPatoTerraParaAgua = SKAction.runBlock({ () -> Void in
                 patinhot.texture = SKTexture(imageNamed: "pato")
@@ -357,24 +388,7 @@ class GameScenePatinho: SKScene {
         
         if quantidadeDePatinhos == numeroDigitado {
             
-            
-            
-            background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinhoVazio")
-            background_patinhos.zPosition = 2
-            background_patinhos.name = "background_patinhos"
-            background_patinhos.size = CGSize(width: 1050, height: 800)
-            background_patinhos.position = CGPoint(x: 510, y: 400)
-            
-            texto.text = "PARABENS!!"
-            texto.zPosition = 3
-            texto.fontColor = UIColor.blueColor()
-            
-            audioS = exercicio.getAudio(1, audio: "audio2")
-            playAudio(audioS, tipo: "m4a")
-            
-            video = exercicio.getVideo(4, video: "video2")
-            playVideo(video, tipo: "m4v")
-            
+            texto.text = "PARABÉNS!!"
             // comemoração estilo fogos de artifício
             comemoracao = SKEmitterNode(fileNamed: "Comemoracao")!
             comemoracaoPosicao = SKSpriteNode()
@@ -383,25 +397,24 @@ class GameScenePatinho: SKScene {
             addChild(comemoracaoPosicao)
             comemoracaoPosicao.addChild(comemoracao)
             
-            retornarMenu = SKSpriteNode(imageNamed: "seta_rosa")
+            retornarMenu = SKSpriteNode(imageNamed: "seta_verde_azul")
             retornarMenu.name = "retornarMenu"
             retornarMenu.zPosition = 3
             retornarMenu.position = CGPoint(x: 600, y: 300)
             retornarMenu.size = CGSize(width: 100, height: 100)
             
-            jogarNovamente = SKSpriteNode(imageNamed: "seta_back")
+            jogarNovamente = SKSpriteNode(imageNamed: "seta_verde_azul_voltar")
             jogarNovamente.name = "jogarNovamente"
             jogarNovamente.zPosition = 3
             jogarNovamente.position = CGPoint(x: 400, y: 300)
             jogarNovamente.size = CGSize(width: 100, height: 100)
             
-            addChild(background_patinhos)
             addChild(jogarNovamente)
             addChild(retornarMenu)
             
         }else{
             texto.text = "Acho que você errou. Tente novamente!"
-            jogarNovamente = SKSpriteNode(imageNamed: "seta_rosa")
+            jogarNovamente = SKSpriteNode(imageNamed: "seta_verde_azul")
             jogarNovamente.name = "tentarNovamente"
             jogarNovamente.zPosition = 2
             jogarNovamente.position = CGPoint(x: 500, y: 400)
@@ -423,7 +436,7 @@ class GameScenePatinho: SKScene {
         videoSprite = SKVideoNode(AVPlayer: aPlayer)
         videoSprite.zPosition = 1
         videoSprite.name = "videoSprite"
-        videoSprite.position = CGPoint(x: 150, y: 600)
+        videoSprite.position = CGPoint(x: 178, y: 565)
         videoSprite.size = CGSize(width: 500, height: 300)
         
         
