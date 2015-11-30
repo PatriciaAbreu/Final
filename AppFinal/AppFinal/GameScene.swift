@@ -21,11 +21,7 @@ class GameScene: SKScene {
     //background
     var backgroundPrincipal: SKSpriteNode!
     
-    //icones do menu
-    var menu_numeros: SKSpriteNode!
-    var menu_espaco_forma: SKSpriteNode!
-    var menu_operacoes: SKSpriteNode!
-    var menu_grandeza_medidas:SKSpriteNode!
+    var botaoCredito: SKSpriteNode!
     
     var menu: SKSpriteNode!
     
@@ -36,16 +32,6 @@ class GameScene: SKScene {
     var personagemCaio: SKSpriteNode!
     var raioSol: SKSpriteNode!
     var sol: SKSpriteNode!
-    
-    //placas
-    var placa_nome_jogo: SKSpriteNode!
-    
-    let menu_todo = SKSpriteNode(color: UIColor.clearColor(), size: CGSize(width: 583, height: 574))
-    
-    var texto: SKSpriteNode!
-    var seta: SKSpriteNode!
-
-    var menuTocado: SKSpriteNode!
     
     var videoSprite: SKVideoNode!
     var audio: AVAudioPlayer!
@@ -93,6 +79,9 @@ class GameScene: SKScene {
             
             novaScene = MenuJogo3(size: size)
             
+        }else if toque.name == "credito" {
+            
+            novaScene = Credito(size: size);
         }
         
         if novaScene != nil {
@@ -160,6 +149,12 @@ class GameScene: SKScene {
         personagemCaio.size = CGSize(width: 300, height: 400)
         personagemCaio.position = CGPoint(x: 900, y: 250)
         
+        botaoCredito = SKSpriteNode(imageNamed: "creditos")
+        botaoCredito.zPosition = 2
+        botaoCredito.name = "credito"
+        botaoCredito.size = CGSize(width: 90, height: 40)
+        botaoCredito.position = CGPoint(x: 950, y: 700)
+        
         addChild(backgroundPrincipal)
         addChild(raioSol)
         addChild(sol)
@@ -167,6 +162,7 @@ class GameScene: SKScene {
         addChild(personagemCarol)
         addChild(personagemPedro)
         addChild(personagemCaio)
+        addChild(botaoCredito)
     }
     
     //função para tocar video
