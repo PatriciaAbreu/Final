@@ -207,7 +207,17 @@ class GameScenePatinho: SKScene {
             
             jogarNovamente.removeFromParent()
             texto.removeFromParent()
+            personagem.removeFromParent()
+            chat.removeFromParent()
+            background_patinhos.removeFromParent()
             
+            background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinhoSol")
+            background_patinhos.zPosition = 2
+            background_patinhos.name = "background_patinhos"
+            background_patinhos.size = CGSize(width: 1424, height: 800)
+            background_patinhos.position = CGPoint(x: 670, y: 400)
+            
+            addChild(background_patinhos)
             montaExercicio(quantidadeDePatinhos)
             
         }else if toque.name == "seta5" {
@@ -348,19 +358,42 @@ class GameScenePatinho: SKScene {
         for i in 0...patinhos.count-1 {
             patinhos[i].removeFromParent()
         }
+        background_patinhos.removeFromParent()
+        
+        background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinhoVazio")
+        background_patinhos.zPosition = 2
+        background_patinhos.name = "background_patinhos"
+        background_patinhos.size = CGSize(width: 1424, height: 800)
+        background_patinhos.position = CGPoint(x: 670, y: 400)
+
+        addChild(background_patinhos)
         
         teclado.patinho = self
         addChild(teclado)
         
         teclado.position = CGPoint(x: CGRectGetMidX((self.view?.bounds)!), y: CGRectGetMinY((self.view?.bounds)!) + teclado.frame.height/2)
         
-        self.texto.position = CGPoint(x: 500, y: 500)
-        self.texto.zPosition = 2
-        self.texto.fontSize = 40
+        texto.position = CGPoint(x: 500, y: 300)
+        texto.zPosition = 999999
+        texto.fontSize = 40
+        texto.color = UIColor.blackColor()
+        texto.text = "teste"
+        addChild(texto)
         
-        self.texto.text = "Quantos patinhos passaram?"
-        self.texto.fontColor = UIColor.blackColor()
-        addChild(self.texto)
+        personagem = SKSpriteNode(imageNamed: "Julia")
+        personagem.zPosition = 2
+        personagem.name = "Julia"
+        personagem.position = CGPoint(x: 900, y: 200)
+        personagem.size = CGSize(width: 150, height: 300)
+        
+        chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_7")
+        chat.zPosition = 2
+        chat.name = "chat1"
+        chat.position = CGPoint(x: 800, y: 400)
+        chat.size = CGSize(width: 200, height: 200)
+        
+        addChild(personagem)
+        addChild(chat)
         
     }
     
@@ -385,10 +418,11 @@ class GameScenePatinho: SKScene {
     func verificaResposta(numero: String){
         
         teclado.removeFromParent()
+        chat.removeFromParent()
+        texto.removeFromParent()
         
         if quantidadeDePatinhos == numeroDigitado {
             
-            texto.text = "PARABÉNS!!"
             // comemoração estilo fogos de artifício
             comemoracao = SKEmitterNode(fileNamed: "Comemoracao")!
             comemoracaoPosicao = SKSpriteNode()
@@ -400,17 +434,24 @@ class GameScenePatinho: SKScene {
             retornarMenu = SKSpriteNode(imageNamed: "seta_verde_azul")
             retornarMenu.name = "retornarMenu"
             retornarMenu.zPosition = 3
-            retornarMenu.position = CGPoint(x: 600, y: 300)
+            retornarMenu.position = CGPoint(x: 600, y: 500)
             retornarMenu.size = CGSize(width: 100, height: 100)
             
             jogarNovamente = SKSpriteNode(imageNamed: "seta_verde_azul_voltar")
             jogarNovamente.name = "jogarNovamente"
             jogarNovamente.zPosition = 3
-            jogarNovamente.position = CGPoint(x: 400, y: 300)
+            jogarNovamente.position = CGPoint(x: 400, y: 500)
             jogarNovamente.size = CGSize(width: 100, height: 100)
             
+            chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_8")
+            chat.zPosition = 2
+            chat.name = "chat1"
+            chat.position = CGPoint(x: 800, y: 400)
+            chat.size = CGSize(width: 200, height: 200)
+
             addChild(jogarNovamente)
             addChild(retornarMenu)
+            addChild(chat)
             
         }else{
             texto.text = "Acho que você errou. Tente novamente!"
@@ -420,8 +461,14 @@ class GameScenePatinho: SKScene {
             jogarNovamente.position = CGPoint(x: 500, y: 400)
             jogarNovamente.size = CGSize(width: 100, height: 100)
             
+            chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_9")
+            chat.zPosition = 2
+            chat.name = "chat1"
+            chat.position = CGPoint(x: 800, y: 400)
+            chat.size = CGSize(width: 200, height: 200)
+
             addChild(jogarNovamente)
-            
+            addChild(chat)
         }
     }
     
