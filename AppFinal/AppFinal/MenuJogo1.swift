@@ -38,10 +38,10 @@ class MenuJogo1: SKScene {
         montarScene()
        
         //chamada do video e audio
-        video = exercicio.getVideo(0, video: "video1")
-        audioS = exercicio.getAudio(0, audio: "audio1")
+        video = exercicio.getVideo(1, video: "video1")
+        audioS = exercicio.getAudio(1, audio: "audio1")
         
-        playVideo(video, tipo: "mp4")
+        playVideo(video, tipo: "m4v")
         playAudio(audioS, tipo: "m4a")
     }
     

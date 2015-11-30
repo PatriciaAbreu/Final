@@ -14,12 +14,25 @@
                    },
                    
                    {
+                   "texto": "Menu jogo 1",
+                   "audio": {
+                   "audio1": "MenuJogo"
+                   },
+                   "tipoAudio": "m4a",
+                   "video": {
+                   "video1": "teste"
+                   },
+                   "tipoVideo": "m4v",
+                   "numero": 2
+                   },
+                   
+                   {
                         "texto": "Oi, vamos encontrar a Júlia?",
                         "audio": {
-                        "audio1": "Exercicio1",
-                        "audio2": "Exercicio2",
-                        "audio3": "Exercicio3",
-                        "audio4": "Exercicio4"
+                        "audio1": "Esconde1",
+                        "audio2": "Esconde2",
+                        "audio3": "Esconde3",
+                        "audio4": "Esconde4"
                         },
                         "tipoAudio": "m4a",
                         "video": {
@@ -33,15 +46,13 @@
                    },
                    
                    {
-                        "texto": "Me ajuda a arrumar os de 0 a 9?",
+                        "texto": "Contar patinhos",
                         "audio": {
-                        "audio1": "Exercicio5",
-                        "audio2": "Exercicio6",
-                        "audio3": "Exercicio7",
-                        "audio4": "Exercicio8",
-                        "audio5": "Exercicio9",
-                        "audio6": "Exercicio10",
-                        "audio7": "Exercicio11"
+                        "audio1": "Patinho1",
+                        "audio2": "Patinho2",
+                        "audio3": "Patinho3",
+                        "audio4": "Patinho4",
+                        "audio5": "Patinho5"
                         },
                         "tipoAudio": "m4a",
                         "video": {
@@ -49,39 +60,10 @@
                         "video2": "teste",
                         "video3": "teste",
                         "video4": "teste",
-                        "video5": "teste",
-                        "video6": "teste",
-                        "video7": "teste"
+                        "video5": "teste"
                         },
                         "tipoVideo": "m4v",
                         "numero": 2
-                   },
-                   
-                   {
-                   "texto": "Vamos montar uma piscina de bolinhas?",
-                   "audio": {
-                   "audio1": "Exercicio12",
-                   "audio2": "Exercicio13",
-                   "audio3": "Exercicio14",
-                   "audio4": "Exercicio15",
-                   "audio5": "Exercicio16",
-                   "audio6": "Exercicio17",
-                   "audio7": "Exercicio18",
-                   "audio8": "Exercicio19"
-                   },
-                   "tipoAudio": "m4a",
-                   "video": {
-                   "video1": "teste",
-                   "video2": "teste",
-                   "video3": "teste",
-                   "video4": "teste",
-                   "video5": "teste",
-                   "video6": "teste",
-                   "video7": "teste",
-                   "video8": "teste"
-                   },
-                   "tipoVideo": "m4v",
-                   "numero": 2
                    },
                    
                    {

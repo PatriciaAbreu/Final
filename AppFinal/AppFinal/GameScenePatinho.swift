@@ -70,8 +70,8 @@ class GameScenePatinho: SKScene {
             seta.position = CGPoint(x: 700, y: 370)
             seta.size = CGSize(width: 50, height: 50)
             
-            video = exercicio.getVideo(4, video: "video2")
-            audioS = exercicio.getAudio(4, audio: "audio2")
+            video = exercicio.getVideo(3, video: "video2")
+            audioS = exercicio.getAudio(3, audio: "audio2")
             
             playAudio(audioS, tipo: "m4a")
             playVideo(video, tipo: "m4v")
@@ -96,8 +96,8 @@ class GameScenePatinho: SKScene {
             seta.position = CGPoint(x: 700, y: 370)
             seta.size = CGSize(width: 50, height: 50)
             
-            video = exercicio.getVideo(4, video: "video3")
-            audioS = exercicio.getAudio(4, audio: "audio3")
+            video = exercicio.getVideo(3, video: "video3")
+            audioS = exercicio.getAudio(3, audio: "audio3")
             
             playAudio(audioS, tipo: "m4a")
             playVideo(video, tipo: "m4v")
@@ -122,8 +122,8 @@ class GameScenePatinho: SKScene {
             seta.position = CGPoint(x: 700, y: 370)
             seta.size = CGSize(width: 50, height: 50)
             
-            video = exercicio.getVideo(4, video: "video4")
-            audioS = exercicio.getAudio(4, audio: "audio4")
+            video = exercicio.getVideo(3, video: "video4")
+            audioS = exercicio.getAudio(3, audio: "audio4")
             
             playAudio(audioS, tipo: "m4a")
             playVideo(video, tipo: "m4v")
@@ -187,10 +187,10 @@ class GameScenePatinho: SKScene {
             seta.position = CGPoint(x: 700, y: 370)
             seta.size = CGSize(width: 50, height: 50)
             
-            audioS = exercicio.getAudio(4, audio: "audio1")
+            audioS = exercicio.getAudio(3, audio: "audio1")
             playAudio(audioS, tipo: "m4a")
             
-            video = exercicio.getVideo(4, video: "video1")
+            video = exercicio.getVideo(3, video: "video1")
             playVideo(video, tipo: "m4v")
             
             addChild(background_patinhos)
@@ -286,10 +286,10 @@ class GameScenePatinho: SKScene {
         setaBack.position = CGPoint(x: 50, y: 50)
         setaBack.size = CGSize(width: 50, height: 50)
         
-        audioS = exercicio.getAudio(4, audio: "audio1")
+        audioS = exercicio.getAudio(3, audio: "audio1")
         playAudio(audioS, tipo: "m4a")
         
-        video = exercicio.getVideo(4, video: "video1")
+        video = exercicio.getVideo(3, video: "video1")
         playVideo(video, tipo: "m4v")
         
         addChild(background_patinhos)
@@ -368,8 +368,8 @@ class GameScenePatinho: SKScene {
         if numero == "DELETE" {
             self.texto.text = "RESPOSTA"
             
-            video = exercicio.getVideo(1, video: "video2")
-            audioS = exercicio.getAudio(1, audio: "audio2")
+            video = exercicio.getVideo(3, video: "video2")
+            audioS = exercicio.getAudio(3, audio: "audio2")
             
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")

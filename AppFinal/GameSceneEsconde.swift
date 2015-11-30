@@ -52,8 +52,8 @@ class GameSceneEsconde: SKScene {
         
         montarScene()
         
-        video = exercicio.getVideo(1, video: "video1")
-        audioS = exercicio.getAudio(1, audio: "audio1")
+        video = exercicio.getVideo(2, video: "video1")
+        audioS = exercicio.getAudio(2, audio: "audio1")
         
         playVideo(video, tipo: "mp4")
         playAudio(audioS, tipo: "m4a")
@@ -86,8 +86,8 @@ class GameSceneEsconde: SKScene {
             seta_play_2.position = CGPoint(x: 780, y: 380)
             
             videoSprite.removeFromParent()
-            video = exercicio.getVideo(1, video: "video2")
-            audioS = exercicio.getAudio(1, audio: "audio2")
+            video = exercicio.getVideo(2, video: "video2")
+            audioS = exercicio.getAudio(2, audio: "audio2")
             
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
@@ -168,8 +168,8 @@ class GameSceneEsconde: SKScene {
             addChild(dialogo2)
             addChild(seta_play_3)
             
-            video = exercicio.getVideo(1, video: "video2")
-            audioS = exercicio.getAudio(1, audio: "audio2")
+            video = exercicio.getVideo(2, video: "video2")
+            audioS = exercicio.getAudio(2, audio: "audio2")
             
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
@@ -212,8 +212,8 @@ class GameSceneEsconde: SKScene {
             addChild(dialogo2)
             addChild(seta_play_4)
             
-            video = exercicio.getVideo(1, video: "video4")
-            audioS = exercicio.getAudio(1, audio: "audio4")
+            video = exercicio.getVideo(2, video: "video4")
+            audioS = exercicio.getAudio(2, audio: "audio4")
             
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
@@ -481,8 +481,8 @@ class GameSceneEsconde: SKScene {
         addChild(dialogo2)
         addChild(seta_play_3)
         
-        video = exercicio.getVideo(1, video: "video3")
-        audioS = exercicio.getAudio(1, audio: "audio3")
+        video = exercicio.getVideo(2, video: "video3")
+        audioS = exercicio.getAudio(2, audio: "audio3")
         playVideo(video, tipo: "mp4")
         playAudio(audioS, tipo: "m4a")
     }
