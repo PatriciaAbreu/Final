@@ -187,11 +187,11 @@ class GameScenePatinho: SKScene {
             seta.position = CGPoint(x: 700, y: 370)
             seta.size = CGSize(width: 50, height: 50)
             
-            audioS = exercicio.getAudio(3, audio: "audio1")
+            audioS = exercicio.getAudio(3, audio: "audio6")
             playAudio(audioS, tipo: "m4a")
             
-            video = exercicio.getVideo(3, video: "video1")
-            playVideo(video, tipo: "m4v")
+            video = exercicio.getVideo(3, video: "video6")
+            playVideo(video, tipo: "mp4")
             
             addChild(background_patinhos)
             addChild(personagem)
@@ -377,7 +377,7 @@ class GameScenePatinho: SKScene {
         texto.zPosition = 999999
         texto.fontSize = 40
         texto.color = UIColor.blackColor()
-        texto.text = "teste"
+        texto.text = "Resposta"
         addChild(texto)
         
         personagem = SKSpriteNode(imageNamed: "Julia")
@@ -391,6 +391,12 @@ class GameScenePatinho: SKScene {
         chat.name = "chat1"
         chat.position = CGPoint(x: 800, y: 400)
         chat.size = CGSize(width: 200, height: 200)
+        
+        audioS = exercicio.getAudio(3, audio: "audio7")
+        playAudio(audioS, tipo: "m4a")
+        
+        video = exercicio.getVideo(3, video: "video7")
+        playVideo(video, tipo: "m4v")
         
         addChild(personagem)
         addChild(chat)
@@ -449,6 +455,12 @@ class GameScenePatinho: SKScene {
             chat.position = CGPoint(x: 800, y: 400)
             chat.size = CGSize(width: 200, height: 200)
 
+            audioS = exercicio.getAudio(3, audio: "audio9")
+            playAudio(audioS, tipo: "m4a")
+            
+            video = exercicio.getVideo(3, video: "video9")
+            playVideo(video, tipo: "m4v")
+            
             addChild(jogarNovamente)
             addChild(retornarMenu)
             addChild(chat)
@@ -467,6 +479,12 @@ class GameScenePatinho: SKScene {
             chat.position = CGPoint(x: 800, y: 400)
             chat.size = CGSize(width: 200, height: 200)
 
+            audioS = exercicio.getAudio(3, audio: "audio8")
+            playAudio(audioS, tipo: "m4a")
+            
+            video = exercicio.getVideo(3, video: "video8")
+            playVideo(video, tipo: "m4v")
+            
             addChild(jogarNovamente)
             addChild(chat)
         }

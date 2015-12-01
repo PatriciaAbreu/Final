@@ -45,6 +45,9 @@
 		6AD3CA1D1C0CA8B900627DD7 /* Patinho5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA141C0CA8B900627DD7 /* Patinho5.m4a */; };
 		6AD3CA1F1C0CADF800627DD7 /* Esconde4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA1E1C0CADF800627DD7 /* Esconde4.m4a */; };
 		6AD3CA211C0CB17400627DD7 /* Credito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD3CA201C0CB17400627DD7 /* Credito.swift */; };
+		6AD3CA241C0DD2CF00627DD7 /* Patinho6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA221C0DD2CF00627DD7 /* Patinho6.m4a */; };
+		6AD3CA251C0DD2CF00627DD7 /* Patinho7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA231C0DD2CF00627DD7 /* Patinho7.m4a */; };
+		6AD3CA271C0DD51100627DD7 /* Patinho8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA261C0DD51100627DD7 /* Patinho8.m4a */; };
 		6AEB427B1BAC74200034FA31 /* Menu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AEB427A1BAC74200034FA31 /* Menu.m4a */; };
 		6AEB427D1BAF0C500034FA31 /* Vegetais.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEB427C1BAF0C500034FA31 /* Vegetais.swift */; };
 		6AFE662A1BEB838C00D2910E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFE66291BEB838C00D2910E /* Assets.xcassets */; };
@@ -107,6 +110,9 @@
 		6AD3CA141C0CA8B900627DD7 /* Patinho5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho5.m4a; path = ../Patinho5.m4a; sourceTree = "<group>"; };
 		6AD3CA1E1C0CADF800627DD7 /* Esconde4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Esconde4.m4a; path = ../Esconde4.m4a; sourceTree = "<group>"; };
 		6AD3CA201C0CB17400627DD7 /* Credito.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credito.swift; sourceTree = "<group>"; };
+		6AD3CA221C0DD2CF00627DD7 /* Patinho6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho6.m4a; path = ../Patinho6.m4a; sourceTree = "<group>"; };
+		6AD3CA231C0DD2CF00627DD7 /* Patinho7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho7.m4a; path = ../Patinho7.m4a; sourceTree = "<group>"; };
+		6AD3CA261C0DD51100627DD7 /* Patinho8.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho8.m4a; path = ../Patinho8.m4a; sourceTree = "<group>"; };
 		6AEB427A1BAC74200034FA31 /* Menu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Menu.m4a; path = ../Menu.m4a; sourceTree = "<group>"; };
 		6AEB427C1BAF0C500034FA31 /* Vegetais.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vegetais.swift; sourceTree = "<group>"; };
 		6AFE66291BEB838C00D2910E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 		6AC134301B8F541800E6F6C6 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
+				6AD3CA261C0DD51100627DD7 /* Patinho8.m4a */,
 				6AD3CA1E1C0CADF800627DD7 /* Esconde4.m4a */,
 				6AD3CA0C1C0CA8B900627DD7 /* Esconde3.m4a */,
 				6AD3CA0D1C0CA8B900627DD7 /* Esconde2.m4a */,
@@ -259,6 +266,8 @@
 				6AD3CA121C0CA8B900627DD7 /* Patinho3.m4a */,
 				6AD3CA131C0CA8B900627DD7 /* Patinho4.m4a */,
 				6AD3CA141C0CA8B900627DD7 /* Patinho5.m4a */,
+				6AD3CA221C0DD2CF00627DD7 /* Patinho6.m4a */,
+				6AD3CA231C0DD2CF00627DD7 /* Patinho7.m4a */,
 				6AEB427A1BAC74200034FA31 /* Menu.m4a */,
 				6A6D69471B9F61EE00A5BAD8 /* Exercicio4.m4a */,
 			);
@@ -368,6 +377,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD3CA271C0DD51100627DD7 /* Patinho8.m4a in Resources */,
+				6AD3CA241C0DD2CF00627DD7 /* Patinho6.m4a in Resources */,
+				6AD3CA251C0DD2CF00627DD7 /* Patinho7.m4a in Resources */,
 				6AD3CA1F1C0CADF800627DD7 /* Esconde4.m4a in Resources */,
 				6AD3CA151C0CA8B900627DD7 /* Esconde3.m4a in Resources */,
 				6AD3CA161C0CA8B900627DD7 /* Esconde2.m4a in Resources */,

@@ -52,7 +52,11 @@
                         "audio2": "Patinho2",
                         "audio3": "Patinho3",
                         "audio4": "Patinho4",
-                        "audio5": "Patinho5"
+                        "audio5": "Patinho5",
+                        "audio6": "Exercicio4",
+                        "audio7": "Patinho6",
+                        "audio8": "Patinho7",
+                        "audio9": "Patinho8"
                         },
                         "tipoAudio": "m4a",
                         "video": {
@@ -60,7 +64,11 @@
                         "video2": "teste",
                         "video3": "teste",
                         "video4": "teste",
-                        "video5": "teste"
+                        "video5": "teste",
+                        "video6": "video5",
+                        "video7": "teste",
+                        "video8": "teste",
+                        "video9": "teste"
                         },
                         "tipoVideo": "m4v",
                         "numero": 2
