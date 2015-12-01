@@ -25,7 +25,7 @@ class GameScene: SKScene {
     
     var menu: SKSpriteNode!
     
-    var circulo_menu: PersonagensMenu!
+    var titulo: SKSpriteNode!
     var personagemJulia: SKSpriteNode!
     var personagemCarol: SKSpriteNode!
     var personagemPedro: SKSpriteNode!
@@ -125,6 +125,12 @@ class GameScene: SKScene {
         sol.size = CGSize(width: 290, height: 290)
         sol.position = CGPoint(x: 150, y: 630)
         
+        titulo = SKSpriteNode(imageNamed: "titulo")
+        titulo.zPosition = 3
+        titulo.name = "titulo"
+        titulo.size = CGSize(width: 500, height: 60)
+        titulo.position = CGPoint(x: 600, y: 700)
+        
         personagemJulia = SKSpriteNode(imageNamed: "Julia")
         personagemJulia.zPosition = 4
         personagemJulia.name = "Julia"
@@ -158,6 +164,7 @@ class GameScene: SKScene {
         addChild(backgroundPrincipal)
         addChild(raioSol)
         addChild(sol)
+        addChild(titulo)
         addChild(personagemJulia)
         addChild(personagemCarol)
         addChild(personagemPedro)
