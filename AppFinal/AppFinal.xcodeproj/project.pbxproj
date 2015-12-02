@@ -46,6 +46,13 @@
 		6AD3CA241C0DD2CF00627DD7 /* Patinho6.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA221C0DD2CF00627DD7 /* Patinho6.m4a */; };
 		6AD3CA251C0DD2CF00627DD7 /* Patinho7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA231C0DD2CF00627DD7 /* Patinho7.m4a */; };
 		6AD3CA271C0DD51100627DD7 /* Patinho8.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA261C0DD51100627DD7 /* Patinho8.m4a */; };
+		6AD3CA2F1C0F27B600627DD7 /* MenuJogo1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA281C0F27B600627DD7 /* MenuJogo1.mp4 */; };
+		6AD3CA301C0F27B600627DD7 /* Principal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA291C0F27B600627DD7 /* Principal.mp4 */; };
+		6AD3CA311C0F27B600627DD7 /* Patinho5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA2A1C0F27B600627DD7 /* Patinho5.mp4 */; };
+		6AD3CA321C0F27B600627DD7 /* Patinho4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA2B1C0F27B600627DD7 /* Patinho4.mp4 */; };
+		6AD3CA331C0F27B600627DD7 /* Patinho3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA2C1C0F27B600627DD7 /* Patinho3.mp4 */; };
+		6AD3CA341C0F27B600627DD7 /* Patinho2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA2D1C0F27B600627DD7 /* Patinho2.mp4 */; };
+		6AD3CA351C0F27B600627DD7 /* Patinho1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3CA2E1C0F27B600627DD7 /* Patinho1.mp4 */; };
 		6AEB427B1BAC74200034FA31 /* Menu.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 6AEB427A1BAC74200034FA31 /* Menu.m4a */; };
 		6AFE662A1BEB838C00D2910E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFE66291BEB838C00D2910E /* Assets.xcassets */; };
 		6AFE66331BED03BE00D2910E /* Teclado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFE66321BED03BE00D2910E /* Teclado.swift */; };
@@ -108,6 +115,13 @@
 		6AD3CA221C0DD2CF00627DD7 /* Patinho6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho6.m4a; path = ../Patinho6.m4a; sourceTree = "<group>"; };
 		6AD3CA231C0DD2CF00627DD7 /* Patinho7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho7.m4a; path = ../Patinho7.m4a; sourceTree = "<group>"; };
 		6AD3CA261C0DD51100627DD7 /* Patinho8.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho8.m4a; path = ../Patinho8.m4a; sourceTree = "<group>"; };
+		6AD3CA281C0F27B600627DD7 /* MenuJogo1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = MenuJogo1.mp4; path = ../MenuJogo1.mp4; sourceTree = "<group>"; };
+		6AD3CA291C0F27B600627DD7 /* Principal.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Principal.mp4; path = ../Principal.mp4; sourceTree = "<group>"; };
+		6AD3CA2A1C0F27B600627DD7 /* Patinho5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho5.mp4; path = ../Patinho5.mp4; sourceTree = "<group>"; };
+		6AD3CA2B1C0F27B600627DD7 /* Patinho4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho4.mp4; path = ../Patinho4.mp4; sourceTree = "<group>"; };
+		6AD3CA2C1C0F27B600627DD7 /* Patinho3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho3.mp4; path = ../Patinho3.mp4; sourceTree = "<group>"; };
+		6AD3CA2D1C0F27B600627DD7 /* Patinho2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho2.mp4; path = ../Patinho2.mp4; sourceTree = "<group>"; };
+		6AD3CA2E1C0F27B600627DD7 /* Patinho1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Patinho1.mp4; path = ../Patinho1.mp4; sourceTree = "<group>"; };
 		6AEB427A1BAC74200034FA31 /* Menu.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Menu.m4a; path = ../Menu.m4a; sourceTree = "<group>"; };
 		6AFE66291BEB838C00D2910E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AFE66321BED03BE00D2910E /* Teclado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teclado.swift; sourceTree = "<group>"; };
@@ -233,6 +247,13 @@
 		6AC1342F1B8F541000E6F6C6 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				6AD3CA281C0F27B600627DD7 /* MenuJogo1.mp4 */,
+				6AD3CA291C0F27B600627DD7 /* Principal.mp4 */,
+				6AD3CA2A1C0F27B600627DD7 /* Patinho5.mp4 */,
+				6AD3CA2B1C0F27B600627DD7 /* Patinho4.mp4 */,
+				6AD3CA2C1C0F27B600627DD7 /* Patinho3.mp4 */,
+				6AD3CA2D1C0F27B600627DD7 /* Patinho2.mp4 */,
+				6AD3CA2E1C0F27B600627DD7 /* Patinho1.mp4 */,
 				6A1686D61BC716E400585972 /* video5.mp4 */,
 				6A1686D71BC716E400585972 /* video4.mp4 */,
 				6A1686D81BC716E400585972 /* video3.mp4 */,
@@ -368,6 +389,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AD3CA2F1C0F27B600627DD7 /* MenuJogo1.mp4 in Resources */,
+				6AD3CA301C0F27B600627DD7 /* Principal.mp4 in Resources */,
+				6AD3CA311C0F27B600627DD7 /* Patinho5.mp4 in Resources */,
+				6AD3CA321C0F27B600627DD7 /* Patinho4.mp4 in Resources */,
+				6AD3CA331C0F27B600627DD7 /* Patinho3.mp4 in Resources */,
+				6AD3CA341C0F27B600627DD7 /* Patinho2.mp4 in Resources */,
+				6AD3CA351C0F27B600627DD7 /* Patinho1.mp4 in Resources */,
 				6AD3CA271C0DD51100627DD7 /* Patinho8.m4a in Resources */,
 				6AD3CA241C0DD2CF00627DD7 /* Patinho6.m4a in Resources */,
 				6AD3CA251C0DD2CF00627DD7 /* Patinho7.m4a in Resources */,

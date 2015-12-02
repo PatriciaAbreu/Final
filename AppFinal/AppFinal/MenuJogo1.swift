@@ -42,7 +42,7 @@ class MenuJogo1: SKScene {
         video = exercicio.getVideo(1, video: "video1")
         audioS = exercicio.getAudio(1, audio: "audio1")
         
-        playVideo(video, tipo: "m4v")
+        playVideo(video, tipo: "mp4")
         playAudio(audioS, tipo: "m4a")
         
     }

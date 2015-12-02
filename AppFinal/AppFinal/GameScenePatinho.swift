@@ -74,7 +74,7 @@ class GameScenePatinho: SKScene {
             audioS = exercicio.getAudio(3, audio: "audio2")
             
             playAudio(audioS, tipo: "m4a")
-            playVideo(video, tipo: "m4v")
+            playVideo(video, tipo: "mp4")
             
             addChild(chat)
             addChild(seta)
@@ -100,7 +100,7 @@ class GameScenePatinho: SKScene {
             audioS = exercicio.getAudio(3, audio: "audio3")
             
             playAudio(audioS, tipo: "m4a")
-            playVideo(video, tipo: "m4v")
+            playVideo(video, tipo: "mp4")
             
             addChild(chat)
             addChild(seta)
@@ -126,7 +126,7 @@ class GameScenePatinho: SKScene {
             audioS = exercicio.getAudio(3, audio: "audio4")
             
             playAudio(audioS, tipo: "m4a")
-            playVideo(video, tipo: "m4v")
+            playVideo(video, tipo: "mp4")
             
             addChild(chat)
             addChild(seta)
@@ -162,6 +162,7 @@ class GameScenePatinho: SKScene {
             retornarMenu.removeFromParent()
             texto.removeFromParent()
             background_patinhos.removeFromParent()
+            videoSprite.removeFromParent()
             
             background_patinhos = SKSpriteNode(imageNamed: "cenarioPatinhoVazio")
             background_patinhos.zPosition = 2
@@ -300,7 +301,7 @@ class GameScenePatinho: SKScene {
         playAudio(audioS, tipo: "m4a")
         
         video = exercicio.getVideo(3, video: "video1")
-        playVideo(video, tipo: "m4v")
+        playVideo(video, tipo: "mp4")
         
         addChild(background_patinhos)
         addChild(sol)
@@ -395,8 +396,8 @@ class GameScenePatinho: SKScene {
         audioS = exercicio.getAudio(3, audio: "audio7")
         playAudio(audioS, tipo: "m4a")
         
-        video = exercicio.getVideo(3, video: "video7")
-        playVideo(video, tipo: "m4v")
+        video = exercicio.getVideo(3, video: "video5")
+        playVideo(video, tipo: "mp4")
         
         addChild(personagem)
         addChild(chat)
@@ -426,6 +427,7 @@ class GameScenePatinho: SKScene {
         teclado.removeFromParent()
         chat.removeFromParent()
         texto.removeFromParent()
+        videoSprite.removeFromParent()
         
         if quantidadeDePatinhos == numeroDigitado {
             
