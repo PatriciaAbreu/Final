@@ -14,6 +14,8 @@ func random(lo: Int, hi : Int) -> Int {
     return lo + Int(arc4random_uniform(UInt32(hi - lo + 1)))
 }
 
+var volumeTotal: Bool!
+
 class GameScene: SKScene {
     
     var gameController: GameViewController!
@@ -36,13 +38,23 @@ class GameScene: SKScene {
     var videoSprite: SKVideoNode!
     var audio: AVAudioPlayer!
     
+    var botaoVolume: SKSpriteNode!
+
     var exercicio: ExercicioJSON = ExercicioJSON()
     var video: String = ""
     var audioS: String = ""
     
+    init(volume: Bool, size: CGSize) {
+        super.init(size: size)
+        volumeTotal = volume
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMoveToView(view: SKView) {
 
-       
         //chamada para montar tela inicial
         montarScene()
         
@@ -82,6 +94,14 @@ class GameScene: SKScene {
         }else if toque.name == "credito" {
             
             novaScene = Credito(size: size);
+        }else if toque.name == "volume" && volumeTotal == false {
+            audio.volume = 0
+            volumeTotal = true
+            botaoVolume.texture = SKTexture(imageNamed: "Mute")
+        }else if toque.name == "volume" && volumeTotal == true {
+            audio.volume = 1
+            volumeTotal = false
+            botaoVolume.texture = SKTexture(imageNamed: "High")
         }
         
         if novaScene != nil {
@@ -161,10 +181,22 @@ class GameScene: SKScene {
         botaoCredito.size = CGSize(width: 90, height: 40)
         botaoCredito.position = CGPoint(x: 950, y: 700)
         
+        if volumeTotal == false {
+                botaoVolume = SKSpriteNode(imageNamed: "High")
+        }else {
+            botaoVolume = SKSpriteNode(imageNamed: "Mute")
+        }
+        
+        botaoVolume.zPosition = 3
+        botaoVolume.name = "volume"
+        botaoVolume.size = CGSize(width: 30, height: 30)
+        botaoVolume.position = CGPoint(x: 950, y: 650)
+        
         addChild(backgroundPrincipal)
         addChild(raioSol)
         addChild(sol)
         addChild(titulo)
+        addChild(botaoVolume)
         addChild(personagemJulia)
         addChild(personagemCarol)
         addChild(personagemPedro)
@@ -186,7 +218,6 @@ class GameScene: SKScene {
         videoSprite.position = CGPoint(x: 150, y: 630)
         videoSprite.size = CGSize(width: 350, height: 290)
         
-        
         addChild(videoSprite)
         videoSprite.play()
 
@@ -195,10 +226,14 @@ class GameScene: SKScene {
     //função para tocar audio
     func playAudio(audio: String, tipo: String){
         
+        
         let path = NSBundle.mainBundle().pathForResource(audio, ofType: tipo)
         let url = NSURL(fileURLWithPath: path!)
         self.audio = try? AVAudioPlayer(contentsOfURL: url)
         self.audio.prepareToPlay()
+        if volumeTotal == true {
+            self.audio.volume = 0
+        }
         self.audio.play()
     }
 

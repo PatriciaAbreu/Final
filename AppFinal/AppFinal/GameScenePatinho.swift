@@ -516,6 +516,9 @@ class GameScenePatinho: SKScene {
         let url = NSURL(fileURLWithPath: path!)
         self.audio = try? AVAudioPlayer(contentsOfURL: url)
         self.audio.prepareToPlay()
+        if volumeTotal == true {
+            self.audio.volume = 0
+        }
         self.audio.play()
     }
     

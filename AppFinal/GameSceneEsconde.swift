@@ -265,36 +265,6 @@ class GameSceneEsconde: SKScene {
         
     }
     
-    //função para tocar video
-    func playVideo( video: String, tipo: String){
-        
-        let url = NSBundle.mainBundle().URLForResource(video, withExtension: tipo)
-        let asset = AVURLAsset(URL: url!)
-        let videoPlay = AVPlayerItem(asset: asset)
-        let aPlayer = AVPlayer(playerItem: videoPlay)
-        
-        videoSprite = SKVideoNode(AVPlayer: aPlayer)
-        videoSprite.zPosition = 1
-        videoSprite.name = "videoSprite"
-        videoSprite.position = CGPoint(x: 100, y: 610)
-        videoSprite.size = CGSize(width: 350, height: 290)
-        
-        
-        addChild(videoSprite)
-        videoSprite.play()
-
-    }
-    
-    //função para tocar audio
-    func playAudio(audio: String, tipo: String){
-        
-        let path = NSBundle.mainBundle().pathForResource(audio, ofType: tipo)
-        let url = NSURL(fileURLWithPath: path!)
-        self.audio = try? AVAudioPlayer(contentsOfURL: url)
-        self.audio.prepareToPlay()
-        self.audio.play()
-    }
-    
     //função par montar o exercicio
     func montarExercicio(){
         
@@ -709,5 +679,38 @@ class GameSceneEsconde: SKScene {
         }
 
         
+    }
+    
+    //função para tocar video
+    func playVideo( video: String, tipo: String){
+        
+        let url = NSBundle.mainBundle().URLForResource(video, withExtension: tipo)
+        let asset = AVURLAsset(URL: url!)
+        let videoPlay = AVPlayerItem(asset: asset)
+        let aPlayer = AVPlayer(playerItem: videoPlay)
+        
+        videoSprite = SKVideoNode(AVPlayer: aPlayer)
+        videoSprite.zPosition = 1
+        videoSprite.name = "videoSprite"
+        videoSprite.position = CGPoint(x: 100, y: 610)
+        videoSprite.size = CGSize(width: 350, height: 290)
+        
+        
+        addChild(videoSprite)
+        videoSprite.play()
+        
+    }
+    
+    //função para tocar audio
+    func playAudio(audio: String, tipo: String){
+        
+        let path = NSBundle.mainBundle().pathForResource(audio, ofType: tipo)
+        let url = NSURL(fileURLWithPath: path!)
+        self.audio = try? AVAudioPlayer(contentsOfURL: url)
+        self.audio.prepareToPlay()
+        if volumeTotal == true {
+            self.audio.volume = 0
+        }
+        self.audio.play()
     }
 }

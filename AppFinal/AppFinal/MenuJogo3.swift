@@ -16,6 +16,7 @@ class MenuJogo3: SKScene {
     var background: SKSpriteNode!
     var raioSol: SKSpriteNode!
     var sol: SKSpriteNode!
+    var titulo: SKSpriteNode!
     
     var textoManutenção: SKSpriteNode!
     
@@ -50,7 +51,7 @@ class MenuJogo3: SKScene {
         let toque = self.nodeAtPoint(touchLocation)
         
         if toque.name == "voltar" {
-            novaScene = GameScene(size: size)
+            novaScene = GameScene(volume: volumeTotal, size: size)
         }
         
         if novaScene != nil {
@@ -93,6 +94,12 @@ class MenuJogo3: SKScene {
         sol.size = CGSize(width: 290, height: 290)
         sol.position = CGPoint(x: 150, y: 630)
         
+        titulo = SKSpriteNode(imageNamed: "titulo")
+        titulo.zPosition = 3
+        titulo.name = "titulo"
+        titulo.size = CGSize(width: 500, height: 60)
+        titulo.position = CGPoint(x: 600, y: 700)
+        
         textoManutenção = SKSpriteNode(imageNamed: "manutencao")
         textoManutenção.zPosition = 3
         textoManutenção.position = CGPoint(x: 500, y: 400)
@@ -107,6 +114,7 @@ class MenuJogo3: SKScene {
         addChild(background)
         addChild(raioSol)
         addChild(sol)
+        addChild(titulo)
         addChild(textoManutenção)
         addChild(voltar)
         
@@ -139,6 +147,9 @@ class MenuJogo3: SKScene {
         let url = NSURL(fileURLWithPath: path!)
         self.audio = try? AVAudioPlayer(contentsOfURL: url)
         self.audio.prepareToPlay()
+        if volumeTotal == true {
+            self.audio.volume = 0
+        }
         self.audio.play()
     }
     

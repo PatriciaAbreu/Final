@@ -23,6 +23,7 @@ class MenuJogo1: SKScene {
     var personagemJulia: SKSpriteNode!
     var dialogo: SKSpriteNode!
     var voltar: SKSpriteNode!
+    var titulo: SKSpriteNode!
     
     var novaScene: SKScene!
     
@@ -36,13 +37,14 @@ class MenuJogo1: SKScene {
     override func didMoveToView(view: SKView) {
 
         montarScene()
-       
+        
         //chamada do video e audio
         video = exercicio.getVideo(1, video: "video1")
         audioS = exercicio.getAudio(1, audio: "audio1")
         
         playVideo(video, tipo: "m4v")
         playAudio(audioS, tipo: "m4a")
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -62,7 +64,7 @@ class MenuJogo1: SKScene {
             
         }else if toque.name == "voltar" {
             
-            novaScene = GameScene(size: size)
+            novaScene = GameScene(volume: volumeTotal, size: size)
             
         }
         
@@ -108,6 +110,12 @@ class MenuJogo1: SKScene {
         sol.name = "sol"
         sol.size = CGSize(width: 290, height: 290)
         sol.position = CGPoint(x: 150, y: 630)
+        
+        titulo = SKSpriteNode(imageNamed: "titulo")
+        titulo.zPosition = 3
+        titulo.name = "titulo"
+        titulo.size = CGSize(width: 500, height: 60)
+        titulo.position = CGPoint(x: 600, y: 700)
         
         placaMenu1 = SKSpriteNode(imageNamed: "placa")
         placaMenu1.zPosition = 2
@@ -158,6 +166,7 @@ class MenuJogo1: SKScene {
         addChild(background)
         addChild(raioSol)
         addChild(sol)
+        addChild(titulo)
         addChild(placaMenu1)
         addChild(placaMenu2)
         addChild(jogoPatinho)
@@ -195,6 +204,9 @@ class MenuJogo1: SKScene {
         let url = NSURL(fileURLWithPath: path!)
         self.audio = try? AVAudioPlayer(contentsOfURL: url)
         self.audio.prepareToPlay()
+        if volumeTotal == true {
+            self.audio.volume = 0
+        }
         self.audio.play()
     }
 

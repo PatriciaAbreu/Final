@@ -49,7 +49,7 @@ class Credito: SKScene {
         let toque = self.nodeAtPoint(touchLocation)
         
         if toque.name == "voltar" {
-            novaScene = GameScene(size: size)
+            novaScene = GameScene(volume: volumeTotal, size: size)
         }
         
         if novaScene != nil {

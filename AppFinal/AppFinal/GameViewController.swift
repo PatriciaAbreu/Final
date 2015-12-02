@@ -33,7 +33,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         //monta plano de fundo
-        let scene = GameScene()
+        let scene = GameScene(volume: false, size: view.bounds.size)
         scene.size = view.bounds.size
         scene.backgroundColor = UIColor(red: 246/255, green: 127/255, blue: 250/255, alpha: 1)
         scene.scaleMode = .ResizeFill
