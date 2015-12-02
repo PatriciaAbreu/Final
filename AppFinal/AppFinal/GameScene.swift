@@ -39,7 +39,11 @@ class GameScene: SKScene {
     var audio: AVAudioPlayer!
     
     var botaoVolume: SKSpriteNode!
-
+    var caixaPersonagem: SKSpriteNode!
+    var caixaPersonagemTexto: SKSpriteNode!
+    
+    var seta: SKSpriteNode!
+    
     var exercicio: ExercicioJSON = ExercicioJSON()
     var video: String = ""
     var audioS: String = ""
@@ -77,19 +81,144 @@ class GameScene: SKScene {
         
         if toque.name == "Julia" {
             
-            novaScene = MenuJogo1(size: size)
+            if caixaPersonagemTexto != nil {
+                caixaPersonagemTexto.removeFromParent()
+                caixaPersonagem.removeFromParent()
+                seta.removeFromParent()
+            }
+            
+            caixaPersonagem = SKSpriteNode()
+            caixaPersonagem.color = UIColor.whiteColor()
+            caixaPersonagem.alpha = 0.6
+            caixaPersonagem.zPosition = 4
+            caixaPersonagem.size = CGSize(width: 400, height: 150)
+            caixaPersonagem.position = CGPoint(x: 500, y: 100)
+            
+            caixaPersonagemTexto = SKSpriteNode(imageNamed: "textoJulia")
+            caixaPersonagemTexto.alpha = 0.6
+            caixaPersonagemTexto.zPosition = 4
+            caixaPersonagemTexto.size = CGSize(width: 200, height: 150)
+            caixaPersonagemTexto.position = CGPoint(x: 450, y: 100)
+            
+            seta = SKSpriteNode(imageNamed: "seta_roxo_escuro")
+            seta.zPosition = 4
+            seta.size = CGSize(width: 70, height: 70)
+            seta.name = "setaJulia"
+            seta.position = CGPoint(x: 600, y: 100)
+            
+            addChild(caixaPersonagem)
+            addChild(caixaPersonagemTexto)
+            addChild(seta)
             
         }else if toque.name == "Caio" {
             
-            novaScene = MenuJogo4(size: size)
+            if caixaPersonagemTexto != nil {
+                caixaPersonagemTexto.removeFromParent()
+                caixaPersonagem.removeFromParent()
+                seta.removeFromParent()
+            }
+            
+            caixaPersonagem = SKSpriteNode()
+            caixaPersonagem.color = UIColor.whiteColor()
+            caixaPersonagem.alpha = 0.6
+            caixaPersonagem.zPosition = 4
+            caixaPersonagem.size = CGSize(width: 400, height: 150)
+            caixaPersonagem.position = CGPoint(x: 500, y: 100)
+            
+            caixaPersonagemTexto = SKSpriteNode(imageNamed: "textoCaio")
+            caixaPersonagemTexto.alpha = 0.6
+            caixaPersonagemTexto.zPosition = 4
+            caixaPersonagemTexto.size = CGSize(width: 200, height: 150)
+            caixaPersonagemTexto.position = CGPoint(x: 450, y: 100)
+            
+            seta = SKSpriteNode(imageNamed: "seta_roxo_escuro")
+            seta.zPosition = 4
+            seta.size = CGSize(width: 70, height: 70)
+            seta.name = "setaCaio"
+            seta.position = CGPoint(x: 600, y: 100)
+            
+            addChild(caixaPersonagem)
+            addChild(caixaPersonagemTexto)
+            addChild(seta)
+
             
         }else if toque.name == "Carol"  {
             
-            novaScene = MenuJogo2(size: size)
+            if caixaPersonagemTexto != nil {
+                caixaPersonagemTexto.removeFromParent()
+                caixaPersonagem.removeFromParent()
+                seta.removeFromParent()
+            }
             
+            caixaPersonagem = SKSpriteNode()
+            caixaPersonagem.color = UIColor.whiteColor()
+            caixaPersonagem.alpha = 0.6
+            caixaPersonagem.zPosition = 4
+            caixaPersonagem.size = CGSize(width: 400, height: 150)
+            caixaPersonagem.position = CGPoint(x: 500, y: 100)
+            
+            caixaPersonagemTexto = SKSpriteNode(imageNamed: "textoCarla")
+            caixaPersonagemTexto.alpha = 0.6
+            caixaPersonagemTexto.zPosition = 4
+            caixaPersonagemTexto.size = CGSize(width: 200, height: 150)
+            caixaPersonagemTexto.position = CGPoint(x: 450, y: 100)
+            
+            seta = SKSpriteNode(imageNamed: "seta_roxo_escuro")
+            seta.zPosition = 4
+            seta.size = CGSize(width: 70, height: 70)
+            seta.name = "setaCarla"
+            seta.position = CGPoint(x: 600, y: 100)
+            
+            addChild(caixaPersonagem)
+            addChild(caixaPersonagemTexto)
+            addChild(seta)
+
         }else if toque.name == "Pedro"  {
             
+            if caixaPersonagemTexto != nil {
+                caixaPersonagemTexto.removeFromParent()
+                caixaPersonagem.removeFromParent()
+                seta.removeFromParent()
+            }
+            
+            caixaPersonagem = SKSpriteNode()
+            caixaPersonagem.color = UIColor.whiteColor()
+            caixaPersonagem.alpha = 0.6
+            caixaPersonagem.zPosition = 4
+            caixaPersonagem.size = CGSize(width: 400, height: 150)
+            caixaPersonagem.position = CGPoint(x: 500, y: 100)
+            
+            caixaPersonagemTexto = SKSpriteNode(imageNamed: "textoPedro")
+            caixaPersonagemTexto.alpha = 0.6
+            caixaPersonagemTexto.zPosition = 4
+            caixaPersonagemTexto.size = CGSize(width: 200, height: 150)
+            caixaPersonagemTexto.position = CGPoint(x: 450, y: 100)
+            
+            seta = SKSpriteNode(imageNamed: "seta_roxo_escuro")
+            seta.zPosition = 4
+            seta.size = CGSize(width: 70, height: 70)
+            seta.name = "setaPedro"
+            seta.position = CGPoint(x: 600, y: 100)
+            
+            addChild(caixaPersonagem)
+            addChild(caixaPersonagemTexto)
+            addChild(seta)
+
+        }else if toque.name == "setaJulia" {
+         
+            novaScene = MenuJogo1(size: size)
+            
+        }else if toque.name == "setaCaio" {
+            
+            novaScene = MenuJogo2(size: size)
+            
+        }else if toque.name == "setaCarla" {
+            
             novaScene = MenuJogo3(size: size)
+            
+        }else if toque.name == "setaPedro" {
+            
+            novaScene = MenuJogo4(size: size)
             
         }else if toque.name == "credito" {
             
