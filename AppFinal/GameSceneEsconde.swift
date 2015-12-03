@@ -116,6 +116,8 @@ class GameSceneEsconde: SKScene {
             personagem_Caio.runAction(SKAction.moveToX(1100, duration: 0.5))
             videoSprite.removeFromParent()
             
+            controle = 11
+
             //posiciona e adiciona o plano de fundo
             background_numeros = SKSpriteNode(imageNamed: "cenarioEsconde")
             background_numeros.zPosition = 2
@@ -139,7 +141,7 @@ class GameSceneEsconde: SKScene {
             voltarMenu = MenuJogo1(size: size)
             self.scene!.view?.presentScene(voltarMenu)
             
-        }else if toque.name == "julia" && controle != 10 {
+        }else if toque.name == "julia" && controle != 10 && controle != 11{
             background_numeros.removeFromParent()
             
             //posiciona e adiciona o plano de fundo
@@ -174,7 +176,7 @@ class GameSceneEsconde: SKScene {
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
             
-        }else if toque.name == "julia" && controle == 10{
+        }else if toque.name == "julia" && controle == 11{
             background_numeros.removeFromParent()
             
             if posicao == 1 {

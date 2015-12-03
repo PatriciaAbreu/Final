@@ -408,8 +408,8 @@ class GameScenePatinho: SKScene {
         if numero == "DELETE" {
             self.texto.text = "RESPOSTA"
             
-            video = exercicio.getVideo(3, video: "video2")
-            audioS = exercicio.getAudio(3, audio: "audio2")
+            video = exercicio.getVideo(3, video: "video5")
+            audioS = exercicio.getAudio(3, audio: "audio7")
             
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
@@ -461,7 +461,7 @@ class GameScenePatinho: SKScene {
             playAudio(audioS, tipo: "m4a")
             
             video = exercicio.getVideo(3, video: "video9")
-            playVideo(video, tipo: "m4v")
+            playVideo(video, tipo: "mp4")
             
             addChild(jogarNovamente)
             addChild(retornarMenu)
@@ -485,7 +485,7 @@ class GameScenePatinho: SKScene {
             playAudio(audioS, tipo: "m4a")
             
             video = exercicio.getVideo(3, video: "video8")
-            playVideo(video, tipo: "m4v")
+            playVideo(video, tipo: "mp4")
             
             addChild(jogarNovamente)
             addChild(chat)

@@ -66,31 +66,12 @@
                         "video4": "Patinho4",
                         "video5": "Patinho5",
                         "video6": "video5",
-                        "video7": "teste",
-                        "video8": "teste",
-                        "video9": "teste"
+                        "video7": "video1",
+                        "video8": "video1",
+                        "video9": "video1"
                         },
                         "tipoVideo": "m4v",
                         "numero": 2
-                   },
-                   
-                   {
-                   "texto": "Vamos contar patinhos?",
-                   "audio": {
-                   "audio1": "Menu",
-                   "audio2": "Menu",
-                   "audio3": "Menu",
-                   "audio4": "Menu"
-                   },
-                   "tipoAudio": "m4a",
-                   "video": {
-                   "video1": "teste",
-                   "video2": "teste",
-                   "video3": "teste",
-                   "video4": "teste"
-                   },
-                   "tipoVideo": "m4v",
-                   "numero": 2
                    }
 
                    ]
