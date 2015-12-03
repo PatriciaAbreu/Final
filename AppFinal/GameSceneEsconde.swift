@@ -220,6 +220,9 @@ class GameSceneEsconde: SKScene {
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
             
+        }else if toque.name == "background_numeros" {
+            playVideo(video, tipo: "mp4")
+            playAudio(audioS, tipo: "m4a")
         }
     }
     

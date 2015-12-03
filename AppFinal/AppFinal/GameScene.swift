@@ -231,6 +231,9 @@ class GameScene: SKScene {
             audio.volume = 1
             volumeTotal = false
             botaoVolume.texture = SKTexture(imageNamed: "High")
+        }else if toque.name == "sol" {
+            playVideo(video, tipo: "mp4")
+            playAudio(audioS, tipo: "m4a")
         }
         
         if novaScene != nil {

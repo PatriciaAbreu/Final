@@ -249,6 +249,10 @@ class GameScenePatinho: SKScene {
             
             menu = MenuJogo1(size: size)
             self.scene?.view?.presentScene(menu)
+            
+        }else if toque.name == "sol" {
+            playVideo(video, tipo: "mp4")
+            playAudio(audioS, tipo: "m4a")
         }
         
         

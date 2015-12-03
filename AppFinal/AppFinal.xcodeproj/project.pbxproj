@@ -71,13 +71,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6A08E4A61BF638D100F7A287 /* Comemoracao.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Comemoracao.sks; sourceTree = "<group>"; };
+		6A08E4A61BF638D100F7A287 /* Comemoracao.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Comemoracao.sks; path = ../Comemoracao.sks; sourceTree = "<group>"; };
 		6A1686D61BC716E400585972 /* video5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video5.mp4; path = ../video5.mp4; sourceTree = "<group>"; };
 		6A1686D71BC716E400585972 /* video4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video4.mp4; path = ../video4.mp4; sourceTree = "<group>"; };
 		6A1686D81BC716E400585972 /* video3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video3.mp4; path = ../video3.mp4; sourceTree = "<group>"; };
 		6A1686D91BC716E400585972 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video2.mp4; path = ../video2.mp4; sourceTree = "<group>"; };
 		6A1686DA1BC716E400585972 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video1.mp4; path = ../video1.mp4; sourceTree = "<group>"; };
-		6A48C07D1BF6332300600DF4 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		6A48C07D1BF6332300600DF4 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
 		6A541A7B1B823DE10066B36C /* AppFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A541A7F1B823DE10066B36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A541A801B823DE10066B36C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,8 +150,6 @@
 		6A541A721B823DE10066B36C = {
 			isa = PBXGroup;
 			children = (
-				6A08E4A61BF638D100F7A287 /* Comemoracao.sks */,
-				6A48C07D1BF6332300600DF4 /* spark.png */,
 				6A541A7D1B823DE10066B36C /* AppFinal */,
 				6A541A971B823DE10066B36C /* AppFinalTests */,
 				6A541A7C1B823DE10066B36C /* Products */,
@@ -171,6 +169,7 @@
 		6A541A7D1B823DE10066B36C /* AppFinal */ = {
 			isa = PBXGroup;
 			children = (
+				6AD3CA361C1058CF00627DD7 /* SKS */,
 				6AC1343E1B9618F900E6F6C6 /* Exercicio */,
 				6AC134301B8F541800E6F6C6 /* Audios */,
 				6AC1342F1B8F541000E6F6C6 /* Videos */,
@@ -179,7 +178,6 @@
 				6A541AA91B8256B20066B36C /* GameViewController */,
 				6A541AA61B82565A0066B36C /* Game_Scene */,
 				6A541A801B823DE10066B36C /* AppDelegate.swift */,
-				6A541A821B823DE10066B36C /* GameScene.sks */,
 				6A541A881B823DE10066B36C /* Main.storyboard */,
 				6AFE66291BEB838C00D2910E /* Assets.xcassets */,
 				6A541A8D1B823DE10066B36C /* LaunchScreen.xib */,
@@ -293,6 +291,16 @@
 				6AC1343C1B9618F100E6F6C6 /* ExercicioJSON.swift */,
 			);
 			name = Exercicio;
+			sourceTree = "<group>";
+		};
+		6AD3CA361C1058CF00627DD7 /* SKS */ = {
+			isa = PBXGroup;
+			children = (
+				6A541A821B823DE10066B36C /* GameScene.sks */,
+				6A08E4A61BF638D100F7A287 /* Comemoracao.sks */,
+				6A48C07D1BF6332300600DF4 /* spark.png */,
+			);
+			name = SKS;
 			sourceTree = "<group>";
 		};
 		6AFE66311BED03A200D2910E /* View */ = {

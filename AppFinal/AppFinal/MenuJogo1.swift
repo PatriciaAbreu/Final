@@ -66,6 +66,9 @@ class MenuJogo1: SKScene {
             
             novaScene = GameScene(volume: volumeTotal, size: size)
             
+        }else if toque.name == "sol" {
+            playVideo(video, tipo: "mp4")
+            playAudio(audioS, tipo: "m4a")
         }
         
         if novaScene != nil {
