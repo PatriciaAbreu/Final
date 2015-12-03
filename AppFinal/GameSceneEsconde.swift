@@ -18,7 +18,7 @@ class GameSceneEsconde: SKScene {
     var vaso: SKSpriteNode!
     var casaCachorro: SKSpriteNode!
     var bola: SKSpriteNode!
-    
+    var caixaTransparenteParaVideo: SKSpriteNode!
     var personagem_Caio: SKSpriteNode!
     var personagem_Julia: SKSpriteNode!
     
@@ -68,8 +68,6 @@ class GameSceneEsconde: SKScene {
         
         let toque = self.nodeAtPoint(touchLocation)
         
-        print(toque.name)
-        
         if toque.name == "seta_play_1" {
             seta_play.name = "seta_play_2"
             
@@ -86,6 +84,7 @@ class GameSceneEsconde: SKScene {
             seta_play_2.position = CGPoint(x: 780, y: 380)
             
             videoSprite.removeFromParent()
+            caixaTransparenteParaVideo.removeFromParent()
             video = exercicio.getVideo(2, video: "video2")
             audioS = exercicio.getAudio(2, audio: "audio2")
             
@@ -104,6 +103,7 @@ class GameSceneEsconde: SKScene {
             
             personagem_Caio.runAction(SKAction.moveToX(1100, duration: 0.5))
             videoSprite.removeFromParent()
+            caixaTransparenteParaVideo.removeFromParent()
             
             montarExercicio()
             
@@ -115,6 +115,7 @@ class GameSceneEsconde: SKScene {
             
             personagem_Caio.runAction(SKAction.moveToX(1100, duration: 0.5))
             videoSprite.removeFromParent()
+            caixaTransparenteParaVideo.removeFromParent()
             
             controle = 11
 
@@ -130,6 +131,7 @@ class GameSceneEsconde: SKScene {
         }else if toque.name == "seta_play_4" {
             
             videoSprite.removeFromParent()
+            caixaTransparenteParaVideo.removeFromParent()
             var novoJogo = SKScene()
             novoJogo = MenuJogo1(size: size)
             self.scene!.view?.presentScene(novoJogo)
@@ -137,6 +139,7 @@ class GameSceneEsconde: SKScene {
         }else if toque.name == "seta_back" {
             
             videoSprite.removeFromParent()
+            caixaTransparenteParaVideo.removeFromParent()
             var voltarMenu = SKScene()
             voltarMenu = MenuJogo1(size: size)
             self.scene!.view?.presentScene(voltarMenu)
@@ -220,7 +223,7 @@ class GameSceneEsconde: SKScene {
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
             
-        }else if toque.name == "background_numeros" {
+        }else if toque.name == "caixaVideo" {
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
         }
@@ -274,6 +277,8 @@ class GameSceneEsconde: SKScene {
     func montarExercicio(){
         
         background_numeros.removeFromParent()
+        videoSprite.removeFromParent()
+        caixaTransparenteParaVideo.removeFromParent()
         
         //posiciona e adiciona o plano de fundo
         background_numeros = SKSpriteNode(imageNamed: "cenarioEsconde")
@@ -468,55 +473,44 @@ class GameSceneEsconde: SKScene {
         if numero.intersectsNode(posicoes[0]) {
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[0].position.x, y: posicoes[0].position.y), duration: 0.2))
-            print("entrou1")
             
         }else if numero.intersectsNode(posicoes[1]){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[1].position.x, y: posicoes[1].position.y), duration: 0.2))
-            print("entrou2")
+
         }else if numero.intersectsNode(posicoes[2]){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[2].position.x, y: posicoes[2].position.y), duration: 0.2))
-            print("entrou3")
             
         }else if numero.intersectsNode(posicoes[3]){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[3].position.x, y: posicoes[3].position.y), duration: 0.2))
-            print("entrou4")
-            
+
         }else if numero.intersectsNode(posicoes[4]){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[4].position.x, y: posicoes[4].position.y), duration: 0.2))
-            print("entrou5")
             
         }else if numero.intersectsNode(posicoes[5]){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[5].position.x, y: posicoes[5].position.y), duration: 0.2))
-            print("entrou6")
             
         }else if numero.intersectsNode(posicoes[6]){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[6].position.x, y: posicoes[6].position.y), duration: 0.2))
-            print("entrou7")
             
         }else if numero.intersectsNode(posicoes[7]){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[7].position.x, y: posicoes[7].position.y), duration: 0.2))
-            print("entrou8")
             
         }else if numero.intersectsNode(posicoes[8]){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[8].position.x, y: posicoes[8].position.y), duration: 0.2))
-            print("entrou9")
             
         }else if numero.intersectsNode(posicoes[9]){
             
             numero.runAction(SKAction.moveTo(CGPoint(x: posicoes[9].position.x, y: posicoes[9].position.y), duration: 0.2))
-            print("entrou10")
             
         }
-        
-        
     }
     
     func verificaPosicao(numero: Numero){
@@ -700,8 +694,14 @@ class GameSceneEsconde: SKScene {
         videoSprite.position = CGPoint(x: 100, y: 610)
         videoSprite.size = CGSize(width: 350, height: 290)
         
+        caixaTransparenteParaVideo = SKSpriteNode()
+        caixaTransparenteParaVideo.zPosition = 3
+        caixaTransparenteParaVideo.name = "caixaVideo"
+        caixaTransparenteParaVideo.position = CGPoint(x: 100, y: 610)
+        caixaTransparenteParaVideo.size = CGSize(width: 350, height: 290)
         
         addChild(videoSprite)
+        addChild(caixaTransparenteParaVideo)
         videoSprite.play()
         
     }

@@ -21,19 +21,14 @@ class ExercicioJSON: NSObject {
         let path: NSString = NSBundle.mainBundle().pathForResource("exercicios", ofType: "json")!
         let data: NSData = try! NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped)
         let dict: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
-        print(dict)
         
         let exercicios = dict.objectForKey("exercicios") as! NSArray
-        print(exercicios)
         
         let exercicio = exercicios.objectAtIndex(exercicio) as! NSDictionary
-        print(exercicio)
         
         let audios = exercicio.objectForKey("audio") as! NSDictionary
-        print(audios)
         
         let audio = audios.objectForKey(audio) as! NSString
-        print(audio)
         
         return audio as String
         
@@ -44,19 +39,14 @@ class ExercicioJSON: NSObject {
         let path: NSString = NSBundle.mainBundle().pathForResource("exercicios", ofType: "json")!
         let data: NSData = try! NSData(contentsOfFile: path as String, options: NSDataReadingOptions.DataReadingMapped)
         let dict: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
-        print(dict)
         
         let exercicios = dict.objectForKey("exercicios") as! NSArray
-        print(exercicios)
         
         let exercicio = exercicios.objectAtIndex(exercicio) as! NSDictionary
-        print(exercicio)
         
         let videos = exercicio.objectForKey("video") as! NSDictionary
-        print(videos)
         
         let video = videos.objectForKey(video) as! NSString
-        print(video)
         
         return video as String
     }

@@ -37,12 +37,7 @@ class Numero: SKSpriteNode {
         
         Numero.toque = touchLocation
         
-        print("began")
-        print(Numero.toque)
-        let toque = nodeAtPoint(location)
-           
-        
-        
+//        let toque = nodeAtPoint(location) 
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
