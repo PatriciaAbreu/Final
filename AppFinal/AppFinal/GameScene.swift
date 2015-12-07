@@ -91,20 +91,20 @@ class GameScene: SKScene {
             caixaPersonagem.color = UIColor.whiteColor()
             caixaPersonagem.alpha = 0.6
             caixaPersonagem.zPosition = 4
-            caixaPersonagem.size = CGSize(width: 400, height: 150)
-            caixaPersonagem.position = CGPoint(x: 500, y: 100)
+            caixaPersonagem.size = CGSize(width: 300, height: 100)
+            caixaPersonagem.position = CGPoint(x: 500, y: 80)
             
             caixaPersonagemTexto = SKSpriteNode(imageNamed: "textoJulia")
             caixaPersonagemTexto.alpha = 0.6
             caixaPersonagemTexto.zPosition = 4
-            caixaPersonagemTexto.size = CGSize(width: 200, height: 150)
-            caixaPersonagemTexto.position = CGPoint(x: 450, y: 100)
+            caixaPersonagemTexto.size = CGSize(width: 200, height: 80)
+            caixaPersonagemTexto.position = CGPoint(x: 450, y: 80)
             
             seta = SKSpriteNode(imageNamed: "seta_roxo_escuro")
             seta.zPosition = 4
             seta.size = CGSize(width: 70, height: 70)
             seta.name = "setaJulia"
-            seta.position = CGPoint(x: 600, y: 100)
+            seta.position = CGPoint(x: 600, y: 80)
             
             addChild(caixaPersonagem)
             addChild(caixaPersonagemTexto)
@@ -122,20 +122,20 @@ class GameScene: SKScene {
             caixaPersonagem.color = UIColor.whiteColor()
             caixaPersonagem.alpha = 0.6
             caixaPersonagem.zPosition = 4
-            caixaPersonagem.size = CGSize(width: 400, height: 150)
-            caixaPersonagem.position = CGPoint(x: 500, y: 100)
+            caixaPersonagem.size = CGSize(width: 300, height: 100)
+            caixaPersonagem.position = CGPoint(x: 500, y: 80)
             
             caixaPersonagemTexto = SKSpriteNode(imageNamed: "textoCaio")
             caixaPersonagemTexto.alpha = 0.6
             caixaPersonagemTexto.zPosition = 4
-            caixaPersonagemTexto.size = CGSize(width: 200, height: 150)
-            caixaPersonagemTexto.position = CGPoint(x: 450, y: 100)
+            caixaPersonagemTexto.size = CGSize(width: 200, height: 80)
+            caixaPersonagemTexto.position = CGPoint(x: 450, y: 80)
             
             seta = SKSpriteNode(imageNamed: "seta_roxo_escuro")
             seta.zPosition = 4
             seta.size = CGSize(width: 70, height: 70)
             seta.name = "setaCaio"
-            seta.position = CGPoint(x: 600, y: 100)
+            seta.position = CGPoint(x: 600, y: 80)
             
             addChild(caixaPersonagem)
             addChild(caixaPersonagemTexto)
@@ -154,20 +154,20 @@ class GameScene: SKScene {
             caixaPersonagem.color = UIColor.whiteColor()
             caixaPersonagem.alpha = 0.6
             caixaPersonagem.zPosition = 4
-            caixaPersonagem.size = CGSize(width: 400, height: 150)
-            caixaPersonagem.position = CGPoint(x: 500, y: 100)
+            caixaPersonagem.size = CGSize(width: 300, height: 100)
+            caixaPersonagem.position = CGPoint(x: 500, y: 80)
             
             caixaPersonagemTexto = SKSpriteNode(imageNamed: "textoCarla")
             caixaPersonagemTexto.alpha = 0.6
             caixaPersonagemTexto.zPosition = 4
-            caixaPersonagemTexto.size = CGSize(width: 200, height: 150)
-            caixaPersonagemTexto.position = CGPoint(x: 450, y: 100)
+            caixaPersonagemTexto.size = CGSize(width: 200, height: 80)
+            caixaPersonagemTexto.position = CGPoint(x: 450, y: 80)
             
             seta = SKSpriteNode(imageNamed: "seta_roxo_escuro")
             seta.zPosition = 4
             seta.size = CGSize(width: 70, height: 70)
             seta.name = "setaCarla"
-            seta.position = CGPoint(x: 600, y: 100)
+            seta.position = CGPoint(x: 600, y: 80)
             
             addChild(caixaPersonagem)
             addChild(caixaPersonagemTexto)
@@ -185,20 +185,20 @@ class GameScene: SKScene {
             caixaPersonagem.color = UIColor.whiteColor()
             caixaPersonagem.alpha = 0.6
             caixaPersonagem.zPosition = 4
-            caixaPersonagem.size = CGSize(width: 400, height: 150)
-            caixaPersonagem.position = CGPoint(x: 500, y: 100)
+            caixaPersonagem.size = CGSize(width: 300, height: 100)
+            caixaPersonagem.position = CGPoint(x: 500, y: 80)
             
             caixaPersonagemTexto = SKSpriteNode(imageNamed: "textoPedro")
             caixaPersonagemTexto.alpha = 0.6
             caixaPersonagemTexto.zPosition = 4
-            caixaPersonagemTexto.size = CGSize(width: 200, height: 150)
-            caixaPersonagemTexto.position = CGPoint(x: 450, y: 100)
+            caixaPersonagemTexto.size = CGSize(width: 200, height: 80)
+            caixaPersonagemTexto.position = CGPoint(x: 450, y: 80)
             
             seta = SKSpriteNode(imageNamed: "seta_roxo_escuro")
             seta.zPosition = 4
             seta.size = CGSize(width: 70, height: 70)
             seta.name = "setaPedro"
-            seta.position = CGPoint(x: 600, y: 100)
+            seta.position = CGPoint(x: 600, y: 80)
             
             addChild(caixaPersonagem)
             addChild(caixaPersonagemTexto)

@@ -28,6 +28,8 @@ class Credito: SKScene {
     
     var fundoTexto: SKSpriteNode!
     
+    var texto: SKSpriteNode!
+    
     var textoDesenvolvido: SKLabelNode!
     var textoDesenvolvidoNome: SKLabelNode!
     var textoDesign: SKLabelNode!
@@ -97,9 +99,14 @@ class Credito: SKScene {
         fundoTexto = SKSpriteNode()
         fundoTexto.color = UIColor.whiteColor()
         fundoTexto.zPosition = 3
-        fundoTexto.size = CGSize(width: 600, height: 600)
+        fundoTexto.size = CGSize(width: 600, height: 400)
         fundoTexto.position = CGPoint(x: 600, y: 310)
         fundoTexto.alpha = 0.6
+        
+        texto = SKSpriteNode(imageNamed: "textoCredito")
+        texto.zPosition = 3
+        texto.size = CGSize(width: 500, height: 300)
+        texto.position = CGPoint(x: 600, y: 300)
         
         textoDesenvolvido = SKLabelNode(fontNamed: "Arial")
         textoDesenvolvido.text = "Desenvolvedor: "
@@ -154,12 +161,13 @@ class Credito: SKScene {
         addChild(sol)
         addChild(titulo)
         addChild(fundoTexto)
-        addChild(textoDesenvolvido)
-        addChild(textoDesenvolvidoNome)
-        addChild(textoDesign)
-        addChild(textoDesignNome)
-        addChild(textoInterprete)
-        addChild(textoInterpreteNome)
+        addChild(texto)
+//        addChild(textoDesenvolvido)
+//        addChild(textoDesenvolvidoNome)
+//        addChild(textoDesign)
+//        addChild(textoDesignNome)
+//        addChild(textoInterprete)
+//        addChild(textoInterpreteNome)
         addChild(voltar)
         
     }

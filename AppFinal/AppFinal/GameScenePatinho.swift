@@ -356,6 +356,14 @@ class GameScenePatinho: SKScene {
                 patinhot.runAction(sequencia)
             }
         }
+        
+        setaBack = SKSpriteNode(imageNamed: "seta_verde_azul_voltar")
+        setaBack.zPosition = 2
+        setaBack.name = "setaVoltar"
+        setaBack.position = CGPoint(x: 50, y: 50)
+        setaBack.size = CGSize(width: 50, height: 50)
+        
+        addChild(setaBack)
     }
     
     func montaResposta(resposta: Int){
