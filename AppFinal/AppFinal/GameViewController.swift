@@ -39,6 +39,7 @@ class GameViewController: UIViewController {
         scene.scaleMode = .ResizeFill
         let skView:SKView = SKView(frame: self.view.frame)
         scene.gameController = self
+
         self.view.addSubview(skView)
         skView.presentScene(scene)
     }
