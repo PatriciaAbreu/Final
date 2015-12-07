@@ -479,22 +479,25 @@ class GameSceneEsconde: SKScene {
         }
     }
     
-    func verificaPosicao(numero: Numero){
+    func verificaPosicao(numero: Numero) -> Bool{
         
         if numero.intersectsNode(barras[0]){
             
             if numero.name != "num1" {
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
             }else if controle == 0 {
                 controle = 1
                 barras[0].texture = SKTexture(imageNamed: "placaClicada")
                 barras[0].size = CGSize(width: 70, height: 70)
+                return true
+//                barras[0].userInteractionEnabled = false
                 
             }else{
                 
                  numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
-                
+                return false
             }
             
         }else if numero.intersectsNode(barras[1]) {
@@ -502,14 +505,18 @@ class GameSceneEsconde: SKScene {
             if numero.name != "num2"{
 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
+                
             }else if controle == 1 {
                 controle = 2
                 barras[1].texture = SKTexture(imageNamed: "placaClicada")
                 barras[1].size = CGSize(width: 70, height: 70)
+                return true
                 
             }else{
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
                 
             }
  
@@ -518,14 +525,18 @@ class GameSceneEsconde: SKScene {
             if numero.name != "num3" {
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
+                
             }else if controle == 2 {
                 controle = 3
                 barras[2].texture = SKTexture(imageNamed: "placaClicada")
                 barras[2].size = CGSize(width: 70, height: 70)
+                return true
                 
             }else{
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
                 
             }
             
@@ -534,14 +545,18 @@ class GameSceneEsconde: SKScene {
             if numero.name != "num4" {
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
+                
             }else if controle == 3 {
                 controle = 4
                 barras[3].texture = SKTexture(imageNamed: "placaClicada")
                 barras[3].size = CGSize(width: 70, height: 70)
+                return true
                 
             }else{
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
                 
             }
             
@@ -550,15 +565,17 @@ class GameSceneEsconde: SKScene {
             if numero.name != "num5" {
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
+                
             }else if controle == 4 {
                 controle = 5
                 barras[4].texture = SKTexture(imageNamed: "placaClicada")
                 barras[4].size = CGSize(width: 70, height: 70)
-                
+                return true
             }else{
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
-                
+              return false
             }
 
         }else if numero.intersectsNode(barras[5]) {
@@ -566,15 +583,16 @@ class GameSceneEsconde: SKScene {
             if numero.name != "num6" {
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
             }else if controle == 5 {
                 controle = 6
                 barras[5].texture = SKTexture(imageNamed: "placaClicada")
                 barras[5].size = CGSize(width: 70, height: 70)
-                
+                return true
             }else{
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
-                
+                return false
             }
 
         }else if numero.intersectsNode(barras[6]) {
@@ -582,15 +600,16 @@ class GameSceneEsconde: SKScene {
             if numero.name != "num7" {
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
             }else if controle == 6 {
                 controle = 7
                 barras[6].texture = SKTexture(imageNamed: "placaClicada")
                 barras[6].size = CGSize(width: 70, height: 70)
-                
+                return true
             }else{
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
-                
+                return false
             }
 
         }else if numero.intersectsNode(barras[7]) {
@@ -598,15 +617,16 @@ class GameSceneEsconde: SKScene {
             if numero.name != "num8" {
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
             }else if controle == 7 {
                 controle = 8
                 barras[7].texture = SKTexture(imageNamed: "placaClicada")
                 barras[7].size = CGSize(width: 70, height: 70)
-                
+                return true
             }else{
                 
                  numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
-                
+                return false
             }
 
         }else if numero.intersectsNode(barras[8]) {
@@ -614,15 +634,16 @@ class GameSceneEsconde: SKScene {
             if numero.name != "num9" {
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
             }else if controle == 8 {
                 controle = 9
                 barras[8].texture = SKTexture(imageNamed: "placaClicada")
                 barras[8].size = CGSize(width: 70, height: 70)
-                
+                return true
             }else{
                 
                  numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
-                
+                return false
             }
             
         }else if numero.intersectsNode(barras[9]) {
@@ -630,19 +651,20 @@ class GameSceneEsconde: SKScene {
             if numero.name != "num10" {
                 
                 numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
+                return false
             }else if controle == 9 {
                 controle = 10
                 barras[9].texture = SKTexture(imageNamed: "placaClicada")
                 barras[9].size = CGSize(width: 70, height: 70)
-                
                 procurarJulia()
-                
+                return true
             }else{
                 
                  numero.runAction(SKAction.moveTo(CGPoint(x: Numero.toque.x, y: Numero.toque.y), duration: 0.2))
-                
+                return false
             }
         }
+        return false
     }
     
     //função para tocar video

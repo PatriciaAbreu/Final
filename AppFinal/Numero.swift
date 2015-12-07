@@ -68,7 +68,11 @@ class Numero: SKSpriteNode {
         let toc = toque as! Numero
         
         if toc.exercicio == 1 {
-            (toque.parent as! GameSceneEsconde).verificaPosicao(toc)
+            let retorno = (toque.parent as! GameSceneEsconde).verificaPosicao(toc)
+            if retorno {
+                toque.userInteractionEnabled = false
+            }
+            
         }
         
         if toc.exercicio != 1 {

@@ -447,21 +447,15 @@ class GameScenePatinho: SKScene {
             comemoracao = SKEmitterNode(fileNamed: "Comemoracao")!
             comemoracaoPosicao = SKSpriteNode()
             comemoracaoPosicao.zPosition = 3
-            comemoracaoPosicao.position = CGPoint(x: 800, y: 600)
+            comemoracaoPosicao.position = CGPoint(x: 600, y: 600)
             addChild(comemoracaoPosicao)
             comemoracaoPosicao.addChild(comemoracao)
             
             retornarMenu = SKSpriteNode(imageNamed: "seta_verde_azul")
             retornarMenu.name = "retornarMenu"
             retornarMenu.zPosition = 3
-            retornarMenu.position = CGPoint(x: 600, y: 500)
-            retornarMenu.size = CGSize(width: 100, height: 100)
-            
-            jogarNovamente = SKSpriteNode(imageNamed: "seta_verde_azul_voltar")
-            jogarNovamente.name = "jogarNovamente"
-            jogarNovamente.zPosition = 3
-            jogarNovamente.position = CGPoint(x: 400, y: 500)
-            jogarNovamente.size = CGSize(width: 100, height: 100)
+            retornarMenu.position = CGPoint(x: 800, y: 380)
+            retornarMenu.size = CGSize(width: 50, height: 50)
             
             chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_8")
             chat.zPosition = 2
@@ -475,17 +469,15 @@ class GameScenePatinho: SKScene {
             video = exercicio.getVideo(3, video: "video9")
             playVideo(video, tipo: "mp4")
             
-            addChild(jogarNovamente)
             addChild(retornarMenu)
             addChild(chat)
             
         }else{
-            texto.text = "Acho que você errou. Tente novamente!"
             jogarNovamente = SKSpriteNode(imageNamed: "seta_verde_azul")
             jogarNovamente.name = "tentarNovamente"
             jogarNovamente.zPosition = 2
-            jogarNovamente.position = CGPoint(x: 500, y: 400)
-            jogarNovamente.size = CGSize(width: 100, height: 100)
+            jogarNovamente.position = CGPoint(x: 800, y: 380)
+            jogarNovamente.size = CGSize(width: 50, height: 50)
             
             chat = SKSpriteNode(imageNamed: "chat_verde_azul_texto_9")
             chat.zPosition = 2
@@ -499,8 +491,9 @@ class GameScenePatinho: SKScene {
             video = exercicio.getVideo(3, video: "video8")
             playVideo(video, tipo: "mp4")
             
-            addChild(jogarNovamente)
             addChild(chat)
+            addChild(jogarNovamente)
+            
         }
     }
     

@@ -108,48 +108,6 @@ class Credito: SKScene {
         texto.size = CGSize(width: 500, height: 300)
         texto.position = CGPoint(x: 600, y: 300)
         
-        textoDesenvolvido = SKLabelNode(fontNamed: "Arial")
-        textoDesenvolvido.text = "Desenvolvedor: "
-        textoDesenvolvido.fontColor = UIColor.blackColor()
-        textoDesenvolvido.fontSize = 50
-        textoDesenvolvido.zPosition = 3
-        textoDesenvolvido.position = CGPoint(x: 600, y: 550)
-        
-        textoDesenvolvidoNome = SKLabelNode(fontNamed: "Arial")
-        textoDesenvolvidoNome.text = "Patricia Machado de Abreu"
-        textoDesenvolvidoNome.fontColor = UIColor.blackColor()
-        textoDesenvolvidoNome.fontSize = 40
-        textoDesenvolvidoNome.zPosition = 3
-        textoDesenvolvidoNome.position = CGPoint(x: 600, y: 450)
-        
-        textoDesign = SKLabelNode(fontNamed: "Arial")
-        textoDesign.text = "Design: "
-        textoDesign.fontColor = UIColor.blackColor()
-        textoDesign.fontSize = 50
-        textoDesign.zPosition = 3
-        textoDesign.position = CGPoint(x: 600, y: 350)
-        
-        textoDesignNome = SKLabelNode(fontNamed: "Arial")
-        textoDesignNome.text = "Elisa Carolina Arizono"
-        textoDesignNome.fontColor = UIColor.blackColor()
-        textoDesignNome.fontSize = 40
-        textoDesignNome.zPosition = 3
-        textoDesignNome.position = CGPoint(x: 600, y: 250)
-        
-        textoInterprete = SKLabelNode(fontNamed: "Arial")
-        textoInterprete.text = "Interprete: "
-        textoInterprete.fontColor = UIColor.blackColor()
-        textoInterprete.fontSize = 50
-        textoInterprete.zPosition = 3
-        textoInterprete.position = CGPoint(x: 600, y: 150)
-
-        textoInterpreteNome = SKLabelNode(fontNamed: "Arial")
-        textoInterpreteNome.text = "Maebi Buosi"
-        textoInterpreteNome.fontColor = UIColor.blackColor()
-        textoInterpreteNome.fontSize = 40
-        textoInterpreteNome.zPosition = 3
-        textoInterpreteNome.position = CGPoint(x: 600, y: 50)
-        
         voltar = SKSpriteNode(imageNamed: "seta_amarelo_voltar")
         voltar.zPosition = 2
         voltar.name = "voltar"
@@ -162,12 +120,6 @@ class Credito: SKScene {
         addChild(titulo)
         addChild(fundoTexto)
         addChild(texto)
-//        addChild(textoDesenvolvido)
-//        addChild(textoDesenvolvidoNome)
-//        addChild(textoDesign)
-//        addChild(textoDesignNome)
-//        addChild(textoInterprete)
-//        addChild(textoInterpreteNome)
         addChild(voltar)
         
     }
