@@ -254,8 +254,6 @@ class GameScenePatinho: SKScene {
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
         }
-        
-        
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -323,7 +321,6 @@ class GameScenePatinho: SKScene {
         }else {
             quantidadeDePatinhos = quantidadePatinhos
         }
-        
         
         for i in 1...quantidadeDePatinhos{
             
