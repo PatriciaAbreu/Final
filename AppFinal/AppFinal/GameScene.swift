@@ -210,15 +210,15 @@ class GameScene: SKScene {
             
         }else if toque.name == "setaCaio" {
             
-            novaScene = MenuJogo2(size: size)
+            novaScene = GameScene(volume: false, size: scene!.view!.bounds.size)
             
         }else if toque.name == "setaCarla" {
             
-            novaScene = MenuJogo3(size: size)
+            novaScene = GameScene(volume: false, size: scene!.view!.bounds.size)
             
         }else if toque.name == "setaPedro" {
             
-            novaScene = MenuJogo4(size: size)
+            novaScene = GameScene(volume: false, size: scene!.view!.bounds.size)
             
         }else if toque.name == "credito" {
             

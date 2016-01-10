@@ -18,12 +18,15 @@ class MenuJogo1: SKScene {
     var sol: SKSpriteNode!
     var placaMenu1: SKSpriteNode!
     var placaMenu2: SKSpriteNode!
+    var placaMenu3: SKSpriteNode!
     var jogoPatinho: SKSpriteNode!
     var jogoEsconde: SKSpriteNode!
     var personagemJulia: SKSpriteNode!
     var dialogo: SKSpriteNode!
     var voltar: SKSpriteNode!
     var titulo: SKSpriteNode!
+    var grama: SKSpriteNode!
+    var proximo: SKSpriteNode!
     
     var novaScene: SKScene!
     
@@ -54,11 +57,11 @@ class MenuJogo1: SKScene {
         
         let toque = self.nodeAtPoint(touchLocation)
         
-        if toque.name == "jogoPato" || toque.name == "menuPlaca1"{
+        if toque.name == "placaPato" {
            
             novaScene = GameScenePatinho(size: size)
             
-        }else if toque.name == "jogoEsconde" || toque.name == "menuPlaca2"{
+        }else if toque.name == "placaEsconde" {
             
             novaScene = GameSceneEsconde(size: size)
             
@@ -67,8 +70,85 @@ class MenuJogo1: SKScene {
             novaScene = GameScene(volume: volumeTotal, size: size)
             
         }else if toque.name == "sol" {
+            
             playVideo(video, tipo: "mp4")
             playAudio(audioS, tipo: "m4a")
+            
+        }else if toque.name == "proximo" {
+            
+            if placaMenu1.position.x == 200 && placaMenu1.name == "placaPato"{
+                
+                placaMenu1.runAction(SKAction.moveToX(-100, duration: 1))
+                placaMenu3.texture = SKTexture(imageNamed: "placaPato")
+                placaMenu3.name = "placaPato"
+                placaMenu3.runAction(SKAction.moveToX(500, duration: 1))
+                placaMenu2.runAction(SKAction.moveToX(200, duration: 1), completion: { () -> Void in
+                    self.placaMenu1.position = CGPoint(x: 800, y: 200)
+                })
+                
+            }else if placaMenu2.position.x == 200 && placaMenu2.name == "placaEsconde"{
+                
+                placaMenu2.runAction(SKAction.moveToX(-100, duration: 1))
+                placaMenu1.texture = SKTexture(imageNamed: "placaEsconde")
+                placaMenu1.name = "placaEsconde"
+                placaMenu1.runAction(SKAction.moveToX(500, duration: 1))
+                placaMenu3.runAction(SKAction.moveToX(200, duration: 1), completion: { () -> Void in
+                    self.placaMenu2.position = CGPoint(x: 800, y: 200)
+                })
+                
+            }else if placaMenu3.position.x == 200 && placaMenu3.name == "placaPato"{
+
+                placaMenu3.runAction(SKAction.moveToX(-100, duration: 1))
+                placaMenu2.texture = SKTexture(imageNamed: "placaPato")
+                placaMenu2.name = "placaPato"
+                placaMenu2.runAction(SKAction.moveToX(500, duration: 1))
+                placaMenu1.runAction(SKAction.moveToX(200, duration: 1), completion: { () -> Void in
+                    self.placaMenu3.position = CGPoint(x: 800, y: 200)
+                })
+                
+            }else if placaMenu1.position.x == 200 && placaMenu1.name == "placaEsconde" {
+                
+                placaMenu1.runAction(SKAction.moveToX(-100, duration: 1))
+                placaMenu3.texture = SKTexture(imageNamed: "placaEsconde")
+                placaMenu3.name = "placaEsconde"
+                placaMenu3.runAction(SKAction.moveToX(500, duration: 1))
+                placaMenu2.runAction(SKAction.moveToX(200, duration: 1), completion: { () -> Void in
+                    self.placaMenu1.position = CGPoint(x: 800, y: 200)
+                })
+                
+            }else if placaMenu2.position.x == 200 && placaMenu2.name == "placaPato" {
+                
+                placaMenu2.runAction(SKAction.moveToX(-100, duration: 1))
+                placaMenu1.texture = SKTexture(imageNamed: "placaPato")
+                placaMenu1.name = "placaPato"
+                placaMenu1.runAction(SKAction.moveToX(500, duration: 1))
+                placaMenu3.runAction(SKAction.moveToX(200, duration: 1), completion: { () -> Void in
+                    self.placaMenu2.position = CGPoint(x: 800, y: 200)
+                })
+                
+            }else if placaMenu3.position.x == 200 && placaMenu3.name == "placaEsconde" {
+                
+                placaMenu3.runAction(SKAction.moveToX(-100, duration: 1))
+                placaMenu2.texture = SKTexture(imageNamed: "placaEsconde")
+                placaMenu2.name = "placaEsconde"
+                placaMenu2.runAction(SKAction.moveToX(500, duration: 1))
+                placaMenu1.runAction(SKAction.moveToX(200, duration: 1), completion: { () -> Void in
+                    self.placaMenu3.position = CGPoint(x: 800, y: 200)
+                })
+                
+            }
+            
+//            jogoPatinho.runAction(SKAction.moveToX(-100, duration: 1), completion: { () -> Void in
+//                self.jogoPatinho.position = CGPoint(x: 800, y: 200)
+//            })
+//            
+//            
+//            
+//            jogoEsconde.runAction(SKAction.moveToX(190, duration: 1))
+//
+//            placaMenu3.runAction(SKAction.moveToX(500, duration: 1), completion: { () -> Void in
+//               self.jogoPatinho.position = CGPoint(x: 490, y: 200)
+//            })
         }
         
         if novaScene != nil {
@@ -102,6 +182,12 @@ class MenuJogo1: SKScene {
         background.size = CGSize(width: 1424, height: 800)
         background.position = CGPoint(x: 670, y: 400)
         
+        grama = SKSpriteNode(imageNamed: "grama")
+        grama.zPosition = 2
+        grama.name = "grama"
+        grama.size = CGSize(width: 430, height: 325)
+        grama.position = CGPoint(x: 820, y: 165)
+        
         raioSol = SKSpriteNode(imageNamed: "raioSol")
         raioSol.zPosition = 2
         raioSol.name = "raioSol"
@@ -120,17 +206,29 @@ class MenuJogo1: SKScene {
         titulo.size = CGSize(width: 500, height: 60)
         titulo.position = CGPoint(x: 600, y: 700)
         
-        placaMenu1 = SKSpriteNode(imageNamed: "placa")
+        placaMenu1 = SKSpriteNode(imageNamed: "placaPato")
         placaMenu1.zPosition = 2
-        placaMenu1.name = "menuPlaca1"
+        placaMenu1.name = "placaPato"
         placaMenu1.size = CGSize(width: 200, height: 100)
         placaMenu1.position = CGPoint(x: 200, y: 200)
         
-        placaMenu2 = SKSpriteNode(imageNamed: "placa")
+        placaMenu2 = SKSpriteNode(imageNamed: "placaEsconde")
         placaMenu2.zPosition = 2
-        placaMenu2.name = "menuPlaca2"
+        placaMenu2.name = "placaEsconde"
         placaMenu2.size = CGSize(width: 200, height: 100)
         placaMenu2.position = CGPoint(x: 500, y: 200)
+        
+        placaMenu3 = SKSpriteNode(imageNamed: "placa")
+        placaMenu3.zPosition = 2
+        placaMenu3.name = "placaPato"
+        placaMenu3.size = CGSize(width: 200, height: 100)
+        placaMenu3.position = CGPoint(x: 800, y: 200)
+        
+        proximo = SKSpriteNode(imageNamed: "seta_amarelo")
+        proximo.zPosition = 2
+        proximo.name = "proximo"
+        proximo.size = CGSize(width: 50, height: 50)
+        proximo.position = CGPoint(x: 600, y: 100)
         
         // posiciona e adiciona os jogos
         jogoPatinho = SKSpriteNode(imageNamed: "pato")
@@ -168,12 +266,16 @@ class MenuJogo1: SKScene {
         
         addChild(background)
         addChild(raioSol)
-        addChild(sol)
-        addChild(titulo)
         addChild(placaMenu1)
         addChild(placaMenu2)
-        addChild(jogoPatinho)
-        addChild(jogoEsconde)
+        addChild(placaMenu3)
+        addChild(grama)
+//        addChild(proximo)
+        addChild(sol)
+        addChild(titulo)
+        
+//        addChild(jogoPatinho)
+//        addChild(jogoEsconde)
         addChild(personagemJulia)
         addChild(dialogo)
         addChild(voltar)
